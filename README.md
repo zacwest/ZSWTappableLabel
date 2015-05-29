@@ -29,11 +29,7 @@ label.attributedText = [[NSAttributedString alloc] initWithString:s attributes:a
 
 This results in a label which renders like:
 
-> <span style="text-decoration: underline; color: blue;">Privacy Policy</span>
-
-normally, and when highlighted like:
-
-> <span style="text-decoration: underline; color: white; background-color: #aaa">Privacy Policy</span>
+> [Privacy Policy](https://github.com/zacwest/zswtappablelabel)
 
 Setting your controller as the `tapDelegate` of the label results in the following method call when tapped:
 
@@ -49,7 +45,7 @@ Setting your controller as the `tapDelegate` of the label results in the followi
 
 For substring linking, I suggest you use [ZSWTaggedString](https://github.com/zacwest/zswtaggedstring) which creates these attributed strings painlessly and localizably. Let's create a more advanced 'privacy policy' link using this library:
 
-> View our <span style="text-decoration: underline; color: blue;">Privacy Policy</span> or <span style="text-decoration: underline; color: blue;">Terms of Service</span>
+> View our [Privacy Policy](https://github.com/zacwest/zswtappablelabel) or [Terms of Service](https://github.com/zacwest/zswtappablelabel)
 
 You can create such a string using a simple ZSWTaggedString:
 
