@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Zachary West. All rights reserved.
 //
 //  MIT License
-//  https://github.com/zacwest/ZSWTaggedString
+//  https://github.com/zacwest/ZSWTappableLabel
 //
 
 #import <UIKit/UIKit.h>
