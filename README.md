@@ -84,7 +84,7 @@ label.attributedText = [[ZSWTaggedString stringWithString:string] attributedStri
 ZSWTappableLabel uses gesture recognizers internally:
 
 - If there are no tappable regions, internal gesture recognizers are disabled.
-- If a touch occurs within a tappable region, all other gesture recognizers are failed.
+- If a touch occurs within a tappable region, all other gesture recognizers are failed if the label is interested in them.
 - If a touch occurs outside a tappable region, internal gesture recognizers fail themselves.
 
 For example, if you place a UITapGestureRecognizer on the label, it will only fire when the user does not interact with a tappable region.
