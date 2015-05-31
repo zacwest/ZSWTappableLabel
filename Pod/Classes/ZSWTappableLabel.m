@@ -17,6 +17,7 @@ NSString *const ZSWTappableLabelHighlightedForegroundAttributeName = @"ZSWTappab
 
 @interface ZSWTappableLabel() <UIGestureRecognizerDelegate>
 @property (nonatomic) NSArray *accessibleElements;
+@property (nonatomic) CGRect lastAccessibleElementsFrame;
 
 @property (nonatomic) NSAttributedString *unmodifiedAttributedText;
 
@@ -366,12 +367,7 @@ NSString *const ZSWTappableLabelHighlightedForegroundAttributeName = @"ZSWTappab
 }
 
 - (NSArray *)accessibleElements {
-    if (_accessibleElements) {
-        return _accessibleElements;
-    }
-    
-    if (!self.unmodifiedAttributedText.length) {
-        _accessibleElements = [NSArray array];
+    if (_accessibleElements && CGRectEqualToRect(self.lastAccessibleElementsFrame, self.frame)) {
         return _accessibleElements;
     }
     
@@ -401,6 +397,7 @@ NSString *const ZSWTappableLabelHighlightedForegroundAttributeName = @"ZSWTappab
                                             usingBlock:enumerationBlock];
         
         _accessibleElements = [accessibleElements copy];
+        _lastAccessibleElementsFrame = self.frame;
     } ignoringGestureRecognizers:YES];
     
     return _accessibleElements;
