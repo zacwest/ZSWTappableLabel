@@ -66,9 +66,4 @@ extern NSString *const ZSWTappableLabelTappableRegionAttributeName;
 
 @property (nonatomic, weak) id<ZSWTappableLabelTapDelegate> tapDelegate;
 
-///! You must use -setAttributedText:
-- (void)setFont:(UIFont *)font NS_UNAVAILABLE;
-///! You must use -setAttributedText
-- (void)setText:(NSString *)text NS_UNAVAILABLE;
-
 @end

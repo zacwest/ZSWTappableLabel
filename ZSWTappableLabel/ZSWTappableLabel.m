@@ -161,15 +161,15 @@ NSString *const ZSWTappableLabelHighlightedForegroundAttributeName = @"ZSWTappab
 #pragma mark - Overloading
 
 - (void)setText:(NSString *)text {
-
+    if (text) {
+        [self setAttributedText:[[NSAttributedString alloc] initWithString:text attributes:nil]];
+    } else {
+        [self setAttributedText:nil];
+    }
 }
 
 - (NSString *)text {
-    return self.attributedText.string;
-}
-
-- (void)setFont:(UIFont *)font {
-
+    return self.unmodifiedAttributedText.string;
 }
 
 - (void)setUnmodifiedAttributedText:(NSAttributedString *)unmodifiedAttributedText {
