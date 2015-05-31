@@ -15,7 +15,7 @@
                         <subviews>
                             <view contentMode="TopLeft" id="XkX-pc-I8h" customClass="ZSWTappableLabel">
                                 <rect key="frame" x="41" y="120" width="238" height="115"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                         </subviews>

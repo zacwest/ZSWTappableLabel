@@ -16,6 +16,9 @@ NSString *const ZSWTappableLabelTappableRegionAttributeName = @"ZSWTappableLabel
 NSString *const ZSWTappableLabelHighlightedForegroundAttributeName = @"ZSWTappableLabelHighlightedForegroundAttributeName";
 
 @interface ZSWTappableLabel() <UIGestureRecognizerDelegate>
+@property (nonatomic) NSArray *accessibleElements;
+@property (nonatomic) CGRect lastAccessibleElementsFrame;
+
 @property (nonatomic) NSAttributedString *unmodifiedAttributedText;
 
 @property (nonatomic) NSTextStorage *gestureTextStorage;
@@ -104,7 +107,9 @@ NSString *const ZSWTappableLabelHighlightedForegroundAttributeName = @"ZSWTappab
     }
 }
 
-- (void)performWithLayoutManager:(void(^)(NSUInteger (^characterIndexAtPoint)(CGPoint point)))layoutManagerBlock ignoringGestureRecognizers:(BOOL)ignoreGestureRecognizers {
+- (void)performWithLayoutManager:(void(^)(NSUInteger (^characterIndexAtPoint)(CGPoint point),
+                                          CGRect (^screenFrameForCharacterRange)(NSRange characterRange)))layoutManagerBlock
+      ignoringGestureRecognizers:(BOOL)ignoreGestureRecognizers {
     [self createTextStorage];
     
     NSTextStorage *textStorage = self.gestureTextStorage;
@@ -136,7 +141,15 @@ NSString *const ZSWTappableLabelHighlightedForegroundAttributeName = @"ZSWTappab
         return characterIdx;
     };
     
-    layoutManagerBlock(characterIndexAtPoint);
+    CGRect (^sreenFrameForCharacterRange)(NSRange) = ^(NSRange characterRange) {
+        NSRange glyphRange = [layoutManager glyphRangeForCharacterRange:characterRange actualCharacterRange:NULL];
+        CGRect viewFrame = [layoutManager boundingRectForGlyphRange:glyphRange inTextContainer:textContainer];
+        viewFrame.origin.x += pointOffset.x;
+        viewFrame.origin.y += pointOffset.y;
+        return UIAccessibilityConvertFrameToScreenCoordinates(viewFrame, self);
+    };
+    
+    layoutManagerBlock(characterIndexAtPoint, sreenFrameForCharacterRange);
     
     if (ignoreGestureRecognizers) {
         self.gestureTextStorage = nil;
@@ -157,6 +170,11 @@ NSString *const ZSWTappableLabelHighlightedForegroundAttributeName = @"ZSWTappab
 
 - (void)setFont:(UIFont *)font {
 
+}
+
+- (void)setUnmodifiedAttributedText:(NSAttributedString *)unmodifiedAttributedText {
+    _unmodifiedAttributedText = unmodifiedAttributedText;
+    _accessibleElements = nil;
 }
 
 - (void)setAttributedText:(NSAttributedString *)attributedText {
@@ -207,7 +225,8 @@ NSString *const ZSWTappableLabelHighlightedForegroundAttributeName = @"ZSWTappab
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
     __block BOOL shouldReceive = NO;
     
-    [self performWithLayoutManager:^(NSUInteger (^characterIndexAtPoint)(CGPoint)) {
+    [self performWithLayoutManager:^(NSUInteger (^characterIndexAtPoint)(CGPoint point),
+                                     CGRect (^screenFrameForCharacterRange)(NSRange characterRange)) {
         NSUInteger characterIdx = characterIndexAtPoint([touch locationInView:self]);
         
         if (characterIdx != NSNotFound) {
@@ -292,7 +311,8 @@ NSString *const ZSWTappableLabelHighlightedForegroundAttributeName = @"ZSWTappab
 }
 
 - (void)tap:(UITapGestureRecognizer *)tapGR {
-    [self performWithLayoutManager:^(NSUInteger(^characterIndexAtPoint)(CGPoint)) {
+    [self performWithLayoutManager:^(NSUInteger (^characterIndexAtPoint)(CGPoint point),
+                                     CGRect (^screenFrameForCharacterRange)(NSRange characterRange)) {
         NSUInteger characterIndex = characterIndexAtPoint([tapGR locationInView:self]);
         
         if (characterIndex == NSNotFound) {
@@ -306,7 +326,8 @@ NSString *const ZSWTappableLabelHighlightedForegroundAttributeName = @"ZSWTappab
 }
 
 - (void)longPress:(UILongPressGestureRecognizer *)longPressGR {
-    [self performWithLayoutManager:^(NSUInteger(^characterIndexAtPoint)(CGPoint)) {
+    [self performWithLayoutManager:^(NSUInteger (^characterIndexAtPoint)(CGPoint point),
+                                     CGRect (^screenFrameForCharacterRange)(NSRange characterRange)) {
         switch (longPressGR.state) {
             case UIGestureRecognizerStatePossible:
                 // noop
@@ -337,6 +358,64 @@ NSString *const ZSWTappableLabelHighlightedForegroundAttributeName = @"ZSWTappab
                 break;
         }
     } ignoringGestureRecognizers:NO];
+}
+
+#pragma mark - Accessibility
+
+- (BOOL)isAccessibilityElement {
+    return NO; // because we're a container
+}
+
+- (NSArray *)accessibleElements {
+    if (_accessibleElements && CGRectEqualToRect(self.lastAccessibleElementsFrame, self.frame)) {
+        return _accessibleElements;
+    }
+    
+    NSMutableArray *accessibleElements = [NSMutableArray array];
+    NSAttributedString *unmodifiedAttributedString = self.unmodifiedAttributedText;
+    
+    [self performWithLayoutManager:^(NSUInteger (^characterIndexAtPoint)(CGPoint point),
+                                     CGRect (^screenFrameForCharacterRange)(NSRange characterRange)) {
+        if (!unmodifiedAttributedString.length) {
+            return;
+        }
+        
+        void (^enumerationBlock)(id, NSRange, BOOL *) = ^(id value, NSRange range, BOOL *stop) {
+            UIAccessibilityElement *element = [[UIAccessibilityElement alloc] initWithAccessibilityContainer:self];
+            element.accessibilityLabel = [unmodifiedAttributedString.string substringWithRange:range];
+            element.accessibilityFrame = screenFrameForCharacterRange(range);
+            
+            if ([value boolValue]) {
+                element.accessibilityTraits = UIAccessibilityTraitLink | UIAccessibilityTraitStaticText;
+            } else {
+                element.accessibilityTraits = UIAccessibilityTraitStaticText;
+            }
+            
+            [accessibleElements addObject:element];
+        };
+        
+        [unmodifiedAttributedString enumerateAttribute:ZSWTappableLabelTappableRegionAttributeName
+                                               inRange:NSMakeRange(0, unmodifiedAttributedString.length)
+                                               options:NSAttributedStringEnumerationLongestEffectiveRangeNotRequired
+                                            usingBlock:enumerationBlock];
+    } ignoringGestureRecognizers:YES];
+
+    _accessibleElements = [accessibleElements copy];
+    _lastAccessibleElementsFrame = self.frame;
+
+    return _accessibleElements;
+}
+
+- (NSInteger)accessibilityElementCount {
+    return [self accessibleElements].count;
+}
+
+- (id)accessibilityElementAtIndex:(NSInteger)idx {
+    return [self accessibleElements][idx];
+}
+
+- (NSInteger)indexOfAccessibilityElement:(id)element {
+    return [[self accessibleElements] indexOfObject:element];
 }
 
 @end

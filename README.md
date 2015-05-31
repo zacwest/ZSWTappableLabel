@@ -79,9 +79,18 @@ NSString *string = NSLocalizedString(@"View our <link type='privacy'>Privacy Pol
 label.attributedText = [[ZSWTaggedString stringWithString:string] attributedStringWithOptions:options];
 ```
 
+## VoiceOver
+
+ZSWTappableLabel is an accessibility container, which exposes the substrings in your attributed string as distinct elements. For example, the above string breaks down into:
+
+1. `View our` (static text)
+1. `Privacy Policy` (link)
+1. ` or ` (static text)
+1. `Terms of Service` (link)
+
 ## Interaction with gesture recognizers
 
-ZSWTappableLabel uses gesture recognizers internally:
+ZSWTappableLabel uses gesture recognizers internally and works well with other gesture recognizers:
 
 - If there are no tappable regions, internal gesture recognizers are disabled.
 - If a touch occurs within a tappable region, all other gesture recognizers are failed if the label is interested in them.
