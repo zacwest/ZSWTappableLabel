@@ -371,11 +371,14 @@ NSString *const ZSWTappableLabelHighlightedForegroundAttributeName = @"ZSWTappab
         return _accessibleElements;
     }
     
+    NSMutableArray *accessibleElements = [NSMutableArray array];
+    NSAttributedString *unmodifiedAttributedString = self.unmodifiedAttributedText;
+    
     [self performWithLayoutManager:^(NSUInteger (^characterIndexAtPoint)(CGPoint point),
                                      CGRect (^screenFrameForCharacterRange)(NSRange characterRange)) {
-        NSMutableArray *accessibleElements = [NSMutableArray array];
-        
-        NSAttributedString *unmodifiedAttributedString = self.unmodifiedAttributedText;
+        if (!unmodifiedAttributedString.length) {
+            return;
+        }
         
         void (^enumerationBlock)(id, NSRange, BOOL *) = ^(id value, NSRange range, BOOL *stop) {
             UIAccessibilityElement *element = [[UIAccessibilityElement alloc] initWithAccessibilityContainer:self];
@@ -395,11 +398,11 @@ NSString *const ZSWTappableLabelHighlightedForegroundAttributeName = @"ZSWTappab
                                                inRange:NSMakeRange(0, unmodifiedAttributedString.length)
                                                options:NSAttributedStringEnumerationLongestEffectiveRangeNotRequired
                                             usingBlock:enumerationBlock];
-        
-        _accessibleElements = [accessibleElements copy];
-        _lastAccessibleElementsFrame = self.frame;
     } ignoringGestureRecognizers:YES];
-    
+
+    _accessibleElements = [accessibleElements copy];
+    _lastAccessibleElementsFrame = self.frame;
+
     return _accessibleElements;
 }
 
