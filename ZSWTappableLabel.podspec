@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name             = "ZSWTappableLabel"
-  s.version          = "1.0"
-  s.summary          = "UILabel subclass in which substrings can be tapped"
+  s.version          = "1.1"
+  s.summary          = "UILabel subclass in which substrings links can be tapped"
   s.description      = <<-DESC
                         NSAttributedStrings presented in ZSWTappableLabel can be tapped
                         in subranges you specify using attributes.
@@ -16,12 +16,5 @@ Pod::Spec.new do |s|
   s.platform     = :ios, '7.0'
   s.requires_arc = true
 
-  s.source_files = 'Pod/Classes/**/*'
-  s.resource_bundles = {
-    'ZSWTappableLabel' => ['Pod/Assets/*.png']
-  }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.source_files = 'ZSWTappableLabel/**/*'
 end
