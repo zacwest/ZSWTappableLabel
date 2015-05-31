@@ -191,12 +191,12 @@ NSString *const ZSWTappableLabelHighlightedForegroundAttributeName = @"ZSWTappab
                                 }
                             }];
     
-    self.tapGR.enabled = self.longPressGR.enabled = containsTappableRegion;
+    if (containsTappableRegion) {
+        self.tapGR.enabled = YES;
+        self.longPressGR.enabled = YES;
         
-    if (attributedText.length) {
         // If the user doesn't specify a font, UILabel is going to render with the current
         // one it wants, so we need to fill in the blanks
-        
         NSMutableAttributedString *mutableText = [attributedText mutableCopy];
         UIFont *font = [super font];
         
@@ -212,6 +212,9 @@ NSString *const ZSWTappableLabelHighlightedForegroundAttributeName = @"ZSWTappab
                                 }];
         
         attributedText = mutableText;
+    } else {
+        self.tapGR.enabled = NO;
+        self.longPressGR.enabled = NO;
     }
     
     self.unmodifiedAttributedText = attributedText;
