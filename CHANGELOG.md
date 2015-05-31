@@ -1,4 +1,4 @@
-# 1.1 (TBD)
+# 1.1 (2015-05-31)
 
 - VoiceOver support
 - Removes `-setText:` unavailability (though you should still use `-setAttributedText:`)
