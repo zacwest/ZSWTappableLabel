@@ -41,6 +41,64 @@ Setting your controller as the `tapDelegate` of the label results in the followi
 }
 ```
 
+## Data detectors
+
+Let's use `NSDataDetector` to find the substrings in a given string that we might want to turn into links:
+
+```objective-c
+NSString *string = @"check google.com or call 415-555-5555? how about friday at 5pm?";
+
+NSDataDetector *detector = [NSDataDetector dataDetectorWithTypes:NSTextCheckingAllSystemTypes error:NULL];
+NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:string attributes:nil];
+// the next line throws an exception if string is nil - make sure you check
+[detector enumerateMatchesInString:string options:0 range:NSMakeRange(0, string.length) usingBlock:^(NSTextCheckingResult *result, NSMatchingFlags flags, BOOL *stop) {
+  NSMutableDictionary *attributes = [NSMutableDictionary dictionary];
+  attributes[ZSWTappableLabelTappableRegionAttributeName] = @YES;
+  attributes[ZSWTappableLabelHighlightedBackgroundAttributeName] = [UIColor lightGrayColor];
+  attributes[ZSWTappableLabelHighlightedForegroundAttributeName] = [UIColor whiteColor];
+  attributes[NSUnderlineStyleAttributeName] = @(NSUnderlineStyleSingle);
+  attributes[@"NSTextCheckingResult"] = result;
+  [attributedString addAttributes:attributes range:result.range];
+}];
+label.attributedText = attributedString;
+```
+
+This results in a label which renders like:
+
+> check [google.com](#) or call [415-555-5555](#)? how about [friday at 5pm](#)?
+
+We can wire up the `tapDelegate` to receive the checking result and handle each result type when the user taps on the link:
+
+```objective-c
+- (void)tappableLabel:(ZSWTappableLabel *)tappableLabel
+        tappedAtIndex:(NSInteger)idx
+       withAttributes:(NSDictionary *)attributes {
+  NSTextCheckingResult *result = attributes[@"NSTextCheckingResult"];
+  if (result) {
+    switch (result.resultType) {
+      case NSTextCheckingTypeAddress:
+        NSLog(@"Address components: %@", result.addressComponents);
+        break;
+          
+      case NSTextCheckingTypePhoneNumber:
+        NSLog(@"Phone number: %@", result.phoneNumber);
+        break;
+          
+      case NSTextCheckingTypeDate:
+        NSLog(@"Date: %@", result.date);
+        break;
+          
+      case NSTextCheckingTypeLink:
+        NSLog(@"Link: %@", result.URL);
+        break;
+
+      default:
+        break;
+    }
+  }
+}
+```
+
 ## Substring linking
 
 For substring linking, I suggest you use [ZSWTaggedString](https://github.com/zacwest/zswtaggedstring) which creates these attributed strings painlessly and localizably. Let's create a more advanced 'privacy policy' link using this library:
