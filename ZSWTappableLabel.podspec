@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "ZSWTappableLabel"
-  s.version          = "1.1"
+  s.version          = "1.2"
   s.summary          = "UILabel subclass in which substrings links can be tapped"
   s.description      = <<-DESC
                         NSAttributedStrings presented in ZSWTappableLabel can be tapped
