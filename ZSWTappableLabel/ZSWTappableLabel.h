@@ -58,6 +58,11 @@ extern NSString *const ZSWTappableLabelTappableRegionAttributeName;
 - (void)tappableLabel:(ZSWTappableLabel *)tappableLabel
         tappedAtIndex:(NSInteger)idx
        withAttributes:(NSDictionary *)attributes;
+
+@optional
+
+- (BOOL)tappableLabelShouldPassThroughUnhighlightedTouches:(ZSWTappableLabel *)tappableLabel;
+
 @end
 
 #pragma mark -

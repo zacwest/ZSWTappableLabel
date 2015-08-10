@@ -227,21 +227,28 @@ NSString *const ZSWTappableLabelHighlightedForegroundAttributeName = @"ZSWTappab
 #pragma mark - UIGestureRecognizerDelegate
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
     __block BOOL shouldReceive = NO;
-    
-    [self performWithLayoutManager:^(NSUInteger (^characterIndexAtPoint)(CGPoint point),
-                                     CGRect (^screenFrameForCharacterRange)(NSRange characterRange)) {
-        NSUInteger characterIdx = characterIndexAtPoint([touch locationInView:self]);
-        
-        if (characterIdx != NSNotFound) {
-            NSNumber *attribute = [self.unmodifiedAttributedText attribute:ZSWTappableLabelTappableRegionAttributeName
-                                                                   atIndex:characterIdx
-                                                            effectiveRange:NULL];
-            shouldReceive = [attribute boolValue];
-        } else {
-            shouldReceive = NO;
-        }
-    } ignoringGestureRecognizers:YES];
-    
+
+    if ([self.tapDelegate respondsToSelector:@selector(tappableLabelShouldPassThroughUnhighlightedTouches:)])
+    {
+        shouldReceive = ![self.tapDelegate tappableLabelShouldPassThroughUnhighlightedTouches:self];
+    }
+    else
+    {
+        [self performWithLayoutManager:^(NSUInteger (^characterIndexAtPoint)(CGPoint point),
+                                         CGRect (^screenFrameForCharacterRange)(NSRange characterRange)) {
+            NSUInteger characterIdx = characterIndexAtPoint([touch locationInView:self]);
+
+            if (characterIdx != NSNotFound) {
+                NSNumber *attribute = [self.unmodifiedAttributedText attribute:ZSWTappableLabelTappableRegionAttributeName
+                                                                       atIndex:characterIdx
+                                                                effectiveRange:NULL];
+                shouldReceive = [attribute boolValue];
+            } else {
+                shouldReceive = NO;
+            }
+        } ignoringGestureRecognizers:YES];
+    }
+
     return shouldReceive;
 }
 
