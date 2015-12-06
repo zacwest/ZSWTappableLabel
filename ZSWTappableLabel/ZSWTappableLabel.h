@@ -11,6 +11,8 @@
 
 #import <UIKit/UIKit.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 #pragma mark - Attributes you include in strings
 
 /*!
@@ -44,7 +46,7 @@ extern NSString *const ZSWTappableLabelTappableRegionAttributeName;
  *
  * You set your delegate using \ref -[ZSWTappableLabel setTapDelegate:]
  */
-@protocol ZSWTappableLabelTapDelegate <NSObject>
+@protocol ZSWTappableLabelTapDelegate
 /*!
  * @brief A tap was completed
  *
@@ -57,13 +59,15 @@ extern NSString *const ZSWTappableLabelTappableRegionAttributeName;
  */
 - (void)tappableLabel:(ZSWTappableLabel *)tappableLabel
         tappedAtIndex:(NSInteger)idx
-       withAttributes:(NSDictionary *)attributes;
+       withAttributes:(NSDictionary<NSString *, id> *)attributes;
 @end
 
 #pragma mark -
 
 @interface ZSWTappableLabel : UILabel
 
-@property (nonatomic, weak) id<ZSWTappableLabelTapDelegate> tapDelegate;
+@property (nullable, nonatomic, weak) IBOutlet id<ZSWTappableLabelTapDelegate> tapDelegate;
 
 @end
+
+NS_ASSUME_NONNULL_END

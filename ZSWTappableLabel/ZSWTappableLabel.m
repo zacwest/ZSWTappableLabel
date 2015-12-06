@@ -305,7 +305,7 @@ NSString *const ZSWTappableLabelHighlightedForegroundAttributeName = @"ZSWTappab
         return;
     }
     
-    NSDictionary *attributes = [self.unmodifiedAttributedText attributesAtIndex:characterIndex effectiveRange:NULL];
+    NSDictionary *attributes = [self.unmodifiedAttributedText attributesAtIndex:characterIndex effectiveRange:NULL] ?: @{};
     
 #if DEBUG
     NSLog(@"Tapped at index %@ with attributes %@", @(characterIndex), attributes);
