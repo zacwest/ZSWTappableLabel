@@ -214,6 +214,22 @@ NSString *const ZSWTappableLabelHighlightedForegroundAttributeName = @"ZSWTappab
                                     }
                                 }];
         
+        if (self.textAlignment != NSTextAlignmentLeft) {
+            NSMutableParagraphStyle *style = [[NSMutableParagraphStyle alloc] init];
+            style.alignment = self.textAlignment;
+            
+            [attributedText enumerateAttribute:NSParagraphStyleAttributeName
+                                       inRange:NSMakeRange(0, attributedText.length)
+                                       options:NSAttributedStringEnumerationLongestEffectiveRangeNotRequired
+                                    usingBlock:^(id value, NSRange range, BOOL *stop) {
+                                        if (!value) {
+                                            [mutableText addAttribute:NSParagraphStyleAttributeName
+                                                                value:style
+                                                                range:range];
+                                        }
+                                    }];
+        }
+        
         attributedText = mutableText;
     } else {
         self.tapGR.enabled = NO;
