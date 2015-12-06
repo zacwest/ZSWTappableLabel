@@ -1,4 +1,4 @@
-# 1.2
+# 1.2 (2015-12-05)
 
 - Adds annotations for nullability and generics to ease Swift import.
 - Fixes a couple Interface Builder issues:
