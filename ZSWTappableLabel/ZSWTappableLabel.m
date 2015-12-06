@@ -370,7 +370,9 @@ NSString *const ZSWTappableLabelHighlightedForegroundAttributeName = @"ZSWTappab
 }
 
 - (NSArray *)accessibleElements {
-    if (_accessibleElements && CGRectEqualToRect(self.lastAccessibleElementsFrame, self.frame)) {
+    CGRect screenFrame = UIAccessibilityConvertFrameToScreenCoordinates(self.frame, self);
+    
+    if (_accessibleElements && CGRectEqualToRect(self.lastAccessibleElementsFrame, screenFrame)) {
         return _accessibleElements;
     }
     
@@ -404,7 +406,7 @@ NSString *const ZSWTappableLabelHighlightedForegroundAttributeName = @"ZSWTappab
     } ignoringGestureRecognizers:YES];
 
     _accessibleElements = [accessibleElements copy];
-    _lastAccessibleElementsFrame = self.frame;
+    _lastAccessibleElementsFrame = screenFrame;
 
     return _accessibleElements;
 }
