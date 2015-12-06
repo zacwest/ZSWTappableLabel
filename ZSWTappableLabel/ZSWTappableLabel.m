@@ -42,6 +42,9 @@ NSString *const ZSWTappableLabelHighlightedForegroundAttributeName = @"ZSWTappab
     self = [super initWithCoder:aDecoder];
     if (self) {
         [self tappableLabelCommonInit];
+        
+        // In case any text was assigned in IB, don't lose it.
+        [self setAttributedText:[super attributedText]];
     }
     return self;
 }
