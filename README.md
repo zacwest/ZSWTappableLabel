@@ -27,6 +27,20 @@ NSDictionary *a = @{
 label.attributedText = [[NSAttributedString alloc] initWithString:s attributes:a];
 ```
 
+```swift
+let string = NSLocalizedString("Privacy Policy", comment: "")
+let attributes: [String: AnyObject] = [
+  ZSWTappableLabelTappableRegionAttributeName: true,
+  ZSWTappableLabelHighlightedBackgroundAttributeName: UIColor.lightGrayColor(),
+  ZSWTappableLabelHighlightedForegroundAttributeName: UIColor.whiteColor(),
+  NSForegroundColorAttributeName: UIColor.blueColor(),
+  NSUnderlineStyleAttributeName: NSUnderlineStyle.StyleSingle.rawValue,
+  "URL": NSURL(string: "http://imgur.com/gallery/VgXCk")!
+]
+
+label.attributedText = NSAttributedString(string: string, attributes: attributes)
+```
+
 This results in a label which renders like:
 
 > [Privacy Policy](https://github.com/zacwest/zswtappablelabel)
@@ -38,6 +52,14 @@ Setting your controller as the `tapDelegate` of the label results in the followi
         tappedAtIndex:(NSInteger)idx
        withAttributes:(NSDictionary *)attributes {
   [[UIApplication sharedApplication] openURL:attributes[@"URL"]];
+}
+```
+
+```
+func tappableLabel(tappableLabel: ZSWTappableLabel, tappedAtIndex idx: Int, withAttributes attributes: [String : AnyObject]) {
+  if let url = attributes["URL"] as? NSURL {
+    UIApplication.sharedApplication().openURL(url)
+  }
 }
 ```
 
@@ -61,6 +83,26 @@ NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc]
   [attributedString addAttributes:attributes range:result.range];
 }];
 label.attributedText = attributedString;
+```
+
+```swift
+let string = "check google.com or call 415-555-5555? how about friday at 5pm?"
+let range = NSRange(location: 0, length: (string as NSString).length)
+
+let detector = try! NSDataDetector(types: NSTextCheckingAllSystemTypes)
+let attributedString = NSMutableAttributedString(string: string, attributes: nil)
+
+detector.enumerateMatchesInString(string, options: [], range: range) { (result, flags, _) in
+  guard let result = result else { return }
+  var attributes = [String: AnyObject]()
+  attributes[ZSWTappableLabelTappableRegionAttributeName] = true
+  attributes[ZSWTappableLabelHighlightedBackgroundAttributeName] = UIColor.lightGrayColor()
+  attributes[ZSWTappableLabelHighlightedForegroundAttributeName] = UIColor.whiteColor()
+  attributes[NSUnderlineStyleAttributeName] = NSUnderlineStyle.StyleSingle.rawValue
+  attributes["NSTextCheckingResult"] = result
+  attributedString.addAttributes(attributes, range: result.range)
+}
+label.attributedText = attributedString
 ```
 
 This results in a label which renders like:
@@ -94,6 +136,27 @@ We can wire up the `tapDelegate` to receive the checking result and handle each 
 
       default:
         break;
+    }
+  }
+}
+```
+
+or in Swift:
+
+```swift
+func tappableLabel(tappableLabel: ZSWTappableLabel, tappedAtIndex idx: Int, withAttributes attributes: [String : AnyObject]) {
+  if let result = attributes["NSTextCheckingResult"] as? NSTextCheckingResult {
+    switch result.resultType {
+    case [.Address]:
+      print("Address components: \(result.addressComponents)")                
+    case [.PhoneNumber]:
+      print("Phone number: \(result.phoneNumber)")
+    case [.Date]:
+      print("Date: \(result.date)")
+    case [.Link]:
+      print("Link: \(result.URL)")
+    default:
+      break
     }
   }
 }
@@ -161,7 +224,7 @@ For example, if you place a UITapGestureRecognizer on the label, it will only fi
 ZSWTappableLabel is available through [CocoaPods](http://cocoapods.org). To install it, simply add the following line to your Podfile:
 
 ```ruby
-pod "ZSWTappableLabel", "~> 1.1"
+pod "ZSWTappableLabel", "~> 1.2"
 ```
 
 ## License
