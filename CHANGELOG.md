@@ -1,3 +1,12 @@
+# 1.2
+
+- Adds annotations for nullability and generics to ease Swift import.
+- Fixes a couple Interface Builder issues:
+    - Flag the delegate as an IBOutlet so it can be assigned.
+    - Fix text being cleared/unset if only set via the IB editor.
+- Fixes text alignments other than left set on the label rather than via NSParagraphStyle.
+- Fixes VoiceOver element positions when placed inside a UIScrollView.
+
 # 1.1 (2015-05-31)
 
 - VoiceOver support
