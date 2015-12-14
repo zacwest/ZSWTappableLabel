@@ -6,9 +6,12 @@
 //
 //
 
-#import "ZSWTaggedString.h"
-#import "ZSWStringParser.h"
-#import "ZSWTaggedStringOptions.h"
+#import <ZSWTaggedString/ZSWTaggedString.h>
+#import <ZSWTaggedString/ZSWStringParser.h>
+#import <ZSWTaggedString/ZSWTaggedStringOptions.h>
+#import <ZSWTaggedString/ZSWTaggedString_Private.h>
+
+NSString *const ZSWTaggedStringErrorDomain = @"ZSWTaggedStringErrorDomain";
 
 @implementation ZSWTaggedString
 
@@ -35,7 +38,7 @@
     if (self) {
         [self commonInit];
         
-        self.underlyingString = string;
+        self.underlyingString = string ?: @"";
     }
     return self;
 }
@@ -50,7 +53,7 @@
         [self commonInit];
         
         self.underlyingString = [decoder decodeObjectOfClass:[NSString class]
-                                                      forKey:ZSWSelector(underlyingString)];
+                                                      forKey:ZSWSelector(underlyingString)] ?: @"";
     }
     return self;
 }
@@ -86,30 +89,49 @@
             NSStringFromClass([self class]), self, self.underlyingString];
 }
 
-#pragma mark - Generation
-
+#pragma mark - Errorless wrappers
 - (NSString *)string {
-    return [self stringWithOptions:[ZSWTaggedStringOptions defaultOptionsNoCopy]];
+    return [self stringWithError:nil];
 }
 
 - (NSString *)stringWithOptions:(ZSWTaggedStringOptions *)options {
-    NSParameterAssert(options != nil);
-    
-    return [ZSWStringParser stringWithTaggedString:self
-                                           options:options
-                                       returnClass:[NSString class]];
+    return [self stringWithOptions:options error:nil];
 }
 
 - (NSAttributedString *)attributedString {
-    return [self attributedStringWithOptions:[ZSWTaggedStringOptions defaultOptionsNoCopy]];
+    return [self attributedStringWithError:nil];
 }
 
 - (NSAttributedString *)attributedStringWithOptions:(ZSWTaggedStringOptions *)options {
+    return [self attributedStringWithOptions:options error:nil];
+}
+
+#pragma mark - Generation
+
+- (NSString *)stringWithError:(NSError * _Nullable __autoreleasing *)error {
+    return [self stringWithOptions:[ZSWTaggedStringOptions _private_defaultOptionsNoCopy] error:error];
+}
+
+- (NSString *)stringWithOptions:(ZSWTaggedStringOptions *)options error:(NSError **)error {
     NSParameterAssert(options != nil);
     
     return [ZSWStringParser stringWithTaggedString:self
                                            options:options
-                                       returnClass:[NSAttributedString class]];
+                                       returnClass:[NSString class]
+                                             error:error];
+}
+
+- (NSAttributedString *)attributedStringWithError:(NSError * _Nullable __autoreleasing *)error {
+    return [self attributedStringWithOptions:[ZSWTaggedStringOptions _private_defaultOptionsNoCopy] error:error];
+}
+
+- (NSAttributedString *)attributedStringWithOptions:(ZSWTaggedStringOptions *)options error:(NSError **)error {
+    NSParameterAssert(options != nil);
+    
+    return [ZSWStringParser stringWithTaggedString:self
+                                           options:options
+                                       returnClass:[NSAttributedString class]
+                                             error:error];
 }
 
 @end

@@ -10,27 +10,21 @@
  * @private
  */
 
-#import "ZSWTaggedString.h"
-#import "ZSWTaggedStringOptions.h"
+#import <ZSWTaggedString/ZSWTaggedString.h>
+#import <ZSWTaggedString/ZSWTaggedStringOptions.h>
+#import <ZSWTaggedString/ZSWTaggedStringAttribute.h>
 
 #define ZSWSelector(selectorName) (NSStringFromSelector(@selector(selectorName)))
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface ZSWStringParser : NSObject
 
-+ (id)stringWithTaggedString:(ZSWTaggedString *)taggedString
-                     options:(ZSWTaggedStringOptions *)options
-                 returnClass:(Class)returnClass;
++ (nullable id)stringWithTaggedString:(ZSWTaggedString *)taggedString
+                              options:(ZSWTaggedStringOptions *)options
+                          returnClass:(Class)returnClass
+                                error:(NSError **)error;
 
 @end
 
-@interface ZSWTaggedString()
-@property (nonatomic, copy) NSString *underlyingString;
-@end
-
-@interface ZSWTaggedStringOptions()
-+ (ZSWTaggedStringOptions *)defaultOptionsNoCopy;
-
-@property (nonatomic) NSDictionary *tagToAttributesMap;
-- (void)updateAttributedString:(NSMutableAttributedString *)string
-               updatedWithTags:(NSArray *)tags;
-@end
+NS_ASSUME_NONNULL_END

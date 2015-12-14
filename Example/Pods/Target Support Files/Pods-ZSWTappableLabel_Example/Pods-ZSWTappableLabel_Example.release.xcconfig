@@ -1,8 +1,8 @@
-FRAMEWORK_SEARCH_PATHS = $(inherited) "$PODS_FRAMEWORK_BUILD_PATH"
+EMBEDDED_CONTENT_CONTAINS_SWIFT = YES
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
 LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
-OTHER_CFLAGS = $(inherited) -iquote "$PODS_FRAMEWORK_BUILD_PATH/ZSWTaggedString.framework/Headers" -iquote "$PODS_FRAMEWORK_BUILD_PATH/ZSWTappableLabel.framework/Headers"
-OTHER_LDFLAGS = $(inherited) -ObjC -framework "ZSWTaggedString" -framework "ZSWTappableLabel"
-OTHER_LIBTOOLFLAGS = $(OTHER_LDFLAGS)
+OTHER_CFLAGS = $(inherited) -iquote "$CONFIGURATION_BUILD_DIR/ZSWTaggedString.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/ZSWTappableLabel.framework/Headers"
+OTHER_LDFLAGS = $(inherited) -framework "ZSWTaggedString" -framework "ZSWTappableLabel"
+OTHER_SWIFT_FLAGS = $(inherited) "-D" "COCOAPODS"
 PODS_FRAMEWORK_BUILD_PATH = $(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Pods-ZSWTappableLabel_Example
 PODS_ROOT = ${SRCROOT}/Pods

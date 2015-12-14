@@ -1,9 +1,0 @@
-framework module ZSWTaggedString {
-  umbrella header "Pods-ZSWTappableLabel_Example-ZSWTaggedString-umbrella.h"
-
-  export *
-  module * { export * }
-
-  private header "ZSWStringParser.h"
-  private header "ZSWStringParserTag.h"
-}

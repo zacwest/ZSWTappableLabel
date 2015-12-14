@@ -9,6 +9,13 @@
 #import <Foundation/Foundation.h>
 #import "ZSWTaggedStringOptions.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
+extern NSString *const ZSWTaggedStringErrorDomain;
+typedef NS_ENUM(NSInteger, ZSWTaggedStringErrorCode) {
+    ZSWTaggedStringErrorCodeInvalidTags = 100,
+};
+
 /*!
  * @brief Escape a string that does not feature tags
  *
@@ -41,7 +48,7 @@ extern NSString *ZSWEscapedStringForString(NSString *unescapedString);
  * generate \ref NSString or \ref NSAttributedString versions take up the
  * chunk of the work.
  */
-+ (ZSWTaggedString *)stringWithFormat:(NSString *)format, ... NS_FORMAT_FUNCTION(1,2);
++ (instancetype)stringWithFormat:(NSString *)format, ... NS_FORMAT_FUNCTION(1,2) NS_SWIFT_UNAVAILABLE("init(format:) is available in the Swift subpod");
 
 /*!
  * @brief Create an unparsed string from a tagged string
@@ -50,7 +57,10 @@ extern NSString *ZSWEscapedStringForString(NSString *unescapedString);
  *
  * Like \ref -stringWithFormat:, very little computation is done in this method.
  */
-+ (ZSWTaggedString *)stringWithString:(NSString *)string;
++ (instancetype)stringWithString:(NSString *)string NS_SWIFT_UNAVAILABLE("Use init(string:)");
+- (instancetype)initWithString:(NSString *)string;
+
+@property (nonatomic, copy) NSString *underlyingString;
 
 /*!
  * @brief Attributed version of an unparsed string
@@ -65,18 +75,20 @@ extern NSString *ZSWEscapedStringForString(NSString *unescapedString);
  *
  * @return Parsed version of the unparsed string
  */
-- (NSAttributedString *)attributedString;
+- (nullable NSAttributedString *)attributedString NS_SWIFT_UNAVAILABLE("Use the throwing version");
+- (nullable NSAttributedString *)attributedStringWithError:(NSError **)error;
 
 /*!
  * @brief Attributed version of of an unparsed string
  *
- * @param options The options to use, or nil to use the default options
+ * @param options The options to use. For defailts, use the options-less method.
  *
  * For available options, see \ref ZSWTaggedStringOptions
  *
  * @return Parsed version of the unparsed string
  */
-- (NSAttributedString *)attributedStringWithOptions:(ZSWTaggedStringOptions *)options;
+- (nullable NSAttributedString *)attributedStringWithOptions:(ZSWTaggedStringOptions *)options NS_SWIFT_UNAVAILABLE("Use the throwing version");
+- (nullable NSAttributedString *)attributedStringWithOptions:(ZSWTaggedStringOptions *)options error:(NSError **)error;
 
 /*!
  * @brief Stripped string
@@ -87,7 +99,8 @@ extern NSString *ZSWEscapedStringForString(NSString *unescapedString);
  *
  * @return Stripped version of the unparsed string
  */
-- (NSString *)string;
+- (nullable NSString *)string NS_SWIFT_UNAVAILABLE("Use the throwing version");
+- (nullable NSString *)stringWithError:(NSError **)error;
 
 /*!
  * @brief Stripped string with options
@@ -108,6 +121,9 @@ extern NSString *ZSWEscapedStringForString(NSString *unescapedString);
  *
  * @return Stripped version of the unparsed string
  */
-- (NSString *)stringWithOptions:(ZSWTaggedStringOptions *)options;
+- (nullable NSString *)stringWithOptions:(ZSWTaggedStringOptions *)options NS_SWIFT_UNAVAILABLE("Use the throwing version");
+- (nullable NSString *)stringWithOptions:(ZSWTaggedStringOptions *)options error:(NSError **)error;
 
 @end
+
+NS_ASSUME_NONNULL_END

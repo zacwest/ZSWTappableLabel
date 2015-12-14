@@ -6,12 +6,12 @@
 //
 //
 
-#import "ZSWStringParserTag.h"
+#import <ZSWTaggedString/ZSWStringParserTag.h>
 
 @interface ZSWStringParserTag()
 @property (nonatomic, readwrite) NSString *tagName;
-@property (nonatomic, readwrite) NSInteger location;
-@property (nonatomic) NSInteger endLocation;
+@property (nonatomic, readwrite) NSUInteger location;
+@property (nonatomic) NSUInteger endLocation;
 
 @property (nonatomic) NSDictionary *tagAttributes;
 
@@ -23,7 +23,7 @@
 @implementation ZSWStringParserTag
 
 - (instancetype)initWithTagName:(NSString *)tagName
-                  startLocation:(NSInteger)location {
+                  startLocation:(NSUInteger)location {
     self = [super init];
     if (self) {
         self.tagName = tagName;
@@ -109,7 +109,7 @@
             if (ateQuote) {
                 // For empty values (e.g. ''), we need to see if we scanned more than one quote.
                 NSInteger count = 0;
-                for (NSInteger idx = 0; idx < quote.length; idx++) {
+                for (NSUInteger idx = 0; idx < quote.length; idx++) {
                     count += [quoteCharacterSet characterIsMember:[quote characterAtIndex:idx]];
                 }
                 

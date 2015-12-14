@@ -21,8 +21,8 @@
 		6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
-		8A089D04118D3C6363651D6B /* Pods_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A86C6FF824664E292619D05C /* Pods_Tests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		FFB3DEC1B5FFE49679B15DC2 /* Pods_ZSWTappableLabel_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC5FCE9727317036233370B7 /* Pods_ZSWTappableLabel_Example.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		8A089D04118D3C6363651D6B /* Pods_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A86C6FF824664E292619D05C /* Pods_Tests.framework */; };
+		FFB3DEC1B5FFE49679B15DC2 /* Pods_ZSWTappableLabel_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC5FCE9727317036233370B7 /* Pods_ZSWTappableLabel_Example.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -531,6 +531,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ZSWTappableLabel/ZSWTappableLabel-Prefix.pch";
 				INFOPLIST_FILE = "ZSWTappableLabel/ZSWTappableLabel-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -551,6 +552,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ZSWTappableLabel/ZSWTappableLabel-Prefix.pch";
 				INFOPLIST_FILE = "ZSWTappableLabel/ZSWTappableLabel-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";

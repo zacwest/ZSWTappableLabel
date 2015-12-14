@@ -1,6 +1,0 @@
-framework module ZSWTappableLabel {
-  umbrella header "Pods-Tests-ZSWTappableLabel-umbrella.h"
-
-  export *
-  module * { export * }
-}

@@ -1,13 +1,18 @@
 PODS:
   - Expecta (1.0.0)
   - Specta (1.0.1)
-  - ZSWTaggedString (1.0)
-  - ZSWTappableLabel (1.1)
+  - ZSWTaggedString (2.0):
+    - ZSWTaggedString/Core (= 2.0)
+  - ZSWTaggedString/Core (2.0)
+  - ZSWTaggedString/Swift (2.0):
+    - ZSWTaggedString/Core
+  - ZSWTappableLabel (1.2)
 
 DEPENDENCIES:
   - Expecta
   - Specta
-  - ZSWTaggedString (~> 1.0)
+  - ZSWTaggedString (~> 2.0)
+  - ZSWTaggedString/Swift (~> 2.0)
   - ZSWTappableLabel (from `../`)
 
 EXTERNAL SOURCES:
@@ -17,7 +22,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   Expecta: 32604574add2c46a36f8d2f716b6c5736eb75024
   Specta: 097be314a75de103703a3bf9a529dc1a398509d7
-  ZSWTaggedString: 06748018b006548af59ad8749646c89af8fb7145
-  ZSWTappableLabel: 4554422da248266f715a7d9756df41c408f873fc
+  ZSWTaggedString: 0c3801de9accd36c3b925038cee1ecc95d94d8e5
+  ZSWTappableLabel: 30951ef31ebb17ba57480fafb79672a20cddc5b8
 
-COCOAPODS: 0.37.2
+COCOAPODS: 0.39.0

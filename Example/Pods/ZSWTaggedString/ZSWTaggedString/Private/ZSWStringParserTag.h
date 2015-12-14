@@ -15,9 +15,9 @@
 @interface ZSWStringParserTag : NSObject
 
 - (instancetype)initWithTagName:(NSString *)tagName
-                  startLocation:(NSInteger)location;
+                  startLocation:(NSUInteger)location;
 @property (nonatomic, readonly) NSString *tagName;
-@property (nonatomic, readonly) NSInteger location;
+@property (nonatomic, readonly) NSUInteger location;
 
 - (BOOL)isEndingTag;
 - (BOOL)isEndedByTag:(ZSWStringParserTag *)tag;

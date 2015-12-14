@@ -6,10 +6,11 @@
 //
 //
 
-#import "ZSWStringParser.h"
-#import "ZSWStringParser.h"
-#import "ZSWStringParserTag.h"
-#import "ZSWTaggedStringOptions.h"
+#import <ZSWTaggedString/ZSWStringParser.h>
+#import <ZSWTaggedString/ZSWStringParser.h>
+#import <ZSWTaggedString/ZSWStringParserTag.h>
+#import <ZSWTaggedString/ZSWTaggedStringOptions.h>
+#import <ZSWTaggedString/ZSWTaggedString_Private.h>
 
 static NSString *const kTagStart = @"<";
 static NSString *const kTagEnd = @">";
@@ -32,16 +33,9 @@ extern NSString *ZSWEscapedStringForString(NSString *unescapedString) {
 }
 
 + (id)stringWithTaggedString:(ZSWTaggedString *)taggedString
-                       options:(ZSWTaggedStringOptions *)options
-                   returnClass:(Class)returnClass {
-    if (!taggedString.underlyingString) {
-        if (options.returnEmptyStringForNil) {
-            return [[returnClass alloc] init];
-        } else {
-            return nil;
-        }
-    }
-    
+                     options:(ZSWTaggedStringOptions *)options
+                 returnClass:(Class)returnClass
+                       error:(NSError **)error {
     BOOL parseTagAttributes = [returnClass isEqual:[NSAttributedString class]];
     
     NSScanner *scanner = [NSScanner scannerWithString:taggedString.underlyingString];
@@ -68,8 +62,9 @@ extern NSString *ZSWEscapedStringForString(NSString *unescapedString) {
         [scanner scanCharactersFromSet:tagStartCharacterSet intoString:NULL];
         
         if ([scratchString characterAtIndex:(scratchString.length - 1)] == kTagIgnore) {
-            // We found a tag start, but it's one that's been escaped. Skip it.
+            // We found a tag start, but it's one that's been escaped. Skip it, and append the start tag we just gobbled up.
             [pendingString deleteCharactersInRange:NSMakeRange(pendingString.length - 1, 1)];
+            [self appendString:kTagStart intoAttributedString:pendingString];
             continue;
         }
         
@@ -102,26 +97,34 @@ extern NSString *ZSWEscapedStringForString(NSString *unescapedString) {
             // We want to apply the attributes from the outer-most tags first, so put them at the start.
             [finishedTags insertObject:lastTag atIndex:0];
         } else if (tag.isEndingTag) {
-            [NSException raise:NSInvalidArgumentException
-                        format:@"String had ending tag %@ when we expected ending tag %@ or new tag",
-                                    tag.tagName, lastTag.tagName];
+            if (error) {
+                *error = [NSError errorWithDomain:ZSWTaggedStringErrorDomain
+                                            code:ZSWTaggedStringErrorCodeInvalidTags
+                                        userInfo:@{ @"developerError": [NSString stringWithFormat:@"String had ending tag %@ when we expected ending tag %@ or new tag", tag.tagName, lastTag.tagName] }];
+            }
+            
+            return nil;
         } else {
             [tagStack addObject:tag];
         }
     }
     
     if (tagStack.count) {
-        [NSException raise:NSInvalidArgumentException
-                    format:@"Reached end of string with %@ tags remaining (%@)",
-                                @(tagStack.count), [[tagStack valueForKey:@"tagName"] componentsJoinedByString:@", "]];
+        if (error) {
+            *error = [NSError errorWithDomain:ZSWTaggedStringErrorDomain
+                                         code:ZSWTaggedStringErrorCodeInvalidTags
+                                     userInfo:@{ @"developerError": [NSString stringWithFormat:@"Reached end of string with %@ tags remaining (%@)", @(tagStack.count), [[tagStack valueForKey:@"tagName"] componentsJoinedByString:@", "]] }];
+        }
+        
+        return nil;
     }
     
     if ([returnClass isEqual:[NSAttributedString class]]) {
-        [options updateAttributedString:pendingString updatedWithTags:finishedTags];
+        [options _private_updateAttributedString:pendingString updatedWithTags:finishedTags];
         return [pendingString copy];
     } else if ([returnClass isEqual:[NSString class]]) {
         return [pendingString.string copy];
-    } else {
+    } else {        
         [NSException raise:NSInternalInconsistencyException
                     format:@"Somehow asked for class type %@ for parsed string",
                                     NSStringFromClass(returnClass)];

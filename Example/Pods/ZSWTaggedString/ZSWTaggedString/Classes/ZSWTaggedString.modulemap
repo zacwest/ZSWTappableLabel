@@ -1,0 +1,13 @@
+framework module ZSWTaggedString {
+  umbrella header "ZSWTaggedString-umbrella.h"
+
+  export *
+  module * { export * }
+
+  explicit module Private {
+    header "ZSWStringParser.h"
+    header "ZSWStringParserTag.h"
+    header "ZSWTaggedString_Private.h"
+    header "ZSWTaggedStringAttribute.h"
+  }
+}

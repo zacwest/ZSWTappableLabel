@@ -8,9 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
-typedef NSDictionary *(^ZSWDynamicAttributes)(NSString *tagName, NSDictionary *tagAttributes, NSDictionary *existingStringAttributes);
+NS_ASSUME_NONNULL_BEGIN
 
-@interface ZSWTaggedStringOptions : NSObject <NSCopying, NSSecureCoding>
+typedef NSDictionary<NSString *, id> * _Nonnull(^ZSWDynamicAttributes)(NSString *_Nonnull tagName, NSDictionary<NSString *, id> *_Nonnull tagAttributes, NSDictionary<NSString *, id> *_Nonnull existingStringAttributes) NS_SWIFT_UNAVAILABLE("Use the enumful setters, which have a better closure wrapper with names");
+
+@interface ZSWTaggedStringOptions : NSObject <NSCopying>
 
 /*!
  * @brief Register a set of default options
@@ -22,24 +24,16 @@ typedef NSDictionary *(^ZSWDynamicAttributes)(NSString *tagName, NSDictionary *t
 + (ZSWTaggedStringOptions *)defaultOptions;
 
 + (ZSWTaggedStringOptions *)options;
-+ (ZSWTaggedStringOptions *)optionsWithBaseAttributes:(NSDictionary *)attributes;
++ (ZSWTaggedStringOptions *)optionsWithBaseAttributes:(NSDictionary<NSString *, id> *)attributes;
+- (instancetype)initWithBaseAttributes:(NSDictionary<NSString *, id> *)attributes;
 
-@property (nonatomic, copy) NSDictionary *baseAttributes;
+@property (nonatomic, copy) NSDictionary<NSString *, id> *baseAttributes;
 
-- (void)setAttributes:(NSDictionary *)attributes forTagName:(NSString *)tagName;
-- (void)setDynamicAttributes:(ZSWDynamicAttributes)dynamicAttributes forTagName:(NSString *)tagName;
+- (void)setAttributes:(nullable NSDictionary<NSString *, id> *)attributes forTagName:(NSString *)tagName NS_SWIFT_UNAVAILABLE("Use the enum-ful replacement. You may need to include the Swift subpod.");
+- (void)setDynamicAttributes:(nullable ZSWDynamicAttributes)dynamicAttributes forTagName:(NSString *)tagName NS_SWIFT_UNAVAILABLE("Use the enum-ful replacement. You may need to include the Swift subpod.");
 
-@property (nonatomic, copy) ZSWDynamicAttributes unknownTagDynamicAttributes;
-
-/*!
- * @brief Should we treat nil as an empty string?
- *
- * Default is NO.
- *
- * When YES, this will return an empty NSString or NSAttributedString
- * (depending on which method you call on ZSWTaggedString) instead of
- * a nil value when you create a ZSWTaggedString with a nil NSString.
- */
-@property (nonatomic) BOOL returnEmptyStringForNil;
+@property (nullable, nonatomic, copy) ZSWDynamicAttributes unknownTagDynamicAttributes NS_SWIFT_UNAVAILABLE("Use the enum-ful replacement. You may need to include the Swift subpod.");
 
 @end
+
+NS_ASSUME_NONNULL_END
