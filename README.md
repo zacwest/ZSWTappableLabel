@@ -19,6 +19,8 @@ let attributes: [String: AnyObject] = [
   ZSWTappableLabelHighlightedForegroundAttributeName: UIColor.whiteColor(),
   NSForegroundColorAttributeName: UIColor.blueColor(),
   NSUnderlineStyleAttributeName: NSUnderlineStyle.StyleSingle.rawValue,
+
+  // You could use NSLinkAttributeName, but this forces foreground color
   "URL": NSURL(string: "http://imgur.com/gallery/VgXCk")!
 ]
 
