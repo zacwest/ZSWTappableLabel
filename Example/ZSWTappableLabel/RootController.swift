@@ -26,6 +26,12 @@ class RootController: UITableViewController, RootExampleCellDelegate {
             return SimpleObjectiveCViewController()
         }))
         
+        examples.append(ExampleRow(name: "Multiple links", constructorSwift: { () -> UIViewController in
+            return MultipleSwiftViewController()
+        }, constructorObjectiveC: { () -> UIViewController in
+            return MultipleObjectiveCViewController()
+        }))
+        
         self.examples = examples
         
         super.init(style: .Plain)

@@ -7,6 +7,7 @@
 //
 
 import ZSWTappableLabel
+import SafariServices
 
 class SimpleSwiftViewController: UIViewController, ZSWTappableLabelTapDelegate {
     let label: ZSWTappableLabel = {
@@ -24,7 +25,7 @@ class SimpleSwiftViewController: UIViewController, ZSWTappableLabelTapDelegate {
         
         label.tapDelegate = self
         
-        let string1 = NSLocalizedString("Privacy Policy", comment: "")
+        let string = NSLocalizedString("Privacy Policy", comment: "")
         let attributes: [String: AnyObject] = [
             ZSWTappableLabelTappableRegionAttributeName: true,
             ZSWTappableLabelHighlightedBackgroundAttributeName: UIColor.lightGrayColor(),
@@ -34,7 +35,7 @@ class SimpleSwiftViewController: UIViewController, ZSWTappableLabelTapDelegate {
             SimpleSwiftViewController.URLAttributeName: NSURL(string: "http://imgur.com/gallery/VgXCk")!
         ]
         
-        label.attributedText = NSAttributedString(string: string1, attributes: attributes)
+        label.attributedText = NSAttributedString(string: string, attributes: attributes)
 
         view.addSubview(label)
         label.snp_makeConstraints { make in
@@ -49,6 +50,10 @@ class SimpleSwiftViewController: UIViewController, ZSWTappableLabelTapDelegate {
             return
         }
         
-        UIApplication.sharedApplication().openURL(URL)
+        if #available(iOS 9, *) {
+            showViewController(SFSafariViewController(URL: URL), sender: self)
+        } else {
+            UIApplication.sharedApplication().openURL(URL)
+        }
     }
 }
