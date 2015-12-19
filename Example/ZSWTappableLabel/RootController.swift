@@ -33,6 +33,12 @@ class RootController: UIViewController, UITableViewDelegate, UITableViewDataSour
             return MultipleObjectiveCViewController()
         }))
         
+        examples.append(ExampleRow(name: "Data detectors", constructorSwift: { () -> UIViewController in
+            return DataDetectorsSwiftViewController()
+        }, constructorObjectiveC: { () -> UIViewController in
+            return DataDetectorsObjectiveCViewController()
+        }))
+        
         self.examples = examples
         
         super.init(nibName: nil, bundle: nil)

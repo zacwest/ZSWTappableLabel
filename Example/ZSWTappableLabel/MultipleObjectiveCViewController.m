@@ -13,12 +13,10 @@
 @import ZSWTaggedString;
 @import SafariServices;
 
-
 static NSString *const URLAttributeName = @"URL";
 
 @interface MultipleObjectiveCViewController () <ZSWTappableLabelTapDelegate>
 @property (nonatomic) ZSWTappableLabel *label;
-
 @end
 
 @implementation MultipleObjectiveCViewController

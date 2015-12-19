@@ -15,6 +15,8 @@
 		110D6E501C25FF5C004E8551 /* RootExampleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110D6E4F1C25FF5C004E8551 /* RootExampleCell.swift */; };
 		116126D11C26094A003B4E43 /* MultipleSwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116126D01C26094A003B4E43 /* MultipleSwiftViewController.swift */; };
 		116126D41C260961003B4E43 /* MultipleObjectiveCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 116126D31C260961003B4E43 /* MultipleObjectiveCViewController.m */; };
+		116126DD1C260F67003B4E43 /* DataDetectorsSwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116126DC1C260F67003B4E43 /* DataDetectorsSwiftViewController.swift */; };
+		116126E01C260F74003B4E43 /* DataDetectorsObjectiveCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 116126DF1C260F74003B4E43 /* DataDetectorsObjectiveCViewController.m */; };
 		11909ABE1C13D46B00B9AB03 /* ZSWViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11909ABD1C13D46B00B9AB03 /* ZSWViewController.swift */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
@@ -51,6 +53,9 @@
 		116126D01C26094A003B4E43 /* MultipleSwiftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultipleSwiftViewController.swift; sourceTree = "<group>"; };
 		116126D21C260961003B4E43 /* MultipleObjectiveCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultipleObjectiveCViewController.h; sourceTree = "<group>"; };
 		116126D31C260961003B4E43 /* MultipleObjectiveCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultipleObjectiveCViewController.m; sourceTree = "<group>"; };
+		116126DC1C260F67003B4E43 /* DataDetectorsSwiftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataDetectorsSwiftViewController.swift; sourceTree = "<group>"; };
+		116126DE1C260F74003B4E43 /* DataDetectorsObjectiveCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataDetectorsObjectiveCViewController.h; sourceTree = "<group>"; };
+		116126DF1C260F74003B4E43 /* DataDetectorsObjectiveCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataDetectorsObjectiveCViewController.m; sourceTree = "<group>"; };
 		11909ABC1C13D46A00B9AB03 /* ZSWTappableLabel_Example-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ZSWTappableLabel_Example-Bridging-Header.h"; sourceTree = "<group>"; };
 		11909ABD1C13D46B00B9AB03 /* ZSWViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZSWViewController.swift; sourceTree = "<group>"; };
 		11F6CCA61B1B90D10064F1CF /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = CHANGELOG.md; path = ../CHANGELOG.md; sourceTree = "<group>"; };
@@ -146,6 +151,16 @@
 			name = "Multiple links";
 			sourceTree = "<group>";
 		};
+		116126DB1C260F55003B4E43 /* Data Detectors */ = {
+			isa = PBXGroup;
+			children = (
+				116126DC1C260F67003B4E43 /* DataDetectorsSwiftViewController.swift */,
+				116126DE1C260F74003B4E43 /* DataDetectorsObjectiveCViewController.h */,
+				116126DF1C260F74003B4E43 /* DataDetectorsObjectiveCViewController.m */,
+			);
+			name = "Data Detectors";
+			sourceTree = "<group>";
+		};
 		1D27E07A82696C9416FAAFAB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -200,6 +215,7 @@
 				110D6E511C25FF62004E8551 /* Root of examples */,
 				110D6E531C25FF7E004E8551 /* Simple string */,
 				116126CF1C26092B003B4E43 /* Multiple links */,
+				116126DB1C260F55003B4E43 /* Data Detectors */,
 				110D6E521C25FF6F004E8551 /* Old things */,
 			);
 			name = "Example for ZSWTappableLabel";
@@ -450,9 +466,11 @@
 				116126D11C26094A003B4E43 /* MultipleSwiftViewController.swift in Sources */,
 				110D6E4E1C25FEC6004E8551 /* SimpleObjectiveCViewController.m in Sources */,
 				110D6E501C25FF5C004E8551 /* RootExampleCell.swift in Sources */,
+				116126DD1C260F67003B4E43 /* DataDetectorsSwiftViewController.swift in Sources */,
 				110D6E471C25FC33004E8551 /* AppDelegate.swift in Sources */,
 				110D6E451C25FC04004E8551 /* RootController.swift in Sources */,
 				116126D41C260961003B4E43 /* MultipleObjectiveCViewController.m in Sources */,
+				116126E01C260F74003B4E43 /* DataDetectorsObjectiveCViewController.m in Sources */,
 				11909ABE1C13D46B00B9AB03 /* ZSWViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

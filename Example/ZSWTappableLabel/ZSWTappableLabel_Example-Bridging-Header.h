@@ -4,3 +4,4 @@
 
 #import "SimpleObjectiveCViewController.h"
 #import "MultipleObjectiveCViewController.h"
+#import "DataDetectorsObjectiveCViewController.h"
