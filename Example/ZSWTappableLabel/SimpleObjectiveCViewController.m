@@ -7,31 +7,54 @@
 //
 
 #import "SimpleObjectiveCViewController.h"
+#import <Masonry/Masonry.h>
+#import <ZSWTappableLabel/ZSWTappableLabel.h>
 
-@interface SimpleObjectiveCViewController ()
+static NSString *const URLAttributeName = @"URL";
 
+@interface SimpleObjectiveCViewController () <ZSWTappableLabelTapDelegate>
+@property (nonatomic) ZSWTappableLabel *label;
 @end
 
 @implementation SimpleObjectiveCViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    self.view.backgroundColor = [UIColor whiteColor];
+
+    self.label = ^{
+        ZSWTappableLabel *label = [[ZSWTappableLabel alloc] init];
+        label.textAlignment = NSTextAlignmentCenter;
+        label.tapDelegate = self;
+        return label;
+    }();
+    
+    NSString *string = NSLocalizedString(@"Privacy Policy", nil);
+    NSDictionary *attributes = @{
+        ZSWTappableLabelTappableRegionAttributeName: @YES,
+        ZSWTappableLabelHighlightedBackgroundAttributeName: [UIColor lightGrayColor],
+        ZSWTappableLabelHighlightedForegroundAttributeName: [UIColor whiteColor],
+        NSForegroundColorAttributeName: [UIColor blueColor],
+        NSUnderlineStyleAttributeName: @(NSUnderlineStyleSingle),
+        URLAttributeName: [NSURL URLWithString:@"http://imgur.com/gallery/VgXCk"],
+    };
+    
+    self.label.attributedText = [[NSAttributedString alloc] initWithString:string attributes:attributes];
+    
+    [self.view addSubview:self.label];
+    [self.label mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.view);
+    }];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+#pragma mark - ZSWTappableLabelTapDelegate
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)tappableLabel:(ZSWTappableLabel *)tappableLabel tappedAtIndex:(NSInteger)idx withAttributes:(NSDictionary<NSString *,id> *)attributes {
+    NSURL *URL = attributes[URLAttributeName];
+    if ([URL isKindOfClass:[NSURL class]]) {
+        [[UIApplication sharedApplication] openURL:URL];
+    }
 }
-*/
 
 @end

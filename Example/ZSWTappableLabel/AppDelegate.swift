@@ -8,6 +8,7 @@
 
 import UIKit
 import SnapKit
+import ZSWTappableLabel
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

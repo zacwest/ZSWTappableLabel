@@ -6,30 +6,49 @@
 //  Copyright © 2015 Zachary West. All rights reserved.
 //
 
-import UIKit
+import ZSWTappableLabel
 
-class SimpleSwiftViewController: UIViewController {
-
+class SimpleSwiftViewController: UIViewController, ZSWTappableLabelTapDelegate {
+    let label: ZSWTappableLabel = {
+        let label = ZSWTappableLabel()
+        label.textAlignment = .Center
+        return label
+    }()
+    
+    static let URLAttributeName = "URL"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        view.backgroundColor = UIColor.whiteColor()
+        
+        label.tapDelegate = self
+        
+        let string1 = NSLocalizedString("Privacy Policy", comment: "")
+        let attributes: [String: AnyObject] = [
+            ZSWTappableLabelTappableRegionAttributeName: true,
+            ZSWTappableLabelHighlightedBackgroundAttributeName: UIColor.lightGrayColor(),
+            ZSWTappableLabelHighlightedForegroundAttributeName: UIColor.whiteColor(),
+            NSForegroundColorAttributeName: UIColor.blueColor(),
+            NSUnderlineStyleAttributeName: NSUnderlineStyle.StyleSingle.rawValue,
+            SimpleSwiftViewController.URLAttributeName: NSURL(string: "http://imgur.com/gallery/VgXCk")!
+        ]
+        
+        label.attributedText = NSAttributedString(string: string1, attributes: attributes)
 
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        view.addSubview(label)
+        label.snp_makeConstraints { make in
+            make.edges.equalTo(view)
+        }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // MARK: - ZSWTappableLabelTapDelegate
+    
+    func tappableLabel(tappableLabel: ZSWTappableLabel, tappedAtIndex idx: Int, withAttributes attributes: [String : AnyObject]) {
+        guard let URL = attributes[SimpleSwiftViewController.URLAttributeName] as? NSURL else {
+            return
+        }
+        
+        UIApplication.sharedApplication().openURL(URL)
     }
-    */
-
 }
