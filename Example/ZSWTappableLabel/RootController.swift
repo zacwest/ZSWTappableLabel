@@ -21,22 +21,28 @@ class RootController: UIViewController, UITableViewDelegate, UITableViewDataSour
     init() {
         var examples = [ExampleRow]()
         
-        examples.append(ExampleRow(name: "Simple string", constructorSwift: { () -> UIViewController in
+        examples.append(ExampleRow(name: "Simple string", constructorSwift: {
             return SimpleSwiftViewController()
-        }, constructorObjectiveC: { () -> UIViewController in
+        }, constructorObjectiveC: {
             return SimpleObjectiveCViewController()
         }))
         
-        examples.append(ExampleRow(name: "Multiple links", constructorSwift: { () -> UIViewController in
+        examples.append(ExampleRow(name: "Multiple links", constructorSwift: {
             return MultipleSwiftViewController()
-        }, constructorObjectiveC: { () -> UIViewController in
+        }, constructorObjectiveC: {
             return MultipleObjectiveCViewController()
         }))
         
-        examples.append(ExampleRow(name: "Data detectors", constructorSwift: { () -> UIViewController in
+        examples.append(ExampleRow(name: "Data detectors", constructorSwift: {
             return DataDetectorsSwiftViewController()
-        }, constructorObjectiveC: { () -> UIViewController in
+        }, constructorObjectiveC: {
             return DataDetectorsObjectiveCViewController()
+        }))
+        
+        examples.append(ExampleRow(name: "Interface builder", constructorSwift: {
+            return InterfaceBuilderSwiftViewController()
+        }, constructorObjectiveC: {
+            return InterfaceBuilderObjectiveCViewController()
         }))
         
         self.examples = examples

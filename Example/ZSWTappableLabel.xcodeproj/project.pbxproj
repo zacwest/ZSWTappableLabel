@@ -17,6 +17,10 @@
 		116126D41C260961003B4E43 /* MultipleObjectiveCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 116126D31C260961003B4E43 /* MultipleObjectiveCViewController.m */; };
 		116126DD1C260F67003B4E43 /* DataDetectorsSwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116126DC1C260F67003B4E43 /* DataDetectorsSwiftViewController.swift */; };
 		116126E01C260F74003B4E43 /* DataDetectorsObjectiveCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 116126DF1C260F74003B4E43 /* DataDetectorsObjectiveCViewController.m */; };
+		116126E41C2612BD003B4E43 /* InterfaceBuilderSwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116126E21C2612BD003B4E43 /* InterfaceBuilderSwiftViewController.swift */; };
+		116126E51C2612BD003B4E43 /* InterfaceBuilderSwiftViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 116126E31C2612BD003B4E43 /* InterfaceBuilderSwiftViewController.xib */; };
+		116126E91C261466003B4E43 /* InterfaceBuilderObjectiveCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 116126E71C261466003B4E43 /* InterfaceBuilderObjectiveCViewController.m */; };
+		116126EA1C261466003B4E43 /* InterfaceBuilderObjectiveCViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 116126E81C261466003B4E43 /* InterfaceBuilderObjectiveCViewController.xib */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -55,6 +59,11 @@
 		116126DC1C260F67003B4E43 /* DataDetectorsSwiftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataDetectorsSwiftViewController.swift; sourceTree = "<group>"; };
 		116126DE1C260F74003B4E43 /* DataDetectorsObjectiveCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataDetectorsObjectiveCViewController.h; sourceTree = "<group>"; };
 		116126DF1C260F74003B4E43 /* DataDetectorsObjectiveCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataDetectorsObjectiveCViewController.m; sourceTree = "<group>"; };
+		116126E21C2612BD003B4E43 /* InterfaceBuilderSwiftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterfaceBuilderSwiftViewController.swift; sourceTree = "<group>"; };
+		116126E31C2612BD003B4E43 /* InterfaceBuilderSwiftViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InterfaceBuilderSwiftViewController.xib; sourceTree = "<group>"; };
+		116126E61C261466003B4E43 /* InterfaceBuilderObjectiveCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InterfaceBuilderObjectiveCViewController.h; sourceTree = "<group>"; };
+		116126E71C261466003B4E43 /* InterfaceBuilderObjectiveCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InterfaceBuilderObjectiveCViewController.m; sourceTree = "<group>"; };
+		116126E81C261466003B4E43 /* InterfaceBuilderObjectiveCViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InterfaceBuilderObjectiveCViewController.xib; sourceTree = "<group>"; };
 		11909ABC1C13D46A00B9AB03 /* ZSWTappableLabel_Example-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ZSWTappableLabel_Example-Bridging-Header.h"; sourceTree = "<group>"; };
 		11F6CCA61B1B90D10064F1CF /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = CHANGELOG.md; path = ../CHANGELOG.md; sourceTree = "<group>"; };
 		34097BFF3CB9AFDD26A8A1F5 /* Pods-Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tests/Pods-Tests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -147,6 +156,18 @@
 			name = "Data Detectors";
 			sourceTree = "<group>";
 		};
+		116126E11C2612A3003B4E43 /* Interface Builder */ = {
+			isa = PBXGroup;
+			children = (
+				116126E21C2612BD003B4E43 /* InterfaceBuilderSwiftViewController.swift */,
+				116126E31C2612BD003B4E43 /* InterfaceBuilderSwiftViewController.xib */,
+				116126E61C261466003B4E43 /* InterfaceBuilderObjectiveCViewController.h */,
+				116126E71C261466003B4E43 /* InterfaceBuilderObjectiveCViewController.m */,
+				116126E81C261466003B4E43 /* InterfaceBuilderObjectiveCViewController.xib */,
+			);
+			name = "Interface Builder";
+			sourceTree = "<group>";
+		};
 		1D27E07A82696C9416FAAFAB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -202,6 +223,7 @@
 				110D6E531C25FF7E004E8551 /* Simple string */,
 				116126CF1C26092B003B4E43 /* Multiple links */,
 				116126DB1C260F55003B4E43 /* Data Detectors */,
+				116126E11C2612A3003B4E43 /* Interface Builder */,
 			);
 			name = "Example for ZSWTappableLabel";
 			path = ZSWTappableLabel;
@@ -333,9 +355,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				116126E51C2612BD003B4E43 /* InterfaceBuilderSwiftViewController.xib in Resources */,
 				110D6E491C25FE2F004E8551 /* Launch Screen.storyboard in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
+				116126EA1C261466003B4E43 /* InterfaceBuilderObjectiveCViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -449,12 +473,14 @@
 			files = (
 				110D6E4B1C25FEBA004E8551 /* SimpleSwiftViewController.swift in Sources */,
 				116126D11C26094A003B4E43 /* MultipleSwiftViewController.swift in Sources */,
+				116126E91C261466003B4E43 /* InterfaceBuilderObjectiveCViewController.m in Sources */,
 				110D6E4E1C25FEC6004E8551 /* SimpleObjectiveCViewController.m in Sources */,
 				110D6E501C25FF5C004E8551 /* RootExampleCell.swift in Sources */,
 				116126DD1C260F67003B4E43 /* DataDetectorsSwiftViewController.swift in Sources */,
 				110D6E471C25FC33004E8551 /* AppDelegate.swift in Sources */,
 				110D6E451C25FC04004E8551 /* RootController.swift in Sources */,
 				116126D41C260961003B4E43 /* MultipleObjectiveCViewController.m in Sources */,
+				116126E41C2612BD003B4E43 /* InterfaceBuilderSwiftViewController.swift in Sources */,
 				116126E01C260F74003B4E43 /* DataDetectorsObjectiveCViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
