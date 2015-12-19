@@ -84,10 +84,14 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "Pods-ZSWTappableLabel_Example/Masonry.framework"
+  install_framework "Pods-ZSWTappableLabel_Example/SnapKit.framework"
   install_framework "Pods-ZSWTappableLabel_Example/ZSWTaggedString.framework"
   install_framework "Pods-ZSWTappableLabel_Example/ZSWTappableLabel.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "Pods-ZSWTappableLabel_Example/Masonry.framework"
+  install_framework "Pods-ZSWTappableLabel_Example/SnapKit.framework"
   install_framework "Pods-ZSWTappableLabel_Example/ZSWTaggedString.framework"
   install_framework "Pods-ZSWTappableLabel_Example/ZSWTappableLabel.framework"
 fi
