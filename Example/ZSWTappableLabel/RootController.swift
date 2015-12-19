@@ -14,8 +14,9 @@ struct ExampleRow {
     let constructorObjectiveC: () -> UIViewController
 }
 
-class RootController: UITableViewController, RootExampleCellDelegate {
+class RootController: UIViewController, UITableViewDelegate, UITableViewDataSource, RootExampleCellDelegate {
     let examples: [ExampleRow]
+    let tableView = UITableView()
     
     init() {
         var examples = [ExampleRow]()
@@ -34,8 +35,7 @@ class RootController: UITableViewController, RootExampleCellDelegate {
         
         self.examples = examples
         
-        super.init(style: .Plain)
-        
+        super.init(nibName: nil, bundle: nil)
         title = "Examples"
     }
     
@@ -46,15 +46,29 @@ class RootController: UITableViewController, RootExampleCellDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        view.addSubview(tableView)
+        
+        tableView.snp_makeConstraints { make in
+            make.edges.equalTo(view)
+        }
+        
+        tableView.delegate = self
+        tableView.dataSource = self
         tableView.rowHeight = 75
         tableView.registerClass(RootExampleCell.self, forCellReuseIdentifier: NSStringFromClass(RootExampleCell))
     }
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        tableView.flashScrollIndicators()
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return examples.count
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(NSStringFromClass(RootExampleCell), forIndexPath: indexPath) as! RootExampleCell
         cell.delegate = self
         cell.configureWith(examples[indexPath.item])
