@@ -14,6 +14,19 @@ protocol RootExampleCellDelegate: class {
 class RootExampleCell: UITableViewCell {
     weak var delegate: RootExampleCellDelegate?
     
+    let nameLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.preferredFontForTextStyle(UIFontTextStyleHeadline)
+        return label
+    }()
+    
+    let bodyLabel: UILabel = {
+        let label = UILabel()
+        label.numberOfLines = 0
+        label.font = UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
+        return label
+    }()
+    
     let swiftButton: UIButton = {
         let button = UIButton(type: .System)
         button.setTitle("Swift", forState: .Normal)
@@ -38,6 +51,8 @@ class RootExampleCell: UITableViewCell {
         
         contentView.addSubview(swiftButton)
         contentView.addSubview(objcButton)
+        contentView.addSubview(bodyLabel)
+        contentView.addSubview(nameLabel)
         
         setNeedsUpdateConstraints()
     }
@@ -55,26 +70,36 @@ class RootExampleCell: UITableViewCell {
     }
     
     override func updateConstraints() {
+        nameLabel.snp_remakeConstraints { make in
+            make.top.equalTo(contentView.snp_topMargin)
+            make.leading.equalTo(contentView.snp_leadingMargin)
+        }
+        
         swiftButton.snp_remakeConstraints { make in
             make.leading.equalTo(objcButton.snp_trailing)
             make.trailing.equalTo(contentView.snp_trailingMargin)
             make.top.equalTo(contentView.snp_topMargin)
-            make.bottom.equalTo(contentView.snp_bottomMargin)
+            make.height.equalTo(nameLabel)
         }
         
         objcButton.snp_remakeConstraints { make in
             make.top.equalTo(contentView.snp_topMargin)
+            make.leading.greaterThanOrEqualTo(nameLabel)
+            make.height.equalTo(swiftButton)
+        }
+
+        bodyLabel.snp_remakeConstraints { make in
+            make.top.equalTo(nameLabel.snp_bottom).offset(5)
+            make.leading.equalTo(contentView.snp_leadingMargin)
+            make.trailing.equalTo(contentView.snp_trailingMargin)
             make.bottom.equalTo(contentView.snp_bottomMargin)
         }
-        
-        contentView.bringSubviewToFront(swiftButton)
-        contentView.bringSubviewToFront(objcButton)
         
         super.updateConstraints()
     }
     
     func configureWith(exampleRow: ExampleRow) {
-        textLabel?.text = exampleRow.name
+        nameLabel.text = exampleRow.name
+        bodyLabel.text = exampleRow.body
     }
-
 }

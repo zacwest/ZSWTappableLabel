@@ -10,6 +10,7 @@ import UIKit
 
 struct ExampleRow {
     let name: String
+    let body: String
     let constructorSwift: () -> UIViewController
     let constructorObjectiveC: () -> UIViewController
 }
@@ -21,25 +22,25 @@ class RootController: UIViewController, UITableViewDelegate, UITableViewDataSour
     init() {
         var examples = [ExampleRow]()
         
-        examples.append(ExampleRow(name: "Simple string", constructorSwift: {
+        examples.append(ExampleRow(name: "Simple string", body: "Entirely a link. The simplest case: attributes apply to the entire thing.", constructorSwift: {
             return SimpleSwiftViewController()
         }, constructorObjectiveC: {
             return SimpleObjectiveCViewController()
         }))
         
-        examples.append(ExampleRow(name: "Multiple links", constructorSwift: {
+        examples.append(ExampleRow(name: "Multiple links", body: "Contains multiple links with different attributes, with non-links in-between.", constructorSwift: {
             return MultipleSwiftViewController()
         }, constructorObjectiveC: {
             return MultipleObjectiveCViewController()
         }))
         
-        examples.append(ExampleRow(name: "Data detectors", constructorSwift: {
+        examples.append(ExampleRow(name: "Data detectors", body: "Uses data detectors to apply links to dynamic content inside a given string.", constructorSwift: {
             return DataDetectorsSwiftViewController()
         }, constructorObjectiveC: {
             return DataDetectorsObjectiveCViewController()
         }))
         
-        examples.append(ExampleRow(name: "Interface builder", constructorSwift: {
+        examples.append(ExampleRow(name: "Interface builder", body: "Label is completely configured inside Interface Builder, and modifications are made later.", constructorSwift: {
             return InterfaceBuilderSwiftViewController()
         }, constructorObjectiveC: {
             return InterfaceBuilderObjectiveCViewController()
@@ -66,7 +67,8 @@ class RootController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.rowHeight = 75
+        tableView.estimatedRowHeight = 75
+        tableView.rowHeight = UITableViewAutomaticDimension
         tableView.registerClass(RootExampleCell.self, forCellReuseIdentifier: NSStringFromClass(RootExampleCell))
     }
     
