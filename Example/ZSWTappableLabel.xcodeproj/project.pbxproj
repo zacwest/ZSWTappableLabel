@@ -7,14 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		110D6E451C25FC04004E8551 /* RootController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110D6E441C25FC04004E8551 /* RootController.swift */; };
+		110D6E471C25FC33004E8551 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110D6E461C25FC33004E8551 /* AppDelegate.swift */; };
+		110D6E491C25FE2F004E8551 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 110D6E481C25FE2F004E8551 /* Launch Screen.storyboard */; };
 		11909ABE1C13D46B00B9AB03 /* ZSWViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11909ABD1C13D46B00B9AB03 /* ZSWViewController.swift */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
 		6003F598195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F596195388D20070C39A /* InfoPlist.strings */; };
-		6003F59A195388D20070C39A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F599195388D20070C39A /* main.m */; };
-		6003F59E195388D20070C39A /* ZSWAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F59D195388D20070C39A /* ZSWAppDelegate.m */; };
-		6003F5A1195388D20070C39A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6003F59F195388D20070C39A /* Main.storyboard */; };
 		6003F5A9195388D20070C39A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5A8195388D20070C39A /* Images.xcassets */; };
 		6003F5B0195388D20070C39A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F5AF195388D20070C39A /* XCTest.framework */; };
 		6003F5B1195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
@@ -36,6 +36,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		110D6E441C25FC04004E8551 /* RootController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootController.swift; sourceTree = "<group>"; };
+		110D6E461C25FC33004E8551 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		110D6E481C25FE2F004E8551 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		11909ABC1C13D46A00B9AB03 /* ZSWTappableLabel_Example-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ZSWTappableLabel_Example-Bridging-Header.h"; sourceTree = "<group>"; };
 		11909ABD1C13D46B00B9AB03 /* ZSWViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZSWViewController.swift; sourceTree = "<group>"; };
 		11F6CCA61B1B90D10064F1CF /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = CHANGELOG.md; path = ../CHANGELOG.md; sourceTree = "<group>"; };
@@ -47,11 +50,7 @@
 		6003F591195388D20070C39A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		6003F595195388D20070C39A /* ZSWTappableLabel-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ZSWTappableLabel-Info.plist"; sourceTree = "<group>"; };
 		6003F597195388D20070C39A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		6003F599195388D20070C39A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6003F59B195388D20070C39A /* ZSWTappableLabel-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ZSWTappableLabel-Prefix.pch"; sourceTree = "<group>"; };
-		6003F59C195388D20070C39A /* ZSWAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZSWAppDelegate.h; sourceTree = "<group>"; };
-		6003F59D195388D20070C39A /* ZSWAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZSWAppDelegate.m; sourceTree = "<group>"; };
-		6003F5A0195388D20070C39A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6003F5A5195388D20070C39A /* ZSWViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZSWViewController.h; sourceTree = "<group>"; };
 		6003F5A6195388D20070C39A /* ZSWViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZSWViewController.m; sourceTree = "<group>"; };
 		6003F5A8195388D20070C39A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -144,15 +143,15 @@
 		6003F593195388D20070C39A /* Example for ZSWTappableLabel */ = {
 			isa = PBXGroup;
 			children = (
-				6003F59C195388D20070C39A /* ZSWAppDelegate.h */,
-				6003F59D195388D20070C39A /* ZSWAppDelegate.m */,
-				6003F59F195388D20070C39A /* Main.storyboard */,
 				6003F5A5195388D20070C39A /* ZSWViewController.h */,
 				6003F5A6195388D20070C39A /* ZSWViewController.m */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
 				11909ABD1C13D46B00B9AB03 /* ZSWViewController.swift */,
 				11909ABC1C13D46A00B9AB03 /* ZSWTappableLabel_Example-Bridging-Header.h */,
+				110D6E441C25FC04004E8551 /* RootController.swift */,
+				110D6E461C25FC33004E8551 /* AppDelegate.swift */,
+				110D6E481C25FE2F004E8551 /* Launch Screen.storyboard */,
 			);
 			name = "Example for ZSWTappableLabel";
 			path = ZSWTappableLabel;
@@ -163,7 +162,6 @@
 			children = (
 				6003F595195388D20070C39A /* ZSWTappableLabel-Info.plist */,
 				6003F596195388D20070C39A /* InfoPlist.strings */,
-				6003F599195388D20070C39A /* main.m */,
 				6003F59B195388D20070C39A /* ZSWTappableLabel-Prefix.pch */,
 			);
 			name = "Supporting Files";
@@ -249,7 +247,7 @@
 		6003F582195388D10070C39A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				CLASSPREFIX = ZSW;
+				CLASSPREFIX = "";
 				LastSwiftUpdateCheck = 0710;
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Zachary West";
@@ -283,8 +281,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				110D6E491C25FE2F004E8551 /* Launch Screen.storyboard in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
-				6003F5A1195388D20070C39A /* Main.storyboard in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -397,9 +395,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6003F59E195388D20070C39A /* ZSWAppDelegate.m in Sources */,
+				110D6E471C25FC33004E8551 /* AppDelegate.swift in Sources */,
+				110D6E451C25FC04004E8551 /* RootController.swift in Sources */,
 				11909ABE1C13D46B00B9AB03 /* ZSWViewController.swift in Sources */,
-				6003F59A195388D20070C39A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -428,14 +426,6 @@
 				6003F597195388D20070C39A /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		6003F59F195388D20070C39A /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				6003F5A0195388D20070C39A /* Base */,
-			);
-			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 		6003F5B8195388D20070C39A /* InfoPlist.strings */ = {
@@ -526,7 +516,6 @@
 			baseConfigurationReference = 8888AAE3F0A56356BFD6DC30 /* Pods-ZSWTappableLabel_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ZSWTappableLabel/ZSWTappableLabel-Prefix.pch";
@@ -547,7 +536,6 @@
 			baseConfigurationReference = 52C6DC99AB650CA0A3515A3C /* Pods-ZSWTappableLabel_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ZSWTappableLabel/ZSWTappableLabel-Prefix.pch";
