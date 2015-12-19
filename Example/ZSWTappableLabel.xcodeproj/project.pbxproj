@@ -196,12 +196,10 @@
 			children = (
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
-				11909ABC1C13D46A00B9AB03 /* ZSWTappableLabel_Example-Bridging-Header.h */,
 				110D6E461C25FC33004E8551 /* AppDelegate.swift */,
 				110D6E511C25FF62004E8551 /* Root of examples */,
 				110D6E531C25FF7E004E8551 /* Simple string */,
 				116126CF1C26092B003B4E43 /* Multiple links */,
-				110D6E481C25FE2F004E8551 /* Launch Screen.storyboard */,
 				110D6E521C25FF6F004E8551 /* Old things */,
 			);
 			name = "Example for ZSWTappableLabel";
@@ -211,6 +209,8 @@
 		6003F594195388D20070C39A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				11909ABC1C13D46A00B9AB03 /* ZSWTappableLabel_Example-Bridging-Header.h */,
+				110D6E481C25FE2F004E8551 /* Launch Screen.storyboard */,
 				6003F595195388D20070C39A /* ZSWTappableLabel-Info.plist */,
 				6003F596195388D20070C39A /* InfoPlist.strings */,
 				6003F59B195388D20070C39A /* ZSWTappableLabel-Prefix.pch */,

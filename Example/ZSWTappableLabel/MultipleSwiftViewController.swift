@@ -14,7 +14,7 @@ import SafariServices
 class MultipleSwiftViewController: UIViewController, ZSWTappableLabelTapDelegate {
     let label: ZSWTappableLabel = {
         let label = ZSWTappableLabel()
-        label.textAlignment = .Center
+        label.textAlignment = .Justified
         return label
     }()
     
@@ -58,7 +58,7 @@ class MultipleSwiftViewController: UIViewController, ZSWTappableLabelTapDelegate
             ]
         })
         
-        let string = NSLocalizedString("View our <link type='privacy'>Privacy Policy</link> or <link type='tos'>Terms of Service</link>", comment: "")
+        let string = NSLocalizedString("Please, feel free to peruse and enjoy our wonderful and alluring <link type='privacy'>Privacy Policy</link> or if you'd really like to understand what you're allowed or not allowed to do, reading our <link type='tos'>Terms of Service</link> is sure to be enlightening", comment: "")
         label.attributedText = try? ZSWTaggedString(string: string).attributedStringWithOptions(options)
         
         view.addSubview(label)

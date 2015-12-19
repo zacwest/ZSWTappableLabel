@@ -30,7 +30,7 @@ static NSString *const URLAttributeName = @"URL";
     
     self.label = ^{
         ZSWTappableLabel *label = [[ZSWTappableLabel alloc] init];
-        label.textAlignment = NSTextAlignmentCenter;
+        label.textAlignment = NSTextAlignmentJustified;
         label.tapDelegate = self;
         return label;
     }();
@@ -60,7 +60,7 @@ static NSString *const URLAttributeName = @"URL";
                  };
     } forTagName:@"link"];
     
-    NSString *string = NSLocalizedString(@"View our <link type='privacy'>Privacy Policy</link> or <link type='tos'>Terms of Service</link>", nil);
+    NSString *string = NSLocalizedString(@"Please, feel free to peruse and enjoy our wonderful and alluring <link type='privacy'>Privacy Policy</link> or if you'd really like to understand what you're allowed or not allowed to do, reading our <link type='tos'>Terms of Service</link> is sure to be enlightening", nil);
     self.label.attributedText = [[ZSWTaggedString stringWithString:string] attributedStringWithOptions:options];
     
     [self.view addSubview:self.label];
