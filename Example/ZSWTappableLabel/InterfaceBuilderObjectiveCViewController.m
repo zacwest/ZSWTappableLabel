@@ -8,7 +8,11 @@
 
 #import "InterfaceBuilderObjectiveCViewController.h"
 
+@import ZSWTappableLabel;
+@import SafariServices;
+
 @interface InterfaceBuilderObjectiveCViewController ()
+@property (weak, nonatomic) IBOutlet ZSWTappableLabel *label;
 
 @end
 
@@ -16,22 +20,31 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    
+    NSMutableAttributedString *attributedText = [self.label.attributedText mutableCopy];
+    NSRange range = [attributedText.string rangeOfString:@"label"];
+    if (range.location != NSNotFound) {
+        [attributedText addAttributes:@{
+            ZSWTappableLabelTappableRegionAttributeName: @YES,
+            NSLinkAttributeName: [NSURL URLWithString:@"https://gotofail.com"],
+            ZSWTappableLabelHighlightedBackgroundAttributeName: [UIColor lightGrayColor]
+        } range:range];
+        self.label.attributedText = attributedText;
+    }
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
-/*
-#pragma mark - Navigation
+#pragma mark - ZSWTappableLabelTapDelegate
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)tappableLabel:(ZSWTappableLabel *)tappableLabel tappedAtIndex:(NSInteger)idx withAttributes:(NSDictionary<NSString *,id> *)attributes {
+    NSURL *URL = attributes[NSLinkAttributeName];
+    if ([URL isKindOfClass:[NSURL class]]) {
+        if ([SFSafariViewController class] != nil) {
+            [self showViewController:[[SFSafariViewController alloc] initWithURL:URL] sender:self];
+        } else {
+            [[UIApplication sharedApplication] openURL:URL];
+        }
+    }
 }
-*/
 
 @end
