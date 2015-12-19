@@ -99,13 +99,24 @@ class RootController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return examples[indexPath.item]
     }
     
+    func showExampleViewController(controller: UIViewController, forExample example: ExampleRow) {
+        controller.configureWith(example)
+        showViewController(controller, sender: self)
+    }
+    
     func rootExampleCellSelectedSwift(cell: RootExampleCell) {
         let example = exampleFor(cell)
-        showViewController(example.constructorSwift(), sender: self)
+        showExampleViewController(example.constructorSwift(), forExample: example)
     }
     
     func rootExampleCellSelectedObjectiveC(cell: RootExampleCell) {
         let example = exampleFor(cell)
-        showViewController(example.constructorObjectiveC(), sender: self)
+        showExampleViewController(example.constructorObjectiveC(), forExample: example)
+    }
+}
+
+extension UIViewController {
+    func configureWith(example: ExampleRow) {
+        title = example.name
     }
 }
