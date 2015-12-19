@@ -9,6 +9,7 @@
 import UIKit
 import ZSWTappableLabel
 import ZSWTaggedString
+import SafariServices
 
 class MultipleSwiftViewController: UIViewController, ZSWTappableLabelTapDelegate {
     let label: ZSWTappableLabel = {

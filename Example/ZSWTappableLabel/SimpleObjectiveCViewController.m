@@ -7,8 +7,10 @@
 //
 
 #import "SimpleObjectiveCViewController.h"
-#import <Masonry/Masonry.h>
-#import <ZSWTappableLabel/ZSWTappableLabel.h>
+
+@import Masonry;
+@import ZSWTappableLabel;
+@import SafariServices;
 
 static NSString *const URLAttributeName = @"URL";
 
@@ -53,7 +55,11 @@ static NSString *const URLAttributeName = @"URL";
 - (void)tappableLabel:(ZSWTappableLabel *)tappableLabel tappedAtIndex:(NSInteger)idx withAttributes:(NSDictionary<NSString *,id> *)attributes {
     NSURL *URL = attributes[URLAttributeName];
     if ([URL isKindOfClass:[NSURL class]]) {
-        [[UIApplication sharedApplication] openURL:URL];
+        if ([SFSafariViewController class] != nil) {
+            [self showViewController:[[SFSafariViewController alloc] initWithURL:URL] sender:self];
+        } else {
+            [[UIApplication sharedApplication] openURL:URL];
+        }
     }
 }
 

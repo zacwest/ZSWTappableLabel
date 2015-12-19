@@ -8,7 +8,16 @@
 
 #import "MultipleObjectiveCViewController.h"
 
-@interface MultipleObjectiveCViewController ()
+@import Masonry;
+@import ZSWTappableLabel;
+@import ZSWTaggedString;
+@import SafariServices;
+
+
+static NSString *const URLAttributeName = @"URL";
+
+@interface MultipleObjectiveCViewController () <ZSWTappableLabelTapDelegate>
+@property (nonatomic) ZSWTappableLabel *label;
 
 @end
 
@@ -16,22 +25,61 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    self.view.backgroundColor = [UIColor whiteColor];
+    
+    self.label = ^{
+        ZSWTappableLabel *label = [[ZSWTappableLabel alloc] init];
+        label.textAlignment = NSTextAlignmentCenter;
+        label.tapDelegate = self;
+        return label;
+    }();
+    
+    ZSWTaggedStringOptions *options = [ZSWTaggedStringOptions options];
+    [options setDynamicAttributes:^NSDictionary *(NSString *tagName,
+                                                  NSDictionary *tagAttributes,
+                                                  NSDictionary *existingStringAttributes) {
+        NSURL *URL;
+        if ([tagAttributes[@"type"] isEqualToString:@"privacy"]) {
+            URL = [NSURL URLWithString:@"http://google.com/search?q=privacy"];
+        } else if ([tagAttributes[@"type"] isEqualToString:@"tos"]) {
+            URL = [NSURL URLWithString:@"http://google.com/search?q=tos"];
+        }
+        
+        if (!URL) {
+            return nil;
+        }
+        
+        return @{
+                 ZSWTappableLabelTappableRegionAttributeName: @YES,
+                 ZSWTappableLabelHighlightedBackgroundAttributeName: [UIColor lightGrayColor],
+                 ZSWTappableLabelHighlightedForegroundAttributeName: [UIColor whiteColor],
+                 NSForegroundColorAttributeName: [UIColor blueColor],
+                 NSUnderlineStyleAttributeName: @(NSUnderlineStyleSingle),
+                 @"URL": URL
+                 };
+    } forTagName:@"link"];
+    
+    NSString *string = NSLocalizedString(@"View our <link type='privacy'>Privacy Policy</link> or <link type='tos'>Terms of Service</link>", nil);
+    self.label.attributedText = [[ZSWTaggedString stringWithString:string] attributedStringWithOptions:options];
+    
+    [self.view addSubview:self.label];
+    [self.label mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.view);
+    }];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+#pragma mark - ZSWTappableLabelTapDelegate
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)tappableLabel:(ZSWTappableLabel *)tappableLabel tappedAtIndex:(NSInteger)idx withAttributes:(NSDictionary<NSString *,id> *)attributes {
+    NSURL *URL = attributes[URLAttributeName];
+    if ([URL isKindOfClass:[NSURL class]]) {
+        if ([SFSafariViewController class] != nil) {
+            [self showViewController:[[SFSafariViewController alloc] initWithURL:URL] sender:self];
+        } else {
+            [[UIApplication sharedApplication] openURL:URL];
+        }
+    }
 }
-*/
 
 @end
