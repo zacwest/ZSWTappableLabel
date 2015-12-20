@@ -1,3 +1,7 @@
+# 1.3
+
+- Long press support: set a longPressDelegate (like tapDelegate) and be notified when the user long-presses.
+
 # 1.2 (2015-12-05)
 
 - Adds annotations for nullability and generics to ease Swift import.

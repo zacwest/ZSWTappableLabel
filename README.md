@@ -65,6 +65,35 @@ func tappableLabel(tappableLabel: ZSWTappableLabel, tappedAtIndex idx: Int, with
 }
 ```
 
+## Long-presses
+
+You may optionally support long-presses by setting a `longPressDelegate` on the label. This behaves very similarly to the `tapDelegate`:
+
+```swift
+func tappableLabel(tappableLabel: ZSWTappableLabel, longPressedAtIndex idx: Int, withAttributes attributes: [String : AnyObject]) {
+  guard let URL = attributes["URL"] as? NSURL else {
+    return
+  }
+    
+  let activityController = UIActivityViewController(activityItems: [URL], applicationActivities: nil)
+  presentViewController(activityController, animated: true, completion: nil)
+}
+```
+
+```objectivec
+- (void)tappableLabel:(ZSWTappableLabel *)tappableLabel 
+   longPressedAtIndex:(NSInteger)idx 
+       withAttributes:(NSDictionary<NSString *,id> *)attributes {
+  NSURL *URL = attributes[URLAttributeName];
+  if ([URL isKindOfClass:[NSURL class]]) {
+    UIActivityViewController *activityController = [[UIActivityViewController alloc] initWithActivityItems:@[ URL ] applicationActivities:nil];
+    [self presentViewController:activityController animated:YES completion:nil];
+  }
+}
+```
+
+You can configure the `longPressDuration` for how long until a long-press is recognized, and the `longPressAccessibilityActionName` which is read aloud to users for [VoiceOver](#voiceover).
+
 ## Data detectors
 
 Let's use `NSDataDetector` to find the substrings in a given string that we might want to turn into links:
@@ -244,6 +273,8 @@ ZSWTappableLabel is an accessibility container, which exposes the substrings in 
 1. `Privacy Policy` (link)
 1. ` or ` (static text)
 1. `Terms of Service` (link)
+
+When you set a `longPressDelegate`, an additional action on links is added to perform the long-press gesture. You should configure the `longPressAccessibilityActionName` to adjust what is read to users.
 
 ## Interaction with gesture recognizers
 
