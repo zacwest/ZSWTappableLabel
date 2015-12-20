@@ -5,7 +5,7 @@
 [![License](https://img.shields.io/cocoapods/l/ZSWTappableLabel.svg?style=flat)](http://cocoapods.org/pods/ZSWTappableLabel)
 [![Platform](https://img.shields.io/cocoapods/p/ZSWTappableLabel.svg?style=flat)](http://cocoapods.org/pods/ZSWTappableLabel)
 
-ZSWTappableLabel is a `UILabel` subclass powered by NSAttributedStrings which allows you to tap on certain regions, with optional highlight behavior. It does not draw text itself and executes a minimal amount of code unless the user is interacting with a tappable region.
+ZSWTappableLabel is a `UILabel` subclass powered by NSAttributedStrings which allows you to tap or long-press on certain regions, with optional highlight behavior. It does not draw text itself and executes a minimal amount of code unless the user is interacting with a tappable region.
 
 ## A basic, tappable link
 
@@ -64,6 +64,35 @@ func tappableLabel(tappableLabel: ZSWTappableLabel, tappedAtIndex idx: Int, with
   [[UIApplication sharedApplication] openURL:attributes[@"URL"]];
 }
 ```
+
+## Long-presses
+
+You may optionally support long-presses by setting a `longPressDelegate` on the label. This behaves very similarly to the `tapDelegate`:
+
+```swift
+func tappableLabel(tappableLabel: ZSWTappableLabel, longPressedAtIndex idx: Int, withAttributes attributes: [String : AnyObject]) {
+  guard let URL = attributes["URL"] as? NSURL else {
+    return
+  }
+    
+  let activityController = UIActivityViewController(activityItems: [URL], applicationActivities: nil)
+  presentViewController(activityController, animated: true, completion: nil)
+}
+```
+
+```objectivec
+- (void)tappableLabel:(ZSWTappableLabel *)tappableLabel 
+   longPressedAtIndex:(NSInteger)idx 
+       withAttributes:(NSDictionary<NSString *,id> *)attributes {
+  NSURL *URL = attributes[URLAttributeName];
+  if ([URL isKindOfClass:[NSURL class]]) {
+    UIActivityViewController *activityController = [[UIActivityViewController alloc] initWithActivityItems:@[ URL ] applicationActivities:nil];
+    [self presentViewController:activityController animated:YES completion:nil];
+  }
+}
+```
+
+You can configure the `longPressDuration` for how long until a long-press is recognized. This defaults to 0.5 seconds.
 
 ## Data detectors
 
@@ -245,6 +274,8 @@ ZSWTappableLabel is an accessibility container, which exposes the substrings in 
 1. ` or ` (static text)
 1. `Terms of Service` (link)
 
+When you set a `longPressDelegate`, an additional action on links is added to perform the long-press gesture. You should configure the `longPressAccessibilityActionName` to adjust what is read to users.
+
 ## Interaction with gesture recognizers
 
 ZSWTappableLabel uses gesture recognizers internally and works well with other gesture recognizers:
@@ -260,7 +291,7 @@ For example, if you place a UITapGestureRecognizer on the label, it will only fi
 ZSWTappableLabel is available through [CocoaPods](http://cocoapods.org). To install it, simply add the following line to your Podfile:
 
 ```ruby
-pod "ZSWTappableLabel", "~> 1.2"
+pod "ZSWTappableLabel", "~> 1.3"
 ```
 
 ## License

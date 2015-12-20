@@ -6,3 +6,4 @@
 #import "MultipleObjectiveCViewController.h"
 #import "DataDetectorsObjectiveCViewController.h"
 #import "InterfaceBuilderObjectiveCViewController.h"
+#import "LongPressObjectiveCViewController.h"
