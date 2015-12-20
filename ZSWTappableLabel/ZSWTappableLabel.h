@@ -62,11 +62,66 @@ extern NSString *const ZSWTappableLabelTappableRegionAttributeName;
        withAttributes:(NSDictionary<NSString *, id> *)attributes;
 @end
 
+@protocol ZSWTappableLabelLongPressDelegate
+/*!
+ * @brief A long press was completed
+ *
+ * @param tappableLabel
+ * @param idx The string index closest to the touch
+ * @param attributes The attributes from the attributed string at the given index
+ *
+ * This method is only invoked if \ref ZSWTappableLabelTappableRegionAttributeName
+ * is specified in the attributes under the touch.
+ *
+ * If the user presses and holds at one spot for at least
+ * \ref longPressDuration seconds, this delegate method will be invoked.
+ *
+ * It may also be invoked by users with accessibility enabled. You should set
+ * \ref longPressAccessibilityActionName to give your users
+ * a better description of what this does.
+ */
+- (void)tappableLabel:(ZSWTappableLabel *)tappableLabel
+   longPressedAtIndex:(NSInteger)idx
+       withAttributes:(NSDictionary<NSString *, id> *)attributes;
+@end
+
 #pragma mark -
 
 @interface ZSWTappableLabel : UILabel
 
+/*!
+ * @brief Delegate which handles taps
+ */
 @property (nullable, nonatomic, weak) IBOutlet id<ZSWTappableLabelTapDelegate> tapDelegate;
+
+/*!
+ * @brief Delegate which handles long-presses
+ */
+@property (nullable, nonatomic, weak) IBOutlet id<ZSWTappableLabelLongPressDelegate> longPressDelegate;
+
+/*!
+ * @brief Long press duration
+ *
+ * How long, in seconds, the user must long press without lifting before
+ * the touch should be recognized as a long press.
+ *
+ * If you do not set a \ref longPressDelegate, a long press does not occur.
+ *
+ * This defaults to 1.0 seconds.
+ */
+@property (nonatomic) NSTimeInterval longPressDuration;
+
+/*!
+ * @brief Accessibility label for long press
+ *
+ * Your users will be read this localized string when they choose to
+ * dig into the custom actions a link has.
+ *
+ * If you do not set a \ref longPressDelegate, this action is not included.
+ *
+ * This defaults to 'Open Menu'.
+ */
+@property (nonatomic, copy) NSString *longPressAccessibilityActionName;
 
 @end
 
