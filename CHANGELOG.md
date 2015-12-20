@@ -1,4 +1,4 @@
-# 1.3
+# 1.3 (2015-12-20)
 
 - Long press support: set a longPressDelegate (like tapDelegate) and be notified when the user long-presses.
 
