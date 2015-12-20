@@ -121,7 +121,7 @@ extern NSString *const ZSWTappableLabelTappableRegionAttributeName;
  *
  * This defaults to 'Open Menu'.
  */
-@property (nonatomic, copy) NSString *longPressAccessibilityActionName;
+@property (null_resettable, nonatomic, copy) NSString *longPressAccessibilityActionName;
 
 @end
 
