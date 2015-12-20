@@ -5,7 +5,7 @@
 [![License](https://img.shields.io/cocoapods/l/ZSWTappableLabel.svg?style=flat)](http://cocoapods.org/pods/ZSWTappableLabel)
 [![Platform](https://img.shields.io/cocoapods/p/ZSWTappableLabel.svg?style=flat)](http://cocoapods.org/pods/ZSWTappableLabel)
 
-ZSWTappableLabel is a `UILabel` subclass powered by NSAttributedStrings which allows you to tap on certain regions, with optional highlight behavior. It does not draw text itself and executes a minimal amount of code unless the user is interacting with a tappable region.
+ZSWTappableLabel is a `UILabel` subclass powered by NSAttributedStrings which allows you to tap or long-press on certain regions, with optional highlight behavior. It does not draw text itself and executes a minimal amount of code unless the user is interacting with a tappable region.
 
 ## A basic, tappable link
 
@@ -291,7 +291,7 @@ For example, if you place a UITapGestureRecognizer on the label, it will only fi
 ZSWTappableLabel is available through [CocoaPods](http://cocoapods.org). To install it, simply add the following line to your Podfile:
 
 ```ruby
-pod "ZSWTappableLabel", "~> 1.2"
+pod "ZSWTappableLabel", "~> 1.3"
 ```
 
 ## License
