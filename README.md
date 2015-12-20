@@ -92,7 +92,7 @@ func tappableLabel(tappableLabel: ZSWTappableLabel, longPressedAtIndex idx: Int,
 }
 ```
 
-You can configure the `longPressDuration` for how long until a long-press is recognized, and the `longPressAccessibilityActionName` which is read aloud to users for [VoiceOver](#voiceover).
+You can configure the `longPressDuration` for how long until a long-press is recognized. This defaults to 0.5 seconds.
 
 ## Data detectors
 

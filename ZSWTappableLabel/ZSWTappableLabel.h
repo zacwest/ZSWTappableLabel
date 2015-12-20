@@ -107,7 +107,7 @@ extern NSString *const ZSWTappableLabelTappableRegionAttributeName;
  *
  * If you do not set a \ref longPressDelegate, a long press does not occur.
  *
- * This defaults to 1.0 seconds.
+ * This defaults to 0.5 seconds.
  */
 @property (nonatomic) NSTimeInterval longPressDuration;
 

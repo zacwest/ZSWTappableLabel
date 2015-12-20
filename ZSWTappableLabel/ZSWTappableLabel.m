@@ -75,7 +75,7 @@ typedef NS_ENUM(NSInteger, ZSWTappableLabelNotifyType) {
     self.numberOfLines = 0;
     self.lineBreakMode = NSLineBreakByWordWrapping;
     
-    self.longPressDuration = 1;
+    self.longPressDuration = 0.5;
     self.longPressAccessibilityActionName = nil; // reset value
     
     self.longPressGR = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPress:)];
