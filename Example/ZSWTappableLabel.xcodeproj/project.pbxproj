@@ -14,6 +14,7 @@
 		110D6E4E1C25FEC6004E8551 /* SimpleObjectiveCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 110D6E4D1C25FEC6004E8551 /* SimpleObjectiveCViewController.m */; };
 		110D6E501C25FF5C004E8551 /* RootExampleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110D6E4F1C25FF5C004E8551 /* RootExampleCell.swift */; };
 		11110E441C27543300E67ACD /* LongPressSwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11110E431C27543300E67ACD /* LongPressSwiftViewController.swift */; };
+		11110E471C2762A900E67ACD /* LongPressObjectiveCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11110E461C2762A900E67ACD /* LongPressObjectiveCViewController.m */; };
 		116126D11C26094A003B4E43 /* MultipleSwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116126D01C26094A003B4E43 /* MultipleSwiftViewController.swift */; };
 		116126D41C260961003B4E43 /* MultipleObjectiveCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 116126D31C260961003B4E43 /* MultipleObjectiveCViewController.m */; };
 		116126DD1C260F67003B4E43 /* DataDetectorsSwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116126DC1C260F67003B4E43 /* DataDetectorsSwiftViewController.swift */; };
@@ -55,6 +56,8 @@
 		110D6E4D1C25FEC6004E8551 /* SimpleObjectiveCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleObjectiveCViewController.m; sourceTree = "<group>"; };
 		110D6E4F1C25FF5C004E8551 /* RootExampleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootExampleCell.swift; sourceTree = "<group>"; };
 		11110E431C27543300E67ACD /* LongPressSwiftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LongPressSwiftViewController.swift; sourceTree = "<group>"; };
+		11110E451C2762A900E67ACD /* LongPressObjectiveCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LongPressObjectiveCViewController.h; sourceTree = "<group>"; };
+		11110E461C2762A900E67ACD /* LongPressObjectiveCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LongPressObjectiveCViewController.m; sourceTree = "<group>"; };
 		116126D01C26094A003B4E43 /* MultipleSwiftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultipleSwiftViewController.swift; sourceTree = "<group>"; };
 		116126D21C260961003B4E43 /* MultipleObjectiveCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultipleObjectiveCViewController.h; sourceTree = "<group>"; };
 		116126D31C260961003B4E43 /* MultipleObjectiveCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultipleObjectiveCViewController.m; sourceTree = "<group>"; };
@@ -142,6 +145,8 @@
 			isa = PBXGroup;
 			children = (
 				11110E431C27543300E67ACD /* LongPressSwiftViewController.swift */,
+				11110E451C2762A900E67ACD /* LongPressObjectiveCViewController.h */,
+				11110E461C2762A900E67ACD /* LongPressObjectiveCViewController.m */,
 			);
 			name = "Long press";
 			sourceTree = "<group>";
@@ -491,6 +496,7 @@
 				11110E441C27543300E67ACD /* LongPressSwiftViewController.swift in Sources */,
 				110D6E471C25FC33004E8551 /* AppDelegate.swift in Sources */,
 				110D6E451C25FC04004E8551 /* RootController.swift in Sources */,
+				11110E471C2762A900E67ACD /* LongPressObjectiveCViewController.m in Sources */,
 				116126D41C260961003B4E43 /* MultipleObjectiveCViewController.m in Sources */,
 				116126E41C2612BD003B4E43 /* InterfaceBuilderSwiftViewController.swift in Sources */,
 				116126E01C260F74003B4E43 /* DataDetectorsObjectiveCViewController.m in Sources */,

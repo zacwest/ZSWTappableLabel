@@ -49,7 +49,7 @@ class RootController: UIViewController, UITableViewDelegate, UITableViewDataSour
         examples.append(ExampleRow(name: "Long press", body: "Long press triggers an Activity View Controller, tapping opens the link.", constructorSwift: { () -> UIViewController in
             return LongPressSwiftViewController()
         }, constructorObjectiveC: { () -> UIViewController in
-            return LongPressSwiftViewController()
+            return LongPressObjectiveCViewController()
         }))
         
         self.examples = examples
