@@ -1,6 +1,8 @@
 source 'https://github.com/CocoaPods/Specs.git'
 use_frameworks!
 
+platform :ios, '8.0'
+
 target 'ZSWTappableLabel_Example', :exclusive => true do
   pod "ZSWTappableLabel", :path => "../"
   pod 'ZSWTaggedString', '~> 2.0'
