@@ -11,22 +11,24 @@ ZSWTappableLabel is a `UILabel` subclass powered by NSAttributedStrings which al
 
 Let's create a string that's entirely tappable and shown with an underline:
 
+Swift
 ```swift
 let string = NSLocalizedString("Privacy Policy", comment: "")
-let attributes: [String: AnyObject] = [
+let attributes: [String: Any] = [
   ZSWTappableLabelTappableRegionAttributeName: true,
-  ZSWTappableLabelHighlightedBackgroundAttributeName: UIColor.lightGrayColor(),
-  ZSWTappableLabelHighlightedForegroundAttributeName: UIColor.whiteColor(),
-  NSForegroundColorAttributeName: UIColor.blueColor(),
-  NSUnderlineStyleAttributeName: NSUnderlineStyle.StyleSingle.rawValue,
+  ZSWTappableLabelHighlightedBackgroundAttributeName: UIColor.lightGray,
+  ZSWTappableLabelHighlightedForegroundAttributeName: UIColor.white,
+  NSForegroundColorAttributeName: UIColor.blue,
+  NSUnderlineStyleAttributeName: NSUnderlineStyle.styleSingle.rawValue as AnyObject,
 
   // You could use NSLinkAttributeName, but this forces foreground color
   "URL": NSURL(string: "http://imgur.com/gallery/VgXCk")!
-]
+];
 
 label.attributedText = NSAttributedString(string: string, attributes: attributes)
 ```
 
+Objective C
 ```objective-c
 NSString *s = NSLocalizedString(@"Privacy Policy", nil);
 NSDictionary *a = @{
@@ -49,14 +51,16 @@ This results in a label which renders like:
 
 Setting your controller as the `tapDelegate` of the label results in the following method call when tapped:
 
-```
-func tappableLabel(tappableLabel: ZSWTappableLabel, tappedAtIndex idx: Int, withAttributes attributes: [String : AnyObject]) {
+Swift
+```swift
+public func tappableLabel(_ tappableLabel: ZSWTappableLabel, tappedAt idx: Int, withAttributes attributes: [String : Any] = [:]) {
   if let url = attributes["URL"] as? NSURL {
     UIApplication.sharedApplication().openURL(url)
   }
 }
 ```
 
+Objective C
 ```objective-c
 - (void)tappableLabel:(ZSWTappableLabel *)tappableLabel
         tappedAtIndex:(NSInteger)idx
@@ -69,6 +73,7 @@ func tappableLabel(tappableLabel: ZSWTappableLabel, tappedAtIndex idx: Int, with
 
 You may optionally support long-presses by setting a `longPressDelegate` on the label. This behaves very similarly to the `tapDelegate`:
 
+Swift
 ```swift
 func tappableLabel(tappableLabel: ZSWTappableLabel, longPressedAtIndex idx: Int, withAttributes attributes: [String : AnyObject]) {
   guard let URL = attributes["URL"] as? NSURL else {
@@ -80,6 +85,7 @@ func tappableLabel(tappableLabel: ZSWTappableLabel, longPressedAtIndex idx: Int,
 }
 ```
 
+Objective C
 ```objectivec
 - (void)tappableLabel:(ZSWTappableLabel *)tappableLabel 
    longPressedAtIndex:(NSInteger)idx 
