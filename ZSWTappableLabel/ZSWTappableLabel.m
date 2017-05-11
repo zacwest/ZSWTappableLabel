@@ -108,8 +108,12 @@ typedef NS_ENUM(NSInteger, ZSWTappableLabelNotifyType) {
         return;
     }
     
-    NSTextStorage *textStorage = [[NSTextStorage alloc] initWithAttributedString:self.unmodifiedAttributedText];
-    NSTextContainer *textContainer = [[NSTextContainer alloc] initWithSize:self.bounds.size];
+    NSTextStorage *textStorage = [[NSTextStorage alloc] initWithAttributedString:self.unmodifiedAttributedText];    // on iOS 10, UILabel sometimes renders multiline labels
+    // while at the same bounds size, NSLayoutManager will render 1 line
+    // this causes a mismatch in character locations between label and manager
+    // so we use a infinite height here to allow the manager to render similarly
+    CGSize adjustedSize =  CGSizeMake(self.bounds.size.width, CGFLOAT_MAX);
+    NSTextContainer *textContainer = [[NSTextContainer alloc] initWithSize:adjustedSize];
     NSLayoutManager *layoutManager = [[NSLayoutManager alloc] init];
 
     textContainer.lineBreakMode = self.lineBreakMode;
