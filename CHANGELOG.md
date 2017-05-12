@@ -1,3 +1,7 @@
+# 1.3.1 (2017-05-12)
+
+- Fixes some cases where the last line in a label, when sized to fit, would not be tappable on iOS 10.
+
 # 1.3 (2015-12-20)
 
 - Long press support: set a longPressDelegate (like tapDelegate) and be notified when the user long-presses.
