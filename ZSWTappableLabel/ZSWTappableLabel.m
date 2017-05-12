@@ -109,7 +109,15 @@ typedef NS_ENUM(NSInteger, ZSWTappableLabelNotifyType) {
     }
     
     NSTextStorage *textStorage = [[NSTextStorage alloc] initWithAttributedString:self.unmodifiedAttributedText];
-    NSTextContainer *textContainer = [[NSTextContainer alloc] initWithSize:self.bounds.size];
+    NSTextContainer *textContainer = [[NSTextContainer alloc] initWithSize:^{
+        CGSize size = self.bounds.size;
+        
+        // On iOS 10, NSLayoutManager will think it doesn't have enough space to fit text
+        // compared to UILabel which will render more text in the same given space. I can't seem to find
+        // any reason, and it's a 1-2pt difference.
+        size.height = CGFLOAT_MAX;
+        return size;
+    }()];
     NSLayoutManager *layoutManager = [[NSLayoutManager alloc] init];
 
     textContainer.lineBreakMode = self.lineBreakMode;
@@ -121,7 +129,7 @@ typedef NS_ENUM(NSInteger, ZSWTappableLabelNotifyType) {
 
     self.gestureTextStorage = textStorage;
     
-    // UITextView vertically centers if it doesn't fill the whole bounds, so compensate for that.
+    // UILabel vertically centers if it doesn't fill the whole bounds, so compensate for that.
     CGRect usedRect = [layoutManager usedRectForTextContainer:textContainer];
     self.gesturePointOffset = CGPointMake(0, (CGRectGetHeight(self.bounds) - CGRectGetHeight(usedRect))/2.0);
 }
