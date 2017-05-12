@@ -142,7 +142,7 @@ This results in a label which renders like:
 We can wire up the `tapDelegate` to receive the checking result and handle each result type when the user taps on the link:
 
 ```swift
-func tappableLabel(tappableLabel: ZSWTappableLabel, tappedAtIndex idx: Int, withAttributes attributes: [String : AnyObject]) {
+func tappableLabel(tappableLabel: ZSWTappableLabel, tappedAtIndex idx: Int, withAttributes attributes: [String : Any]) {
   if let result = attributes["NSTextCheckingResult"] as? NSTextCheckingResult {
     switch result.resultType {
     case [.address]:
