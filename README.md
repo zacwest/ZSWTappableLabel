@@ -291,7 +291,7 @@ For example, if you place a UITapGestureRecognizer on the label, it will only fi
 ZSWTappableLabel is available through [CocoaPods](http://cocoapods.org). To install it, simply add the following line to your Podfile:
 
 ```ruby
-pod "ZSWTappableLabel", "~> 1.3"
+pod "ZSWTappableLabel", "~> 1.3.1"
 ```
 
 ## License
