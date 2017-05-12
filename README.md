@@ -23,7 +23,6 @@ let attributes: [String: Any] = [
 ]
 
 label.attributedText = NSAttributedString(string: string, attributes: attributes)
-
 ```
 
 ```objective-c
@@ -48,7 +47,7 @@ This results in a label which renders like:
 
 Setting your controller as the `tapDelegate` of the label results in the following method call when tapped:
 
-```
+```swift
 func tappableLabel(_ tappableLabel: ZSWTappableLabel, tappedAt idx: Int, withAttributes attributes: [String : Any]) {
   if let url = attributes["URL"] as? URL {
     UIApplication.shared.openURL(url)
@@ -79,7 +78,7 @@ func tappableLabel(_ tappableLabel: ZSWTappableLabel, longPressedAt idx: Int, wi
 }
 ```
 
-```objectivec
+```objective-c
 - (void)tappableLabel:(ZSWTappableLabel *)tappableLabel 
    longPressedAtIndex:(NSInteger)idx 
        withAttributes:(NSDictionary<NSString *,id> *)attributes {
