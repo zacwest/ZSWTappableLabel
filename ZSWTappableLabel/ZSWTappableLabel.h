@@ -50,7 +50,7 @@ extern NSString *const ZSWTappableLabelTappableRegionAttributeName;
 /*!
  * @brief A tap was completed
  *
- * @param tappableLabel
+ * @param tappableLabel The label
  * @param idx The string index closest to the touch
  * @param attributes The attributes from the attributed string at the given index
  *
@@ -66,7 +66,7 @@ extern NSString *const ZSWTappableLabelTappableRegionAttributeName;
 /*!
  * @brief A long press was completed
  *
- * @param tappableLabel
+ * @param tappableLabel The label
  * @param idx The string index closest to the touch
  * @param attributes The attributes from the attributed string at the given index
  *
