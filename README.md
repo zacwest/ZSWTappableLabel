@@ -14,12 +14,12 @@ Let's create a string that's entirely tappable and shown with an underline:
 ```swift
 let string = NSLocalizedString("Privacy Policy", comment: "")
 let attributes: [String: Any] = [
-    ZSWTappableLabelTappableRegionAttributeName: true,
-    ZSWTappableLabelHighlightedBackgroundAttributeName: UIColor.lightGray,
-    ZSWTappableLabelHighlightedForegroundAttributeName: UIColor.white,
-    NSForegroundColorAttributeName: UIColor.blue,
-    NSUnderlineStyleAttributeName: NSUnderlineStyle.styleSingle.rawValue,
-    SimpleSwiftViewController.URLAttributeName: URL(string: "http://imgur.com/gallery/VgXCk")!
+  ZSWTappableLabelTappableRegionAttributeName: true,
+  ZSWTappableLabelHighlightedBackgroundAttributeName: UIColor.lightGray,
+  ZSWTappableLabelHighlightedForegroundAttributeName: UIColor.white,
+  NSForegroundColorAttributeName: UIColor.blue,
+  NSUnderlineStyleAttributeName: NSUnderlineStyle.styleSingle.rawValue,
+  SimpleSwiftViewController.URLAttributeName: URL(string: "http://imgur.com/gallery/VgXCk")!
 ]
 
 label.attributedText = NSAttributedString(string: string, attributes: attributes)
@@ -72,7 +72,7 @@ func tappableLabel(_ tappableLabel: ZSWTappableLabel, longPressedAt idx: Int, wi
   guard let URL = attributes["URL"] as? URL else {
     return
   }
-    
+  
   let activityController = UIActivityViewController(activityItems: [URL], applicationActivities: nil)
   present(activityController, animated: true, completion: nil)
 }
@@ -105,7 +105,7 @@ let range = NSRange(location: 0, length: (string as NSString).length)
 
 detector.enumerateMatches(in: attributedString.string, options: [], range: range) { (result, flags, _) in
   guard let result = result else { return }
-    
+  
   var attributes = [String: Any]()
   attributes[ZSWTappableLabelTappableRegionAttributeName] = true
   attributes[ZSWTappableLabelHighlightedBackgroundAttributeName] = UIColor.lightGray
