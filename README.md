@@ -13,18 +13,17 @@ Let's create a string that's entirely tappable and shown with an underline:
 
 ```swift
 let string = NSLocalizedString("Privacy Policy", comment: "")
-let attributes: [String: AnyObject] = [
-  ZSWTappableLabelTappableRegionAttributeName: true,
-  ZSWTappableLabelHighlightedBackgroundAttributeName: UIColor.lightGrayColor(),
-  ZSWTappableLabelHighlightedForegroundAttributeName: UIColor.whiteColor(),
-  NSForegroundColorAttributeName: UIColor.blueColor(),
-  NSUnderlineStyleAttributeName: NSUnderlineStyle.StyleSingle.rawValue,
-
-  // You could use NSLinkAttributeName, but this forces foreground color
-  "URL": NSURL(string: "http://imgur.com/gallery/VgXCk")!
+let attributes: [String: Any] = [
+    ZSWTappableLabelTappableRegionAttributeName: true,
+    ZSWTappableLabelHighlightedBackgroundAttributeName: UIColor.lightGray,
+    ZSWTappableLabelHighlightedForegroundAttributeName: UIColor.white,
+    NSForegroundColorAttributeName: UIColor.blue,
+    NSUnderlineStyleAttributeName: NSUnderlineStyle.styleSingle.rawValue,
+    SimpleSwiftViewController.URLAttributeName: URL(string: "http://imgur.com/gallery/VgXCk")!
 ]
 
 label.attributedText = NSAttributedString(string: string, attributes: attributes)
+
 ```
 
 ```objective-c
@@ -50,9 +49,9 @@ This results in a label which renders like:
 Setting your controller as the `tapDelegate` of the label results in the following method call when tapped:
 
 ```
-func tappableLabel(tappableLabel: ZSWTappableLabel, tappedAtIndex idx: Int, withAttributes attributes: [String : AnyObject]) {
-  if let url = attributes["URL"] as? NSURL {
-    UIApplication.sharedApplication().openURL(url)
+func tappableLabel(_ tappableLabel: ZSWTappableLabel, tappedAt idx: Int, withAttributes attributes: [String : Any]) {
+  if let url = attributes["URL"] as? URL {
+    UIApplication.shared.openURL(url)
   }
 }
 ```
@@ -70,13 +69,13 @@ func tappableLabel(tappableLabel: ZSWTappableLabel, tappedAtIndex idx: Int, with
 You may optionally support long-presses by setting a `longPressDelegate` on the label. This behaves very similarly to the `tapDelegate`:
 
 ```swift
-func tappableLabel(tappableLabel: ZSWTappableLabel, longPressedAtIndex idx: Int, withAttributes attributes: [String : AnyObject]) {
-  guard let URL = attributes["URL"] as? NSURL else {
+func tappableLabel(_ tappableLabel: ZSWTappableLabel, longPressedAt idx: Int, withAttributes attributes: [String : Any]) {
+  guard let URL = attributes["URL"] as? URL else {
     return
   }
     
   let activityController = UIActivityViewController(activityItems: [URL], applicationActivities: nil)
-  presentViewController(activityController, animated: true, completion: nil)
+  present(activityController, animated: true, completion: nil)
 }
 ```
 
@@ -100,19 +99,20 @@ Let's use `NSDataDetector` to find the substrings in a given string that we migh
 
 ```swift
 let string = "check google.com or call 415-555-5555? how about friday at 5pm?"
-let range = NSRange(location: 0, length: (string as NSString).length)
 
 let detector = try! NSDataDetector(types: NSTextCheckingAllSystemTypes)
 let attributedString = NSMutableAttributedString(string: string, attributes: nil)
+let range = NSRange(location: 0, length: (string as NSString).length)
 
-detector.enumerateMatchesInString(string, options: [], range: range) { (result, flags, _) in
+detector.enumerateMatches(in: attributedString.string, options: [], range: range) { (result, flags, _) in
   guard let result = result else { return }
-  var attributes = [String: AnyObject]()
+    
+  var attributes = [String: Any]()
   attributes[ZSWTappableLabelTappableRegionAttributeName] = true
-  attributes[ZSWTappableLabelHighlightedBackgroundAttributeName] = UIColor.lightGrayColor()
-  attributes[ZSWTappableLabelHighlightedForegroundAttributeName] = UIColor.whiteColor()
-  attributes[NSUnderlineStyleAttributeName] = NSUnderlineStyle.StyleSingle.rawValue
-  attributes["NSTextCheckingResult"] = result
+  attributes[ZSWTappableLabelHighlightedBackgroundAttributeName] = UIColor.lightGray
+  attributes[ZSWTappableLabelHighlightedForegroundAttributeName] = UIColor.white
+  attributes[NSUnderlineStyleAttributeName] = NSUnderlineStyle.styleSingle.rawValue
+  attributes[DataDetectorsSwiftViewController.TextCheckingResultAttributeName] = result
   attributedString.addAttributes(attributes, range: result.range)
 }
 label.attributedText = attributedString
@@ -146,14 +146,14 @@ We can wire up the `tapDelegate` to receive the checking result and handle each 
 func tappableLabel(tappableLabel: ZSWTappableLabel, tappedAtIndex idx: Int, withAttributes attributes: [String : AnyObject]) {
   if let result = attributes["NSTextCheckingResult"] as? NSTextCheckingResult {
     switch result.resultType {
-    case [.Address]:
-      print("Address components: \(result.addressComponents)")                
-    case [.PhoneNumber]:
+    case [.address]:
+      print("Address components: \(result.addressComponents)")
+    case [.phoneNumber]:
       print("Phone number: \(result.phoneNumber)")
-    case [.Date]:
+    case [.date]:
       print("Date: \(result.date)")
-    case [.Link]:
-      print("Link: \(result.URL)")
+    case [.link]:
+      print("Link: \(result.url)")
     default:
       break
     }
@@ -201,38 +201,38 @@ You can create such a string using a simple ZSWTaggedString:
 
 ```swift
 let options = ZSWTaggedStringOptions()
-options["link"] = .Dynamic({ tagName, tagAttributes, stringAttributes in
+options["link"] = .dynamic({ tagName, tagAttributes, stringAttributes in
   guard let type = tagAttributes["type"] as? String else {
-    return [String: AnyObject]()
+    return [String: Any]()
   }
   
-  var foundURL: NSURL?
+  var foundURL: URL?
   
   switch type {
   case "privacy":
-    foundURL = NSURL(string: "http://google.com/search?q=privacy")!
+    foundURL = URL(string: "http://google.com/search?q=privacy")!
   case "tos":
-    foundURL = NSURL(string: "http://google.com/search?q=tos")!
+    foundURL = URL(string: "http://google.com/search?q=tos")!
   default:
     break
   }
   
   guard let URL = foundURL else {
-    return [String: AnyObject]()
+    return [String: Any]()
   }
   
   return [
     ZSWTappableLabelTappableRegionAttributeName: true,
-    ZSWTappableLabelHighlightedBackgroundAttributeName: UIColor.lightGrayColor(),
-    ZSWTappableLabelHighlightedForegroundAttributeName: UIColor.whiteColor(),
-    NSForegroundColorAttributeName: UIColor.blueColor(),
-    NSUnderlineStyleAttributeName: NSUnderlineStyle.StyleSingle.rawValue,
+    ZSWTappableLabelHighlightedBackgroundAttributeName: UIColor.lightGray,
+    ZSWTappableLabelHighlightedForegroundAttributeName: UIColor.white,
+    NSForegroundColorAttributeName: UIColor.blue,
+    NSUnderlineStyleAttributeName: NSUnderlineStyle.styleSingle.rawValue,
     "URL": URL
   ]
 })
 
 let string = NSLocalizedString("View our <link type='privacy'>Privacy Policy</link> or <link type='tos'>Terms of Service</link>", comment: "")
-label.attributedText = try? ZSWTaggedString(string: string).attributedStringWithOptions(options)
+label.attributedText = try? ZSWTaggedString(string: string).attributedString(with: options)
 ```
 
 ```objective-c
