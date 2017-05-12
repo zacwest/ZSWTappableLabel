@@ -3,17 +3,16 @@ use_frameworks!
 
 platform :ios, '8.0'
 
-target 'ZSWTappableLabel_Example', :exclusive => true do
+target :ZSWTappableLabel_Example do
   pod "ZSWTappableLabel", :path => "../"
-  pod 'ZSWTaggedString', '~> 2.0'
-  pod 'ZSWTaggedString/Swift', '~> 2.0'
-  pod 'SnapKit', '~> 0.18.0'
-  pod 'Masonry', '~> 0.6.3'
-end
+  pod 'ZSWTaggedString', '~> 3.0'
+  pod 'ZSWTaggedString/Swift', '~> 3.0'
+  pod 'SnapKit'
+  pod 'Masonry'
 
-target 'Tests', :exclusive => true do
-  pod "ZSWTappableLabel", :path => "../"
-
-  pod 'Specta'
-  pod 'Expecta'
+  target 'Tests' do
+    inherit! :search_paths
+    pod 'Specta'
+    pod 'Expecta'
+  end
 end

@@ -67,7 +67,7 @@ class RootController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         view.addSubview(tableView)
         
-        tableView.snp_makeConstraints { make in
+        tableView.snp.makeConstraints { make in
             make.edges.equalTo(view)
         }
         
@@ -75,21 +75,21 @@ class RootController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.dataSource = self
         tableView.estimatedRowHeight = 75
         tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.registerClass(RootExampleCell.self, forCellReuseIdentifier: NSStringFromClass(RootExampleCell))
+        tableView.register(RootExampleCell.self, forCellReuseIdentifier: NSStringFromClass(RootExampleCell.self))
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         tableView.flashScrollIndicators()
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return examples.count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(NSStringFromClass(RootExampleCell), forIndexPath: indexPath) as! RootExampleCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: NSStringFromClass(RootExampleCell.self), for: indexPath) as! RootExampleCell
         cell.delegate = self
         cell.configureWith(examples[indexPath.item])
         return cell
@@ -97,32 +97,32 @@ class RootController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     // MARK: - RootExampleCellDelegate
     
-    private func exampleFor(cell: UITableViewCell) -> ExampleRow {
-        guard let indexPath = tableView.indexPathForCell(cell) else {
+    fileprivate func exampleFor(_ cell: UITableViewCell) -> ExampleRow {
+        guard let indexPath = tableView.indexPath(for: cell) else {
             fatalError()
         }
         
         return examples[indexPath.item]
     }
     
-    func showExampleViewController(controller: UIViewController, forExample example: ExampleRow) {
+    func showExampleViewController(_ controller: UIViewController, forExample example: ExampleRow) {
         controller.configureWith(example)
-        showViewController(controller, sender: self)
+        show(controller, sender: self)
     }
     
-    func rootExampleCellSelectedSwift(cell: RootExampleCell) {
+    func rootExampleCellSelectedSwift(_ cell: RootExampleCell) {
         let example = exampleFor(cell)
         showExampleViewController(example.constructorSwift(), forExample: example)
     }
     
-    func rootExampleCellSelectedObjectiveC(cell: RootExampleCell) {
+    func rootExampleCellSelectedObjectiveC(_ cell: RootExampleCell) {
         let example = exampleFor(cell)
         showExampleViewController(example.constructorObjectiveC(), forExample: example)
     }
 }
 
 extension UIViewController {
-    func configureWith(example: ExampleRow) {
+    func configureWith(_ example: ExampleRow) {
         title = example.name
     }
 }

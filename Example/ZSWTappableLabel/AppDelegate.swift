@@ -6,6 +6,7 @@
 //  Copyright © 2015 Zachary West. All rights reserved.
 //
 
+import Foundation
 import UIKit
 import SnapKit
 import ZSWTappableLabel
@@ -14,9 +15,9 @@ import ZSWTappableLabel
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject : AnyObject]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         window = {
-            let window = UIWindow(frame: UIScreen.mainScreen().bounds)
+            let window = UIWindow(frame: UIScreen.main.bounds)
             window.rootViewController = UINavigationController(rootViewController: RootController())
             window.makeKeyAndVisible()
             return window

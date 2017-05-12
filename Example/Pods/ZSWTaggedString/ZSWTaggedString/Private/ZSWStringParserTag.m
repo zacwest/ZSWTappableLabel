@@ -28,6 +28,7 @@
     if (self) {
         self.tagName = tagName;
         self.location = location;
+        self.tagAttributes = @{};
     }
     return self;
 }

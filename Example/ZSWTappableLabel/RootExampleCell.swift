@@ -7,8 +7,8 @@
 //
 
 protocol RootExampleCellDelegate: class {
-    func rootExampleCellSelectedSwift(cell: RootExampleCell)
-    func rootExampleCellSelectedObjectiveC(cell: RootExampleCell)
+    func rootExampleCellSelectedSwift(_ cell: RootExampleCell)
+    func rootExampleCellSelectedObjectiveC(_ cell: RootExampleCell)
 }
 
 class RootExampleCell: UITableViewCell {
@@ -16,38 +16,38 @@ class RootExampleCell: UITableViewCell {
     
     let nameLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.preferredFontForTextStyle(UIFontTextStyleHeadline)
+        label.font = UIFont.preferredFont(forTextStyle: .headline)
         return label
     }()
     
     let bodyLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
-        label.font = UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
+        label.font = UIFont.preferredFont(forTextStyle: .body)
         return label
     }()
     
     let swiftButton: UIButton = {
-        let button = UIButton(type: .System)
-        button.setTitle("Swift", forState: .Normal)
+        let button = UIButton(type: .system)
+        button.setTitle("Swift", for: .normal)
         button.contentEdgeInsets = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
         return button
     }()
     
     let objcButton: UIButton = {
-        let button = UIButton(type: .System)
-        button.setTitle("Obj-C", forState: .Normal)
+        let button = UIButton(type: .system)
+        button.setTitle("Obj-C", for: .normal)
         button.contentEdgeInsets = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
         return button
     }()
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
-        super.init(style: .Default, reuseIdentifier: reuseIdentifier)
+        super.init(style: .default, reuseIdentifier: reuseIdentifier)
         
-        selectionStyle = .None
+        selectionStyle = .none
         
-        swiftButton.addTarget(self, action: "selectButton:", forControlEvents: .TouchUpInside)
-        objcButton.addTarget(self, action: "selectButton:", forControlEvents: .TouchUpInside)
+        swiftButton.addTarget(self, action: #selector(selectButton(_:)), for: .touchUpInside)
+        objcButton.addTarget(self, action: #selector(selectButton(_:)), for: .touchUpInside)
         
         contentView.addSubview(swiftButton)
         contentView.addSubview(objcButton)
@@ -61,7 +61,7 @@ class RootExampleCell: UITableViewCell {
         fatalError()
     }
     
-    func selectButton(sender: UIButton) {
+    func selectButton(_ sender: UIButton) {
         if sender === swiftButton {
             delegate?.rootExampleCellSelectedSwift(self)
         } else {
@@ -70,35 +70,35 @@ class RootExampleCell: UITableViewCell {
     }
     
     override func updateConstraints() {
-        nameLabel.snp_remakeConstraints { make in
-            make.top.equalTo(contentView.snp_topMargin)
-            make.leading.equalTo(contentView.snp_leadingMargin)
+        nameLabel.snp.remakeConstraints { make in
+            make.top.equalTo(contentView.snp.topMargin)
+            make.leading.equalTo(contentView.snp.leadingMargin)
         }
         
-        swiftButton.snp_remakeConstraints { make in
-            make.leading.equalTo(objcButton.snp_trailing)
-            make.trailing.equalTo(contentView.snp_trailingMargin)
-            make.top.equalTo(contentView.snp_topMargin)
+        swiftButton.snp.remakeConstraints { make in
+            make.leading.equalTo(objcButton.snp.trailing)
+            make.trailing.equalTo(contentView.snp.trailingMargin)
+            make.top.equalTo(contentView.snp.topMargin)
             make.height.equalTo(nameLabel)
         }
         
-        objcButton.snp_remakeConstraints { make in
-            make.top.equalTo(contentView.snp_topMargin)
+        objcButton.snp.remakeConstraints { make in
+            make.top.equalTo(contentView.snp.topMargin)
             make.leading.greaterThanOrEqualTo(nameLabel)
             make.height.equalTo(swiftButton)
         }
 
-        bodyLabel.snp_remakeConstraints { make in
-            make.top.equalTo(nameLabel.snp_bottom).offset(5)
-            make.leading.equalTo(contentView.snp_leadingMargin)
-            make.trailing.equalTo(contentView.snp_trailingMargin)
-            make.bottom.equalTo(contentView.snp_bottomMargin)
+        bodyLabel.snp.remakeConstraints { make in
+            make.top.equalTo(nameLabel.snp.bottom).offset(5)
+            make.leading.equalTo(contentView.snp.leadingMargin)
+            make.trailing.equalTo(contentView.snp.trailingMargin)
+            make.bottom.equalTo(contentView.snp.bottomMargin)
         }
         
         super.updateConstraints()
     }
     
-    func configureWith(exampleRow: ExampleRow) {
+    func configureWith(_ exampleRow: ExampleRow) {
         nameLabel.text = exampleRow.name
         bodyLabel.text = exampleRow.body
     }

@@ -14,7 +14,7 @@ class InterfaceBuilderSwiftViewController: UIViewController, ZSWTappableLabelTap
     @IBOutlet weak var label: ZSWTappableLabel!
 
     // for iOS 8
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: "InterfaceBuilderSwiftViewController", bundle: nil)
     }
 
@@ -27,12 +27,12 @@ class InterfaceBuilderSwiftViewController: UIViewController, ZSWTappableLabelTap
         super.viewDidLoad()
 
         if let attributedText = label.attributedText?.mutableCopy() as? NSMutableAttributedString {
-            let range = (attributedText.string as NSString).rangeOfString("label")
+            let range = (attributedText.string as NSString).range(of: "label")
             if range.location != NSNotFound {
                 attributedText.addAttributes([
                     ZSWTappableLabelTappableRegionAttributeName: true,
-                    NSLinkAttributeName: NSURL(string: "https://gotofail.com")!,
-                    ZSWTappableLabelHighlightedBackgroundAttributeName: UIColor.lightGrayColor()
+                    NSLinkAttributeName: URL(string: "https://gotofail.com")!,
+                    ZSWTappableLabelHighlightedBackgroundAttributeName: UIColor.lightGray
                 ], range: range)
             }
             label.attributedText = attributedText
@@ -40,15 +40,15 @@ class InterfaceBuilderSwiftViewController: UIViewController, ZSWTappableLabelTap
     }
 
     // MARK: - ZSWTappableLabelTapDelegate
-    func tappableLabel(tappableLabel: ZSWTappableLabel, tappedAtIndex idx: Int, withAttributes attributes: [String : AnyObject]) {
-        guard let URL = attributes[NSLinkAttributeName] as? NSURL else {
+    func tappableLabel(_ tappableLabel: ZSWTappableLabel, tappedAt idx: Int, withAttributes attributes: [String : Any]) {
+        guard let URL = attributes[NSLinkAttributeName] as? URL else {
             return
         }
         
         if #available(iOS 9, *) {
-            showViewController(SFSafariViewController(URL: URL), sender: self)
+            show(SFSafariViewController(url: URL), sender: self)
         } else {
-            UIApplication.sharedApplication().openURL(URL)
+            UIApplication.shared.openURL(URL)
         }
     }
 }

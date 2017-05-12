@@ -7,7 +7,7 @@
 //
 
 extension ZSWTaggedString {
-    public convenience init(format: String, _ arguments: CVarArgType...) {
+    public convenience init(format: String, _ arguments: CVarArg...) {
         let string = String(format: format, arguments: arguments)
         self.init(string: string)
     }

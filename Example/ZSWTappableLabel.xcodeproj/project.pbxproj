@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		014F618B951FFDCDFAF88F4E /* Pods_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD19B77BBAAAF2B208853716 /* Pods_Tests.framework */; };
 		110D6E451C25FC04004E8551 /* RootController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110D6E441C25FC04004E8551 /* RootController.swift */; };
 		110D6E471C25FC33004E8551 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110D6E461C25FC33004E8551 /* AppDelegate.swift */; };
 		110D6E491C25FE2F004E8551 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 110D6E481C25FE2F004E8551 /* Launch Screen.storyboard */; };
@@ -33,8 +34,7 @@
 		6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
-		8A089D04118D3C6363651D6B /* Pods_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A86C6FF824664E292619D05C /* Pods_Tests.framework */; };
-		FFB3DEC1B5FFE49679B15DC2 /* Pods_ZSWTappableLabel_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC5FCE9727317036233370B7 /* Pods_ZSWTappableLabel_Example.framework */; };
+		90AC65593931D8B67D21E94A /* Pods_ZSWTappableLabel_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 939EFDF28497ABEB0A8F8955 /* Pods_ZSWTappableLabel_Example.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,8 +71,7 @@
 		116126E81C261466003B4E43 /* InterfaceBuilderObjectiveCViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InterfaceBuilderObjectiveCViewController.xib; sourceTree = "<group>"; };
 		11909ABC1C13D46A00B9AB03 /* ZSWTappableLabel_Example-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ZSWTappableLabel_Example-Bridging-Header.h"; sourceTree = "<group>"; };
 		11F6CCA61B1B90D10064F1CF /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = CHANGELOG.md; path = ../CHANGELOG.md; sourceTree = "<group>"; };
-		34097BFF3CB9AFDD26A8A1F5 /* Pods-Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tests/Pods-Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		52C6DC99AB650CA0A3515A3C /* Pods-ZSWTappableLabel_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZSWTappableLabel_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZSWTappableLabel_Example/Pods-ZSWTappableLabel_Example.release.xcconfig"; sourceTree = "<group>"; };
+		48D9CAFA7C85FFBDE3E5A1E1 /* Pods-Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tests/Pods-Tests.release.xcconfig"; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* ZSWTappableLabel_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZSWTappableLabel_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -87,13 +86,14 @@
 		6003F5B9195388D20070C39A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6003F5BB195388D20070C39A /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
-		8888AAE3F0A56356BFD6DC30 /* Pods-ZSWTappableLabel_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZSWTappableLabel_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZSWTappableLabel_Example/Pods-ZSWTappableLabel_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		939EFDF28497ABEB0A8F8955 /* Pods_ZSWTappableLabel_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZSWTappableLabel_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3CB99196150C959F7CB1E34 /* ZSWTappableLabel.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = ZSWTappableLabel.podspec; path = ../ZSWTappableLabel.podspec; sourceTree = "<group>"; };
-		A86C6FF824664E292619D05C /* Pods_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC49F6A892919C130D6F5530 /* Pods-Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tests/Pods-Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		AF18D47E55316D6BB54A685B /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		B10A2A1C5130F4803544B103 /* Pods-Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tests/Pods-Tests.release.xcconfig"; sourceTree = "<group>"; };
+		B489BE10F69914A015A3B20E /* Pods-ZSWTappableLabel_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZSWTappableLabel_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZSWTappableLabel_Example/Pods-ZSWTappableLabel_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		BD19B77BBAAAF2B208853716 /* Pods_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C972D1FBC1030089034F330B /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		EC5FCE9727317036233370B7 /* Pods_ZSWTappableLabel_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZSWTappableLabel_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF668BCCFF63A0470C3D2E34 /* Pods-ZSWTappableLabel_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZSWTappableLabel_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZSWTappableLabel_Example/Pods-ZSWTappableLabel_Example.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,7 +104,7 @@
 				6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */,
 				6003F592195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F58E195388D20070C39A /* Foundation.framework in Frameworks */,
-				FFB3DEC1B5FFE49679B15DC2 /* Pods_ZSWTappableLabel_Example.framework in Frameworks */,
+				90AC65593931D8B67D21E94A /* Pods_ZSWTappableLabel_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,7 +115,7 @@
 				6003F5B0195388D20070C39A /* XCTest.framework in Frameworks */,
 				6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F5B1195388D20070C39A /* Foundation.framework in Frameworks */,
-				8A089D04118D3C6363651D6B /* Pods_Tests.framework in Frameworks */,
+				014F618B951FFDCDFAF88F4E /* Pods_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -183,17 +183,6 @@
 			name = "Interface Builder";
 			sourceTree = "<group>";
 		};
-		1D27E07A82696C9416FAAFAB /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				34097BFF3CB9AFDD26A8A1F5 /* Pods-Tests.debug.xcconfig */,
-				B10A2A1C5130F4803544B103 /* Pods-Tests.release.xcconfig */,
-				8888AAE3F0A56356BFD6DC30 /* Pods-ZSWTappableLabel_Example.debug.xcconfig */,
-				52C6DC99AB650CA0A3515A3C /* Pods-ZSWTappableLabel_Example.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		6003F581195388D10070C39A = {
 			isa = PBXGroup;
 			children = (
@@ -202,7 +191,7 @@
 				6003F5B5195388D20070C39A /* Tests */,
 				6003F58C195388D20070C39A /* Frameworks */,
 				6003F58B195388D20070C39A /* Products */,
-				1D27E07A82696C9416FAAFAB /* Pods */,
+				606845BA57C23C75E56DBD46 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -222,8 +211,8 @@
 				6003F58F195388D20070C39A /* CoreGraphics.framework */,
 				6003F591195388D20070C39A /* UIKit.framework */,
 				6003F5AF195388D20070C39A /* XCTest.framework */,
-				A86C6FF824664E292619D05C /* Pods_Tests.framework */,
-				EC5FCE9727317036233370B7 /* Pods_ZSWTappableLabel_Example.framework */,
+				BD19B77BBAAAF2B208853716 /* Pods_Tests.framework */,
+				939EFDF28497ABEB0A8F8955 /* Pods_ZSWTappableLabel_Example.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -276,6 +265,17 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		606845BA57C23C75E56DBD46 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AC49F6A892919C130D6F5530 /* Pods-Tests.debug.xcconfig */,
+				48D9CAFA7C85FFBDE3E5A1E1 /* Pods-Tests.release.xcconfig */,
+				B489BE10F69914A015A3B20E /* Pods-ZSWTappableLabel_Example.debug.xcconfig */,
+				EF668BCCFF63A0470C3D2E34 /* Pods-ZSWTappableLabel_Example.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		60FF7A9C1954A5C5007DD14C /* Podspec Metadata */ = {
 			isa = PBXGroup;
 			children = (
@@ -294,12 +294,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6003F5BF195388D20070C39A /* Build configuration list for PBXNativeTarget "ZSWTappableLabel_Example" */;
 			buildPhases = (
-				CE18D40718277C657992E3CD /* Check Pods Manifest.lock */,
+				638BC9F2078B90D7BE7CE7A8 /* [CP] Check Pods Manifest.lock */,
 				6003F586195388D20070C39A /* Sources */,
 				6003F587195388D20070C39A /* Frameworks */,
 				6003F588195388D20070C39A /* Resources */,
-				01725737104FDF28F8883F89 /* Embed Pods Frameworks */,
-				303C86B6402AA600AF4B1F0B /* Copy Pods Resources */,
+				D218C61965177FB2BFE93097 /* [CP] Embed Pods Frameworks */,
+				77A9FFEBC4D2F519374DBC21 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -314,12 +314,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6003F5C2195388D20070C39A /* Build configuration list for PBXNativeTarget "Tests" */;
 			buildPhases = (
-				52800981A1F68BC9A31F25D3 /* Check Pods Manifest.lock */,
+				2949A0B5099EC9640514E55D /* [CP] Check Pods Manifest.lock */,
 				6003F5AA195388D20070C39A /* Sources */,
 				6003F5AB195388D20070C39A /* Frameworks */,
 				6003F5AC195388D20070C39A /* Resources */,
-				C01A3BBC0EFAEAB69C57DD3B /* Embed Pods Frameworks */,
-				996F30E836D8B14F682188BE /* Copy Pods Resources */,
+				241A642BB55123F671A30CDB /* [CP] Embed Pods Frameworks */,
+				E5C72CB483456806D6ACE16C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -342,6 +342,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Zachary West";
 				TargetAttributes = {
+					6003F589195388D20070C39A = {
+						LastSwiftMigration = 0830;
+					};
 					6003F5AD195388D20070C39A = {
 						TestTargetID = 6003F589195388D20070C39A;
 					};
@@ -390,74 +393,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		01725737104FDF28F8883F89 /* Embed Pods Frameworks */ = {
+		241A642BB55123F671A30CDB /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZSWTappableLabel_Example/Pods-ZSWTappableLabel_Example-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		303C86B6402AA600AF4B1F0B /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZSWTappableLabel_Example/Pods-ZSWTappableLabel_Example-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		52800981A1F68BC9A31F25D3 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		996F30E836D8B14F682188BE /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Tests/Pods-Tests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C01A3BBC0EFAEAB69C57DD3B /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -465,19 +408,79 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Tests/Pods-Tests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		CE18D40718277C657992E3CD /* Check Pods Manifest.lock */ = {
+		2949A0B5099EC9640514E55D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		638BC9F2078B90D7BE7CE7A8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		77A9FFEBC4D2F519374DBC21 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZSWTappableLabel_Example/Pods-ZSWTappableLabel_Example-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D218C61965177FB2BFE93097 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZSWTappableLabel_Example/Pods-ZSWTappableLabel_Example-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E5C72CB483456806D6ACE16C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Tests/Pods-Tests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -615,7 +618,7 @@
 		};
 		6003F5C0195388D20070C39A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8888AAE3F0A56356BFD6DC30 /* Pods-ZSWTappableLabel_Example.debug.xcconfig */;
+			baseConfigurationReference = B489BE10F69914A015A3B20E /* Pods-ZSWTappableLabel_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -628,6 +631,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "ZSWTappableLabel/ZSWTappableLabel_Example-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -635,7 +639,7 @@
 		};
 		6003F5C1195388D20070C39A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 52C6DC99AB650CA0A3515A3C /* Pods-ZSWTappableLabel_Example.release.xcconfig */;
+			baseConfigurationReference = EF668BCCFF63A0470C3D2E34 /* Pods-ZSWTappableLabel_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -647,6 +651,7 @@
 				MODULE_NAME = ExampleApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "ZSWTappableLabel/ZSWTappableLabel_Example-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -654,7 +659,7 @@
 		};
 		6003F5C3195388D20070C39A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 34097BFF3CB9AFDD26A8A1F5 /* Pods-Tests.debug.xcconfig */;
+			baseConfigurationReference = AC49F6A892919C130D6F5530 /* Pods-Tests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -677,7 +682,7 @@
 		};
 		6003F5C4195388D20070C39A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B10A2A1C5130F4803544B103 /* Pods-Tests.release.xcconfig */;
+			baseConfigurationReference = 48D9CAFA7C85FFBDE3E5A1E1 /* Pods-Tests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (

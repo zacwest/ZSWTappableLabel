@@ -23,7 +23,7 @@ extension ZSWTaggedStringOptions {
      - Returns: The `NSAttributedString` attributes you wish to be applied for the tag.
      
      */
-    public typealias DynamicAttributes = (tagName: String, tagAttributes: [String: AnyObject], existingStringAttributes: [String: AnyObject]) -> [String: AnyObject]
+    public typealias DynamicAttributes = (_ tagName: String, _ tagAttributes: [String: Any], _ existingStringAttributes: [String: Any]) -> [String: Any]
     
     /**
      Attributes to be applied to an attributed string.
@@ -32,14 +32,14 @@ extension ZSWTaggedStringOptions {
      - Static: Always returns the same attributes.
      */
     public enum Attributes {
-        case Dynamic(DynamicAttributes)
-        case Static([String: AnyObject])
+        case dynamic(DynamicAttributes)
+        case `static`([String: Any])
         
         init(wrapper: ZSWTaggedStringAttribute) {
             if let dictionary = wrapper.staticDictionary {
-                self = .Static(dictionary)
+                self = .static(dictionary)
             } else if let block = wrapper.dynamicAttributes {
-                self = .Dynamic(block)
+                self = .dynamic(block)
             } else {
                 fatalError("Not static or dynamic")
             }
@@ -49,9 +49,9 @@ extension ZSWTaggedStringOptions {
             let wrapper = ZSWTaggedStringAttribute()
             
             switch self {
-            case .Dynamic(let attributes):
+            case .dynamic(let attributes):
                 wrapper.dynamicAttributes = attributes
-            case .Static(let attributes):
+            case .static(let attributes):
                 wrapper.staticDictionary = attributes
             }
             

@@ -86,7 +86,7 @@ static char kInstalledConstraintsKey;
 - (void)setLayoutConstant:(CGFloat)layoutConstant {
     _layoutConstant = layoutConstant;
 
-#if TARGET_OS_MAC && !TARGET_OS_IPHONE
+#if TARGET_OS_MAC && !(TARGET_OS_IPHONE || TARGET_OS_TV)
     if (self.useAnimator) {
         [self.layoutConstraint.animator setConstant:layoutConstant];
     } else {
@@ -175,6 +175,7 @@ static char kInstalledConstraintsKey;
             NSMutableArray *children = NSMutableArray.new;
             for (id attr in attribute) {
                 MASViewConstraint *viewConstraint = [self copy];
+                viewConstraint.layoutRelation = relation;
                 viewConstraint.secondViewAttribute = attr;
                 [children addObject:viewConstraint];
             }
@@ -211,7 +212,7 @@ static char kInstalledConstraintsKey;
 
 #pragma mark - Animator proxy
 
-#if TARGET_OS_MAC && !TARGET_OS_IPHONE
+#if TARGET_OS_MAC && !(TARGET_OS_IPHONE || TARGET_OS_TV)
 
 - (MASConstraint *)animator {
     self.useAnimator = YES;
@@ -288,28 +289,21 @@ static char kInstalledConstraintsKey;
 #pragma mark - MASConstraint
 
 - (void)activate {
-    if ([self supportsActiveProperty] && self.layoutConstraint) {
-        if (self.hasBeenInstalled) {
-            return;
-        }
-        self.layoutConstraint.active = YES;
-        [self.firstViewAttribute.view.mas_installedConstraints addObject:self];
-    } else {
-        [self install];
-    }
+    [self install];
 }
 
 - (void)deactivate {
-    if ([self supportsActiveProperty]) {
-        self.layoutConstraint.active = NO;
-        [self.firstViewAttribute.view.mas_installedConstraints removeObject:self];
-    } else {
-        [self uninstall];
-    }
+    [self uninstall];
 }
 
 - (void)install {
     if (self.hasBeenInstalled) {
+        return;
+    }
+    
+    if ([self supportsActiveProperty] && self.layoutConstraint) {
+        self.layoutConstraint.active = YES;
+        [self.firstViewAttribute.view.mas_installedConstraints addObject:self];
         return;
     }
     
@@ -387,6 +381,12 @@ static char kInstalledConstraintsKey;
 }
 
 - (void)uninstall {
+    if ([self supportsActiveProperty]) {
+        self.layoutConstraint.active = NO;
+        [self.firstViewAttribute.view.mas_installedConstraints removeObject:self];
+        return;
+    }
+    
     [self.installedView removeConstraint:self.layoutConstraint];
     self.layoutConstraint = nil;
     self.installedView = nil;

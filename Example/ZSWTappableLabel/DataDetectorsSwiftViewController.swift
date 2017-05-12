@@ -22,7 +22,7 @@ class DataDetectorsSwiftViewController: UIViewController, ZSWTappableLabelTapDel
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = UIColor.whiteColor()
+        view.backgroundColor = .white
         
         label.tapDelegate = self
         
@@ -32,43 +32,43 @@ class DataDetectorsSwiftViewController: UIViewController, ZSWTappableLabelTapDel
         let attributedString = NSMutableAttributedString(string: string, attributes: nil)
         let range = NSRange(location: 0, length: (string as NSString).length)
         
-        detector.enumerateMatchesInString(attributedString.string, options: [], range: range) { (result, flags, _) in
+        detector.enumerateMatches(in: attributedString.string, options: [], range: range) { (result, flags, _) in
             guard let result = result else { return }
             
-            var attributes = [String: AnyObject]()
+            var attributes = [String: Any]()
             attributes[ZSWTappableLabelTappableRegionAttributeName] = true
-            attributes[ZSWTappableLabelHighlightedBackgroundAttributeName] = UIColor.lightGrayColor()
-            attributes[ZSWTappableLabelHighlightedForegroundAttributeName] = UIColor.whiteColor()
-            attributes[NSUnderlineStyleAttributeName] = NSUnderlineStyle.StyleSingle.rawValue
+            attributes[ZSWTappableLabelHighlightedBackgroundAttributeName] = UIColor.lightGray
+            attributes[ZSWTappableLabelHighlightedForegroundAttributeName] = UIColor.white
+            attributes[NSUnderlineStyleAttributeName] = NSUnderlineStyle.styleSingle.rawValue
             attributes[DataDetectorsSwiftViewController.TextCheckingResultAttributeName] = result
             attributedString.addAttributes(attributes, range: result.range)
         }
         label.attributedText = attributedString
         
         view.addSubview(label)
-        label.snp_makeConstraints { make in
+        label.snp.makeConstraints { make in
             make.edges.equalTo(view)
         }
     }
     
     // MARK: - ZSWTappableLabelTapDelegate
     
-    func tappableLabel(tappableLabel: ZSWTappableLabel, tappedAtIndex idx: Int, withAttributes attributes: [String : AnyObject]) {
-        var URL: NSURL?
+    func tappableLabel(_ tappableLabel: ZSWTappableLabel, tappedAt idx: Int, withAttributes attributes: [String : Any]) {
+        var URL: URL?
         
         if let result = attributes[DataDetectorsSwiftViewController.TextCheckingResultAttributeName] as? NSTextCheckingResult {
             switch result.resultType {
-            case [.Address]:
+            case [.address]:
                 print("Address components: \(result.addressComponents)")
-            case [.PhoneNumber]:
-                let components = NSURLComponents()
+            case [.phoneNumber]:
+                var components = URLComponents()
                 components.scheme = "tel"
                 components.host = result.phoneNumber
-                URL = components.URL
-            case [.Date]:
+                URL = components.url
+            case [.date]:
                 print("Date: \(result.date)")
-            case [.Link]:
-                URL = result.URL
+            case [.link]:
+                URL = result.url
             default:
                 break
             }
@@ -76,13 +76,13 @@ class DataDetectorsSwiftViewController: UIViewController, ZSWTappableLabelTapDel
         
         if let URL = URL {
             if #available(iOS 9, *) {
-                if ["http", "https"].contains(URL.scheme.lowercaseString) {
-                    showViewController(SFSafariViewController(URL: URL), sender: self)
+                if let scheme = URL.scheme?.lowercased(), ["http", "https"].contains(scheme) {
+                    show(SFSafariViewController(url: URL), sender: self)
                 } else {
-                    UIApplication.sharedApplication().openURL(URL)
+                    UIApplication.shared.openURL(URL)
                 }
             } else {
-                UIApplication.sharedApplication().openURL(URL)
+                UIApplication.shared.openURL(URL)
             }
         }
     }
