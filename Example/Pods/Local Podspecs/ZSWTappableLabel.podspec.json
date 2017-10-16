@@ -1,6 +1,6 @@
 {
   "name": "ZSWTappableLabel",
-  "version": "1.3",
+  "version": "1.3.1",
   "summary": "UILabel subclass in which substrings links can be tapped",
   "description": "NSAttributedStrings presented in ZSWTappableLabel can be tapped or long-pressed\nin subranges you specify using attributes.\nRead more: https://github.com/zacwest/ZSWTappableLabel",
   "homepage": "https://github.com/zacwest/ZSWTappableLabel",
@@ -10,7 +10,7 @@
   },
   "source": {
     "git": "https://github.com/zacwest/ZSWTappableLabel.git",
-    "tag": "1.3"
+    "tag": "1.3.1"
   },
   "social_media_url": "https://twitter.com/zacwest",
   "platforms": {

@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef NSDictionary<NSString *, id> * _Nonnull(^ZSWDynamicAttributes)(NSString *_Nonnull tagName, NSDictionary<NSString *, id> *_Nonnull tagAttributes, NSDictionary<NSString *, id> *_Nonnull existingStringAttributes) NS_SWIFT_UNAVAILABLE("Use the enumful setters, which have a better closure wrapper with names");
+typedef NSDictionary<NSAttributedStringKey, id> * _Nonnull(^ZSWDynamicAttributes)(NSString *_Nonnull tagName, NSDictionary<NSString *, id> *_Nonnull tagAttributes, NSDictionary<NSAttributedStringKey, id> *_Nonnull existingStringAttributes) NS_SWIFT_UNAVAILABLE("Use the enumful setters, which have a better closure wrapper with names");
 
 @interface ZSWTaggedStringOptions : NSObject <NSCopying>
 
@@ -24,12 +24,12 @@ typedef NSDictionary<NSString *, id> * _Nonnull(^ZSWDynamicAttributes)(NSString 
 + (ZSWTaggedStringOptions *)defaultOptions;
 
 + (ZSWTaggedStringOptions *)options;
-+ (ZSWTaggedStringOptions *)optionsWithBaseAttributes:(NSDictionary<NSString *, id> *)attributes;
-- (instancetype)initWithBaseAttributes:(NSDictionary<NSString *, id> *)attributes;
++ (ZSWTaggedStringOptions *)optionsWithBaseAttributes:(NSDictionary<NSAttributedStringKey, id> *)attributes;
+- (instancetype)initWithBaseAttributes:(NSDictionary<NSAttributedStringKey, id> *)attributes;
 
-@property (nonatomic, copy) NSDictionary<NSString *, id> *baseAttributes;
+@property (nonatomic, copy) NSDictionary<NSAttributedStringKey, id> *baseAttributes;
 
-- (void)setAttributes:(nullable NSDictionary<NSString *, id> *)attributes forTagName:(NSString *)tagName NS_SWIFT_UNAVAILABLE("Use the enum-ful replacement. You may need to include the Swift subpod.");
+- (void)setAttributes:(nullable NSDictionary<NSAttributedStringKey, id> *)attributes forTagName:(NSString *)tagName NS_SWIFT_UNAVAILABLE("Use the enum-ful replacement. You may need to include the Swift subpod.");
 - (void)setDynamicAttributes:(nullable ZSWDynamicAttributes)dynamicAttributes forTagName:(NSString *)tagName NS_SWIFT_UNAVAILABLE("Use the enum-ful replacement. You may need to include the Swift subpod.");
 
 @property (nullable, nonatomic, copy) ZSWDynamicAttributes unknownTagDynamicAttributes NS_SWIFT_UNAVAILABLE("Use the enum-ful replacement. You may need to include the Swift subpod.");

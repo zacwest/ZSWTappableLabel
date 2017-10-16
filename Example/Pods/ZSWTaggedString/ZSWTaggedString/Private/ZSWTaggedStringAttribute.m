@@ -40,7 +40,7 @@
     return (NSUInteger)(self.dynamicAttributes) + self.staticDictionary.hash;
 }
 
-- (NSDictionary<NSString *, id> *)attributesForTag:(ZSWStringParserTag *)tag forString:(NSAttributedString *)string {
+- (NSDictionary<NSAttributedStringKey, id> *)attributesForTag:(ZSWStringParserTag *)tag forString:(NSAttributedString *)string {
     if (self.staticDictionary) {
         return self.staticDictionary;
     }

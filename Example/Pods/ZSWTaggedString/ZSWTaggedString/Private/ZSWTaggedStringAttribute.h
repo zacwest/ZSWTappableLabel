@@ -11,8 +11,8 @@
 @class ZSWStringParserTag;
 
 @interface ZSWTaggedStringAttribute: NSObject <NSCopying>
-@property (nonatomic, copy) NSDictionary<NSString *, id> *staticDictionary;
+@property (nonatomic, copy) NSDictionary<NSAttributedStringKey, id> *staticDictionary;
 @property (nonatomic, copy) ZSWDynamicAttributes dynamicAttributes;
 
-- (NSDictionary<NSString *, id> *)attributesForTag:(ZSWStringParserTag *)tag forString:(NSAttributedString *)string;
+- (NSDictionary<NSAttributedStringKey, id> *)attributesForTag:(ZSWStringParserTag *)tag forString:(NSAttributedString *)string;
 @end

@@ -108,7 +108,7 @@ static ZSWTaggedStringOptions *ZSWStringParserDefaultOptions;
     self._private_tagToAttributesMap = mutableMap;
 }
 
-- (void)setAttributes:(NSDictionary<NSString *,id> *)dict forTagName:(NSString *)tagName {
+- (void)setAttributes:(NSDictionary<NSAttributedStringKey,id> *)dict forTagName:(NSString *)tagName {
     NSParameterAssert(tagName.length > 0);
     
     ZSWTaggedStringAttribute *attribute = [[ZSWTaggedStringAttribute alloc] init];
@@ -145,7 +145,7 @@ static ZSWTaggedStringOptions *ZSWStringParserDefaultOptions;
     
     for (ZSWStringParserTag *tag in tags) {
         ZSWTaggedStringAttribute *tagValue = self._private_tagToAttributesMap[tag.tagName.lowercaseString];
-        NSDictionary<NSString *, id> *attributes = nil;
+        NSDictionary<NSAttributedStringKey, id> *attributes = nil;
         
         if (tagValue) {
             attributes = [tagValue attributesForTag:tag forString:string];
