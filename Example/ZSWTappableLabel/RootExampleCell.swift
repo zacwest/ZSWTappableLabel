@@ -61,7 +61,7 @@ class RootExampleCell: UITableViewCell {
         fatalError()
     }
     
-    func selectButton(_ sender: UIButton) {
+    @objc func selectButton(_ sender: UIButton) {
         if sender === swiftButton {
             delegate?.rootExampleCellSelectedSwift(self)
         } else {

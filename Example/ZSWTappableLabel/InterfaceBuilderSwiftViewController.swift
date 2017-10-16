@@ -30,9 +30,9 @@ class InterfaceBuilderSwiftViewController: UIViewController, ZSWTappableLabelTap
             let range = (attributedText.string as NSString).range(of: "label")
             if range.location != NSNotFound {
                 attributedText.addAttributes([
-                    ZSWTappableLabelTappableRegionAttributeName: true,
-                    NSLinkAttributeName: URL(string: "https://gotofail.com")!,
-                    ZSWTappableLabelHighlightedBackgroundAttributeName: UIColor.lightGray
+                    .tappableRegion: true,
+                    .link: URL(string: "https://gotofail.com")!,
+                    .tappableHighlightedBackgroundColor: UIColor.lightGray
                 ], range: range)
             }
             label.attributedText = attributedText
@@ -40,8 +40,8 @@ class InterfaceBuilderSwiftViewController: UIViewController, ZSWTappableLabelTap
     }
 
     // MARK: - ZSWTappableLabelTapDelegate
-    func tappableLabel(_ tappableLabel: ZSWTappableLabel, tappedAt idx: Int, withAttributes attributes: [String : Any]) {
-        guard let URL = attributes[NSLinkAttributeName] as? URL else {
+    func tappableLabel(_ tappableLabel: ZSWTappableLabel, tappedAt idx: Int, withAttributes attributes: [NSAttributedStringKey : Any]) {
+        guard let URL = attributes[.link] as? URL else {
             return
         }
         
