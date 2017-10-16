@@ -32,7 +32,7 @@ class SimpleSwiftViewController: UIViewController, ZSWTappableLabelTapDelegate {
             .tappableHighlightedForegroundColor: UIColor.white,
             .foregroundColor: UIColor.blue,
             .underlineStyle: NSUnderlineStyle.styleSingle.rawValue,
-            SimpleSwiftViewController.URLAttributeName: URL(string: "http://imgur.com/gallery/VgXCk")!
+            .link: URL(string: "http://imgur.com/gallery/VgXCk")!
         ]
         
         label.attributedText = NSAttributedString(string: string, attributes: attributes)

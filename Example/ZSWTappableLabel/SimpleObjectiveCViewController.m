@@ -52,7 +52,7 @@ static NSString *const URLAttributeName = @"URL";
 
 #pragma mark - ZSWTappableLabelTapDelegate
 
-- (void)tappableLabel:(ZSWTappableLabel *)tappableLabel tappedAtIndex:(NSInteger)idx withAttributes:(NSDictionary<NSString *,id> *)attributes {
+- (void)tappableLabel:(ZSWTappableLabel *)tappableLabel tappedAtIndex:(NSInteger)idx withAttributes:(NSDictionary<NSAttributedStringKey ,id> *)attributes {
     NSURL *URL = attributes[URLAttributeName];
     if ([URL isKindOfClass:[NSURL class]]) {
         if ([SFSafariViewController class] != nil) {

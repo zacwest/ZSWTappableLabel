@@ -36,7 +36,7 @@
 
 #pragma mark - ZSWTappableLabelTapDelegate
 
-- (void)tappableLabel:(ZSWTappableLabel *)tappableLabel tappedAtIndex:(NSInteger)idx withAttributes:(NSDictionary<NSString *,id> *)attributes {
+- (void)tappableLabel:(ZSWTappableLabel *)tappableLabel tappedAtIndex:(NSInteger)idx withAttributes:(NSDictionary<NSAttributedStringKey, id> *)attributes {
     NSURL *URL = attributes[NSLinkAttributeName];
     if ([URL isKindOfClass:[NSURL class]]) {
         if ([SFSafariViewController class] != nil) {
