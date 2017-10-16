@@ -1,3 +1,7 @@
+# 2.0 (2017-10-16)
+
+- Updated for Xcode 9 (and Swift 4).
+
 # 1.3.1 (2017-05-12)
 
 - Fixes some cases where the last line in a label, when sized to fit, would not be tappable on iOS 10.
