@@ -21,14 +21,14 @@ NS_ASSUME_NONNULL_BEGIN
  * Value is a UIColor. When a touch event occurs within this range, the attribute
  * \a NSBackgroundColorAttributeName is applied to the tappable region.
  */
-extern NSString *const ZSWTappableLabelHighlightedBackgroundAttributeName;
+extern NSAttributedStringKey const ZSWTappableLabelHighlightedBackgroundAttributeName NS_SWIFT_NAME(tappableHighlightedBackgroundColor);
 /*!
  * @brief Highlight the text color when selected
  *
  * Value is a UIColor. When a touch event occurs within this range, the attribute
  * \a NSForegroundColorAttributeName is applied to the tappable region.
  */
-extern NSString *const ZSWTappableLabelHighlightedForegroundAttributeName;
+extern NSAttributedStringKey const ZSWTappableLabelHighlightedForegroundAttributeName NS_SWIFT_NAME(tappableHighlightedForegroundColor);
 
 /*!
  * @brief A highlighted region - enables interaction
@@ -36,7 +36,7 @@ extern NSString *const ZSWTappableLabelHighlightedForegroundAttributeName;
  * Value is an NSNumber (BOOL). If the location of a touch has this attribute,
  * the \ref -[ZSWTappableLabel tapDelegate] will be invoked.
  */
-extern NSString *const ZSWTappableLabelTappableRegionAttributeName;
+extern NSAttributedStringKey const ZSWTappableLabelTappableRegionAttributeName NS_SWIFT_NAME(tappableRegion);
 
 #pragma mark - Tap delegate
 
@@ -59,7 +59,7 @@ extern NSString *const ZSWTappableLabelTappableRegionAttributeName;
  */
 - (void)tappableLabel:(ZSWTappableLabel *)tappableLabel
         tappedAtIndex:(NSInteger)idx
-       withAttributes:(NSDictionary<NSString *, id> *)attributes;
+       withAttributes:(NSDictionary<NSAttributedStringKey, id> *)attributes;
 @end
 
 @protocol ZSWTappableLabelLongPressDelegate
@@ -82,7 +82,7 @@ extern NSString *const ZSWTappableLabelTappableRegionAttributeName;
  */
 - (void)tappableLabel:(ZSWTappableLabel *)tappableLabel
    longPressedAtIndex:(NSInteger)idx
-       withAttributes:(NSDictionary<NSString *, id> *)attributes;
+       withAttributes:(NSDictionary<NSAttributedStringKey, id> *)attributes;
 @end
 
 #pragma mark -

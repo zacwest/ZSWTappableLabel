@@ -54,7 +54,7 @@ static NSString *const TextCheckingResultAttributeName = @"TextCheckingResultAtt
 
 #pragma mark - ZSWTappableLabelTapDelegate
 
-- (void)tappableLabel:(ZSWTappableLabel *)tappableLabel tappedAtIndex:(NSInteger)idx withAttributes:(NSDictionary<NSString *,id> *)attributes {
+- (void)tappableLabel:(ZSWTappableLabel *)tappableLabel tappedAtIndex:(NSInteger)idx withAttributes:(NSDictionary<NSAttributedStringKey, id> *)attributes {
     NSURL *URL;
     
     NSTextCheckingResult *result = attributes[TextCheckingResultAttributeName];

@@ -16,7 +16,7 @@ class SimpleSwiftViewController: UIViewController, ZSWTappableLabelTapDelegate {
         return label
     }()
     
-    static let URLAttributeName = "URL"
+    static let URLAttributeName = NSAttributedStringKey(rawValue: "URL")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,13 +26,13 @@ class SimpleSwiftViewController: UIViewController, ZSWTappableLabelTapDelegate {
         label.tapDelegate = self
         
         let string = NSLocalizedString("Privacy Policy", comment: "")
-        let attributes: [String: Any] = [
-            ZSWTappableLabelTappableRegionAttributeName: true,
-            ZSWTappableLabelHighlightedBackgroundAttributeName: UIColor.lightGray,
-            ZSWTappableLabelHighlightedForegroundAttributeName: UIColor.white,
-            NSForegroundColorAttributeName: UIColor.blue,
-            NSUnderlineStyleAttributeName: NSUnderlineStyle.styleSingle.rawValue,
-            SimpleSwiftViewController.URLAttributeName: URL(string: "http://imgur.com/gallery/VgXCk")!
+        let attributes: [NSAttributedStringKey: Any] = [
+            .tappableRegion: true,
+            .tappableHighlightedBackgroundColor: UIColor.lightGray,
+            .tappableHighlightedForegroundColor: UIColor.white,
+            .foregroundColor: UIColor.blue,
+            .underlineStyle: NSUnderlineStyle.styleSingle.rawValue,
+            .link: URL(string: "http://imgur.com/gallery/VgXCk")!
         ]
         
         label.attributedText = NSAttributedString(string: string, attributes: attributes)
@@ -45,7 +45,7 @@ class SimpleSwiftViewController: UIViewController, ZSWTappableLabelTapDelegate {
     
     // MARK: - ZSWTappableLabelTapDelegate
     
-    func tappableLabel(_ tappableLabel: ZSWTappableLabel, tappedAt idx: Int, withAttributes attributes: [String : Any]) {
+    func tappableLabel(_ tappableLabel: ZSWTappableLabel, tappedAt idx: Int, withAttributes attributes: [NSAttributedStringKey : Any]) {
         guard let URL = attributes[SimpleSwiftViewController.URLAttributeName] as? URL else {
             return
         }

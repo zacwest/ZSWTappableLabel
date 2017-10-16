@@ -20,9 +20,9 @@
 
 #pragma mark -
 
-NSString *const ZSWTappableLabelHighlightedBackgroundAttributeName = @"ZSWTappableLabelHighlightedBackgroundAttributeName";
-NSString *const ZSWTappableLabelTappableRegionAttributeName = @"ZSWTappableLabelTappableRegionAttributeName";
-NSString *const ZSWTappableLabelHighlightedForegroundAttributeName = @"ZSWTappableLabelHighlightedForegroundAttributeName";
+NSAttributedStringKey const ZSWTappableLabelHighlightedBackgroundAttributeName = @"ZSWTappableLabelHighlightedBackgroundAttributeName";
+NSAttributedStringKey const ZSWTappableLabelTappableRegionAttributeName = @"ZSWTappableLabelTappableRegionAttributeName";
+NSAttributedStringKey const ZSWTappableLabelHighlightedForegroundAttributeName = @"ZSWTappableLabelHighlightedForegroundAttributeName";
 
 NSString *const ZSWTappableLabelCharacterIndexUserInfoKey = @"CharacterIndex";
 
@@ -331,7 +331,7 @@ typedef NS_ENUM(NSInteger, ZSWTappableLabelNotifyType) {
     
     UIColor *foregroundColor = [attributedString attribute:ZSWTappableLabelHighlightedForegroundAttributeName
                                                    atIndex:characterIndex
-                                            longestEffectiveRange:&foregroundEffectiveRange
+                                     longestEffectiveRange:&foregroundEffectiveRange
                                                    inRange:NSMakeRange(0, attributedString.length)];
     
     if (highlightColor || foregroundColor) {

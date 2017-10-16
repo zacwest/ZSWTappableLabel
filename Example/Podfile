@@ -5,8 +5,8 @@ platform :ios, '8.0'
 
 target :ZSWTappableLabel_Example do
   pod "ZSWTappableLabel", :path => "../"
-  pod 'ZSWTaggedString', '~> 3.0'
-  pod 'ZSWTaggedString/Swift', '~> 3.0'
+  pod 'ZSWTaggedString', '~> 4.0'
+  pod 'ZSWTaggedString/Swift', '~> 4.0'
   pod 'SnapKit'
   pod 'Masonry'
 

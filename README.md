@@ -13,13 +13,13 @@ Let's create a string that's entirely tappable and shown with an underline:
 
 ```swift
 let string = NSLocalizedString("Privacy Policy", comment: "")
-let attributes: [String: Any] = [
-  ZSWTappableLabelTappableRegionAttributeName: true,
-  ZSWTappableLabelHighlightedBackgroundAttributeName: UIColor.lightGray,
-  ZSWTappableLabelHighlightedForegroundAttributeName: UIColor.white,
-  NSForegroundColorAttributeName: UIColor.blue,
-  NSUnderlineStyleAttributeName: NSUnderlineStyle.styleSingle.rawValue,
-  SimpleSwiftViewController.URLAttributeName: URL(string: "http://imgur.com/gallery/VgXCk")!
+let attributes: [NSAttributedStringKey: Any] = [
+  .tappableRegion: true,
+  .tappableHighlightedBackgroundColor: UIColor.lightGray,
+  .tappableHighlightedForegroundColor: UIColor.white,
+  .foregroundColor: UIColor.blue,
+  .underlineStyle: NSUnderlineStyle.styleSingle.rawValue,
+  .link: URL(string: "http://imgur.com/gallery/VgXCk")!
 ]
 
 label.attributedText = NSAttributedString(string: string, attributes: attributes)
@@ -33,9 +33,7 @@ NSDictionary *a = @{
   ZSWTappableLabelHighlightedForegroundAttributeName: [UIColor whiteColor],
   NSForegroundColorAttributeName: [UIColor blueColor],
   NSUnderlineStyleAttributeName: @(NSUnderlineStyleSingle),
-
-  // You could use NSLinkAttributeName, but this forces foreground color
-  @"URL": [NSURL URLWithString:@"http://imgur.com/gallery/VgXCk"],
+  NSLinkAttributeName: [NSURL URLWithString:@"http://imgur.com/gallery/VgXCk"],
 };
 
 label.attributedText = [[NSAttributedString alloc] initWithString:s attributes:a];
@@ -48,8 +46,8 @@ This results in a label which renders like:
 Setting your controller as the `tapDelegate` of the label results in the following method call when tapped:
 
 ```swift
-func tappableLabel(_ tappableLabel: ZSWTappableLabel, tappedAt idx: Int, withAttributes attributes: [String : Any]) {
-  if let url = attributes["URL"] as? URL {
+func tappableLabel(_ tappableLabel: ZSWTappableLabel, tappedAt idx: Int, withAttributes attributes: [NSAttributedStringKey : Any]) {
+  if let url = attributes[.link] as? URL {
     UIApplication.shared.openURL(url)
   }
 }
@@ -58,7 +56,7 @@ func tappableLabel(_ tappableLabel: ZSWTappableLabel, tappedAt idx: Int, withAtt
 ```objective-c
 - (void)tappableLabel:(ZSWTappableLabel *)tappableLabel
         tappedAtIndex:(NSInteger)idx
-       withAttributes:(NSDictionary *)attributes {
+       withAttributes:(NSDictionary<NSAttributedStringKey, id> *)attributes {
   [[UIApplication sharedApplication] openURL:attributes[@"URL"]];
 }
 ```
@@ -68,8 +66,8 @@ func tappableLabel(_ tappableLabel: ZSWTappableLabel, tappedAt idx: Int, withAtt
 You may optionally support long-presses by setting a `longPressDelegate` on the label. This behaves very similarly to the `tapDelegate`:
 
 ```swift
-func tappableLabel(_ tappableLabel: ZSWTappableLabel, longPressedAt idx: Int, withAttributes attributes: [String : Any]) {
-  guard let URL = attributes["URL"] as? URL else {
+func tappableLabel(_ tappableLabel: ZSWTappableLabel, longPressedAt idx: Int, withAttributes attributes: [NSAttributedStringKey : Any]) {
+  guard let URL = attributes[.link] as? URL else {
     return
   }
   
@@ -81,8 +79,8 @@ func tappableLabel(_ tappableLabel: ZSWTappableLabel, longPressedAt idx: Int, wi
 ```objective-c
 - (void)tappableLabel:(ZSWTappableLabel *)tappableLabel 
    longPressedAtIndex:(NSInteger)idx 
-       withAttributes:(NSDictionary<NSString *,id> *)attributes {
-  NSURL *URL = attributes[URLAttributeName];
+       withAttributes:(NSDictionary<NSAttributedStringKey, id> *)attributes {
+  NSURL *URL = attributes[NSLinkAttributeName];
   if ([URL isKindOfClass:[NSURL class]]) {
     UIActivityViewController *activityController = [[UIActivityViewController alloc] initWithActivityItems:@[ URL ] applicationActivities:nil];
     [self presentViewController:activityController animated:YES completion:nil];
@@ -106,12 +104,12 @@ let range = NSRange(location: 0, length: (string as NSString).length)
 detector.enumerateMatches(in: attributedString.string, options: [], range: range) { (result, flags, _) in
   guard let result = result else { return }
   
-  var attributes = [String: Any]()
-  attributes[ZSWTappableLabelTappableRegionAttributeName] = true
-  attributes[ZSWTappableLabelHighlightedBackgroundAttributeName] = UIColor.lightGray
-  attributes[ZSWTappableLabelHighlightedForegroundAttributeName] = UIColor.white
-  attributes[NSUnderlineStyleAttributeName] = NSUnderlineStyle.styleSingle.rawValue
-  attributes[DataDetectorsSwiftViewController.TextCheckingResultAttributeName] = result
+  var attributes = [NSAttributedStringKey: Any]()
+  attributes[.tappableRegion] = true
+  attributes[.tappableHighlightedBackgroundColor] = UIColor.lightGray
+  attributes[.tappableHighlightedForegroundColor] = UIColor.white
+  attributes[.underlineStyle] = NSUnderlineStyle.styleSingle.rawValue
+  attributes[.init(rawValue: "NSTextCheckingResult")] = result
   attributedString.addAttributes(attributes, range: result.range)
 }
 label.attributedText = attributedString
@@ -142,8 +140,8 @@ This results in a label which renders like:
 We can wire up the `tapDelegate` to receive the checking result and handle each result type when the user taps on the link:
 
 ```swift
-func tappableLabel(tappableLabel: ZSWTappableLabel, tappedAtIndex idx: Int, withAttributes attributes: [String : Any]) {
-  if let result = attributes["NSTextCheckingResult"] as? NSTextCheckingResult {
+func tappableLabel(tappableLabel: ZSWTappableLabel, tappedAtIndex idx: Int, withAttributes attributes: [NSAttributedStringKey : Any]) {
+  if let result = attributes[.init(rawValue: "NSTextCheckingResult")] as? NSTextCheckingResult {
     switch result.resultType {
     case [.address]:
       print("Address components: \(result.addressComponents)")
@@ -163,7 +161,7 @@ func tappableLabel(tappableLabel: ZSWTappableLabel, tappedAtIndex idx: Int, with
 ```objective-c
 - (void)tappableLabel:(ZSWTappableLabel *)tappableLabel
         tappedAtIndex:(NSInteger)idx
-       withAttributes:(NSDictionary *)attributes {
+       withAttributes:(NSDictionary<NSAttributedStringKey, id> *)attributes {
   NSTextCheckingResult *result = attributes[@"NSTextCheckingResult"];
   if (result) {
     switch (result.resultType) {
@@ -202,7 +200,7 @@ You can create such a string using a simple ZSWTaggedString:
 let options = ZSWTaggedStringOptions()
 options["link"] = .dynamic({ tagName, tagAttributes, stringAttributes in
   guard let type = tagAttributes["type"] as? String else {
-    return [String: Any]()
+    return [NSAttributedStringKey: AnyObject]()
   }
   
   var foundURL: URL?
@@ -217,16 +215,16 @@ options["link"] = .dynamic({ tagName, tagAttributes, stringAttributes in
   }
   
   guard let URL = foundURL else {
-    return [String: Any]()
+    return [NSAttributedStringKey: AnyObject]()
   }
   
   return [
-    ZSWTappableLabelTappableRegionAttributeName: true,
-    ZSWTappableLabelHighlightedBackgroundAttributeName: UIColor.lightGray,
-    ZSWTappableLabelHighlightedForegroundAttributeName: UIColor.white,
-    NSForegroundColorAttributeName: UIColor.blue,
-    NSUnderlineStyleAttributeName: NSUnderlineStyle.styleSingle.rawValue,
-    "URL": URL
+    .tappableRegion: true,
+    .tappableHighlightedBackgroundColor: UIColor.lightGray,
+    .tappableHighlightedForegroundColor: UIColor.white,
+    .foregroundColor: UIColor.blue,
+    .underlineStyle: NSUnderlineStyle.styleSingle.rawValue,
+    .link: foundURL
   ]
 })
 
@@ -290,7 +288,7 @@ For example, if you place a UITapGestureRecognizer on the label, it will only fi
 ZSWTappableLabel is available through [CocoaPods](http://cocoapods.org). To install it, simply add the following line to your Podfile:
 
 ```ruby
-pod "ZSWTappableLabel", "~> 1.3.1"
+pod "ZSWTappableLabel", "~> 2.0"
 ```
 
 ## License
