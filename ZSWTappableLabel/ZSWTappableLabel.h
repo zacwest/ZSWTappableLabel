@@ -38,6 +38,13 @@ extern NSAttributedStringKey const ZSWTappableLabelHighlightedForegroundAttribut
  */
 extern NSAttributedStringKey const ZSWTappableLabelTappableRegionAttributeName NS_SWIFT_NAME(tappableRegion);
 
+/*!
+ * @brief URL
+ *
+ * Value is an NSURL. Used for store URL in text.
+ */
+extern NSAttributedStringKey const ZSWTappableLabelTappableURLAttributeName NS_SWIFT_NAME(url);
+
 #pragma mark - Tap delegate
 
 @class ZSWTappableLabel;

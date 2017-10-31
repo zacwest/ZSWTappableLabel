@@ -23,6 +23,7 @@
 NSAttributedStringKey const ZSWTappableLabelHighlightedBackgroundAttributeName = @"ZSWTappableLabelHighlightedBackgroundAttributeName";
 NSAttributedStringKey const ZSWTappableLabelTappableRegionAttributeName = @"ZSWTappableLabelTappableRegionAttributeName";
 NSAttributedStringKey const ZSWTappableLabelHighlightedForegroundAttributeName = @"ZSWTappableLabelHighlightedForegroundAttributeName";
+NSAttributedStringKey const ZSWTappableLabelTappableURLAttributeName = @"ZSWTappableLabelTappableURLAttributeName";
 
 NSString *const ZSWTappableLabelCharacterIndexUserInfoKey = @"CharacterIndex";
 
