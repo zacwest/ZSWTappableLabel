@@ -33,8 +33,7 @@ extern NSAttributedStringKey const ZSWTappableLabelHighlightedForegroundAttribut
 /*!
  * @brief A highlighted region - enables interaction
  *
- * Value is an NSNumber (BOOL). If the location of a touch has this attribute,
- * the \ref -[ZSWTappableLabel tapDelegate] will be invoked.
+ * Value is an NSNumber (BOOL). If the location of a touch has this attribute, the \a tapDelegate will be invoked.
  */
 extern NSAttributedStringKey const ZSWTappableLabelTappableRegionAttributeName NS_SWIFT_NAME(tappableRegion);
 
@@ -67,7 +66,7 @@ extern NSAttributedStringKey const ZSWTappableLabelTappableRegionAttributeName N
 /*!
  * @brief The tap delegate of the label
  *
- * You set your delegate using \ref -[ZSWTappableLabel setTapDelegate:]
+ * You set your delegate using \a -setTapDelegate:
  */
 @protocol ZSWTappableLabelTapDelegate
 /*!
@@ -77,7 +76,7 @@ extern NSAttributedStringKey const ZSWTappableLabelTappableRegionAttributeName N
  * @param idx The string index closest to the touch
  * @param attributes The attributes from the attributed string at the given index
  *
- * This method is only invoked if \ref ZSWTappableLabelTappableRegionAttributeName
+ * This method is only invoked if \a ZSWTappableLabelTappableRegionAttributeName
  * is specified in the attributes under the touch.
  */
 - (void)tappableLabel:(ZSWTappableLabel *)tappableLabel
@@ -93,14 +92,14 @@ extern NSAttributedStringKey const ZSWTappableLabelTappableRegionAttributeName N
  * @param idx The string index closest to the touch
  * @param attributes The attributes from the attributed string at the given index
  *
- * This method is only invoked if \ref ZSWTappableLabelTappableRegionAttributeName
+ * This method is only invoked if \a ZSWTappableLabelTappableRegionAttributeName
  * is specified in the attributes under the touch.
  *
  * If the user presses and holds at one spot for at least
- * \ref longPressDuration seconds, this delegate method will be invoked.
+ * \a longPressDuration seconds, this delegate method will be invoked.
  *
  * It may also be invoked by users with accessibility enabled. You should set
- * \ref longPressAccessibilityActionName to give your users
+ * \a longPressAccessibilityActionName to give your users
  * a better description of what this does.
  */
 - (void)tappableLabel:(ZSWTappableLabel *)tappableLabel
@@ -177,7 +176,7 @@ extern NSAttributedStringKey const ZSWTappableLabelTappableRegionAttributeName N
  * How long, in seconds, the user must long press without lifting before
  * the touch should be recognized as a long press.
  *
- * If you do not set a \ref longPressDelegate, a long press does not occur.
+ * If you do not set a \a longPressDelegate, a long press does not occur.
  *
  * This defaults to 0.5 seconds.
  */
@@ -189,7 +188,7 @@ extern NSAttributedStringKey const ZSWTappableLabelTappableRegionAttributeName N
  * Your users will be read this localized string when they choose to
  * dig into the custom actions a link has.
  *
- * If you do not set a \ref longPressDelegate, this action is not included.
+ * If you do not set a \a longPressDelegate, this action is not included.
  *
  * This defaults to 'Open Menu'.
  */
