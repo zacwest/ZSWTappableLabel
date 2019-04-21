@@ -485,10 +485,10 @@ typedef NS_ENUM(NSInteger, ZSWTappableLabelNotifyType) {
         }
         
         NSRange effectiveRange;
-        id value = [self.unmodifiedAttributedText attribute:ZSWTappableLabelTappableRegionAttributeName
+        NSNumber *attribute = [self.unmodifiedAttributedText attribute:ZSWTappableLabelTappableRegionAttributeName
                                                     atIndex:characterIndex
                                              effectiveRange:&effectiveRange];
-        if (!value) {
+        if (![attribute boolValue]) {
             return;
         }
         
