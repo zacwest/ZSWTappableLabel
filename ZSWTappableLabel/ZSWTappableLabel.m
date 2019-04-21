@@ -11,6 +11,14 @@
 
 #import "ZSWTappableLabel.h"
 
+@interface ZSWTappableLabelTappableRegionInfo()
+@property (nonatomic, readwrite) CGRect frame;
+@property (nonatomic, readwrite) NSDictionary<NSAttributedStringKey, id> *attributes;
+@end
+
+@implementation ZSWTappableLabelTappableRegionInfo
+@end
+
 @interface ZSWTappableLabelAccessibilityActionLongPress: UIAccessibilityCustomAction
 @property (nonatomic) NSUInteger characterIndex;
 @end
@@ -164,6 +172,7 @@ typedef NS_ENUM(NSInteger, ZSWTappableLabelNotifyType) {
 - (void)performWithLayoutManager:(void(^)(NSUInteger (^characterIndexAtPoint)(CGPoint point),
                                           CGRect (^frameForCharacterRange)(NSRange characterRange)))layoutManagerBlock
       ignoringGestureRecognizers:(BOOL)ignoreGestureRecognizers {
+    BOOL hadStorage = self.gestureTextStorage != nil;
     [self createTextStorage];
     
     NSTextStorage *textStorage = self.gestureTextStorage;
@@ -206,7 +215,11 @@ typedef NS_ENUM(NSInteger, ZSWTappableLabelNotifyType) {
     layoutManagerBlock(characterIndexAtPoint, frameForCharacterRange);
     
     if (ignoreGestureRecognizers) {
-        self.gestureTextStorage = nil;
+        if (!hadStorage) {
+            // Only clear storage if we created it for this. For example, we may be queried
+            // _during_ a gesture, for something like 3D Touch.
+            self.gestureTextStorage = nil;
+        }
     } else {
         [self destroyTextStorageIfNeeded];
     }
@@ -470,6 +483,34 @@ typedef NS_ENUM(NSInteger, ZSWTappableLabelNotifyType) {
                 break;
         }
     } ignoringGestureRecognizers:NO];
+}
+
+#pragma mark - Public attribute getting
+
+- (ZSWTappableLabelTappableRegionInfo *)tappableRegionInfoAtPoint:(CGPoint)point {
+    __block ZSWTappableLabelTappableRegionInfo *regionInfo;
+    
+    [self performWithLayoutManager:^(NSUInteger (^characterIndexAtPoint)(CGPoint point),
+                                     CGRect (^frameForCharacterRange)(NSRange characterRange)) {
+        NSUInteger characterIndex = characterIndexAtPoint(point);
+        if (characterIndex == NSNotFound) {
+            return;
+        }
+        
+        NSRange effectiveRange;
+        id value = [self.unmodifiedAttributedText attribute:ZSWTappableLabelTappableRegionAttributeName
+                                                    atIndex:characterIndex
+                                             effectiveRange:&effectiveRange];
+        if (!value) {
+            return;
+        }
+        
+        regionInfo = [[ZSWTappableLabelTappableRegionInfo alloc] init];
+        regionInfo.attributes = [self.unmodifiedAttributedText attributesAtIndex:characterIndex effectiveRange:NULL];
+        regionInfo.frame = frameForCharacterRange(effectiveRange);
+    } ignoringGestureRecognizers:YES];
+    
+    return regionInfo;
 }
 
 #pragma mark - Accessibility

@@ -38,6 +38,29 @@ extern NSAttributedStringKey const ZSWTappableLabelHighlightedForegroundAttribut
  */
 extern NSAttributedStringKey const ZSWTappableLabelTappableRegionAttributeName NS_SWIFT_NAME(tappableRegion);
 
+#pragma mark - Data structures
+
+@interface ZSWTappableLabelTappableRegionInfo : NSObject
+/*!
+ * @brief The frame of the tappable region in the label's coordinate space
+ *
+ * If you are setting this as the sourceRect for the previewingContext of a 3D Touch event
+ * you will need to convert it to the sourceView's coordinate space, for example:
+ *
+ *   previewingContext.sourceRect = previewingContext.sourceView.convert(regionInfo.frame, from: label)
+ *
+ * in Swift, or in Objective-C:
+ *
+ *   previewingContext.sourceRect = [previewingContext.sourceView convertRect:regionInfo.frame fromView:self.label];
+ */
+@property (nonatomic, readonly) CGRect frame;
+
+/*!
+ * @brief The attributed string attributes at the point
+ */
+@property (nonatomic, readonly) NSDictionary<NSAttributedStringKey, id> *attributes;
+@end
+
 #pragma mark - Tap delegate
 
 @class ZSWTappableLabel;
@@ -123,6 +146,30 @@ extern NSAttributedStringKey const ZSWTappableLabelTappableRegionAttributeName N
  * @brief Delegate which handles accessibility
  */
 @property (nullable, nonatomic, weak) IBOutlet id<ZSWTappableLabelAccessibilityDelegate> accessibilityDelegate;
+
+/*!
+ * @brief Get the tappable region info at a point
+ *
+ * @param point The point in the label's coordinate space to look for a tappable region
+ *
+ * This is particularly useful if you need to inspect the label's current regions, for example
+ * you are responding to a 3D Touch previewing event and all you know is the point the event is
+ * occurring at.
+ *
+ * It is very important that you convert to the label's coordinate space when asking
+ * for this point information. For example, from a 3D Touch previewing event, you would use:
+ *
+ *   label.convert(location, from: previewingContext.sourceView)
+ *
+ * in Swift, or in Objective-C:
+ *
+ *   [self.label convertPoint:location fromView:previewingContext.sourceView]
+ *
+ * @return The region information if a region is at the point, nil otherwise
+ *
+ * See \a ZSWTappableLabelTappableRegionInfo for the information returned
+ */
+- (nullable ZSWTappableLabelTappableRegionInfo *)tappableRegionInfoAtPoint:(CGPoint)point;
 
 /*!
  * @brief Long press duration
