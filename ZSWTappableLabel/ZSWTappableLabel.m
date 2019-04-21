@@ -10,21 +10,8 @@
 //
 
 #import "ZSWTappableLabel.h"
-
-@interface ZSWTappableLabelTappableRegionInfo()
-@property (nonatomic, readwrite) CGRect frame;
-@property (nonatomic, readwrite) NSDictionary<NSAttributedStringKey, id> *attributes;
-@end
-
-@implementation ZSWTappableLabelTappableRegionInfo
-@end
-
-@interface ZSWTappableLabelAccessibilityActionLongPress: UIAccessibilityCustomAction
-@property (nonatomic) NSUInteger characterIndex;
-@end
-
-@implementation ZSWTappableLabelAccessibilityActionLongPress
-@end
+#import "Private/ZSWTappableLabelTappableRegionInfo+Private.h"
+#import "Private/ZSWTappableLabelAccessibilityActionLongPress.h"
 
 #pragma mark -
 
@@ -487,7 +474,7 @@ typedef NS_ENUM(NSInteger, ZSWTappableLabelNotifyType) {
 
 #pragma mark - Public attribute getting
 
-- (ZSWTappableLabelTappableRegionInfo *)tappableRegionInfoAtPoint:(CGPoint)point {
+- (nullable ZSWTappableLabelTappableRegionInfo *)tappableRegionInfoAtPoint:(CGPoint)point {
     __block ZSWTappableLabelTappableRegionInfo *regionInfo;
     
     [self performWithLayoutManager:^(NSUInteger (^characterIndexAtPoint)(CGPoint point),
@@ -505,12 +492,19 @@ typedef NS_ENUM(NSInteger, ZSWTappableLabelNotifyType) {
             return;
         }
         
-        regionInfo = [[ZSWTappableLabelTappableRegionInfo alloc] init];
-        regionInfo.attributes = [self.unmodifiedAttributedText attributesAtIndex:characterIndex effectiveRange:NULL];
-        regionInfo.frame = frameForCharacterRange(effectiveRange);
+        CGRect frame = frameForCharacterRange(effectiveRange);
+        NSDictionary<NSAttributedStringKey, id> *attributes = [self.unmodifiedAttributedText attributesAtIndex:characterIndex effectiveRange:NULL];
+        
+        regionInfo = [[ZSWTappableLabelTappableRegionInfo alloc] initWithFrame:frame
+                                                                    attributes:attributes
+                                                                 containerView:self];
     } ignoringGestureRecognizers:YES];
     
     return regionInfo;
+}
+
+- (nullable ZSWTappableLabelTappableRegionInfo *)tappableRegionInfoForPreviewingContext:(id<UIViewControllerPreviewing>)previewingContext location:(CGPoint)location {
+    return [self tappableRegionInfoAtPoint:[previewingContext.sourceView convertPoint:location toView:self]];
 }
 
 #pragma mark - Accessibility

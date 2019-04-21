@@ -10,6 +10,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ZSWTappableLabelTappableRegionInfo.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -36,29 +37,6 @@ extern NSAttributedStringKey const ZSWTappableLabelHighlightedForegroundAttribut
  * Value is an NSNumber (BOOL). If the location of a touch has this attribute, the \a tapDelegate will be invoked.
  */
 extern NSAttributedStringKey const ZSWTappableLabelTappableRegionAttributeName NS_SWIFT_NAME(tappableRegion);
-
-#pragma mark - Data structures
-
-@interface ZSWTappableLabelTappableRegionInfo : NSObject
-/*!
- * @brief The frame of the tappable region in the label's coordinate space
- *
- * If you are setting this as the sourceRect for the previewingContext of a 3D Touch event
- * you will need to convert it to the sourceView's coordinate space, for example:
- *
- *   previewingContext.sourceRect = previewingContext.sourceView.convert(regionInfo.frame, from: label)
- *
- * in Swift, or in Objective-C:
- *
- *   previewingContext.sourceRect = [previewingContext.sourceView convertRect:regionInfo.frame fromView:self.label];
- */
-@property (nonatomic, readonly) CGRect frame;
-
-/*!
- * @brief The attributed string attributes at the point
- */
-@property (nonatomic, readonly) NSDictionary<NSAttributedStringKey, id> *attributes;
-@end
 
 #pragma mark - Tap delegate
 
@@ -169,6 +147,18 @@ extern NSAttributedStringKey const ZSWTappableLabelTappableRegionAttributeName N
  * See \a ZSWTappableLabelTappableRegionInfo for the information returned
  */
 - (nullable ZSWTappableLabelTappableRegionInfo *)tappableRegionInfoAtPoint:(CGPoint)point;
+
+/*!
+ * @brief Convenience method to get tappable region for 3D Touch
+ *
+ * Since the point/hierarchy management is easy to get confused on, this method is
+ * provided as a convenience to turn a 3D Touch preview into a tappable region info.
+ *
+ * You may also find the \a ZSWTappableLabelTappableRegionInfo convenience method for
+ * configuring a preview context to be useful.
+ *
+ */
+- (nullable ZSWTappableLabelTappableRegionInfo *)tappableRegionInfoForPreviewingContext:(id<UIViewControllerPreviewing>)previewingContext location:(CGPoint)location;
 
 /*!
  * @brief Long press duration
