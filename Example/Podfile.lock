@@ -1,14 +1,14 @@
 PODS:
   - Expecta (1.0.6)
   - Masonry (1.1.0)
-  - SnapKit (4.0.0)
+  - SnapKit (4.2.0)
   - Specta (1.0.7)
-  - ZSWTaggedString (4.0):
-    - ZSWTaggedString/Core (= 4.0)
-  - ZSWTaggedString/Core (4.0)
-  - ZSWTaggedString/Swift (4.0):
+  - ZSWTaggedString (4.1):
+    - ZSWTaggedString/Core (= 4.1)
+  - ZSWTaggedString/Core (4.1)
+  - ZSWTaggedString/Swift (4.1):
     - ZSWTaggedString/Core
-  - ZSWTappableLabel (1.3.1)
+  - ZSWTappableLabel (3.0)
 
 DEPENDENCIES:
   - Expecta
@@ -19,18 +19,26 @@ DEPENDENCIES:
   - ZSWTaggedString/Swift (~> 4.0)
   - ZSWTappableLabel (from `../`)
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Expecta
+    - Masonry
+    - SnapKit
+    - Specta
+    - ZSWTaggedString
+
 EXTERNAL SOURCES:
   ZSWTappableLabel:
-    :path: ../
+    :path: "../"
 
 SPEC CHECKSUMS:
   Expecta: 3b6bd90a64b9a1dcb0b70aa0e10a7f8f631667d5
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
-  SnapKit: a42d492c16e80209130a3379f73596c3454b7694
+  SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   Specta: 3e1bd89c3517421982dc4d1c992503e48bd5fe66
-  ZSWTaggedString: 3b06dc0fc32138bd15688a84167b0867c7353f3c
-  ZSWTappableLabel: 5a2bd9464d43b3dd55f1e9cb107775a05043e018
+  ZSWTaggedString: c29edd1ccf2ae30a356d56382cfec6cf06bbd70f
+  ZSWTappableLabel: f56ce14e2914ac4e4de31279ae51cde2d0f0c189
 
-PODFILE CHECKSUM: 97678fceeebef292fe260f11b7563a4f5f48b770
+PODFILE CHECKSUM: 9e919496c1848acd1d34cab7f2ec703df663e564
 
-COCOAPODS: 1.3.1
+COCOAPODS: 1.6.1

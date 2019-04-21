@@ -24,6 +24,9 @@
 		116126E51C2612BD003B4E43 /* InterfaceBuilderSwiftViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 116126E31C2612BD003B4E43 /* InterfaceBuilderSwiftViewController.xib */; };
 		116126E91C261466003B4E43 /* InterfaceBuilderObjectiveCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 116126E71C261466003B4E43 /* InterfaceBuilderObjectiveCViewController.m */; };
 		116126EA1C261466003B4E43 /* InterfaceBuilderObjectiveCViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 116126E81C261466003B4E43 /* InterfaceBuilderObjectiveCViewController.xib */; };
+		11E9BCC1226BF626003C1962 /* AccessibilitySwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E9BCC0226BF626003C1962 /* AccessibilitySwiftViewController.swift */; };
+		11E9BCC4226BFBCE003C1962 /* 3DTouchSwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E9BCC3226BFBCE003C1962 /* 3DTouchSwiftViewController.swift */; };
+		11E9BCC7226C037C003C1962 /* CollectionViewSwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E9BCC6226C037C003C1962 /* CollectionViewSwiftViewController.swift */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -70,6 +73,9 @@
 		116126E71C261466003B4E43 /* InterfaceBuilderObjectiveCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InterfaceBuilderObjectiveCViewController.m; sourceTree = "<group>"; };
 		116126E81C261466003B4E43 /* InterfaceBuilderObjectiveCViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InterfaceBuilderObjectiveCViewController.xib; sourceTree = "<group>"; };
 		11909ABC1C13D46A00B9AB03 /* ZSWTappableLabel_Example-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ZSWTappableLabel_Example-Bridging-Header.h"; sourceTree = "<group>"; };
+		11E9BCC0226BF626003C1962 /* AccessibilitySwiftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilitySwiftViewController.swift; sourceTree = "<group>"; };
+		11E9BCC3226BFBCE003C1962 /* 3DTouchSwiftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 3DTouchSwiftViewController.swift; sourceTree = "<group>"; };
+		11E9BCC6226C037C003C1962 /* CollectionViewSwiftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewSwiftViewController.swift; sourceTree = "<group>"; };
 		11F6CCA61B1B90D10064F1CF /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = CHANGELOG.md; path = ../CHANGELOG.md; sourceTree = "<group>"; };
 		48D9CAFA7C85FFBDE3E5A1E1 /* Pods-Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tests/Pods-Tests.release.xcconfig"; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* ZSWTappableLabel_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZSWTappableLabel_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -128,7 +134,7 @@
 				110D6E441C25FC04004E8551 /* RootController.swift */,
 				110D6E4F1C25FF5C004E8551 /* RootExampleCell.swift */,
 			);
-			name = "Root of examples";
+			path = "Root of examples";
 			sourceTree = "<group>";
 		};
 		110D6E531C25FF7E004E8551 /* Simple string */ = {
@@ -138,7 +144,7 @@
 				110D6E4C1C25FEC6004E8551 /* SimpleObjectiveCViewController.h */,
 				110D6E4D1C25FEC6004E8551 /* SimpleObjectiveCViewController.m */,
 			);
-			name = "Simple string";
+			path = "Simple string";
 			sourceTree = "<group>";
 		};
 		11110E421C27541700E67ACD /* Long press */ = {
@@ -148,7 +154,7 @@
 				11110E451C2762A900E67ACD /* LongPressObjectiveCViewController.h */,
 				11110E461C2762A900E67ACD /* LongPressObjectiveCViewController.m */,
 			);
-			name = "Long press";
+			path = "Long press";
 			sourceTree = "<group>";
 		};
 		116126CF1C26092B003B4E43 /* Multiple links */ = {
@@ -158,17 +164,17 @@
 				116126D21C260961003B4E43 /* MultipleObjectiveCViewController.h */,
 				116126D31C260961003B4E43 /* MultipleObjectiveCViewController.m */,
 			);
-			name = "Multiple links";
+			path = "Multiple links";
 			sourceTree = "<group>";
 		};
-		116126DB1C260F55003B4E43 /* Data Detectors */ = {
+		116126DB1C260F55003B4E43 /* Data detectors */ = {
 			isa = PBXGroup;
 			children = (
 				116126DC1C260F67003B4E43 /* DataDetectorsSwiftViewController.swift */,
 				116126DE1C260F74003B4E43 /* DataDetectorsObjectiveCViewController.h */,
 				116126DF1C260F74003B4E43 /* DataDetectorsObjectiveCViewController.m */,
 			);
-			name = "Data Detectors";
+			path = "Data detectors";
 			sourceTree = "<group>";
 		};
 		116126E11C2612A3003B4E43 /* Interface Builder */ = {
@@ -180,7 +186,31 @@
 				116126E71C261466003B4E43 /* InterfaceBuilderObjectiveCViewController.m */,
 				116126E81C261466003B4E43 /* InterfaceBuilderObjectiveCViewController.xib */,
 			);
-			name = "Interface Builder";
+			path = "Interface Builder";
+			sourceTree = "<group>";
+		};
+		11E9BCBF226BF612003C1962 /* Accessibility */ = {
+			isa = PBXGroup;
+			children = (
+				11E9BCC0226BF626003C1962 /* AccessibilitySwiftViewController.swift */,
+			);
+			path = Accessibility;
+			sourceTree = "<group>";
+		};
+		11E9BCC2226BFBBC003C1962 /* 3D Touch */ = {
+			isa = PBXGroup;
+			children = (
+				11E9BCC3226BFBCE003C1962 /* 3DTouchSwiftViewController.swift */,
+			);
+			path = "3D Touch";
+			sourceTree = "<group>";
+		};
+		11E9BCC5226C036F003C1962 /* Collection View */ = {
+			isa = PBXGroup;
+			children = (
+				11E9BCC6226C037C003C1962 /* CollectionViewSwiftViewController.swift */,
+			);
+			path = "Collection View";
 			sourceTree = "<group>";
 		};
 		6003F581195388D10070C39A = {
@@ -226,9 +256,12 @@
 				110D6E511C25FF62004E8551 /* Root of examples */,
 				110D6E531C25FF7E004E8551 /* Simple string */,
 				116126CF1C26092B003B4E43 /* Multiple links */,
-				116126DB1C260F55003B4E43 /* Data Detectors */,
+				116126DB1C260F55003B4E43 /* Data detectors */,
 				116126E11C2612A3003B4E43 /* Interface Builder */,
 				11110E421C27541700E67ACD /* Long press */,
+				11E9BCBF226BF612003C1962 /* Accessibility */,
+				11E9BCC2226BFBBC003C1962 /* 3D Touch */,
+				11E9BCC5226C036F003C1962 /* Collection View */,
 			);
 			name = "Example for ZSWTappableLabel";
 			path = ZSWTappableLabel;
@@ -299,7 +332,6 @@
 				6003F587195388D20070C39A /* Frameworks */,
 				6003F588195388D20070C39A /* Resources */,
 				D218C61965177FB2BFE93097 /* [CP] Embed Pods Frameworks */,
-				77A9FFEBC4D2F519374DBC21 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -319,7 +351,6 @@
 				6003F5AB195388D20070C39A /* Frameworks */,
 				6003F5AC195388D20070C39A /* Resources */,
 				241A642BB55123F671A30CDB /* [CP] Embed Pods Frameworks */,
-				E5C72CB483456806D6ACE16C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -343,7 +374,8 @@
 				ORGANIZATIONNAME = "Zachary West";
 				TargetAttributes = {
 					6003F589195388D20070C39A = {
-						LastSwiftMigration = 0900;
+						DevelopmentTeam = FH8YWD52JM;
+						LastSwiftMigration = 1020;
 					};
 					6003F5AD195388D20070C39A = {
 						TestTargetID = 6003F589195388D20070C39A;
@@ -355,6 +387,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -399,7 +432,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Tests/Pods-Tests-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Tests/Pods-Tests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Expecta/Expecta.framework",
 				"${BUILT_PRODUCTS_DIR}/Specta/Specta.framework",
 			);
@@ -410,7 +443,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Tests/Pods-Tests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Tests/Pods-Tests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		2949A0B5099EC9640514E55D /* [CP] Check Pods Manifest.lock */ = {
@@ -449,28 +482,13 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		77A9FFEBC4D2F519374DBC21 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZSWTappableLabel_Example/Pods-ZSWTappableLabel_Example-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		D218C61965177FB2BFE93097 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-ZSWTappableLabel_Example/Pods-ZSWTappableLabel_Example-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-ZSWTappableLabel_Example/Pods-ZSWTappableLabel_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/ZSWTaggedString/ZSWTaggedString.framework",
@@ -485,22 +503,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZSWTappableLabel_Example/Pods-ZSWTappableLabel_Example-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E5C72CB483456806D6ACE16C /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Tests/Pods-Tests-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ZSWTappableLabel_Example/Pods-ZSWTappableLabel_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -515,13 +518,16 @@
 				116126E91C261466003B4E43 /* InterfaceBuilderObjectiveCViewController.m in Sources */,
 				110D6E4E1C25FEC6004E8551 /* SimpleObjectiveCViewController.m in Sources */,
 				110D6E501C25FF5C004E8551 /* RootExampleCell.swift in Sources */,
+				11E9BCC7226C037C003C1962 /* CollectionViewSwiftViewController.swift in Sources */,
 				116126DD1C260F67003B4E43 /* DataDetectorsSwiftViewController.swift in Sources */,
 				11110E441C27543300E67ACD /* LongPressSwiftViewController.swift in Sources */,
 				110D6E471C25FC33004E8551 /* AppDelegate.swift in Sources */,
 				110D6E451C25FC04004E8551 /* RootController.swift in Sources */,
+				11E9BCC1226BF626003C1962 /* AccessibilitySwiftViewController.swift in Sources */,
 				11110E471C2762A900E67ACD /* LongPressObjectiveCViewController.m in Sources */,
 				116126D41C260961003B4E43 /* MultipleObjectiveCViewController.m in Sources */,
 				116126E41C2612BD003B4E43 /* InterfaceBuilderSwiftViewController.swift in Sources */,
+				11E9BCC4226BFBCE003C1962 /* 3DTouchSwiftViewController.swift in Sources */,
 				116126E01C260F74003B4E43 /* DataDetectorsObjectiveCViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -596,7 +602,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -629,7 +635,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -642,16 +648,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = FH8YWD52JM;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ZSWTappableLabel/ZSWTappableLabel-Prefix.pch";
 				INFOPLIST_FILE = "ZSWTappableLabel/ZSWTappableLabel-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "ZSWTappableLabel/ZSWTappableLabel_Example-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -663,15 +669,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = FH8YWD52JM;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ZSWTappableLabel/ZSWTappableLabel-Prefix.pch";
 				INFOPLIST_FILE = "ZSWTappableLabel/ZSWTappableLabel-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "ZSWTappableLabel/ZSWTappableLabel_Example-Bridging-Header.h";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};

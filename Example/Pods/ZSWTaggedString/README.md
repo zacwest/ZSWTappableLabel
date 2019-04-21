@@ -80,7 +80,7 @@ options["i"] = .static([
 
 // Dynamic attributes give you an opportunity to decide what to do for each tag
 options["story"] = .dynamic({ tagName, tagAttributes, existingAttributes in
-    var attributes = [NSAttributedStringKey: AnyObject]()
+    var attributes = [NSAttributedString.Key: AnyObject]()
     
     guard let typeString = tagAttributes["type"] as? String,
         let type = Story.StoryType(rawValue: typeString) else {
@@ -165,7 +165,7 @@ options.baseAttributes = [
 ]
 
 options.unknownTagAttributes = .dynamic({ tagName, tagAttributes, existingAttributes in
-    var attributes = [NSAttributedStringKey: Any]()
+    var attributes = [NSAttributedString.Key: Any]()
     
     if let font = existingAttributes[.font] as? UIFont {
         switch tagName {
@@ -179,7 +179,7 @@ options.unknownTagAttributes = .dynamic({ tagName, tagAttributes, existingAttrib
     }
     
     if tagName == "u" {
-        attributes[.underlineStyle] = NSUnderlineStyle.styleSingle.rawValue
+        attributes[.underlineStyle] = NSUnderlineStyle.single.rawValue
     }
     
     return attributes

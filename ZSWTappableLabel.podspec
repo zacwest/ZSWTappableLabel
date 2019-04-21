@@ -1,10 +1,10 @@
 Pod::Spec.new do |s|
   s.name             = "ZSWTappableLabel"
-  s.version          = "2.1"
-  s.summary          = "UILabel subclass in which substrings links can be tapped"
+  s.version          = "3.0"
+  s.summary          = "UILabel subclass in which substrings links can be tapped, long-pressed, 3D Touched, or acted on via VoiceOver."
   s.description      = <<-DESC
-                        NSAttributedStrings presented in ZSWTappableLabel can be tapped or long-pressed
-                        in subranges you specify using attributes.
+                        NSAttributedStrings presented in ZSWTappableLabel can be tapped, long-pressed, acted upon
+                        via accessibility, or 3D Touched in subranges you specify using attributes.
                         Read more: https://github.com/zacwest/ZSWTappableLabel
                        DESC
   s.homepage         = "https://github.com/zacwest/ZSWTappableLabel"

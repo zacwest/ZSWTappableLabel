@@ -23,7 +23,7 @@ extension ZSWTaggedStringOptions {
      - Returns: The `NSAttributedString` attributes you wish to be applied for the tag.
      
      */
-    public typealias DynamicAttributes = (_ tagName: String, _ tagAttributes: [String: Any], _ existingStringAttributes: [NSAttributedStringKey: Any]) -> [NSAttributedStringKey: Any]
+    public typealias DynamicAttributes = (_ tagName: String, _ tagAttributes: [String: Any], _ existingStringAttributes: [NSAttributedString.Key: Any]) -> [NSAttributedString.Key: Any]
     
     /**
      Attributes to be applied to an attributed string.
@@ -33,7 +33,7 @@ extension ZSWTaggedStringOptions {
      */
     public enum Attributes {
         case dynamic(DynamicAttributes)
-        case `static`([NSAttributedStringKey: Any])
+        case `static`([NSAttributedString.Key: Any])
         
         init(wrapper: ZSWTaggedStringAttribute) {
             if let dictionary = wrapper.staticDictionary {
