@@ -307,7 +307,7 @@ typedef NS_ENUM(NSInteger, ZSWTappableLabelNotifyType) {
     __block BOOL shouldReceive = NO;
     
     [self performWithLayoutManager:^(NSUInteger (^characterIndexAtPoint)(CGPoint point),
-                                     CGRect (^screenFrameForCharacterRange)(NSRange characterRange)) {
+                                     CGRect (^frameForCharacterRange)(NSRange characterRange)) {
         NSUInteger characterIdx = characterIndexAtPoint([touch locationInView:self]);
         
         if (characterIdx != NSNotFound) {
