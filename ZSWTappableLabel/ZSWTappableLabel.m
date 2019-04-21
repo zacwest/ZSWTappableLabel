@@ -34,8 +34,8 @@ typedef NS_ENUM(NSInteger, ZSWTappableLabelNotifyType) {
 #pragma mark -
 
 @interface ZSWTappableLabel() <UIGestureRecognizerDelegate>
-@property (nonatomic) NSArray *accessibleElements;
-@property (nonatomic) CGRect lastAccessibleElementsFrame;
+@property (nonatomic) NSArray<UIAccessibilityElement *> *accessibleElements;
+@property (nonatomic) CGRect lastAccessibleElementsBounds;
 
 @property (nonatomic) NSAttributedString *unmodifiedAttributedText;
 
@@ -98,6 +98,11 @@ typedef NS_ENUM(NSInteger, ZSWTappableLabelNotifyType) {
     _accessibleElements = nil;
 }
 
+- (void)setAccessibilityDelegate:(id<ZSWTappableLabelAccessibilityDelegate>)accessibilityDelegate {
+    _accessibilityDelegate = accessibilityDelegate;
+    _accessibleElements = nil;
+}
+
 - (void)setUnmodifiedAttributedText:(NSAttributedString *)unmodifiedAttributedText {
     _unmodifiedAttributedText = unmodifiedAttributedText;
     _accessibleElements = nil;
@@ -157,7 +162,7 @@ typedef NS_ENUM(NSInteger, ZSWTappableLabelNotifyType) {
 }
 
 - (void)performWithLayoutManager:(void(^)(NSUInteger (^characterIndexAtPoint)(CGPoint point),
-                                          CGRect (^screenFrameForCharacterRange)(NSRange characterRange)))layoutManagerBlock
+                                          CGRect (^frameForCharacterRange)(NSRange characterRange)))layoutManagerBlock
       ignoringGestureRecognizers:(BOOL)ignoreGestureRecognizers {
     [self createTextStorage];
     
@@ -190,15 +195,15 @@ typedef NS_ENUM(NSInteger, ZSWTappableLabelNotifyType) {
         return characterIdx;
     };
     
-    CGRect (^sreenFrameForCharacterRange)(NSRange) = ^(NSRange characterRange) {
+    CGRect (^frameForCharacterRange)(NSRange) = ^(NSRange characterRange) {
         NSRange glyphRange = [layoutManager glyphRangeForCharacterRange:characterRange actualCharacterRange:NULL];
         CGRect viewFrame = [layoutManager boundingRectForGlyphRange:glyphRange inTextContainer:textContainer];
         viewFrame.origin.x += pointOffset.x;
         viewFrame.origin.y += pointOffset.y;
-        return UIAccessibilityConvertFrameToScreenCoordinates(viewFrame, self);
+        return viewFrame;
     };
     
-    layoutManagerBlock(characterIndexAtPoint, sreenFrameForCharacterRange);
+    layoutManagerBlock(characterIndexAtPoint, frameForCharacterRange);
     
     if (ignoreGestureRecognizers) {
         self.gestureTextStorage = nil;
@@ -474,17 +479,21 @@ typedef NS_ENUM(NSInteger, ZSWTappableLabelNotifyType) {
 }
 
 - (NSArray *)accessibleElements {
-    CGRect screenFrame = UIAccessibilityConvertFrameToScreenCoordinates(self.frame, self);
-    
-    if (_accessibleElements && CGRectEqualToRect(self.lastAccessibleElementsFrame, screenFrame)) {
+    if (_accessibleElements && CGRectEqualToRect(self.bounds, self.lastAccessibleElementsBounds)) {
+        // As long as our content and bounds don't change, our elements won't need updating, because
+        // their frame is based on our container space.
         return _accessibleElements;
     }
     
-    NSMutableArray *accessibleElements = [NSMutableArray array];
+    NSMutableArray<UIAccessibilityElement *> *accessibleElements = [NSMutableArray array];
     NSAttributedString *unmodifiedAttributedString = self.unmodifiedAttributedText;
     
+    id<ZSWTappableLabelAccessibilityDelegate> accessibilityDelegate = self.accessibilityDelegate;
+    id<ZSWTappableLabelLongPressDelegate> longPressDelegate = self.longPressDelegate;
+    NSString *longPressAccessibilityActionName = self.longPressAccessibilityActionName;
+    
     [self performWithLayoutManager:^(NSUInteger (^characterIndexAtPoint)(CGPoint point),
-                                     CGRect (^screenFrameForCharacterRange)(NSRange characterRange)) {
+                                     CGRect (^frameForCharacterRange)(NSRange characterRange)) {
         if (!unmodifiedAttributedString.length) {
             return;
         }
@@ -492,7 +501,7 @@ typedef NS_ENUM(NSInteger, ZSWTappableLabelNotifyType) {
         void (^enumerationBlock)(id, NSRange, BOOL *) = ^(id value, NSRange range, BOOL *stop) {
             UIAccessibilityElement *element = [[UIAccessibilityElement alloc] initWithAccessibilityContainer:self];
             element.accessibilityLabel = [unmodifiedAttributedString.string substringWithRange:range];
-            element.accessibilityFrame = screenFrameForCharacterRange(range);
+            element.accessibilityFrameInContainerSpace = frameForCharacterRange(range);
             
             if ([value boolValue]) {
                 element.accessibilityTraits = UIAccessibilityTraitLink | UIAccessibilityTraitStaticText;
@@ -500,11 +509,23 @@ typedef NS_ENUM(NSInteger, ZSWTappableLabelNotifyType) {
                 element.accessibilityTraits = UIAccessibilityTraitStaticText;
             }
             
-            if (self.longPressDelegate) {
-                ZSWTappableLabelAccessibilityActionLongPress *action = [[ZSWTappableLabelAccessibilityActionLongPress alloc] initWithName:self.longPressAccessibilityActionName target:self selector:@selector(longPressForAccessibilityAction:)];
+            NSMutableArray<UIAccessibilityCustomAction *> *customActions = [NSMutableArray array];
+            
+            if (longPressDelegate) {
+                ZSWTappableLabelAccessibilityActionLongPress *action = [[ZSWTappableLabelAccessibilityActionLongPress alloc] initWithName:longPressAccessibilityActionName target:self selector:@selector(longPressForAccessibilityAction:)];
                 action.characterIndex = range.location;
-                
-                element.accessibilityCustomActions = @[ action ];
+                [customActions addObject:action];
+            }
+            
+            if (accessibilityDelegate) {
+                NSDictionary<NSAttributedStringKey, id> *attributesAtStart = [unmodifiedAttributedString attributesAtIndex:range.location effectiveRange:NULL];
+                [customActions addObjectsFromArray:[accessibilityDelegate tappableLabel:self
+                                            accessibilityCustomActionsForCharacterRange:range
+                                                                  withAttributesAtStart:attributesAtStart]];
+            }
+            
+            if (customActions.count > 0) {
+                element.accessibilityCustomActions = customActions;
             }
             
             [accessibleElements addObject:element];
@@ -517,7 +538,7 @@ typedef NS_ENUM(NSInteger, ZSWTappableLabelNotifyType) {
     } ignoringGestureRecognizers:YES];
 
     _accessibleElements = [accessibleElements copy];
-    _lastAccessibleElementsFrame = screenFrame;
+    self.lastAccessibleElementsBounds = self.bounds;
 
     return _accessibleElements;
 }

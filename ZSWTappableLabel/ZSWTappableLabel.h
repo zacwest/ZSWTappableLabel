@@ -85,6 +85,26 @@ extern NSAttributedStringKey const ZSWTappableLabelTappableRegionAttributeName N
        withAttributes:(NSDictionary<NSAttributedStringKey, id> *)attributes;
 @end
 
+@protocol ZSWTappableLabelAccessibilityDelegate
+/*!
+ * @brief Provide custom actions for a given element
+ *
+ * @param tappableLabel The label
+ * @param characterRange The range of characters represented by an element
+ * @param attributes The attributes from the attributed string for the first location of the range
+ *
+ * Any returned actions will be included after a long-press action, if \a longPressDelegate is set.
+ *
+ * Only the attributes for the first character of the string are included since the attributes can vary
+ * over the substring, and is provided as a convenience to access tappable range information.
+ *
+ * @return The additional elements to include, or empty array to include none
+ */
+- (NSArray<UIAccessibilityCustomAction *> *)tappableLabel:(ZSWTappableLabel *)tappableLabel
+              accessibilityCustomActionsForCharacterRange:(NSRange)characterRange
+                                    withAttributesAtStart:(NSDictionary<NSAttributedStringKey, id> *)attributes;
+@end
+
 #pragma mark -
 
 @interface ZSWTappableLabel : UILabel
@@ -98,6 +118,11 @@ extern NSAttributedStringKey const ZSWTappableLabelTappableRegionAttributeName N
  * @brief Delegate which handles long-presses
  */
 @property (nullable, nonatomic, weak) IBOutlet id<ZSWTappableLabelLongPressDelegate> longPressDelegate;
+
+/*!
+ * @brief Delegate which handles accessibility
+ */
+@property (nullable, nonatomic, weak) IBOutlet id<ZSWTappableLabelAccessibilityDelegate> accessibilityDelegate;
 
 /*!
  * @brief Long press duration
