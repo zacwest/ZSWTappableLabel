@@ -3,7 +3,7 @@
 //  ZSWTappableLabel
 //
 //  Created by Zachary West on 3/23/15.
-//  Copyright (c) 2015 Zachary West. All rights reserved.
+//  Copyright (c) 2019 Zachary West. All rights reserved.
 //
 //  MIT License
 //  https://github.com/zacwest/ZSWTappableLabel
