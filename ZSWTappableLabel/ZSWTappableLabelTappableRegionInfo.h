@@ -3,6 +3,10 @@
 //  ZSWTappableLabel
 //
 //  Created by Zac West on 4/20/19.
+//  Copyright (c) 2019 Zachary West. All rights reserved.
+//
+//  MIT License
+//  https://github.com/zacwest/ZSWTappableLabel
 //
 
 #import <Foundation/Foundation.h>
@@ -37,7 +41,7 @@ NS_ASSUME_NONNULL_BEGIN
  *
  * Configures the previewing context with the correct frame information for this tappable region info.
  */
-- (void)configurePreviewingContext:(id<UIViewControllerPreviewing>)previewingContext;
+- (void)configurePreviewingContext:(id<UIViewControllerPreviewing>)previewingContext NS_SWIFT_NAME(configure(previewingContext:));
 
 @end
 
