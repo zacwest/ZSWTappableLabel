@@ -14,6 +14,7 @@ import SafariServices
 class DataDetectorsSwiftViewController: UIViewController, ZSWTappableLabelTapDelegate {
     let label: ZSWTappableLabel = {
         let label = ZSWTappableLabel()
+        label.adjustsFontForContentSizeCategory = true
         return label
     }()
     
@@ -29,7 +30,9 @@ class DataDetectorsSwiftViewController: UIViewController, ZSWTappableLabelTapDel
         let string = "check google.com or call 415-555-5555? how about friday at 5pm?"
         
         let detector = try! NSDataDetector(types: NSTextCheckingAllSystemTypes)
-        let attributedString = NSMutableAttributedString(string: string, attributes: nil)
+        let attributedString = NSMutableAttributedString(string: string, attributes: [
+            .font: UIFont.preferredFont(forTextStyle: .body),
+        ])
         let range = NSRange(location: 0, length: (string as NSString).length)
         
         detector.enumerateMatches(in: attributedString.string, options: [], range: range) { (result, flags, _) in

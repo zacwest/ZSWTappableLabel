@@ -29,11 +29,14 @@ static NSString *const URLAttributeName = @"URL";
     self.label = ^{
         ZSWTappableLabel *label = [[ZSWTappableLabel alloc] init];
         label.textAlignment = NSTextAlignmentJustified;
+        label.adjustsFontForContentSizeCategory = YES;
         label.tapDelegate = self;
         return label;
     }();
     
-    ZSWTaggedStringOptions *options = [ZSWTaggedStringOptions options];
+    ZSWTaggedStringOptions *options = [ZSWTaggedStringOptions optionsWithBaseAttributes:@{
+        NSFontAttributeName: [UIFont preferredFontForTextStyle:UIFontTextStyleBody],
+    }];
     [options setDynamicAttributes:^NSDictionary *(NSString *tagName,
                                                   NSDictionary *tagAttributes,
                                                   NSDictionary *existingStringAttributes) {
@@ -49,13 +52,13 @@ static NSString *const URLAttributeName = @"URL";
         }
         
         return @{
-                 ZSWTappableLabelTappableRegionAttributeName: @YES,
-                 ZSWTappableLabelHighlightedBackgroundAttributeName: [UIColor lightGrayColor],
-                 ZSWTappableLabelHighlightedForegroundAttributeName: [UIColor whiteColor],
-                 NSForegroundColorAttributeName: [UIColor blueColor],
-                 NSUnderlineStyleAttributeName: @(NSUnderlineStyleSingle),
-                 @"URL": URL
-                 };
+            ZSWTappableLabelTappableRegionAttributeName: @YES,
+            ZSWTappableLabelHighlightedBackgroundAttributeName: [UIColor lightGrayColor],
+            ZSWTappableLabelHighlightedForegroundAttributeName: [UIColor whiteColor],
+            NSForegroundColorAttributeName: [UIColor blueColor],
+            NSUnderlineStyleAttributeName: @(NSUnderlineStyleSingle),
+            @"URL": URL
+         };
     } forTagName:@"link"];
     
     NSString *string = NSLocalizedString(@"Please, feel free to peruse and enjoy our wonderful and alluring <link type='privacy'>Privacy Policy</link> or if you'd really like to understand what you're allowed or not allowed to do, reading our <link type='tos'>Terms of Service</link> is sure to be enlightening", nil);

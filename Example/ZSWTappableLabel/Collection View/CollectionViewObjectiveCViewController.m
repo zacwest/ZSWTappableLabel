@@ -20,9 +20,10 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     if ((self = [super initWithFrame:frame])) {
         self.label = [[ZSWTappableLabel alloc] init];
+        self.label.adjustsFontForContentSizeCategory = YES;
         [self.contentView addSubview:self.label];
         [self.label mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.edges.equalTo(self.contentView).insets(UIEdgeInsetsMake(10, 10, 10, 10));
+            make.edges.equalTo(self.contentView);
         }];
         
         // Mostly to demonstrate that you can tap without selecting, make it ugly and red when selected.
@@ -40,7 +41,9 @@
 @implementation CollectionViewObjectiveCViewController
 
 - (instancetype)init {
-    UICollectionViewLayout *layout = [[UICollectionViewFlowLayout alloc] init];
+    UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
+    layout.minimumLineSpacing = 0;
+    layout.minimumInteritemSpacing = 0;
     return [self initWithCollectionViewLayout:layout];
 }
 
@@ -72,6 +75,7 @@
         NSLinkAttributeName: [NSURL URLWithString:[NSString stringWithFormat:@"https://google.com/search?q=index+%ld", (long)indexPath.item]],
         ZSWTappableLabelTappableRegionAttributeName: @YES,
         ZSWTappableLabelHighlightedBackgroundAttributeName: [UIColor lightGrayColor],
+        NSFontAttributeName: [UIFont preferredFontForTextStyle:UIFontTextStyleCallout],
     }];
     
     return cell;

@@ -323,6 +323,8 @@ ZSWTappableLabel is an accessibility container, which exposes the substrings in 
 1. ` or ` (static text)
 1. `Terms of Service` (link)
 
+This is similar behavior to Safari, which breaks up elements into discrete chunks.
+
 When you set a `longPressDelegate`, an additional action on links is added to perform the long-press gesture. You should configure the `longPressAccessibilityActionName` to adjust what is read to users.
 
 When you set an `accessibilityDelegate`, you can add custom actions to a particular link, for example:

@@ -14,6 +14,7 @@ import SafariServices
 class MultipleSwiftViewController: UIViewController, ZSWTappableLabelTapDelegate {
     let label: ZSWTappableLabel = {
         let label = ZSWTappableLabel()
+        label.adjustsFontForContentSizeCategory = true
         label.textAlignment = .justified
         return label
     }()
@@ -41,7 +42,9 @@ class MultipleSwiftViewController: UIViewController, ZSWTappableLabelTapDelegate
         
         label.tapDelegate = self
         
-        let options = ZSWTaggedStringOptions()
+        let options = ZSWTaggedStringOptions(baseAttributes: [
+            .font: UIFont.preferredFont(forTextStyle: .body),
+        ])
         options["link"] = .dynamic({ tagName, tagAttributes, stringAttributes in
             guard let typeString = tagAttributes["type"] as? String,
                 let type = LinkType(rawValue: typeString) else {

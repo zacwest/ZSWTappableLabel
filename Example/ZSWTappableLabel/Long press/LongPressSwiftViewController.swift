@@ -13,6 +13,7 @@ import SafariServices
 class LongPressSwiftViewController: UIViewController, ZSWTappableLabelTapDelegate, ZSWTappableLabelLongPressDelegate {
     let label: ZSWTappableLabel = {
         let label = ZSWTappableLabel()
+        label.adjustsFontForContentSizeCategory = true
         label.textAlignment = .justified
         return label
     }()
@@ -42,7 +43,9 @@ class LongPressSwiftViewController: UIViewController, ZSWTappableLabelTapDelegat
         label.longPressDelegate = self
         label.longPressAccessibilityActionName = NSLocalizedString("Share", comment: "")
         
-        let options = ZSWTaggedStringOptions()
+        let options = ZSWTaggedStringOptions(baseAttributes: [
+            .font: UIFont.preferredFont(forTextStyle: .body),
+        ])
         options["link"] = .dynamic({ tagName, tagAttributes, stringAttributes in
             guard let typeString = tagAttributes["type"] as? String,
                 let type = LinkType(rawValue: typeString) else {

@@ -33,8 +33,6 @@ typedef NS_ENUM(NSInteger, ZSWTappableLabelNotifyType) {
 
 @property (nonatomic) ZSWTappableLabelTouchHandling *touchHandling;
 
-@property (nonatomic) NSAttributedString *unmodifiedAttributedText;
-
 @property (nonatomic) BOOL needsToWatchTouches;
 @property (nonatomic) UILongPressGestureRecognizer *longPressGR;
 @property (nonatomic) BOOL hasCurrentEvent;
@@ -55,8 +53,8 @@ typedef NS_ENUM(NSInteger, ZSWTappableLabelNotifyType) {
     if (self) {
         [self tappableLabelCommonInit];
         
-        // In case any text was assigned in IB, don't lose it.
-        [self setAttributedText:[super attributedText]];
+        // Text was assigned by IB, possibly, so we need to make sure we're running if there's anything useful.
+        [self checkForTappableRegions];
     }
     return self;
 }
@@ -95,18 +93,69 @@ typedef NS_ENUM(NSInteger, ZSWTappableLabelNotifyType) {
     _accessibleElements = nil;
 }
 
-- (void)setUnmodifiedAttributedText:(NSAttributedString *)unmodifiedAttributedText {
-    _unmodifiedAttributedText = unmodifiedAttributedText;
-    _accessibleElements = nil;
-    _touchHandling = nil;
+- (void)traitCollectionDidChange:(UITraitCollection *)previousTraitCollection {
+    [super traitCollectionDidChange:previousTraitCollection];
+    
+    if (self.adjustsFontForContentSizeCategory) {
+        UIContentSizeCategory previousCategory = previousTraitCollection.preferredContentSizeCategory;
+        UIContentSizeCategory currentCategory = self.traitCollection.preferredContentSizeCategory;
+        
+        if (![previousCategory isEqual:currentCategory] || previousCategory != currentCategory) {
+            _touchHandling = nil;
+        }
+    }
 }
 
 - (ZSWTappableLabelTouchHandling *)createTouchHandlingIfNeeded {
-    if (self.touchHandling && CGRectEqualToRect(self.touchHandling.bounds, self.bounds)) {
-        return self.touchHandling;
+    ZSWTappableLabelTouchHandling *existingTouchHandling = self.touchHandling;
+    
+    if (existingTouchHandling) {
+        if (CGRectEqualToRect(existingTouchHandling.bounds, self.bounds)) {
+            // we can continue to use the existing touch handling
+            return existingTouchHandling;
+        } else {
+            // we need to create a new touch handling. additionally, we need to reset from the last one.
+            // if the view is resizing while we were handling a touch, we need to cancel out the attributed
+            // changes that we performed from the previous touch handling.
+            [super setAttributedText:existingTouchHandling.unmodifiedAttributedString];
+        }
     }
     
-    NSTextStorage *textStorage = [[NSTextStorage alloc] initWithAttributedString:self.unmodifiedAttributedText];
+    // If the user doesn't specify a font, UILabel is going to render with the current
+    // one it wants, so we need to fill in the blanks
+    NSAttributedString *attributedText = [super attributedText];
+    NSMutableAttributedString *mutableText = [attributedText mutableCopy];
+    UIFont *font = self.font;
+    
+    [attributedText enumerateAttribute:NSFontAttributeName
+                               inRange:NSMakeRange(0, attributedText.length)
+                               options:NSAttributedStringEnumerationLongestEffectiveRangeNotRequired
+                            usingBlock:^(id value, NSRange range, BOOL *stop) {
+                                if (!value) {
+                                    [mutableText addAttribute:NSFontAttributeName
+                                                        value:font
+                                                        range:range];
+                                }
+                            }];
+    
+    if (self.textAlignment != NSTextAlignmentLeft) {
+        NSMutableParagraphStyle *style = [[NSMutableParagraphStyle alloc] init];
+        style.alignment = self.textAlignment;
+        
+        [attributedText enumerateAttribute:NSParagraphStyleAttributeName
+                                   inRange:NSMakeRange(0, attributedText.length)
+                                   options:NSAttributedStringEnumerationLongestEffectiveRangeNotRequired
+                                usingBlock:^(id value, NSRange range, BOOL *stop) {
+                                    if (!value) {
+                                        [mutableText addAttribute:NSParagraphStyleAttributeName
+                                                            value:style
+                                                            range:range];
+                                    }
+                                }];
+    }
+    
+    NSTextStorage *textStorage = [[NSTextStorage alloc] initWithAttributedString:mutableText];
+    NSLayoutManager *layoutManager = [[NSLayoutManager alloc] init];
     NSTextContainer *textContainer = [[NSTextContainer alloc] initWithSize:^{
         CGSize size = self.bounds.size;
         
@@ -116,7 +165,6 @@ typedef NS_ENUM(NSInteger, ZSWTappableLabelNotifyType) {
         size.height = CGFLOAT_MAX;
         return size;
     }()];
-    NSLayoutManager *layoutManager = [[NSLayoutManager alloc] init];
 
     textContainer.lineBreakMode = self.lineBreakMode;
     textContainer.maximumNumberOfLines = self.numberOfLines;
@@ -142,19 +190,19 @@ typedef NS_ENUM(NSInteger, ZSWTappableLabelNotifyType) {
 #pragma mark - Overloading
 
 - (void)setText:(NSString *)text {
-    if (text) {
-        [self setAttributedText:[[NSAttributedString alloc] initWithString:text attributes:nil]];
-    } else {
-        [self setAttributedText:nil];
-    }
-}
-
-- (NSString *)text {
-    return self.unmodifiedAttributedText.string;
+    [super setText:text];
+    self.touchHandling = nil;
+    [self checkForTappableRegions];
 }
 
 - (void)setAttributedText:(NSAttributedString *)attributedText {
     [super setAttributedText:attributedText];
+    self.touchHandling = nil;
+    [self checkForTappableRegions];
+}
+
+- (void)checkForTappableRegions {
+    NSAttributedString *attributedText = self.attributedText;
     
     __block BOOL containsTappableRegion = NO;
     [attributedText enumerateAttribute:ZSWTappableLabelTappableRegionAttributeName
@@ -167,53 +215,8 @@ typedef NS_ENUM(NSInteger, ZSWTappableLabelNotifyType) {
                                 }
                             }];
     
-    if (containsTappableRegion) {
-        self.needsToWatchTouches = YES;
-        self.longPressGR.enabled = YES;
-        
-        // If the user doesn't specify a font, UILabel is going to render with the current
-        // one it wants, so we need to fill in the blanks
-        NSMutableAttributedString *mutableText = [attributedText mutableCopy];
-        UIFont *font = [super font];
-        
-        [attributedText enumerateAttribute:NSFontAttributeName
-                                   inRange:NSMakeRange(0, attributedText.length)
-                                   options:NSAttributedStringEnumerationLongestEffectiveRangeNotRequired
-                                usingBlock:^(id value, NSRange range, BOOL *stop) {
-                                    if (!value) {
-                                        [mutableText addAttribute:NSFontAttributeName
-                                                            value:font
-                                                            range:range];
-                                    }
-                                }];
-        
-        if (self.textAlignment != NSTextAlignmentLeft) {
-            NSMutableParagraphStyle *style = [[NSMutableParagraphStyle alloc] init];
-            style.alignment = self.textAlignment;
-            
-            [attributedText enumerateAttribute:NSParagraphStyleAttributeName
-                                       inRange:NSMakeRange(0, attributedText.length)
-                                       options:NSAttributedStringEnumerationLongestEffectiveRangeNotRequired
-                                    usingBlock:^(id value, NSRange range, BOOL *stop) {
-                                        if (!value) {
-                                            [mutableText addAttribute:NSParagraphStyleAttributeName
-                                                                value:style
-                                                                range:range];
-                                        }
-                                    }];
-        }
-        
-        attributedText = mutableText;
-    } else {
-        self.needsToWatchTouches = NO;
-        self.longPressGR.enabled = NO;
-    }
-    
-    self.unmodifiedAttributedText = attributedText;
-}
-
-- (NSAttributedString *)attributedText {
-    return self.unmodifiedAttributedText;
+    self.needsToWatchTouches = containsTappableRegion;
+    self.longPressGR.enabled = containsTappableRegion;
 }
 
 #pragma mark - UIGestureRecognizerDelegate
@@ -301,40 +304,44 @@ typedef NS_ENUM(NSInteger, ZSWTappableLabelNotifyType) {
         return;
     }
     
-    NSMutableAttributedString *attributedString = [self.unmodifiedAttributedText mutableCopy];
-    
-    NSRange highlightEffectiveRange = NSMakeRange(0, 0), foregroundEffectiveRange = NSMakeRange(0, 0);
-    UIColor *highlightColor = [attributedString attribute:ZSWTappableLabelHighlightedBackgroundAttributeName
-                                                  atIndex:characterIndex
-                                    longestEffectiveRange:&highlightEffectiveRange
-                                                  inRange:NSMakeRange(0, attributedString.length)];
-    
-    UIColor *foregroundColor = [attributedString attribute:ZSWTappableLabelHighlightedForegroundAttributeName
-                                                   atIndex:characterIndex
-                                     longestEffectiveRange:&foregroundEffectiveRange
-                                                   inRange:NSMakeRange(0, attributedString.length)];
-    
-    if (highlightColor || foregroundColor) {
-        if (highlightColor) {
-            [attributedString addAttribute:NSBackgroundColorAttributeName
-                                     value:highlightColor
-                                     range:highlightEffectiveRange];
-        }
+    [self performWithTouchHandling:^(ZSWTappableLabelTouchHandling *th) {
+        NSMutableAttributedString *attributedString = [th.unmodifiedAttributedString mutableCopy];
         
-        if (foregroundColor) {
-            [attributedString addAttribute:NSForegroundColorAttributeName
-                                     value:foregroundColor
-                                     range:foregroundEffectiveRange];
-        }
+        NSRange highlightEffectiveRange = NSMakeRange(0, 0), foregroundEffectiveRange = NSMakeRange(0, 0);
+        UIColor *highlightColor = [attributedString attribute:ZSWTappableLabelHighlightedBackgroundAttributeName
+                                                      atIndex:characterIndex
+                                        longestEffectiveRange:&highlightEffectiveRange
+                                                      inRange:NSMakeRange(0, attributedString.length)];
         
-        [super setAttributedText:attributedString];
-    } else {
-        [self removeHighlight];
-    }
+        UIColor *foregroundColor = [attributedString attribute:ZSWTappableLabelHighlightedForegroundAttributeName
+                                                       atIndex:characterIndex
+                                         longestEffectiveRange:&foregroundEffectiveRange
+                                                       inRange:NSMakeRange(0, attributedString.length)];
+        
+        if (highlightColor || foregroundColor) {
+            if (highlightColor) {
+                [attributedString addAttribute:NSBackgroundColorAttributeName
+                                         value:highlightColor
+                                         range:highlightEffectiveRange];
+            }
+            
+            if (foregroundColor) {
+                [attributedString addAttribute:NSForegroundColorAttributeName
+                                         value:foregroundColor
+                                         range:foregroundEffectiveRange];
+            }
+            
+            [super setAttributedText:attributedString];
+        } else {
+            [self removeHighlight];
+        }
+    }];
 }
 
 - (void)removeHighlight {
-    [super setAttributedText:self.unmodifiedAttributedText];
+    [self performWithTouchHandling:^(ZSWTappableLabelTouchHandling *th) {
+        [super setAttributedText:th.unmodifiedAttributedString];
+    }];
 }
 
 - (void)notifyForCharacterIndex:(NSUInteger)characterIndex type:(ZSWTappableLabelNotifyType)notifyType {
@@ -342,21 +349,23 @@ typedef NS_ENUM(NSInteger, ZSWTappableLabelNotifyType) {
         return;
     }
     
-    NSDictionary *attributes = [self.unmodifiedAttributedText attributesAtIndex:characterIndex effectiveRange:NULL] ?: @{};
-    
-    switch (notifyType) {
-        case ZSWTappableLabelNotifyTypeTap:
-            [self.tapDelegate tappableLabel:self
-                              tappedAtIndex:characterIndex
-                             withAttributes:attributes];
-            break;
-            
-        case ZSWTappableLabelNotifyTypeLongPress:
-            [self.longPressDelegate tappableLabel:self
-                               longPressedAtIndex:characterIndex
-                                   withAttributes:attributes];
-            break;
-    }
+    [self performWithTouchHandling:^(ZSWTappableLabelTouchHandling *th) {
+        NSDictionary *attributes = [th.unmodifiedAttributedString attributesAtIndex:characterIndex effectiveRange:NULL] ?: @{};
+        
+        switch (notifyType) {
+            case ZSWTappableLabelNotifyTypeTap:
+                [self.tapDelegate tappableLabel:self
+                                  tappedAtIndex:characterIndex
+                                 withAttributes:attributes];
+                break;
+                
+            case ZSWTappableLabelNotifyTypeLongPress:
+                [self.longPressDelegate tappableLabel:self
+                                   longPressedAtIndex:characterIndex
+                                       withAttributes:attributes];
+                break;
+        }
+    }];
 }
 
 - (BOOL)longPressForAccessibilityAction:(ZSWTappableLabelAccessibilityActionLongPress *)action {
@@ -388,15 +397,15 @@ typedef NS_ENUM(NSInteger, ZSWTappableLabelNotifyType) {
         }
         
         NSRange effectiveRange;
-        NSNumber *attribute = [self.unmodifiedAttributedText attribute:ZSWTappableLabelTappableRegionAttributeName
-                                                    atIndex:characterIndex
-                                             effectiveRange:&effectiveRange];
+        NSNumber *attribute = [th.unmodifiedAttributedString attribute:ZSWTappableLabelTappableRegionAttributeName
+                                                               atIndex:characterIndex
+                                                        effectiveRange:&effectiveRange];
         if (![attribute boolValue]) {
             return;
         }
         
         CGRect frame = [th frameForCharacterRange:effectiveRange];
-        NSDictionary<NSAttributedStringKey, id> *attributes = [self.unmodifiedAttributedText attributesAtIndex:characterIndex effectiveRange:NULL];
+        NSDictionary<NSAttributedStringKey, id> *attributes = [th.unmodifiedAttributedString attributesAtIndex:characterIndex effectiveRange:NULL];
         
         regionInfo = [[ZSWTappableLabelTappableRegionInfo alloc] initWithFrame:frame
                                                                     attributes:attributes
@@ -424,7 +433,7 @@ typedef NS_ENUM(NSInteger, ZSWTappableLabelNotifyType) {
     }
     
     NSMutableArray<UIAccessibilityElement *> *accessibleElements = [NSMutableArray array];
-    NSAttributedString *unmodifiedAttributedString = self.unmodifiedAttributedText;
+    NSAttributedString *unmodifiedAttributedString = self.attributedText;
     
     id<ZSWTappableLabelAccessibilityDelegate> accessibilityDelegate = self.accessibilityDelegate;
     id<ZSWTappableLabelLongPressDelegate> longPressDelegate = self.longPressDelegate;

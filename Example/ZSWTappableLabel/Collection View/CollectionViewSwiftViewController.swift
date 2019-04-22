@@ -14,6 +14,8 @@ import SnapKit
 class CollectionViewSwiftViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout, ZSWTappableLabelTapDelegate, ZSWTappableLabelLongPressDelegate {
     init() {
         let layout = UICollectionViewFlowLayout()
+        layout.minimumInteritemSpacing = 0
+        layout.minimumLineSpacing = 0
         super.init(collectionViewLayout: layout)
     }
     
@@ -48,6 +50,7 @@ class CollectionViewSwiftViewController: UICollectionViewController, UICollectio
             .link: URL(string: String(format: "https://google.com/search?q=index+%d", indexPath.item))!,
             .tappableRegion: true,
             .tappableHighlightedBackgroundColor: UIColor.lightGray,
+            .font: UIFont.preferredFont(forTextStyle: .callout),
         ])
         
         return cell
@@ -78,9 +81,11 @@ class CollectionViewSwiftCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
+        label.adjustsFontForContentSizeCategory = true
+        
         contentView.addSubview(label)
         label.snp.makeConstraints { make in
-            make.edges.equalToSuperview().inset(UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10))
+            make.edges.equalToSuperview()
         }
         
         // Mostly to demonstrate that you can tap without selecting, make it ugly and red when selected.

@@ -29,13 +29,16 @@ static NSString *const URLAttributeName = @"URL";
     self.label = ^{
         ZSWTappableLabel *label = [[ZSWTappableLabel alloc] init];
         label.textAlignment = NSTextAlignmentJustified;
+        label.adjustsFontForContentSizeCategory = YES;
         label.tapDelegate = self;
         label.longPressDelegate = self;
         label.longPressAccessibilityActionName = NSLocalizedString(@"Share", nil);
         return label;
     }();
     
-    ZSWTaggedStringOptions *options = [ZSWTaggedStringOptions options];
+    ZSWTaggedStringOptions *options = [ZSWTaggedStringOptions optionsWithBaseAttributes:@{
+        NSFontAttributeName: [UIFont preferredFontForTextStyle:UIFontTextStyleBody],
+    }];
     [options setDynamicAttributes:^NSDictionary *(NSString *tagName,
                                                   NSDictionary *tagAttributes,
                                                   NSDictionary *existingStringAttributes) {

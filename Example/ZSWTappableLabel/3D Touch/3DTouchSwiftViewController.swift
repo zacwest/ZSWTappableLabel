@@ -11,7 +11,11 @@ import ZSWTappableLabel
 import SafariServices
 
 class DDDTouchSwiftViewController: UIViewController, ZSWTappableLabelTapDelegate, ZSWTappableLabelLongPressDelegate, UIViewControllerPreviewingDelegate {
-    let label = ZSWTappableLabel()
+    let label: ZSWTappableLabel = {
+        let label = ZSWTappableLabel()
+        label.adjustsFontForContentSizeCategory = true
+        return label
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +29,7 @@ class DDDTouchSwiftViewController: UIViewController, ZSWTappableLabelTapDelegate
         let attributes: [NSAttributedString.Key: Any] = [
             .tappableRegion: true,
             .tappableHighlightedBackgroundColor: UIColor.lightGray,
+            .font: UIFont.preferredFont(forTextStyle: .body),
             .foregroundColor: UIColor.blue,
             .underlineStyle: NSUnderlineStyle.single.rawValue,
             .link: URL(string: "http://imgur.com/gallery/VgXCk")!

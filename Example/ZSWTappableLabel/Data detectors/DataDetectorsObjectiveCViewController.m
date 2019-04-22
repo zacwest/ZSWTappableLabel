@@ -28,12 +28,15 @@ static NSString *const TextCheckingResultAttributeName = @"TextCheckingResultAtt
     self.label = ^{
         ZSWTappableLabel *label = [[ZSWTappableLabel alloc] init];
         label.tapDelegate = self;
+        label.adjustsFontForContentSizeCategory = YES;
         return label;
     }();
     
     NSDataDetector *dataDetector = [NSDataDetector dataDetectorWithTypes:NSTextCheckingAllSystemTypes error:NULL];
     NSString *string = @"did you check google.com or call 415-555-5555? how about friday at 5pm?";
-    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:string attributes:nil];
+    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:string attributes:@{
+        NSFontAttributeName: [UIFont preferredFontForTextStyle:UIFontTextStyleBody],
+    }];
 
     [dataDetector enumerateMatchesInString:string options:0 range:NSMakeRange(0, string.length) usingBlock:^(NSTextCheckingResult *result, NSMatchingFlags flags, BOOL *stop) {
         NSMutableDictionary *attributes = [NSMutableDictionary dictionary];

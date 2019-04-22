@@ -28,6 +28,7 @@ static NSString *const URLAttributeName = @"URL";
     self.label = ^{
         ZSWTappableLabel *label = [[ZSWTappableLabel alloc] init];
         label.textAlignment = NSTextAlignmentCenter;
+        label.adjustsFontForContentSizeCategory = YES;
         label.tapDelegate = self;
         return label;
     }();
@@ -37,6 +38,7 @@ static NSString *const URLAttributeName = @"URL";
         ZSWTappableLabelTappableRegionAttributeName: @YES,
         ZSWTappableLabelHighlightedBackgroundAttributeName: [UIColor lightGrayColor],
         ZSWTappableLabelHighlightedForegroundAttributeName: [UIColor whiteColor],
+        NSFontAttributeName: [UIFont preferredFontForTextStyle:UIFontTextStyleBody],
         NSForegroundColorAttributeName: [UIColor blueColor],
         NSUnderlineStyleAttributeName: @(NSUnderlineStyleSingle),
         URLAttributeName: [NSURL URLWithString:@"http://imgur.com/gallery/VgXCk"],

@@ -13,6 +13,7 @@
 #import "../ZSWTappableLabel.h"
 
 @interface ZSWTappableLabelTouchHandling()
+@property (nonatomic, readwrite) NSAttributedString *unmodifiedAttributedString;
 @property (nonatomic, readwrite) NSTextStorage *textStorage;
 @property (nonatomic, readwrite) NSLayoutManager *layoutManager;
 @property (nonatomic, readwrite) NSTextContainer *textContainer;
@@ -24,6 +25,7 @@
 
 - (instancetype)initWithTextStorage:(NSTextStorage *)textStorage pointOffset:(CGPoint)pointOffset bounds:(CGRect)bounds {
     if ((self = [super init])) {
+        self.unmodifiedAttributedString = [[NSAttributedString alloc] initWithAttributedString:textStorage];
         self.textStorage = textStorage;
         self.layoutManager = textStorage.layoutManagers.lastObject;
         self.textContainer = textStorage.layoutManagers.lastObject.textContainers.lastObject;

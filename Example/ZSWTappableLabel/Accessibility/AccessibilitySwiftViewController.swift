@@ -22,7 +22,11 @@ class SwiftViewLinkCustomAction: UIAccessibilityCustomAction {
 }
 
 class AccessibilitySwiftViewController: UIViewController, ZSWTappableLabelTapDelegate, ZSWTappableLabelAccessibilityDelegate {
-    let label = ZSWTappableLabel()
+    let label: ZSWTappableLabel = {
+        let label = ZSWTappableLabel()
+        label.adjustsFontForContentSizeCategory = true
+        return label
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +42,7 @@ class AccessibilitySwiftViewController: UIViewController, ZSWTappableLabelTapDel
             .tappableRegion: true,
             .tappableHighlightedBackgroundColor: UIColor.lightGray,
             .tappableHighlightedForegroundColor: UIColor.white,
+            .font: UIFont.preferredFont(forTextStyle: .body),
             .foregroundColor: UIColor.blue,
             .underlineStyle: NSUnderlineStyle.single.rawValue,
             .link: URL(string: "http://imgur.com/gallery/VgXCk")!

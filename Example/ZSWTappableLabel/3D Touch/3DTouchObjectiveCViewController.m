@@ -26,6 +26,7 @@
     self.label = ^{
         ZSWTappableLabel *label = [[ZSWTappableLabel alloc] init];
         label.textAlignment = NSTextAlignmentCenter;
+        label.adjustsFontForContentSizeCategory = YES;
         label.tapDelegate = self;
         label.longPressDelegate = self;
         return label;
@@ -35,6 +36,7 @@
     NSDictionary<NSAttributedStringKey, id> *attributes = @{
         ZSWTappableLabelTappableRegionAttributeName: @YES,
         ZSWTappableLabelHighlightedBackgroundAttributeName: [UIColor lightGrayColor],
+        NSFontAttributeName: [UIFont preferredFontForTextStyle:UIFontTextStyleBody],
         NSLinkAttributeName: [NSURL URLWithString:@"http://imgur.com/gallery/VgXCk"],
     };
     

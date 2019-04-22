@@ -12,6 +12,8 @@ import SafariServices
 class SimpleSwiftViewController: UIViewController, ZSWTappableLabelTapDelegate {
     let label: ZSWTappableLabel = {
         let label = ZSWTappableLabel()
+        // note: this doesn't seem to take effect unless you pass a .font to the label, this may be a bug?
+        label.adjustsFontForContentSizeCategory = true
         label.textAlignment = .center
         return label
     }()
@@ -30,6 +32,7 @@ class SimpleSwiftViewController: UIViewController, ZSWTappableLabelTapDelegate {
             .tappableRegion: true,
             .tappableHighlightedBackgroundColor: UIColor.lightGray,
             .tappableHighlightedForegroundColor: UIColor.white,
+            .font: UIFont.preferredFont(forTextStyle: .body),
             .foregroundColor: UIColor.blue,
             .underlineStyle: NSUnderlineStyle.single.rawValue,
             SimpleSwiftViewController.URLAttributeName: URL(string: "http://imgur.com/gallery/VgXCk")!

@@ -16,6 +16,8 @@ class RootExampleCell: UITableViewCell {
     
     let nameLabel: UILabel = {
         let label = UILabel()
+        label.numberOfLines = 0
+        label.adjustsFontForContentSizeCategory = true
         label.font = UIFont.preferredFont(forTextStyle: .headline)
         return label
     }()
@@ -23,12 +25,14 @@ class RootExampleCell: UITableViewCell {
     let bodyLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
+        label.adjustsFontForContentSizeCategory = true
         label.font = UIFont.preferredFont(forTextStyle: .body)
         return label
     }()
     
     let swiftButton: UIButton = {
         let button = UIButton(type: .system)
+        button.titleLabel?.adjustsFontForContentSizeCategory = true
         button.setTitle("Swift", for: .normal)
         button.contentEdgeInsets = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
         return button
@@ -36,6 +40,7 @@ class RootExampleCell: UITableViewCell {
     
     let objcButton: UIButton = {
         let button = UIButton(type: .system)
+        button.titleLabel?.adjustsFontForContentSizeCategory = true
         button.setTitle("Obj-C", for: .normal)
         button.contentEdgeInsets = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
         return button
@@ -84,7 +89,7 @@ class RootExampleCell: UITableViewCell {
         
         objcButton.snp.remakeConstraints { make in
             make.top.equalTo(contentView.snp.topMargin)
-            make.leading.greaterThanOrEqualTo(nameLabel)
+            make.leading.greaterThanOrEqualTo(nameLabel.snp.trailing)
             make.height.equalTo(swiftButton)
         }
 

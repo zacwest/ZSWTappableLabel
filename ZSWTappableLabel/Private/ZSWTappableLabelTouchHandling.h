@@ -24,6 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, readonly) NSTextContainer *textContainer;
 @property (nonatomic, readonly) CGPoint pointOffset;
 @property (nonatomic, readonly) CGRect bounds;
+@property (nonatomic, readonly) NSAttributedString *unmodifiedAttributedString;
 
 - (NSUInteger)characterIndexAtPoint:(CGPoint)point;
 - (BOOL)isTappableRegionAtPoint:(CGPoint)point;
