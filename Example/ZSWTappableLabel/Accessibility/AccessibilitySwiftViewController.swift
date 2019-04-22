@@ -10,7 +10,7 @@ import UIKit
 import ZSWTappableLabel
 import SafariServices
 
-class ViewLinkCustomAction: UIAccessibilityCustomAction {
+class SwiftViewLinkCustomAction: UIAccessibilityCustomAction {
     let range: NSRange
     let attributes: [NSAttributedString.Key: Any]
     
@@ -51,21 +51,23 @@ class AccessibilitySwiftViewController: UIViewController, ZSWTappableLabelTapDel
         }
     }
     
-    @objc func viewLink(_ action: ViewLinkCustomAction) {
+    @objc func viewLink(_ action: SwiftViewLinkCustomAction) -> Bool {
         guard let URL = action.attributes[.link] as? URL else {
-            return
+            return false
         }
         
         let alertController = UIAlertController(title: URL.absoluteString, message: nil, preferredStyle: .alert)
-        alertController.addAction(UIAlertAction(title: "Open URL", style: .default, handler: { [weak self] _ in
+        alertController.addAction(UIAlertAction(title: NSLocalizedString("Open URL", comment: ""), style: .default, handler: { [weak self] _ in
             guard let this = self else {
                 return
             }
             this.show(SFSafariViewController(url: URL), sender: this)
         }))
-        alertController.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        alertController.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .cancel, handler: nil))
         
         present(alertController, animated: true, completion: nil)
+        
+        return true
     }
     
     // MARK: - ZSWTappableLabelTapDelegate
@@ -82,8 +84,8 @@ class AccessibilitySwiftViewController: UIViewController, ZSWTappableLabelTapDel
     
     func tappableLabel(_ tappableLabel: ZSWTappableLabel, accessibilityCustomActionsForCharacterRange characterRange: NSRange, withAttributesAtStart attributes: [NSAttributedString.Key : Any] = [:]) -> [UIAccessibilityCustomAction] {
         return [
-            ViewLinkCustomAction(
-                name: "View Link Address",
+            SwiftViewLinkCustomAction(
+                name: NSLocalizedString("View Link Address", comment: ""),
                 target: self,
                 selector: #selector(viewLink(_:)),
                 range: characterRange,

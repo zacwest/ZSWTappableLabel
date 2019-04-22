@@ -3,7 +3,7 @@
 //  ZSWTappableLabel
 //
 //  Created by Zachary West on 12/19/15.
-//  Copyright © 2015 Zachary West. All rights reserved.
+//  Copyright © 2019 Zachary West. All rights reserved.
 //
 
 protocol RootExampleCellDelegate: class {
@@ -41,7 +41,7 @@ class RootExampleCell: UITableViewCell {
         return button
     }()
     
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: .default, reuseIdentifier: reuseIdentifier)
         
         selectionStyle = .none

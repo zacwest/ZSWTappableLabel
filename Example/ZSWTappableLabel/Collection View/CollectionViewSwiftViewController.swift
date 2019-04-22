@@ -13,7 +13,8 @@ import SnapKit
 
 class CollectionViewSwiftViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout, ZSWTappableLabelTapDelegate, ZSWTappableLabelLongPressDelegate {
     init() {
-        super.init(collectionViewLayout: UICollectionViewFlowLayout())
+        let layout = UICollectionViewFlowLayout()
+        super.init(collectionViewLayout: layout)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -32,6 +33,11 @@ class CollectionViewSwiftViewController: UICollectionViewController, UICollectio
         return 100
     }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        // Not bothering to size these cells in this example
+        return CGSize(width: 100, height: 60)
+    }
+    
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CollectionViewSwiftCell
         
@@ -46,11 +52,7 @@ class CollectionViewSwiftViewController: UICollectionViewController, UICollectio
         
         return cell
     }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 200, height: 200)
-    }
-    
+
     // MARK: - ZSWTappableLabelTapDelegate
     func tappableLabel(_ tappableLabel: ZSWTappableLabel, tappedAt idx: Int, withAttributes attributes: [NSAttributedString.Key : Any] = [:]) {
         guard let URL = attributes[.link] as? URL else {
@@ -78,9 +80,10 @@ class CollectionViewSwiftCell: UICollectionViewCell {
         
         contentView.addSubview(label)
         label.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+            make.edges.equalToSuperview().inset(UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10))
         }
         
+        // Mostly to demonstrate that you can tap without selecting, make it ugly and red when selected.
         selectedBackgroundView = UIView()
         selectedBackgroundView?.backgroundColor = .red
     }

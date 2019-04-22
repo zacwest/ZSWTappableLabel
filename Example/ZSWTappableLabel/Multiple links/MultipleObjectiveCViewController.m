@@ -1,12 +1,12 @@
 //
-//  LongPressObjectiveCViewController.m
+//  MultipleObjectiveCViewController.m
 //  ZSWTappableLabel
 //
-//  Created by Zachary West on 12/20/15.
-//  Copyright © 2015 Zachary West. All rights reserved.
+//  Created by Zachary West on 12/19/15.
+//  Copyright © 2019 Zachary West. All rights reserved.
 //
 
-#import "LongPressObjectiveCViewController.h"
+#import "MultipleObjectiveCViewController.h"
 
 @import Masonry;
 @import ZSWTappableLabel;
@@ -15,11 +15,11 @@
 
 static NSString *const URLAttributeName = @"URL";
 
-@interface LongPressObjectiveCViewController() <ZSWTappableLabelTapDelegate, ZSWTappableLabelLongPressDelegate>
+@interface MultipleObjectiveCViewController () <ZSWTappableLabelTapDelegate>
 @property (nonatomic) ZSWTappableLabel *label;
 @end
 
-@implementation LongPressObjectiveCViewController
+@implementation MultipleObjectiveCViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -30,8 +30,6 @@ static NSString *const URLAttributeName = @"URL";
         ZSWTappableLabel *label = [[ZSWTappableLabel alloc] init];
         label.textAlignment = NSTextAlignmentJustified;
         label.tapDelegate = self;
-        label.longPressDelegate = self;
-        label.longPressAccessibilityActionName = NSLocalizedString(@"Share", nil);
         return label;
     }();
     
@@ -74,21 +72,7 @@ static NSString *const URLAttributeName = @"URL";
 - (void)tappableLabel:(ZSWTappableLabel *)tappableLabel tappedAtIndex:(NSInteger)idx withAttributes:(NSDictionary<NSAttributedStringKey, id> *)attributes {
     NSURL *URL = attributes[URLAttributeName];
     if ([URL isKindOfClass:[NSURL class]]) {
-        if ([SFSafariViewController class] != nil) {
-            [self showViewController:[[SFSafariViewController alloc] initWithURL:URL] sender:self];
-        } else {
-            [[UIApplication sharedApplication] openURL:URL];
-        }
-    }
-}
-
-#pragma mark - ZSWTappableLabelLongPressDelegate
-
-- (void)tappableLabel:(ZSWTappableLabel *)tappableLabel longPressedAtIndex:(NSInteger)idx withAttributes:(NSDictionary<NSAttributedStringKey, id> *)attributes {
-    NSURL *URL = attributes[URLAttributeName];
-    if ([URL isKindOfClass:[NSURL class]]) {
-        UIActivityViewController *activityController = [[UIActivityViewController alloc] initWithActivityItems:@[ URL ] applicationActivities:nil];
-        [self presentViewController:activityController animated:YES completion:nil];
+        [self showViewController:[[SFSafariViewController alloc] initWithURL:URL] sender:self];
     }
 }
 

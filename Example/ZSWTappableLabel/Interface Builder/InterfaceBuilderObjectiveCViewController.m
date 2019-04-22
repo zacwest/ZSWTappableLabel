@@ -3,7 +3,7 @@
 //  ZSWTappableLabel
 //
 //  Created by Zachary West on 12/19/15.
-//  Copyright © 2015 Zachary West. All rights reserved.
+//  Copyright © 2019 Zachary West. All rights reserved.
 //
 
 #import "InterfaceBuilderObjectiveCViewController.h"
@@ -39,11 +39,7 @@
 - (void)tappableLabel:(ZSWTappableLabel *)tappableLabel tappedAtIndex:(NSInteger)idx withAttributes:(NSDictionary<NSAttributedStringKey, id> *)attributes {
     NSURL *URL = attributes[NSLinkAttributeName];
     if ([URL isKindOfClass:[NSURL class]]) {
-        if ([SFSafariViewController class] != nil) {
-            [self showViewController:[[SFSafariViewController alloc] initWithURL:URL] sender:self];
-        } else {
-            [[UIApplication sharedApplication] openURL:URL];
-        }
+        [self showViewController:[[SFSafariViewController alloc] initWithURL:URL] sender:self];
     }
 }
 

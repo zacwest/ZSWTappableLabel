@@ -24,6 +24,9 @@
 		116126E51C2612BD003B4E43 /* InterfaceBuilderSwiftViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 116126E31C2612BD003B4E43 /* InterfaceBuilderSwiftViewController.xib */; };
 		116126E91C261466003B4E43 /* InterfaceBuilderObjectiveCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 116126E71C261466003B4E43 /* InterfaceBuilderObjectiveCViewController.m */; };
 		116126EA1C261466003B4E43 /* InterfaceBuilderObjectiveCViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 116126E81C261466003B4E43 /* InterfaceBuilderObjectiveCViewController.xib */; };
+		119AC0C6226D3ABB00DD70BC /* AccessibilityObjectiveCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 119AC0C5226D3ABB00DD70BC /* AccessibilityObjectiveCViewController.m */; };
+		119AC0C9226D3D3500DD70BC /* 3DTouchObjectiveCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 119AC0C8226D3D3500DD70BC /* 3DTouchObjectiveCViewController.m */; };
+		119AC0CC226D3EB600DD70BC /* CollectionViewObjectiveCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 119AC0CB226D3EB600DD70BC /* CollectionViewObjectiveCViewController.m */; };
 		11E9BCC1226BF626003C1962 /* AccessibilitySwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E9BCC0226BF626003C1962 /* AccessibilitySwiftViewController.swift */; };
 		11E9BCC4226BFBCE003C1962 /* 3DTouchSwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E9BCC3226BFBCE003C1962 /* 3DTouchSwiftViewController.swift */; };
 		11E9BCC7226C037C003C1962 /* CollectionViewSwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E9BCC6226C037C003C1962 /* CollectionViewSwiftViewController.swift */; };
@@ -73,6 +76,12 @@
 		116126E71C261466003B4E43 /* InterfaceBuilderObjectiveCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InterfaceBuilderObjectiveCViewController.m; sourceTree = "<group>"; };
 		116126E81C261466003B4E43 /* InterfaceBuilderObjectiveCViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InterfaceBuilderObjectiveCViewController.xib; sourceTree = "<group>"; };
 		11909ABC1C13D46A00B9AB03 /* ZSWTappableLabel_Example-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ZSWTappableLabel_Example-Bridging-Header.h"; sourceTree = "<group>"; };
+		119AC0C4226D3ABB00DD70BC /* AccessibilityObjectiveCViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AccessibilityObjectiveCViewController.h; sourceTree = "<group>"; };
+		119AC0C5226D3ABB00DD70BC /* AccessibilityObjectiveCViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AccessibilityObjectiveCViewController.m; sourceTree = "<group>"; };
+		119AC0C7226D3D3500DD70BC /* 3DTouchObjectiveCViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = 3DTouchObjectiveCViewController.h; sourceTree = "<group>"; };
+		119AC0C8226D3D3500DD70BC /* 3DTouchObjectiveCViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = 3DTouchObjectiveCViewController.m; sourceTree = "<group>"; };
+		119AC0CA226D3EB600DD70BC /* CollectionViewObjectiveCViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionViewObjectiveCViewController.h; sourceTree = "<group>"; };
+		119AC0CB226D3EB600DD70BC /* CollectionViewObjectiveCViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionViewObjectiveCViewController.m; sourceTree = "<group>"; };
 		11E9BCC0226BF626003C1962 /* AccessibilitySwiftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilitySwiftViewController.swift; sourceTree = "<group>"; };
 		11E9BCC3226BFBCE003C1962 /* 3DTouchSwiftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 3DTouchSwiftViewController.swift; sourceTree = "<group>"; };
 		11E9BCC6226C037C003C1962 /* CollectionViewSwiftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewSwiftViewController.swift; sourceTree = "<group>"; };
@@ -193,6 +202,8 @@
 			isa = PBXGroup;
 			children = (
 				11E9BCC0226BF626003C1962 /* AccessibilitySwiftViewController.swift */,
+				119AC0C4226D3ABB00DD70BC /* AccessibilityObjectiveCViewController.h */,
+				119AC0C5226D3ABB00DD70BC /* AccessibilityObjectiveCViewController.m */,
 			);
 			path = Accessibility;
 			sourceTree = "<group>";
@@ -201,6 +212,8 @@
 			isa = PBXGroup;
 			children = (
 				11E9BCC3226BFBCE003C1962 /* 3DTouchSwiftViewController.swift */,
+				119AC0C7226D3D3500DD70BC /* 3DTouchObjectiveCViewController.h */,
+				119AC0C8226D3D3500DD70BC /* 3DTouchObjectiveCViewController.m */,
 			);
 			path = "3D Touch";
 			sourceTree = "<group>";
@@ -209,6 +222,8 @@
 			isa = PBXGroup;
 			children = (
 				11E9BCC6226C037C003C1962 /* CollectionViewSwiftViewController.swift */,
+				119AC0CA226D3EB600DD70BC /* CollectionViewObjectiveCViewController.h */,
+				119AC0CB226D3EB600DD70BC /* CollectionViewObjectiveCViewController.m */,
 			);
 			path = "Collection View";
 			sourceTree = "<group>";
@@ -523,6 +538,9 @@
 				11110E441C27543300E67ACD /* LongPressSwiftViewController.swift in Sources */,
 				110D6E471C25FC33004E8551 /* AppDelegate.swift in Sources */,
 				110D6E451C25FC04004E8551 /* RootController.swift in Sources */,
+				119AC0C6226D3ABB00DD70BC /* AccessibilityObjectiveCViewController.m in Sources */,
+				119AC0CC226D3EB600DD70BC /* CollectionViewObjectiveCViewController.m in Sources */,
+				119AC0C9226D3D3500DD70BC /* 3DTouchObjectiveCViewController.m in Sources */,
 				11E9BCC1226BF626003C1962 /* AccessibilitySwiftViewController.swift in Sources */,
 				11110E471C2762A900E67ACD /* LongPressObjectiveCViewController.m in Sources */,
 				116126D41C260961003B4E43 /* MultipleObjectiveCViewController.m in Sources */,

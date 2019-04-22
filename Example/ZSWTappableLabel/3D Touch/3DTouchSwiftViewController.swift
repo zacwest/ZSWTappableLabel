@@ -61,9 +61,7 @@ class DDDTouchSwiftViewController: UIViewController, ZSWTappableLabelTapDelegate
     // MARK: - UIViewControllerPreviewingDelegate
     
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
-        // sourceView is the same as label in this example, but for your information, you should always
-        // convert the point to the label's coordinate space like below
-        guard let regionInfo = label.tappableRegionInfo(at: label.convert(location, from: previewingContext.sourceView)) else {
+        guard let regionInfo = label.tappableRegionInfo(forPreviewingContext: previewingContext, location: location) else {
             return nil
         }
         
@@ -71,8 +69,9 @@ class DDDTouchSwiftViewController: UIViewController, ZSWTappableLabelTapDelegate
             return nil
         }
     
-        previewingContext.sourceRect = previewingContext.sourceView.convert(regionInfo.frame, from: label)
-        
+        // convenience method that sets the rect of the previewing context
+        regionInfo.configure(previewingContext: previewingContext)
+    
         return SFSafariViewController(url: URL)
     }
     

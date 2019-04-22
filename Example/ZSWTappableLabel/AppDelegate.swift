@@ -3,7 +3,7 @@
 //  ZSWTappableLabel
 //
 //  Created by Zachary West on 12/19/15.
-//  Copyright © 2015 Zachary West. All rights reserved.
+//  Copyright © 2019 Zachary West. All rights reserved.
 //
 
 import Foundation
@@ -15,7 +15,7 @@ import ZSWTappableLabel
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         window = {
             let window = UIWindow(frame: UIScreen.main.bounds)
             window.rootViewController = UINavigationController(rootViewController: RootController())

@@ -3,7 +3,7 @@
 //  ZSWTappableLabel
 //
 //  Created by Zachary West on 12/19/15.
-//  Copyright © 2015 Zachary West. All rights reserved.
+//  Copyright © 2019 Zachary West. All rights reserved.
 //
 
 import UIKit
@@ -52,6 +52,24 @@ class RootController: UIViewController, UITableViewDelegate, UITableViewDataSour
             return LongPressObjectiveCViewController()
         }))
         
+        examples.append(ExampleRow(name: "Accessibility", body: "Contains additional actions for links for VoiceOver users.", constructorSwift: { () -> UIViewController in
+            return AccessibilitySwiftViewController()
+        }, constructorObjectiveC: { () -> UIViewController in
+            return AccessibilityObjectiveCViewController()
+        }))
+        
+        examples.append(ExampleRow(name: "3D Touch", body: "Tap to open, long-press to share and 3D Touch for a peeking preview.", constructorSwift: { () -> UIViewController in
+            return DDDTouchSwiftViewController()
+        }, constructorObjectiveC: { () -> UIViewController in
+            return DDDTouchObjectiveCViewController()
+        }))
+        
+        examples.append(ExampleRow(name: "Collection View", body: "Within a UICollectionViewCell, the label only intercepts touches for the tappable regions and allows selection elsewhere.", constructorSwift: { () -> UIViewController in
+            return CollectionViewSwiftViewController()
+        }, constructorObjectiveC: { () -> UIViewController in
+            return CollectionViewObjectiveCViewController()
+        }))
+        
         self.examples = examples
         
         super.init(nibName: nil, bundle: nil)
@@ -74,7 +92,7 @@ class RootController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.delegate = self
         tableView.dataSource = self
         tableView.estimatedRowHeight = 75
-        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.rowHeight = UITableView.automaticDimension
         tableView.register(RootExampleCell.self, forCellReuseIdentifier: NSStringFromClass(RootExampleCell.self))
     }
     
