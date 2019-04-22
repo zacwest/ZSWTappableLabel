@@ -70,6 +70,9 @@
 #pragma mark - UIViewControllerPreviewingDelegate
 - (UIViewController *)previewingContext:(id<UIViewControllerPreviewing>)previewingContext viewControllerForLocation:(CGPoint)location {
     ZSWTappableLabelTappableRegionInfo *regionInfo = [self.label tappableRegionInfoForPreviewingContext:previewingContext location:location];
+    if (!regionInfo) {
+        return nil;
+    }
     NSURL *URL = regionInfo.attributes[NSLinkAttributeName];
     [regionInfo configurePreviewingContext:previewingContext];
     return [[SFSafariViewController alloc] initWithURL:URL];
