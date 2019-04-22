@@ -101,7 +101,7 @@ typedef NS_ENUM(NSInteger, ZSWTappableLabelNotifyType) {
         UIContentSizeCategory currentCategory = self.traitCollection.preferredContentSizeCategory;
         
         if (![previousCategory isEqual:currentCategory] || previousCategory != currentCategory) {
-            _touchHandling = nil;
+            self.touchHandling = nil;
         }
     }
 }
