@@ -61,6 +61,7 @@
 		402A938976407A2CF76563279D89E11E /* ConstraintMakerExtendable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FEFC156D8E3ABD53937E55E9B07EE81 /* ConstraintMakerExtendable.swift */; };
 		4099BF5895F73B4E1D10869D68EC54A1 /* ConstraintMakerFinalizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5428CD399D33FCC5309E696EF6408000 /* ConstraintMakerFinalizable.swift */; };
 		41B43BEEF42524A0AE28EED6C4CDC7F0 /* ExpectaObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 06F5DD1515F99E1178F4F897E9B35027 /* ExpectaObject.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		4210AF539C3B086BC14E12E2799F7AED /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A78A63F4B04747F9E0BFFCD650CD9DDF /* UIKit.framework */; };
 		43BDAB16AD203084BB4B5A6BE283360D /* Constraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B1E724E1AF94E62246C58BB8807C65 /* Constraint.swift */; };
 		43C6A0510A72A7010133EC961D8A7DF6 /* XCTestCase+Specta.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E19930DD53CD370558EF84D09F73221 /* XCTestCase+Specta.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		45841FE955BBD495DF132C0771023A05 /* EXPMatchers+equal.h in Headers */ = {isa = PBXBuildFile; fileRef = 53D1C0CF7500A532EEF3440BCA1FA209 /* EXPMatchers+equal.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -73,7 +74,6 @@
 		4F416D5932B01B815EAE2BC291AB5F70 /* EXPMatchers+postNotification.h in Headers */ = {isa = PBXBuildFile; fileRef = E5FD2FC80FF5FAD31490AD5E7719D2D7 /* EXPMatchers+postNotification.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4F554F99FA8F7F3BE84205BF017E3712 /* EXPMatchers+beGreaterThanOrEqualTo.m in Sources */ = {isa = PBXBuildFile; fileRef = 47FC287DA98545F73244CD1A43FE332F /* EXPMatchers+beGreaterThanOrEqualTo.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4FDED973490EB6A8908D2671154FDB89 /* View+MASShorthandAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = F0679FE591256A8DAAECB42A2E7D2303 /* View+MASShorthandAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5102287C66412D32140F63041D9D56EC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E9918E473A3EAA67C469D7119E74EB1 /* Foundation.framework */; };
 		5146A654C4F46F06B8102CA502A19F84 /* EXPMatchers+beLessThanOrEqualTo.h in Headers */ = {isa = PBXBuildFile; fileRef = 909500B9D395FF974C7B70864C8718F8 /* EXPMatchers+beLessThanOrEqualTo.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		52738A747531E3218438913768C799EC /* EXPMatchers+beInTheRangeOf.h in Headers */ = {isa = PBXBuildFile; fileRef = DBE0BB5F3F086DB9EE10D5907D42844B /* EXPMatchers+beInTheRangeOf.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		54D57D3DD00156DFBE0DA95A6C867FE7 /* ZSWStringParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 75E8C7FF0FC4FF4838D53829E2D0F1BF /* ZSWStringParser.m */; };
@@ -86,6 +86,7 @@
 		595562EA6459A31C4B9CC08ACDC70C6C /* ZSWTappableLabel-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E45AAB4E6A9590CB1D2E0E6560C0084 /* ZSWTappableLabel-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5AC5FF2760255680235313B56A574609 /* EXPMatchers+beInstanceOf.h in Headers */ = {isa = PBXBuildFile; fileRef = A5C17A3E342D53F1E54DFC8A8CB0DB39 /* EXPMatchers+beInstanceOf.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5C81C19AB676D2725664BF54A3B23AE5 /* EXPMatchers+raise.h in Headers */ = {isa = PBXBuildFile; fileRef = A7B916EFB33582E9E4992D21A3FEDB85 /* EXPMatchers+raise.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5E03103015C8695CFA7D422F9D11C2A6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E9918E473A3EAA67C469D7119E74EB1 /* Foundation.framework */; };
 		5FB8C1215921CC4BF3E7F417BAD08DBD /* SPTTestSuite.m in Sources */ = {isa = PBXBuildFile; fileRef = BE888B0A091869EF0C3FB62CA606E71B /* SPTTestSuite.m */; };
 		62449CA0C38A2DC85B0982B25394E90E /* MASConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 8807377DE6584D7A93B04E458950844D /* MASConstraint.m */; };
 		626B143296611EBC98F20F738CFB4AA8 /* MASViewConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = 66C090FBDEFC3302F751120D703632A8 /* MASViewConstraint.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -561,14 +562,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C48B0D4110C4A4CA1A0080C4C1723339 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5102287C66412D32140F63041D9D56EC /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		CFD504BBC29C7F82645D4755D191F67B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -583,6 +576,15 @@
 			files = (
 				66A710204E06BE20617A9FDA0E41DCF9 /* Foundation.framework in Frameworks */,
 				262C017B4ED4A5B04928FFCEB402568D /* XCTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E7B3993EF8B1C04D10AD258E760FDBC5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5E03103015C8695CFA7D422F9D11C2A6 /* Foundation.framework in Frameworks */,
+				4210AF539C3B086BC14E12E2799F7AED /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1299,7 +1301,7 @@
 			buildPhases = (
 				0AEA072A92DB295C288BF10DFEC09E39 /* Headers */,
 				E0A43D396C6C6DB8BF972C896516AE20 /* Sources */,
-				C48B0D4110C4A4CA1A0080C4C1723339 /* Frameworks */,
+				E7B3993EF8B1C04D10AD258E760FDBC5 /* Frameworks */,
 				452C963DC2FBBB184299424DC80070F0 /* Resources */,
 			);
 			buildRules = (
