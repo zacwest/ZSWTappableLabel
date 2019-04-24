@@ -10,7 +10,7 @@
 //
 
 #import "ZSWTappableLabel.h"
-#import "Private/ZSWTappableLabelTappableRegionInfo+Private.h"
+#import "Private/ZSWTappableLabelTappableRegionInfoImpl.h"
 #import "Private/ZSWTappableLabelAccessibilityActionLongPress.h"
 #import "Private/ZSWTappableLabelTouchHandling.h"
 
@@ -387,8 +387,8 @@ typedef NS_ENUM(NSInteger, ZSWTappableLabelNotifyType) {
 
 #pragma mark - Public attribute getting
 
-- (nullable ZSWTappableLabelTappableRegionInfo *)tappableRegionInfoAtPoint:(CGPoint)point {
-    __block ZSWTappableLabelTappableRegionInfo *regionInfo;
+- (nullable id<ZSWTappableLabelTappableRegionInfo>)tappableRegionInfoAtPoint:(CGPoint)point {
+    __block ZSWTappableLabelTappableRegionInfoImpl *regionInfo;
     
     [self performWithTouchHandling:^(ZSWTappableLabelTouchHandling *th) {
         NSUInteger characterIndex = [th characterIndexAtPoint:point];
@@ -407,15 +407,15 @@ typedef NS_ENUM(NSInteger, ZSWTappableLabelNotifyType) {
         CGRect frame = [th frameForCharacterRange:effectiveRange];
         NSDictionary<NSAttributedStringKey, id> *attributes = [th.unmodifiedAttributedString attributesAtIndex:characterIndex effectiveRange:NULL];
         
-        regionInfo = [[ZSWTappableLabelTappableRegionInfo alloc] initWithFrame:frame
-                                                                    attributes:attributes
-                                                                 containerView:self];
+        regionInfo = [[ZSWTappableLabelTappableRegionInfoImpl alloc] initWithFrame:frame
+                                                                        attributes:attributes
+                                                                     containerView:self];
     }];
     
     return regionInfo;
 }
 
-- (nullable ZSWTappableLabelTappableRegionInfo *)tappableRegionInfoForPreviewingContext:(id<UIViewControllerPreviewing>)previewingContext location:(CGPoint)location {
+- (nullable id<ZSWTappableLabelTappableRegionInfo>)tappableRegionInfoForPreviewingContext:(id<UIViewControllerPreviewing>)previewingContext location:(CGPoint)location {
     return [self tappableRegionInfoAtPoint:[previewingContext.sourceView convertPoint:location toView:self]];
 }
 

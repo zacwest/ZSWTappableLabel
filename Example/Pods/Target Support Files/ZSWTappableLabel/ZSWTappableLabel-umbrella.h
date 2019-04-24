@@ -11,7 +11,6 @@
 #endif
 
 #import "ZSWTappableLabel.h"
-#import "ZSWTappableLabelTappableRegionInfo.h"
 
 FOUNDATION_EXPORT double ZSWTappableLabelVersionNumber;
 FOUNDATION_EXPORT const unsigned char ZSWTappableLabelVersionString[];

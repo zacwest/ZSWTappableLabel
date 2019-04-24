@@ -129,7 +129,7 @@ func previewingContext(
 ```objc
 - (UIViewController *)previewingContext:(id<UIViewControllerPreviewing>)previewingContext
               viewControllerForLocation:(CGPoint)location {
-  ZSWTappableLabelTappableRegionInfo *regionInfo = 
+  id<ZSWTappableLabelTappableRegionInfo> regionInfo = 
     [self.label tappableRegionInfoForPreviewingContext:previewingContext location:location];
   if (!regionInfo) {
     return nil;

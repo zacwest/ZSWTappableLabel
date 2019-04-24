@@ -10,7 +10,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ZSWTappableLabelTappableRegionInfo.h"
+
+@class ZSWTappableLabel;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -42,10 +43,11 @@ extern NSAttributedStringKey const ZSWTappableLabelHighlightedForegroundAttribut
 extern NSAttributedStringKey const ZSWTappableLabelTappableRegionAttributeName
     NS_SWIFT_NAME(tappableRegion);
 
-#pragma mark - Tap delegate
+#pragma mark - Delegates
 
-@class ZSWTappableLabel;
-
+/**
+ * @brief Delegate for handling taps
+ */
 @protocol ZSWTappableLabelTapDelegate
 /*!
  * @brief A tap was completed
@@ -62,6 +64,9 @@ extern NSAttributedStringKey const ZSWTappableLabelTappableRegionAttributeName
        withAttributes:(NSDictionary<NSAttributedStringKey, id> *)attributes;
 @end
 
+/**
+ * @brief Delegate for handling long presses
+ */
 @protocol ZSWTappableLabelLongPressDelegate
 /*!
  * @brief A long press was completed
@@ -84,6 +89,9 @@ extern NSAttributedStringKey const ZSWTappableLabelTappableRegionAttributeName
        withAttributes:(NSDictionary<NSAttributedStringKey, id> *)attributes;
 @end
 
+/**
+ * @brief Delegate for handling accessibility
+ */
 @protocol ZSWTappableLabelAccessibilityDelegate
 /*!
  * @brief Provide custom actions for a given element
@@ -104,24 +112,94 @@ extern NSAttributedStringKey const ZSWTappableLabelTappableRegionAttributeName
                                     withAttributesAtStart:(NSDictionary<NSAttributedStringKey, id> *)attributes;
 @end
 
-#pragma mark -
+#pragma mark - Data protocols
+
+/**
+ * @brief Protocol given in response to requests to the label
+ *
+ * You do not need to implement this protocol to use the label.
+ * See the -tappableRegionInfo... methods on ZSWTappableLabel.
+ */
+@protocol ZSWTappableLabelTappableRegionInfo
+/*!
+ * @brief The frame of the tappable region in the label's coordinate space
+ *
+ * If you are setting this as the sourceRect for the previewingContext of a 3D Touch event
+ * you will need to convert it to the sourceView's coordinate space, for example:
+ *
+ *   previewingContext.sourceRect = previewingContext.sourceView.convert(regionInfo.frame, from: label)
+ *
+ * in Swift, or in Objective-C:
+ *
+ *   previewingContext.sourceRect = [previewingContext.sourceView convertRect:regionInfo.frame fromView:self.label];
+ *
+ * Since this is easy to get wrong, see \a -configurePreviewingContext:
+ */
+@property (nonatomic, readonly) CGRect frame;
+
+/*!
+ * @brief The attributed string attributes at the point requested
+ */
+@property (nonatomic, readonly) NSDictionary<NSAttributedStringKey, id> *attributes;
+
+/*!
+ * @brief Convenience method for 3D Touch
+ *
+ * Configures the previewing context with the correct frame information for this tappable region info.
+ */
+- (void)configurePreviewingContext:(id<UIViewControllerPreviewing>)previewingContext
+    NS_SWIFT_NAME(configure(previewingContext:));
+@end
+
+#pragma mark - Primary class
 
 @interface ZSWTappableLabel : UILabel
 
-/*!
- * @brief Delegate which handles taps
+#pragma mark - Configuration
+
+/**
+ * @brief Delegate for handling taps
+ * @see ZSWTappableLabelTapDelegate
  */
 @property (nullable, nonatomic, weak) IBOutlet id<ZSWTappableLabelTapDelegate> tapDelegate;
-
-/*!
- * @brief Delegate which handles long-presses
+/**
+ * @brief Delegate for handling long presses
+ *
+ * You should also configure \a longPressAccessibilityActionName.
+ * You are also able to configure \a longPressDuration, though the default value should be sufficient.
+ *
+ * @see ZSWTappableLabelLongPressDelegate
  */
 @property (nullable, nonatomic, weak) IBOutlet id<ZSWTappableLabelLongPressDelegate> longPressDelegate;
-
-/*!
- * @brief Delegate which handles accessibility
+/**
+ * @brief Delegate for handling accessibility actions
+ * @see ZSWTappableLabelAccessibilityDelegate
  */
 @property (nullable, nonatomic, weak) IBOutlet id<ZSWTappableLabelAccessibilityDelegate> accessibilityDelegate;
+
+/*!
+ * @brief Long press duration
+ *
+ * How long, in seconds, the user must long press without lifting before the touch should be recognized as a long press.
+ *
+ * If you do not set a \a longPressDelegate, a long press does not occur.
+ *
+ * This defaults to 0.5 seconds.
+ */
+@property (nonatomic) NSTimeInterval longPressDuration;
+
+/*!
+ * @brief Accessibility label for long press
+ *
+ * Your users will be read this localized string when they choose to dig into the custom actions a link has.
+ *
+ * If you do not set a \a longPressDelegate, this action is not included.
+ *
+ * This defaults to 'Open Menu', but localization will not occur as this library currently has no translations.
+ */
+@property (null_resettable, nonatomic, copy) IBInspectable NSString *longPressAccessibilityActionName;
+
+#pragma mark - Getting information
 
 /*!
  * @brief Get the tappable region info at a point
@@ -150,7 +228,7 @@ extern NSAttributedStringKey const ZSWTappableLabelTappableRegionAttributeName
  *
  * See \a ZSWTappableLabelTappableRegionInfo for the information returned
  */
-- (nullable ZSWTappableLabelTappableRegionInfo *)tappableRegionInfoAtPoint:(CGPoint)point;
+- (nullable id<ZSWTappableLabelTappableRegionInfo>)tappableRegionInfoAtPoint:(CGPoint)point;
 
 /*!
  * @brief Convenience method to get tappable region for 3D Touch
@@ -165,30 +243,8 @@ extern NSAttributedStringKey const ZSWTappableLabelTappableRegionAttributeName
  *
  * See \a ZSWTappableLabelTappableRegionInfo for the information returned
  */
-- (nullable ZSWTappableLabelTappableRegionInfo *)
+- (nullable id<ZSWTappableLabelTappableRegionInfo>)
     tappableRegionInfoForPreviewingContext:(id<UIViewControllerPreviewing>)previewingContext location:(CGPoint)location;
-
-/*!
- * @brief Long press duration
- *
- * How long, in seconds, the user must long press without lifting before the touch should be recognized as a long press.
- *
- * If you do not set a \a longPressDelegate, a long press does not occur.
- *
- * This defaults to 0.5 seconds.
- */
-@property (nonatomic) NSTimeInterval longPressDuration;
-
-/*!
- * @brief Accessibility label for long press
- *
- * Your users will be read this localized string when they choose to dig into the custom actions a link has.
- *
- * If you do not set a \a longPressDelegate, this action is not included.
- *
- * This defaults to 'Open Menu'.
- */
-@property (null_resettable, nonatomic, copy) IBInspectable NSString *longPressAccessibilityActionName;
 
 @end
 

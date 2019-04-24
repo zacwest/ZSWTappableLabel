@@ -1,4 +1,4 @@
-# 3.0 (2019-04-23)
+# 3.0 (2019-04-24)
 
 - Updates touch handling, improving the long-press experience and adding support for 3D Touch.
 - Introduces an accessibility delegate, to provide actions for links within the label.
