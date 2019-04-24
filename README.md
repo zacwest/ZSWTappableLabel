@@ -5,7 +5,7 @@
 [![License](https://img.shields.io/cocoapods/l/ZSWTappableLabel.svg?style=flat)](http://cocoapods.org/pods/ZSWTappableLabel)
 [![Platform](https://img.shields.io/cocoapods/p/ZSWTappableLabel.svg?style=flat)](http://cocoapods.org/pods/ZSWTappableLabel)
 
-ZSWTappableLabel is a `UILabel` subclass powered by NSAttributedStrings which allows you to tap, long-press, 3D Touch or perform accessibility actions on certain regions, with optional highlight behavior. It does not draw text itself and executes a minimal amount of code unless the user is interacting with a tappable region.
+ZSWTappableLabel is a UILabel subclass for links which are tappable, long-pressable, 3D Touchable, and VoiceOverable. It has optional highlighting behavior, and does not draw text itself. Its goal is to be as minimally different from UILabel as possible, and only executes additional code when the user is interacting with a tappable region.
 
 ## A basic, tappable link
 
