@@ -1,11 +1,11 @@
 ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES
-FRAMEWORK_SEARCH_PATHS = $(inherited) "$PODS_CONFIGURATION_BUILD_DIR/Masonry" "$PODS_CONFIGURATION_BUILD_DIR/SnapKit" "$PODS_CONFIGURATION_BUILD_DIR/ZSWTaggedString" "$PODS_CONFIGURATION_BUILD_DIR/ZSWTappableLabel"
+FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/Masonry" "${PODS_CONFIGURATION_BUILD_DIR}/SnapKit" "${PODS_CONFIGURATION_BUILD_DIR}/ZSWTaggedString" "${PODS_CONFIGURATION_BUILD_DIR}/ZSWTappableLabel"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/Masonry/Masonry.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/SnapKit/SnapKit.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/ZSWTaggedString/ZSWTaggedString.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/ZSWTappableLabel/ZSWTappableLabel.framework/Headers"
 LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
-OTHER_CFLAGS = $(inherited) -iquote "$PODS_CONFIGURATION_BUILD_DIR/Masonry/Masonry.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/SnapKit/SnapKit.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/ZSWTaggedString/ZSWTaggedString.framework/Headers" -iquote "$PODS_CONFIGURATION_BUILD_DIR/ZSWTappableLabel/ZSWTappableLabel.framework/Headers"
-OTHER_LDFLAGS = $(inherited) -framework "Masonry" -framework "SnapKit" -framework "ZSWTaggedString" -framework "ZSWTappableLabel"
-OTHER_SWIFT_FLAGS = $(inherited) "-D" "COCOAPODS"
-PODS_BUILD_DIR = $BUILD_DIR
-PODS_CONFIGURATION_BUILD_DIR = $PODS_BUILD_DIR/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
+OTHER_LDFLAGS = $(inherited) -framework "Foundation" -framework "Masonry" -framework "SnapKit" -framework "UIKit" -framework "ZSWTaggedString" -framework "ZSWTappableLabel"
+OTHER_SWIFT_FLAGS = $(inherited) -D COCOAPODS
+PODS_BUILD_DIR = ${BUILD_DIR}
+PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
 PODS_PODFILE_DIR_PATH = ${SRCROOT}/.
 PODS_ROOT = ${SRCROOT}/Pods

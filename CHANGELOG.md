@@ -1,3 +1,13 @@
+# 3.0 (2019-??-??)
+
+- Updates touch handling, improving the long-press experience and adding support for 3D Touch.
+- Introduces an accessibility delegate, to provide actions for links within the label.
+- Adds the ability to get attributes at a point, particularly for use with 3D Touch.
+- Updated examples for Xcode 10.2 and Swift 5 (the pod itself did not need updates).
+- Fixes long press delegate call not being invoked unless there was a foreground or background highlight state.
+- Fixes not handling `adjustsFontForContentSizeCategory`. Note that you do need to specify a `NSFontAttributeName` attribute for this to work, even on vanilla `UILabel`, when you are setting attributedText.
+- Now requires iOS 10 or later, specifically for `-[UIAccessibilityElement accessibilityFrameInContainerSpace]`.
+
 # 2.0 (2017-10-16)
 
 - Updated for Xcode 9 (and Swift 4).

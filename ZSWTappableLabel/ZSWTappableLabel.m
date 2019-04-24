@@ -3,28 +3,22 @@
 //  ZSWTappableLabel
 //
 //  Created by Zachary West on 3/23/15.
-//  Copyright (c) 2015 Zachary West. All rights reserved.
+//  Copyright (c) 2019 Zachary West. All rights reserved.
 //
 //  MIT License
 //  https://github.com/zacwest/ZSWTappableLabel
 //
 
 #import "ZSWTappableLabel.h"
-
-@interface ZSWTappableLabelAccessibilityActionLongPress: UIAccessibilityCustomAction
-@property (nonatomic) NSUInteger characterIndex;
-@end
-
-@implementation ZSWTappableLabelAccessibilityActionLongPress
-@end
+#import "Private/ZSWTappableLabelTappableRegionInfo+Private.h"
+#import "Private/ZSWTappableLabelAccessibilityActionLongPress.h"
+#import "Private/ZSWTappableLabelTouchHandling.h"
 
 #pragma mark -
 
 NSAttributedStringKey const ZSWTappableLabelHighlightedBackgroundAttributeName = @"ZSWTappableLabelHighlightedBackgroundAttributeName";
 NSAttributedStringKey const ZSWTappableLabelTappableRegionAttributeName = @"ZSWTappableLabelTappableRegionAttributeName";
 NSAttributedStringKey const ZSWTappableLabelHighlightedForegroundAttributeName = @"ZSWTappableLabelHighlightedForegroundAttributeName";
-
-NSString *const ZSWTappableLabelCharacterIndexUserInfoKey = @"CharacterIndex";
 
 typedef NS_ENUM(NSInteger, ZSWTappableLabelNotifyType) {
     ZSWTappableLabelNotifyTypeTap = 1,
@@ -34,18 +28,14 @@ typedef NS_ENUM(NSInteger, ZSWTappableLabelNotifyType) {
 #pragma mark -
 
 @interface ZSWTappableLabel() <UIGestureRecognizerDelegate>
-@property (nonatomic) NSArray *accessibleElements;
-@property (nonatomic) CGRect lastAccessibleElementsFrame;
+@property (nonatomic) NSArray<UIAccessibilityElement *> *accessibleElements;
+@property (nonatomic) CGRect lastAccessibleElementsBounds;
 
-@property (nonatomic) NSAttributedString *unmodifiedAttributedText;
+@property (nonatomic) ZSWTappableLabelTouchHandling *touchHandling;
 
-@property (nonatomic) NSTextStorage *gestureTextStorage;
-@property (nonatomic) CGPoint gesturePointOffset;
-
+@property (nonatomic) BOOL needsToWatchTouches;
 @property (nonatomic) UILongPressGestureRecognizer *longPressGR;
-@property (nonatomic) UITapGestureRecognizer *tapGR;
-
-@property (nonatomic) NSTimer *longPressTriggerTimer;
+@property (nonatomic) BOOL hasCurrentEvent;
 @end
 
 @implementation ZSWTappableLabel
@@ -63,8 +53,8 @@ typedef NS_ENUM(NSInteger, ZSWTappableLabelNotifyType) {
     if (self) {
         [self tappableLabelCommonInit];
         
-        // In case any text was assigned in IB, don't lose it.
-        [self setAttributedText:[super attributedText]];
+        // Text was assigned by IB, possibly, so we need to make sure we're running if there's anything useful.
+        [self checkForTappableRegions];
     }
     return self;
 }
@@ -80,12 +70,12 @@ typedef NS_ENUM(NSInteger, ZSWTappableLabelNotifyType) {
     
     self.longPressGR = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPress:)];
     self.longPressGR.delegate = self;
-    self.longPressGR.minimumPressDuration = 0.15; // trying to match timing of UICollectionView's highlight LPGR
     [self addGestureRecognizer:self.longPressGR];
-    
-    self.tapGR = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tap:)];
-    self.tapGR.delegate = self;
-    [self addGestureRecognizer:self.tapGR];
+}
+
+- (void)setLongPressDuration:(NSTimeInterval)longPressDuration {
+    _longPressDuration = longPressDuration;
+    self.longPressGR.minimumPressDuration = longPressDuration;
 }
 
 - (void)setLongPressDelegate:(id<ZSWTappableLabelLongPressDelegate>)longPressDelegate {
@@ -98,17 +88,74 @@ typedef NS_ENUM(NSInteger, ZSWTappableLabelNotifyType) {
     _accessibleElements = nil;
 }
 
-- (void)setUnmodifiedAttributedText:(NSAttributedString *)unmodifiedAttributedText {
-    _unmodifiedAttributedText = unmodifiedAttributedText;
+- (void)setAccessibilityDelegate:(id<ZSWTappableLabelAccessibilityDelegate>)accessibilityDelegate {
+    _accessibilityDelegate = accessibilityDelegate;
     _accessibleElements = nil;
 }
 
-- (void)createTextStorage {
-    if (self.gestureTextStorage) {
-        return;
+- (void)traitCollectionDidChange:(UITraitCollection *)previousTraitCollection {
+    [super traitCollectionDidChange:previousTraitCollection];
+    
+    if (self.adjustsFontForContentSizeCategory) {
+        UIContentSizeCategory previousCategory = previousTraitCollection.preferredContentSizeCategory;
+        UIContentSizeCategory currentCategory = self.traitCollection.preferredContentSizeCategory;
+        
+        if (![previousCategory isEqual:currentCategory] || previousCategory != currentCategory) {
+            self.touchHandling = nil;
+        }
+    }
+}
+
+- (ZSWTappableLabelTouchHandling *)createTouchHandlingIfNeeded {
+    ZSWTappableLabelTouchHandling *existingTouchHandling = self.touchHandling;
+    
+    if (existingTouchHandling) {
+        if (CGRectEqualToRect(existingTouchHandling.bounds, self.bounds)) {
+            // we can continue to use the existing touch handling
+            return existingTouchHandling;
+        } else {
+            // we need to create a new touch handling. additionally, we need to reset from the last one.
+            // if the view is resizing while we were handling a touch, we need to cancel out the attributed
+            // changes that we performed from the previous touch handling.
+            [super setAttributedText:existingTouchHandling.unmodifiedAttributedString];
+        }
     }
     
-    NSTextStorage *textStorage = [[NSTextStorage alloc] initWithAttributedString:self.unmodifiedAttributedText];
+    // If the user doesn't specify a font, UILabel is going to render with the current
+    // one it wants, so we need to fill in the blanks
+    NSAttributedString *attributedText = [super attributedText];
+    NSMutableAttributedString *mutableText = [attributedText mutableCopy];
+    UIFont *font = self.font;
+    
+    [attributedText enumerateAttribute:NSFontAttributeName
+                               inRange:NSMakeRange(0, attributedText.length)
+                               options:NSAttributedStringEnumerationLongestEffectiveRangeNotRequired
+                            usingBlock:^(id value, NSRange range, BOOL *stop) {
+                                if (!value) {
+                                    [mutableText addAttribute:NSFontAttributeName
+                                                        value:font
+                                                        range:range];
+                                }
+                            }];
+    
+    if (self.textAlignment != NSTextAlignmentLeft) {
+        NSMutableParagraphStyle *style = [[NSMutableParagraphStyle alloc] init];
+        style.alignment = self.textAlignment;
+        
+        [attributedText enumerateAttribute:NSParagraphStyleAttributeName
+                                   inRange:NSMakeRange(0, attributedText.length)
+                                   options:NSAttributedStringEnumerationLongestEffectiveRangeNotRequired
+                                usingBlock:^(id value, NSRange range, BOOL *stop) {
+                                    if (!value) {
+                                        [mutableText addAttribute:NSParagraphStyleAttributeName
+                                                            value:style
+                                                            range:range];
+                                    }
+                                }];
+    }
+    
+    NSTextStorage *textStorage = [[NSTextStorage alloc] initWithAttributedString:mutableText];
+    NSLayoutManager *layoutManager = [[NSLayoutManager alloc] init];
     NSTextContainer *textContainer = [[NSTextContainer alloc] initWithSize:^{
         CGSize size = self.bounds.size;
         
@@ -118,7 +165,6 @@ typedef NS_ENUM(NSInteger, ZSWTappableLabelNotifyType) {
         size.height = CGFLOAT_MAX;
         return size;
     }()];
-    NSLayoutManager *layoutManager = [[NSLayoutManager alloc] init];
 
     textContainer.lineBreakMode = self.lineBreakMode;
     textContainer.maximumNumberOfLines = self.numberOfLines;
@@ -127,102 +173,36 @@ typedef NS_ENUM(NSInteger, ZSWTappableLabelNotifyType) {
     
     [textStorage addLayoutManager:layoutManager];
 
-    self.gestureTextStorage = textStorage;
-    
     // UILabel vertically centers if it doesn't fill the whole bounds, so compensate for that.
     CGRect usedRect = [layoutManager usedRectForTextContainer:textContainer];
-    self.gesturePointOffset = CGPointMake(0, (CGRectGetHeight(self.bounds) - CGRectGetHeight(usedRect))/2.0);
+    CGPoint pointOffset = CGPointMake(0, (CGRectGetHeight(self.bounds) - CGRectGetHeight(usedRect))/2.0);
+    
+    ZSWTappableLabelTouchHandling *touchHandling = [[ZSWTappableLabelTouchHandling alloc] initWithTextStorage:textStorage pointOffset:pointOffset bounds:self.bounds];
+    self.touchHandling = touchHandling;
+    return touchHandling;
 }
 
-- (void)destroyTextStorageIfNeeded {
-    BOOL (^isEnded)(UIGestureRecognizer *) = ^(UIGestureRecognizer *gestureRecognizer) {
-        switch (gestureRecognizer.state) {
-            case UIGestureRecognizerStateBegan:
-            case UIGestureRecognizerStateChanged:
-            case UIGestureRecognizerStatePossible:
-                return NO;
-                
-            case UIGestureRecognizerStateCancelled:
-            case UIGestureRecognizerStateEnded:
-            case UIGestureRecognizerStateFailed:
-                return YES;
-        }
-        
-        return YES;
-    };
-    
-    if (isEnded(self.tapGR) && isEnded(self.longPressGR)) {
-        self.gestureTextStorage = nil;
-    }
-}
-
-- (void)performWithLayoutManager:(void(^)(NSUInteger (^characterIndexAtPoint)(CGPoint point),
-                                          CGRect (^screenFrameForCharacterRange)(NSRange characterRange)))layoutManagerBlock
-      ignoringGestureRecognizers:(BOOL)ignoreGestureRecognizers {
-    [self createTextStorage];
-    
-    NSTextStorage *textStorage = self.gestureTextStorage;
-    NSLayoutManager *layoutManager = textStorage.layoutManagers.lastObject;
-    NSTextContainer *textContainer = layoutManager.textContainers.lastObject;
-    CGPoint pointOffset = self.gesturePointOffset;
-    
-    NSUInteger (^characterIndexAtPoint)(CGPoint) = ^NSUInteger(CGPoint point) {
-        point.x -= pointOffset.x;
-        point.y -= pointOffset.y;
-        
-        CGFloat fractionOfDistanceBetween;
-        NSUInteger characterIdx = [layoutManager characterIndexForPoint:point
-                                                        inTextContainer:textContainer
-                               fractionOfDistanceBetweenInsertionPoints:&fractionOfDistanceBetween];
-        
-        characterIdx = MIN(textStorage.length - 1, characterIdx + fractionOfDistanceBetween);
-
-        NSRange glyphRange = [layoutManager glyphRangeForCharacterRange:NSMakeRange(characterIdx, 1) actualCharacterRange:NULL];
-        CGRect glyphRect = [layoutManager boundingRectForGlyphRange:glyphRange inTextContainer:textContainer];
-        
-        // plus some padding to make it easier in some cases
-        glyphRect = CGRectInset(glyphRect, -10, -10);
-
-        if (!CGRectContainsPoint(glyphRect, point)) {
-            characterIdx = NSNotFound;
-        }
-        
-        return characterIdx;
-    };
-    
-    CGRect (^sreenFrameForCharacterRange)(NSRange) = ^(NSRange characterRange) {
-        NSRange glyphRange = [layoutManager glyphRangeForCharacterRange:characterRange actualCharacterRange:NULL];
-        CGRect viewFrame = [layoutManager boundingRectForGlyphRange:glyphRange inTextContainer:textContainer];
-        viewFrame.origin.x += pointOffset.x;
-        viewFrame.origin.y += pointOffset.y;
-        return UIAccessibilityConvertFrameToScreenCoordinates(viewFrame, self);
-    };
-    
-    layoutManagerBlock(characterIndexAtPoint, sreenFrameForCharacterRange);
-    
-    if (ignoreGestureRecognizers) {
-        self.gestureTextStorage = nil;
-    } else {
-        [self destroyTextStorageIfNeeded];
-    }
+- (void)performWithTouchHandling:(void(^)(ZSWTappableLabelTouchHandling *th))block {
+    ZSWTappableLabelTouchHandling *touchHandling = [self createTouchHandlingIfNeeded];
+    block(touchHandling);
 }
 
 #pragma mark - Overloading
 
 - (void)setText:(NSString *)text {
-    if (text) {
-        [self setAttributedText:[[NSAttributedString alloc] initWithString:text attributes:nil]];
-    } else {
-        [self setAttributedText:nil];
-    }
-}
-
-- (NSString *)text {
-    return self.unmodifiedAttributedText.string;
+    [super setText:text];
+    self.touchHandling = nil;
+    [self checkForTappableRegions];
 }
 
 - (void)setAttributedText:(NSAttributedString *)attributedText {
     [super setAttributedText:attributedText];
+    self.touchHandling = nil;
+    [self checkForTappableRegions];
+}
+
+- (void)checkForTappableRegions {
+    NSAttributedString *attributedText = self.attributedText;
     
     __block BOOL containsTappableRegion = NO;
     [attributedText enumerateAttribute:ZSWTappableLabelTappableRegionAttributeName
@@ -235,85 +215,88 @@ typedef NS_ENUM(NSInteger, ZSWTappableLabelNotifyType) {
                                 }
                             }];
     
-    if (containsTappableRegion) {
-        self.tapGR.enabled = YES;
-        self.longPressGR.enabled = YES;
-        
-        // If the user doesn't specify a font, UILabel is going to render with the current
-        // one it wants, so we need to fill in the blanks
-        NSMutableAttributedString *mutableText = [attributedText mutableCopy];
-        UIFont *font = [super font];
-        
-        [attributedText enumerateAttribute:NSFontAttributeName
-                                   inRange:NSMakeRange(0, attributedText.length)
-                                   options:NSAttributedStringEnumerationLongestEffectiveRangeNotRequired
-                                usingBlock:^(id value, NSRange range, BOOL *stop) {
-                                    if (!value) {
-                                        [mutableText addAttribute:NSFontAttributeName
-                                                            value:font
-                                                            range:range];
-                                    }
-                                }];
-        
-        if (self.textAlignment != NSTextAlignmentLeft) {
-            NSMutableParagraphStyle *style = [[NSMutableParagraphStyle alloc] init];
-            style.alignment = self.textAlignment;
-            
-            [attributedText enumerateAttribute:NSParagraphStyleAttributeName
-                                       inRange:NSMakeRange(0, attributedText.length)
-                                       options:NSAttributedStringEnumerationLongestEffectiveRangeNotRequired
-                                    usingBlock:^(id value, NSRange range, BOOL *stop) {
-                                        if (!value) {
-                                            [mutableText addAttribute:NSParagraphStyleAttributeName
-                                                                value:style
-                                                                range:range];
-                                        }
-                                    }];
-        }
-        
-        attributedText = mutableText;
-    } else {
-        self.tapGR.enabled = NO;
-        self.longPressGR.enabled = NO;
-    }
-    
-    self.unmodifiedAttributedText = attributedText;
-}
-
-- (NSAttributedString *)attributedText {
-    return self.unmodifiedAttributedText;
+    self.needsToWatchTouches = containsTappableRegion;
+    self.longPressGR.enabled = containsTappableRegion;
 }
 
 #pragma mark - UIGestureRecognizerDelegate
+
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
+    if (gestureRecognizer == self.longPressGR && !self.longPressDelegate) {
+        // We wait until the last moment to decide if a long press should occur because keeping track of the
+        // GR's enabled state when the delegate changes is a bit more state management than seems appropriate.
+        return NO;
+    }
+    
     __block BOOL shouldReceive = NO;
     
-    [self performWithLayoutManager:^(NSUInteger (^characterIndexAtPoint)(CGPoint point),
-                                     CGRect (^screenFrameForCharacterRange)(NSRange characterRange)) {
-        NSUInteger characterIdx = characterIndexAtPoint([touch locationInView:self]);
-        
-        if (characterIdx != NSNotFound) {
-            NSNumber *attribute = [self.unmodifiedAttributedText attribute:ZSWTappableLabelTappableRegionAttributeName
-                                                                   atIndex:characterIdx
-                                                            effectiveRange:NULL];
-            shouldReceive = [attribute boolValue];
-        } else {
-            shouldReceive = NO;
-        }
-    } ignoringGestureRecognizers:YES];
+    [self performWithTouchHandling:^(ZSWTappableLabelTouchHandling *th) {
+        shouldReceive = [th isTappableRegionAtPoint:[touch locationInView:self]];
+    }];
     
     return shouldReceive;
 }
 
-- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldBeRequiredToFailByGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
-    if (otherGestureRecognizer == self.tapGR || otherGestureRecognizer == self.longPressGR) {
-        return NO;
+#pragma mark - Touch handling
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    if (!self.needsToWatchTouches) {
+        [super touchesBegan:touches withEvent:event];
+        return;
     }
     
-    return YES;
+    [self performWithTouchHandling:^(ZSWTappableLabelTouchHandling *th) {
+        CGPoint point = [touches.anyObject locationInView:self];
+        NSUInteger characterIdx = [th characterIndexAtPoint:point];
+        
+        if ([th isTappableRegionAtCharacterIndex:characterIdx]) {
+            // Touching in a tappable region, we're good to start controlling these touches.
+            self.hasCurrentEvent = YES;
+            [self applyHighlightAtIndex:characterIdx];
+        } else {
+            // Touching is outside of a tappable region, we should forward the touches onward.
+            // This forwarding allows e.g. a UICollectionViewCell we're contained in to highlight, select, etc.
+            self.hasCurrentEvent = NO;
+            [super touchesBegan:touches withEvent:event];
+        }
+    }];
 }
 
-#pragma mark - Gestures
+- (void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    if (!self.needsToWatchTouches || !self.hasCurrentEvent) {
+        [super touchesMoved:touches withEvent:event];
+        return;
+    }
+    
+    [self performWithTouchHandling:^(ZSWTappableLabelTouchHandling *th) {
+        NSUInteger characterIdx = [th characterIndexAtPoint:[touches.anyObject locationInView:self]];
+        [self applyHighlightAtIndex:characterIdx];
+    }];
+}
+
+- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    if (!self.needsToWatchTouches || !self.hasCurrentEvent) {
+        [super touchesEnded:touches withEvent:event];
+        return;
+    }
+    
+    self.hasCurrentEvent = NO;
+    [self performWithTouchHandling:^(ZSWTappableLabelTouchHandling *th) {
+        NSUInteger characterIdx = [th characterIndexAtPoint:[touches.anyObject locationInView:self]];
+        [self notifyForCharacterIndex:characterIdx type:ZSWTappableLabelNotifyTypeTap];
+        [self removeHighlight];
+    }];
+}
+
+- (void)touchesCancelled:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    if (!self.needsToWatchTouches || !self.hasCurrentEvent) {
+        [super touchesCancelled:touches withEvent:event];
+        return;
+    }
+    
+    self.hasCurrentEvent = NO;
+    [self removeHighlight];
+}
 
 - (void)applyHighlightAtIndex:(NSUInteger)characterIndex {
     if (characterIndex == NSNotFound) {
@@ -321,42 +304,44 @@ typedef NS_ENUM(NSInteger, ZSWTappableLabelNotifyType) {
         return;
     }
     
-    NSMutableAttributedString *attributedString = [self.unmodifiedAttributedText mutableCopy];
-    
-    NSRange highlightEffectiveRange = NSMakeRange(0, 0), foregroundEffectiveRange = NSMakeRange(0, 0);
-    UIColor *highlightColor = [attributedString attribute:ZSWTappableLabelHighlightedBackgroundAttributeName
-                                                  atIndex:characterIndex
-                                    longestEffectiveRange:&highlightEffectiveRange
-                                                  inRange:NSMakeRange(0, attributedString.length)];
-    
-    UIColor *foregroundColor = [attributedString attribute:ZSWTappableLabelHighlightedForegroundAttributeName
-                                                   atIndex:characterIndex
-                                     longestEffectiveRange:&foregroundEffectiveRange
-                                                   inRange:NSMakeRange(0, attributedString.length)];
-    
-    if (highlightColor || foregroundColor) {
-        if (highlightColor) {
-            [attributedString addAttribute:NSBackgroundColorAttributeName
-                                     value:highlightColor
-                                     range:highlightEffectiveRange];
-        }
+    [self performWithTouchHandling:^(ZSWTappableLabelTouchHandling *th) {
+        NSMutableAttributedString *attributedString = [th.unmodifiedAttributedString mutableCopy];
         
-        if (foregroundColor) {
-            [attributedString addAttribute:NSForegroundColorAttributeName
-                                     value:foregroundColor
-                                     range:foregroundEffectiveRange];
-        }
+        NSRange highlightEffectiveRange = NSMakeRange(0, 0), foregroundEffectiveRange = NSMakeRange(0, 0);
+        UIColor *highlightColor = [attributedString attribute:ZSWTappableLabelHighlightedBackgroundAttributeName
+                                                      atIndex:characterIndex
+                                        longestEffectiveRange:&highlightEffectiveRange
+                                                      inRange:NSMakeRange(0, attributedString.length)];
         
-        [self beginLongPressAtIndex:characterIndex];
-        [super setAttributedText:attributedString];
-    } else {
-        [self removeHighlight];
-    }
+        UIColor *foregroundColor = [attributedString attribute:ZSWTappableLabelHighlightedForegroundAttributeName
+                                                       atIndex:characterIndex
+                                         longestEffectiveRange:&foregroundEffectiveRange
+                                                       inRange:NSMakeRange(0, attributedString.length)];
+        
+        if (highlightColor || foregroundColor) {
+            if (highlightColor) {
+                [attributedString addAttribute:NSBackgroundColorAttributeName
+                                         value:highlightColor
+                                         range:highlightEffectiveRange];
+            }
+            
+            if (foregroundColor) {
+                [attributedString addAttribute:NSForegroundColorAttributeName
+                                         value:foregroundColor
+                                         range:foregroundEffectiveRange];
+            }
+            
+            [super setAttributedText:attributedString];
+        } else {
+            [self removeHighlight];
+        }
+    }];
 }
 
 - (void)removeHighlight {
-    [super setAttributedText:self.unmodifiedAttributedText];
-    [self cancelLongPressTimer];
+    [self performWithTouchHandling:^(ZSWTappableLabelTouchHandling *th) {
+        [super setAttributedText:th.unmodifiedAttributedString];
+    }];
 }
 
 - (void)notifyForCharacterIndex:(NSUInteger)characterIndex type:(ZSWTappableLabelNotifyType)notifyType {
@@ -364,52 +349,23 @@ typedef NS_ENUM(NSInteger, ZSWTappableLabelNotifyType) {
         return;
     }
     
-    NSDictionary *attributes = [self.unmodifiedAttributedText attributesAtIndex:characterIndex effectiveRange:NULL] ?: @{};
-    
-    switch (notifyType) {
-        case ZSWTappableLabelNotifyTypeTap:
-            [self.tapDelegate tappableLabel:self
-                              tappedAtIndex:characterIndex
-                             withAttributes:attributes];
-            break;
-            
-        case ZSWTappableLabelNotifyTypeLongPress:
-            [self.longPressDelegate tappableLabel:self
-                               longPressedAtIndex:characterIndex
-                                   withAttributes:attributes];
-            break;
-    }
-}
-
-- (void)beginLongPressAtIndex:(NSUInteger)characterIndex {
-    if (!self.longPressDelegate) {
-        return;
-    }
-    
-    NSDictionary *userInfo = @{
-        ZSWTappableLabelCharacterIndexUserInfoKey: @(characterIndex)
-    };
-    
-    [self.longPressTriggerTimer invalidate];
-    self.longPressTriggerTimer = [NSTimer scheduledTimerWithTimeInterval:self.longPressDuration target:self selector:@selector(longPressForTimer:) userInfo:userInfo repeats:NO];
-}
-
-- (void)cancelLongPressTimer {
-    [self.longPressTriggerTimer invalidate];
-    self.longPressTriggerTimer = nil;
-}
-
-- (void)longPressForTimer:(NSTimer *)timer {
-    NSDictionary *userInfo = timer.userInfo;
-    
-    [self cancelLongPressTimer];
-    
-    // Cancel the long press gesture so it doesn't fire after this
-    self.longPressGR.enabled = NO;
-    self.longPressGR.enabled = YES;
-    
-    NSUInteger characterIndex = [userInfo[ZSWTappableLabelCharacterIndexUserInfoKey] unsignedIntegerValue];
-    [self notifyForCharacterIndex:characterIndex type:ZSWTappableLabelNotifyTypeLongPress];
+    [self performWithTouchHandling:^(ZSWTappableLabelTouchHandling *th) {
+        NSDictionary *attributes = [th.unmodifiedAttributedString attributesAtIndex:characterIndex effectiveRange:NULL] ?: @{};
+        
+        switch (notifyType) {
+            case ZSWTappableLabelNotifyTypeTap:
+                [self.tapDelegate tappableLabel:self
+                                  tappedAtIndex:characterIndex
+                                 withAttributes:attributes];
+                break;
+                
+            case ZSWTappableLabelNotifyTypeLongPress:
+                [self.longPressDelegate tappableLabel:self
+                                   longPressedAtIndex:characterIndex
+                                       withAttributes:attributes];
+                break;
+        }
+    }];
 }
 
 - (BOOL)longPressForAccessibilityAction:(ZSWTappableLabelAccessibilityActionLongPress *)action {
@@ -417,54 +373,50 @@ typedef NS_ENUM(NSInteger, ZSWTappableLabelNotifyType) {
     return YES;
 }
 
-- (void)tap:(UITapGestureRecognizer *)tapGR {
-    [self performWithLayoutManager:^(NSUInteger (^characterIndexAtPoint)(CGPoint point),
-                                     CGRect (^screenFrameForCharacterRange)(NSRange characterRange)) {
-        NSUInteger characterIndex = characterIndexAtPoint([tapGR locationInView:self]);
-        
+- (void)longPress:(UILongPressGestureRecognizer *)longPressGR {
+    if (longPressGR.state != UIGestureRecognizerStateBegan) {
+        // We only care about began because that is when we notify our delegate. Everything else can be ignored.
+        return;
+    }
+    
+    [self performWithTouchHandling:^(ZSWTappableLabelTouchHandling *th) {
+        NSUInteger characterIndex = [th characterIndexAtPoint:[longPressGR locationInView:self]];
+        [self notifyForCharacterIndex:characterIndex type:ZSWTappableLabelNotifyTypeLongPress];
+    }];
+}
+
+#pragma mark - Public attribute getting
+
+- (nullable ZSWTappableLabelTappableRegionInfo *)tappableRegionInfoAtPoint:(CGPoint)point {
+    __block ZSWTappableLabelTappableRegionInfo *regionInfo;
+    
+    [self performWithTouchHandling:^(ZSWTappableLabelTouchHandling *th) {
+        NSUInteger characterIndex = [th characterIndexAtPoint:point];
         if (characterIndex == NSNotFound) {
             return;
         }
         
-        [self applyHighlightAtIndex:characterIndex];
-        [self notifyForCharacterIndex:characterIndex type:ZSWTappableLabelNotifyTypeTap];
-        [self removeHighlight];
-    } ignoringGestureRecognizers:NO];
+        NSRange effectiveRange;
+        NSNumber *attribute = [th.unmodifiedAttributedString attribute:ZSWTappableLabelTappableRegionAttributeName
+                                                               atIndex:characterIndex
+                                                        effectiveRange:&effectiveRange];
+        if (![attribute boolValue]) {
+            return;
+        }
+        
+        CGRect frame = [th frameForCharacterRange:effectiveRange];
+        NSDictionary<NSAttributedStringKey, id> *attributes = [th.unmodifiedAttributedString attributesAtIndex:characterIndex effectiveRange:NULL];
+        
+        regionInfo = [[ZSWTappableLabelTappableRegionInfo alloc] initWithFrame:frame
+                                                                    attributes:attributes
+                                                                 containerView:self];
+    }];
+    
+    return regionInfo;
 }
 
-- (void)longPress:(UILongPressGestureRecognizer *)longPressGR {
-    [self performWithLayoutManager:^(NSUInteger (^characterIndexAtPoint)(CGPoint point),
-                                     CGRect (^screenFrameForCharacterRange)(NSRange characterRange)) {
-        switch (longPressGR.state) {
-            case UIGestureRecognizerStatePossible:
-                // noop
-                break;
-                
-            case UIGestureRecognizerStateBegan:
-            case UIGestureRecognizerStateChanged: {
-                if (CGRectContainsPoint(self.bounds, [longPressGR locationInView:self])) {
-                    NSUInteger characterIndex = characterIndexAtPoint([longPressGR locationInView:self]);
-                    [self applyHighlightAtIndex:characterIndex];
-                } else {
-                    [self removeHighlight];
-                }
-                break;
-            }
-                
-            case UIGestureRecognizerStateEnded: {
-                NSUInteger characterIndex = characterIndexAtPoint([longPressGR locationInView:self]);
-                [self notifyForCharacterIndex:characterIndex type:ZSWTappableLabelNotifyTypeTap];
-                [self removeHighlight];
-                break;
-            }
-                
-            case UIGestureRecognizerStateCancelled:
-            case UIGestureRecognizerStateFailed:
-                // don't do anything; just remove highlight
-                [self removeHighlight];
-                break;
-        }
-    } ignoringGestureRecognizers:NO];
+- (nullable ZSWTappableLabelTappableRegionInfo *)tappableRegionInfoForPreviewingContext:(id<UIViewControllerPreviewing>)previewingContext location:(CGPoint)location {
+    return [self tappableRegionInfoAtPoint:[previewingContext.sourceView convertPoint:location toView:self]];
 }
 
 #pragma mark - Accessibility
@@ -474,25 +426,36 @@ typedef NS_ENUM(NSInteger, ZSWTappableLabelNotifyType) {
 }
 
 - (NSArray *)accessibleElements {
-    CGRect screenFrame = UIAccessibilityConvertFrameToScreenCoordinates(self.frame, self);
-    
-    if (_accessibleElements && CGRectEqualToRect(self.lastAccessibleElementsFrame, screenFrame)) {
+    if (_accessibleElements && CGRectEqualToRect(self.bounds, self.lastAccessibleElementsBounds)) {
+        // As long as our content and bounds don't change, our elements won't need updating, because
+        // their frame is based on our container space.
         return _accessibleElements;
     }
     
-    NSMutableArray *accessibleElements = [NSMutableArray array];
-    NSAttributedString *unmodifiedAttributedString = self.unmodifiedAttributedText;
+    NSMutableArray<UIAccessibilityElement *> *accessibleElements = [NSMutableArray array];
+    NSAttributedString *unmodifiedAttributedString = self.attributedText;
     
-    [self performWithLayoutManager:^(NSUInteger (^characterIndexAtPoint)(CGPoint point),
-                                     CGRect (^screenFrameForCharacterRange)(NSRange characterRange)) {
+    id<ZSWTappableLabelAccessibilityDelegate> accessibilityDelegate = self.accessibilityDelegate;
+    id<ZSWTappableLabelLongPressDelegate> longPressDelegate = self.longPressDelegate;
+    NSString *longPressAccessibilityActionName = self.longPressAccessibilityActionName;
+    
+    [self performWithTouchHandling:^(ZSWTappableLabelTouchHandling *th) {
         if (!unmodifiedAttributedString.length) {
             return;
         }
         
+        // Our general strategy is to break apart the string into multiple elements, where the boundary for each
+        // element is the tappable region start/stop locations. This produces something like:
+        //
+        // [This is an] [example: link] [sentence with a link in the middle.]
+        //
+        // This matches Safari's behavior when it encounters links in the page. Remember that a VoiceOver user can
+        // always enumerate and read the entire contents using the two-finger up/down gesture, and this is behavior
+        // they are likely used to.
         void (^enumerationBlock)(id, NSRange, BOOL *) = ^(id value, NSRange range, BOOL *stop) {
             UIAccessibilityElement *element = [[UIAccessibilityElement alloc] initWithAccessibilityContainer:self];
             element.accessibilityLabel = [unmodifiedAttributedString.string substringWithRange:range];
-            element.accessibilityFrame = screenFrameForCharacterRange(range);
+            element.accessibilityFrameInContainerSpace = [th frameForCharacterRange:range];
             
             if ([value boolValue]) {
                 element.accessibilityTraits = UIAccessibilityTraitLink | UIAccessibilityTraitStaticText;
@@ -500,11 +463,23 @@ typedef NS_ENUM(NSInteger, ZSWTappableLabelNotifyType) {
                 element.accessibilityTraits = UIAccessibilityTraitStaticText;
             }
             
-            if (self.longPressDelegate) {
-                ZSWTappableLabelAccessibilityActionLongPress *action = [[ZSWTappableLabelAccessibilityActionLongPress alloc] initWithName:self.longPressAccessibilityActionName target:self selector:@selector(longPressForAccessibilityAction:)];
+            NSMutableArray<UIAccessibilityCustomAction *> *customActions = [NSMutableArray array];
+            
+            if (longPressDelegate) {
+                ZSWTappableLabelAccessibilityActionLongPress *action = [[ZSWTappableLabelAccessibilityActionLongPress alloc] initWithName:longPressAccessibilityActionName target:self selector:@selector(longPressForAccessibilityAction:)];
                 action.characterIndex = range.location;
-                
-                element.accessibilityCustomActions = @[ action ];
+                [customActions addObject:action];
+            }
+            
+            if (accessibilityDelegate) {
+                NSDictionary<NSAttributedStringKey, id> *attributesAtStart = [unmodifiedAttributedString attributesAtIndex:range.location effectiveRange:NULL];
+                [customActions addObjectsFromArray:[accessibilityDelegate tappableLabel:self
+                                            accessibilityCustomActionsForCharacterRange:range
+                                                                  withAttributesAtStart:attributesAtStart]];
+            }
+            
+            if (customActions.count > 0) {
+                element.accessibilityCustomActions = customActions;
             }
             
             [accessibleElements addObject:element];
@@ -514,10 +489,10 @@ typedef NS_ENUM(NSInteger, ZSWTappableLabelNotifyType) {
                                                inRange:NSMakeRange(0, unmodifiedAttributedString.length)
                                                options:NSAttributedStringEnumerationLongestEffectiveRangeNotRequired
                                             usingBlock:enumerationBlock];
-    } ignoringGestureRecognizers:YES];
+    }];
 
     _accessibleElements = [accessibleElements copy];
-    _lastAccessibleElementsFrame = screenFrame;
+    self.lastAccessibleElementsBounds = self.bounds;
 
     return _accessibleElements;
 }
