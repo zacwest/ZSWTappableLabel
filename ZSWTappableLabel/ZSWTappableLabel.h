@@ -162,6 +162,7 @@ extern NSAttributedStringKey const ZSWTappableLabelTappableRegionAttributeName
  * @see ZSWTappableLabelTapDelegate
  */
 @property (nullable, nonatomic, weak) IBOutlet id<ZSWTappableLabelTapDelegate> tapDelegate;
+
 /**
  * @brief Delegate for handling long presses
  *
@@ -171,6 +172,7 @@ extern NSAttributedStringKey const ZSWTappableLabelTappableRegionAttributeName
  * @see ZSWTappableLabelLongPressDelegate
  */
 @property (nullable, nonatomic, weak) IBOutlet id<ZSWTappableLabelLongPressDelegate> longPressDelegate;
+
 /**
  * @brief Delegate for handling accessibility actions
  * @see ZSWTappableLabelAccessibilityDelegate
