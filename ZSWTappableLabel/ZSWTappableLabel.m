@@ -191,12 +191,14 @@ typedef NS_ENUM(NSInteger, ZSWTappableLabelNotifyType) {
 - (void)setText:(NSString *)text {
     [super setText:text];
     self.touchHandling = nil;
+    _accessibleElements = nil;
     [self checkForTappableRegions];
 }
 
 - (void)setAttributedText:(NSAttributedString *)attributedText {
     [super setAttributedText:attributedText];
     self.touchHandling = nil;
+    _accessibleElements = nil;
     [self checkForTappableRegions];
 }
 
