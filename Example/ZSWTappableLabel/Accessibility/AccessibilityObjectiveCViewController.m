@@ -39,7 +39,7 @@
         label.accessibilityDelegate = self;
         return label;
     }();
-    
+
     NSString *string = NSLocalizedString(@"Privacy Policy", nil);
     NSDictionary<NSAttributedStringKey, id> *attributes = @{
         ZSWTappableLabelTappableRegionAttributeName: @YES,
@@ -86,6 +86,11 @@
     customAction.range = characterRange;
     customAction.attributes = attributes;
     return @[ customAction ];
+}
+
+- (nullable NSString *)tappableLabel:(nonnull ZSWTappableLabel *)tappableLabel accessibilityLabelForCharacterRange:(NSRange)characterRange withAttributesAtStart:(nonnull NSDictionary<NSAttributedStringKey,id> *)attributes {
+    // The Swift example overrides, the Objective-C example does not.
+    return nil;
 }
 
 @end

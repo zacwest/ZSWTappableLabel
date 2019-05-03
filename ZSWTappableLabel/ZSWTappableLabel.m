@@ -455,7 +455,7 @@ typedef NS_ENUM(NSInteger, ZSWTappableLabelNotifyType) {
         // they are likely used to.
         void (^enumerationBlock)(id, NSRange, BOOL *) = ^(id value, NSRange range, BOOL *stop) {
             UIAccessibilityElement *element = [[UIAccessibilityElement alloc] initWithAccessibilityContainer:self];
-            element.accessibilityLabel = [unmodifiedAttributedString.string substringWithRange:range];
+
             element.accessibilityFrameInContainerSpace = [th frameForCharacterRange:range];
             
             if ([value boolValue]) {
@@ -477,6 +477,17 @@ typedef NS_ENUM(NSInteger, ZSWTappableLabelNotifyType) {
                 [customActions addObjectsFromArray:[accessibilityDelegate tappableLabel:self
                                             accessibilityCustomActionsForCharacterRange:range
                                                                   withAttributesAtStart:attributesAtStart]];
+
+                NSString *replacementLabel = [accessibilityDelegate tappableLabel:self
+                                              accessibilityLabelForCharacterRange:range
+                                                            withAttributesAtStart:attributesAtStart];
+                if (replacementLabel != nil) {
+                    element.accessibilityLabel = replacementLabel;
+                } else {
+                    element.accessibilityLabel = [unmodifiedAttributedString.string substringWithRange:range];
+                }
+            } else {
+                element.accessibilityLabel = [unmodifiedAttributedString.string substringWithRange:range];
             }
             
             if (customActions.count > 0) {

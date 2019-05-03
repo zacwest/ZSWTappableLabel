@@ -98,4 +98,12 @@ class AccessibilitySwiftViewController: UIViewController, ZSWTappableLabelTapDel
             )
         ]
     }
+
+    func tappableLabel(_ tappableLabel: ZSWTappableLabel, accessibilityLabelForCharacterRange characterRange: NSRange, withAttributesAtStart attributes: [NSAttributedString.Key : Any] = [:]) -> String? {
+        if attributes[.link] != nil {
+            return NSLocalizedString("Privacy Policy Label For Accessibility", comment: "Replaces the Privacy Policy text in the label")
+        } else {
+            return nil
+        }
+    }
 }

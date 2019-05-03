@@ -109,6 +109,22 @@ extern NSAttributedStringKey const ZSWTappableLabelTappableRegionAttributeName
 - (NSArray<UIAccessibilityCustomAction *> *)tappableLabel:(ZSWTappableLabel *)tappableLabel
               accessibilityCustomActionsForCharacterRange:(NSRange)characterRange
                                     withAttributesAtStart:(NSDictionary<NSAttributedStringKey, id> *)attributes;
+
+/*!
+ * @brief Provide an accessibility label for a given range
+ *
+ * @param tappableLabel The label
+ * @param characterRange The range of characters represented by an element
+ * @param attributes The attributes from the attributed string for the first location of the range
+ *
+ * @note Only the attributes for the first character of the string are included since the attributes can vary
+ * over the substring.
+ *
+ * @return An accessibility label to use or nil if you want the existing text at the range
+ */
+- (nullable NSString *)tappableLabel:(ZSWTappableLabel *)tappableLabel
+ accessibilityLabelForCharacterRange:(NSRange)characterRange
+               withAttributesAtStart:(NSDictionary<NSAttributedStringKey, id> *)attributes;
 @end
 
 #pragma mark - Data protocols
