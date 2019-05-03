@@ -391,7 +391,7 @@ func tappableLabel(
 ZSWTappableLabel is available through [CocoaPods](http://cocoapods.org). To install it, simply add the following line to your Podfile:
 
 ```ruby
-pod "ZSWTappableLabel", "~> 3.0"
+pod "ZSWTappableLabel", "~> 3.1"
 ```
 
 ## License
