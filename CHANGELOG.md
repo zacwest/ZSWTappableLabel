@@ -1,3 +1,8 @@
+# 3.1 (2019-05-03)
+
+- Adds accessibilityDelegate method to override accessibilityLabel of constituent elements.
+- Fixes accessibility elements not resetting when text changed.
+
 # 3.0 (2019-04-24)
 
 - Updates touch handling, improving the long-press experience and adding support for 3D Touch.

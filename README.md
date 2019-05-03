@@ -357,6 +357,35 @@ func tappableLabel(
 }
 ```
 
+You can also change the `accessibilityLabel` of the created accessibility elements, for example:
+
+```swift
+func tappableLabel(
+  _ tappableLabel: ZSWTappableLabel, 
+  accessibilityLabelForCharacterRange characterRange: NSRange, 
+  withAttributesAtStart attributes: [NSAttributedString.Key : Any] = [:]
+) -> String? {
+  if attributes[.link] != nil {
+    return "Some Custom Label"
+  } else {
+    return nil
+  }
+}
+```
+
+```objc
+- (nullable NSString *)tappableLabel:(nonnull ZSWTappableLabel *)tappableLabel 
+ accessibilityLabelForCharacterRange:(NSRange)characterRange 
+               withAttributesAtStart:(nonnull NSDictionary<NSAttributedStringKey,id> *)attributes {
+  if (attributes[NSLinkAttributeName] != nil) {
+    return @"Some Custom Label";
+  } else {
+    return nil;
+  }
+}
+```
+
+
 ## Installation
 
 ZSWTappableLabel is available through [CocoaPods](http://cocoapods.org). To install it, simply add the following line to your Podfile:
