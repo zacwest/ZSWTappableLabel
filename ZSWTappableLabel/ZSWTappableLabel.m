@@ -463,14 +463,14 @@ typedef NS_ENUM(NSInteger, ZSWTappableLabelNotifyType) {
             ZSWTappableLabelAccessibilityElement *element = [[ZSWTappableLabelAccessibilityElement alloc] initWithAccessibilityContainer:self];
             NSInteger characterIndex = range.location;
             
-            __weak __typeof(self) weakSelf = self;
-            element.activateBlock = ^{
-                return [weakSelf activateForAccessibilityIndex:characterIndex];
-            };
             element.accessibilityFrameInContainerSpace = [th frameForCharacterRange:range];
             
             if ([value boolValue]) {
                 element.accessibilityTraits = UIAccessibilityTraitLink | UIAccessibilityTraitStaticText;
+                __weak __typeof(self) weakSelf = self;
+                element.activateBlock = ^{
+                    return [weakSelf activateForAccessibilityIndex:characterIndex];
+                };
             } else {
                 element.accessibilityTraits = UIAccessibilityTraitStaticText;
             }
