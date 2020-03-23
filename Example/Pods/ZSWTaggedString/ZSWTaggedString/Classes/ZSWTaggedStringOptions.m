@@ -139,6 +139,14 @@ static ZSWTaggedStringOptions *ZSWStringParserDefaultOptions;
                updatedWithTags:(NSArray *)tags {
     NSParameterAssert([string isKindOfClass:[NSMutableAttributedString class]]);
     
+    if (string.length == 0) {
+        // For example, a string like '<blah></blah>' has no content, so we can 't
+        // adjust what's inside based on tags. All we can do is base attributes.
+        // For dynamic attributes below, we may end up calling out of bounds trying
+        // to get existing attributes at index 0, which doesn't exist.
+        return;
+    }
+    
     [string setAttributes:self.baseAttributes range:NSMakeRange(0, string.length)];
     
     ZSWTaggedStringAttribute *unknownTagWrapper = self._private_unknownTagWrapper;
