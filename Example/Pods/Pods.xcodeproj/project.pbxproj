@@ -14,20 +14,23 @@
 		04543980C4A7CE442330B0F1BC4A9A54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F94A9F552457B2DBAD1616C5E0E0E7A /* Foundation.framework */; };
 		0475A9EA5F07D6B60E1135A35541C3C3 /* Specta-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 57FA94E2313119DFEC69AEF2185DF19F /* Specta-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		05A040F35BF1C88F869404E1A940B493 /* NSArray+MASShorthandAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = FBAAB1E7F87FE52CD0EE64771041E244 /* NSArray+MASShorthandAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		05A0FCCE886D4B78281B22FE12B8D993 /* ZSWTappableLabelAccessibilityElement.m in Sources */ = {isa = PBXBuildFile; fileRef = C1E4D7B03E6838735E87BFBE03FDD211 /* ZSWTappableLabelAccessibilityElement.m */; };
 		05BCAED08DADF67CC4711A102262D9AB /* EXPMatchers+equal.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CA270DB6D4A960128F3774E25728651 /* EXPMatchers+equal.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		05CFF6618B87EDE2069D4C5D3DDFF9EB /* EXPMatchers+beginWith.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C1DCC6EB03EAA3D741BCB533E49E4F /* EXPMatchers+beginWith.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		05EA1447EEA0EB669F8DEE73964A7C60 /* NSArray+MASAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 978BCD424134017DC8880E689570BE00 /* NSArray+MASAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		06F842D617FB7015C5798852A4E3F359 /* SPTCallSite.m in Sources */ = {isa = PBXBuildFile; fileRef = 68726AF26C5807C1FD5455A5785E9954 /* SPTCallSite.m */; };
+		07066AFD38A12C6C39948A6810222F10 /* ZSWTappableLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = FE334E3F332B11157D0B5D5334F5A8C5 /* ZSWTappableLabel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0967598607D521318F69D7D39D517B20 /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B6B7B2F58F16A6ABE9BA2409120ADE63 /* ViewController+MASAdditions.m */; };
 		098630ECDB64ED7B89F5F687C82B4AC3 /* NSArray+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F6E658CC17DF6A282A61CC30CF242A1 /* NSArray+MASAdditions.m */; };
 		0AF1AD35706D90B1A91F291B899EF8C0 /* NSLayoutConstraint+MASDebugAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = EE3D617B2D8FFF22510E55AF0CA66C29 /* NSLayoutConstraint+MASDebugAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0B8E66F0F59569E54B1C4793A51FC778 /* ZSWTappableLabel-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E14383A3EEC6E98E6F3FEDD23F6E0933 /* ZSWTappableLabel-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0DE0AA588BC61692033B67CFCE4EC742 /* EXPMatchers+beSubclassOf.h in Headers */ = {isa = PBXBuildFile; fileRef = B603FCC61F547D58E9B6CCAF0416627D /* EXPMatchers+beSubclassOf.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0E3313A86EF95C651FC2D3BF2FC34072 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F94A9F552457B2DBAD1616C5E0E0E7A /* Foundation.framework */; };
 		114C2163DAE74196CAF6FA2E5FB633D7 /* NSObject+Expecta.h in Headers */ = {isa = PBXBuildFile; fileRef = 444DADF7269A25AB88A26D16AA04DD4E /* NSObject+Expecta.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		12C14FE4834134BC916F8DD42B875D3B /* EXPMatchers+beLessThanOrEqualTo.h in Headers */ = {isa = PBXBuildFile; fileRef = D00EE66B4CBAC5AE28BE1099FD3E1016 /* EXPMatchers+beLessThanOrEqualTo.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		13E39E050768ED6CBE0C7FDF93102EA6 /* ZSWStringParserTag.m in Sources */ = {isa = PBXBuildFile; fileRef = 51DF1328B0BA0D2A688AC9664E0BC5BE /* ZSWStringParserTag.m */; };
 		140394F97EEF0A95AB171649249F211C /* EXPMatchers+beTruthy.m in Sources */ = {isa = PBXBuildFile; fileRef = A6451597DDAAEBE136D04ADBA6B5C8BF /* EXPMatchers+beTruthy.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		15C0054801F96BA3329545B1FAA6A85E /* EXPMatchers+haveCountOf.m in Sources */ = {isa = PBXBuildFile; fileRef = 376FC0FBB7BEDC4DC9154C7483E1D545 /* EXPMatchers+haveCountOf.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		17AC35C571DD5B2CBC360BE3EDD436E4 /* ZSWTappableLabelTappableRegionInfoImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 08DCB2D9E1989AECCEE67B840FDF958C /* ZSWTappableLabelTappableRegionInfoImpl.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		188A55E8570219DC971027460C2BCF1B /* EXPMatchers+beSubclassOf.m in Sources */ = {isa = PBXBuildFile; fileRef = 0399C4A34E947EDA190D20FD07EE34D8 /* EXPMatchers+beSubclassOf.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		1956E392D500F3CD899D39A5F805736D /* Typealiases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 791D61DA20A51E4A65793DC07216266A /* Typealiases.swift */; };
 		19621E59AF2C3772FF6290740DB6EAB4 /* NSValue+Expecta.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A8578A4A3C11A0EAD5E2A26ECB7B6CA /* NSValue+Expecta.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -36,12 +39,13 @@
 		1AFB1E9136716C0B61D6C700FF1E60FD /* ConstraintLayoutGuide+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C1F05F899D3C8465A7604DA9BBE202 /* ConstraintLayoutGuide+Extensions.swift */; };
 		1BE7FE40FAEBFD94EA74D3CA2F62568A /* ZSWTaggedString-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DBC2621358959CEAFC25C7F114AA03C /* ZSWTaggedString-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1CF5E91F1AE39E4CA72E7CB9DC066BC5 /* EXPMatchers+raiseWithReason.h in Headers */ = {isa = PBXBuildFile; fileRef = C72017E1167E3E32D5DD1CFE51DA158F /* EXPMatchers+raiseWithReason.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1DAB9ABBF2A850D5595A020D905BACFE /* ZSWTappableLabelAccessibilityActionLongPress.h in Headers */ = {isa = PBXBuildFile; fileRef = 97070E9CB7186A70D0F5438DCF9DE90B /* ZSWTappableLabelAccessibilityActionLongPress.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		1EDA4657EEF6B795B643063E05E8DC57 /* EXPMatchers+respondTo.m in Sources */ = {isa = PBXBuildFile; fileRef = 69EF07869B95CBD52EE2CF08B3F0EFCA /* EXPMatchers+respondTo.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		20471DE376ACB94F0E144A26EFFCFD21 /* EXPMatchers+beSupersetOf.m in Sources */ = {isa = PBXBuildFile; fileRef = CC03980281470D813C0472B61D026BD4 /* EXPMatchers+beSupersetOf.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		207A91122FC8432D4C2E74FD2D00A730 /* ZSWTappableLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 50C781375288DC6F9CC08520667F355F /* ZSWTappableLabel.m */; };
 		21AB1101BBE4D28D74ED4EDF0D59025A /* ConstraintInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424D17F30512AED808F59DE623220117 /* ConstraintInsets.swift */; };
 		232B2F922E972D9F43D2EE15ACECE734 /* ConstraintPriority.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C02439B39A860EB7074E5CF7DF0DEEA /* ConstraintPriority.swift */; };
 		244D8552B11F2D1B417EBB82BBE9E938 /* EXPMatchers+beKindOf.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E6FFB29E954CF85F786BF19FDD8D632 /* EXPMatchers+beKindOf.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		2598BD91C7084B82F568C8B35E7BEF99 /* ZSWTappableLabelTouchHandling.h in Headers */ = {isa = PBXBuildFile; fileRef = 8428347ABE1FC2D5A8EB1B49727EA856 /* ZSWTappableLabelTouchHandling.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		25C2905BD04D69AB3CCA7BCC93D07AC7 /* EXPMatchers+beGreaterThanOrEqualTo.h in Headers */ = {isa = PBXBuildFile; fileRef = C4E9123C042E5C1DC122459B97C4EF64 /* EXPMatchers+beGreaterThanOrEqualTo.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		280D36330BAC5715615FF4A8B42D60D6 /* MASUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 0674FB044F270873E86B7AC891122673 /* MASUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		28F23E68E55462EBC24ABF2F2F131255 /* EXPMatchers+beLessThan.h in Headers */ = {isa = PBXBuildFile; fileRef = E29A37CC14388AB839AA445AC2ADC002 /* EXPMatchers+beLessThan.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -53,7 +57,6 @@
 		2BFCCD2D052757EA67D9E8CE838F65E4 /* Specta-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5979066B2710E1926D8494B59F47891B /* Specta-dummy.m */; };
 		2C06F2E972444D359754D21AC46BFFE2 /* ConstraintInsetTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = A042C3D1D52FC4D6CCC001B924359E7C /* ConstraintInsetTarget.swift */; };
 		2FED4B7E6410714C867AAEFCE317D308 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F94A9F552457B2DBAD1616C5E0E0E7A /* Foundation.framework */; };
-		3068A9473B6C2FC52CC4D84B53AF3259 /* ZSWTappableLabel-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 86B0512E0ACF2FCEB3A8EE5FAC9FBC8F /* ZSWTappableLabel-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		32196B0F99B54C8B6E1A7BC7D91FDED0 /* ZSWTaggedString-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 767E4C6873D96145E929AB3AB5A43992 /* ZSWTaggedString-dummy.m */; };
 		32762E6201C8909C32899F1EA489913B /* EXPMatchers+beInstanceOf.h in Headers */ = {isa = PBXBuildFile; fileRef = A24E9578413C6988311411C88F2A82C4 /* EXPMatchers+beInstanceOf.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		32EBE818F0F41CC0EA2270B977BD62C8 /* SPTSpec.h in Headers */ = {isa = PBXBuildFile; fileRef = 9480931C55EB2C4036DF2FDC9F9B56BA /* SPTSpec.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -71,7 +74,6 @@
 		40553AD8F47956602E39E4EFD481C83F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F94A9F552457B2DBAD1616C5E0E0E7A /* Foundation.framework */; };
 		416D3BE841B08CED03D16649957ECB10 /* ExpectaSupport.h in Headers */ = {isa = PBXBuildFile; fileRef = A845DEAC98CB99D60E5D51C4FFD0CE94 /* ExpectaSupport.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		41B490A5CB6565458F1F507A8AD0FB45 /* EXPMatchers.h in Headers */ = {isa = PBXBuildFile; fileRef = A7EE6CFD585CE6C82D800F0456F2A4AC /* EXPMatchers.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4348F373DA0E6DB8DDE4AB3EC21A6C06 /* ZSWTappableLabelTouchHandling.m in Sources */ = {isa = PBXBuildFile; fileRef = E85355A1714D0E8DDE7C446A1609D898 /* ZSWTappableLabelTouchHandling.m */; };
 		4363A9B7F321D650D93F2E2096D32BD8 /* ZSWTaggedString.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B9B13AD7421F9878D2D979CCB313755 /* ZSWTaggedString.m */; };
 		4499BB3103E3A22DDBCF80F7A1A2E02E /* Pods-ZSWTappableLabel_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9646212FE3FA5A3384011B49588C8CBA /* Pods-ZSWTappableLabel_Example-dummy.m */; };
 		46A96403505C673588DF7F87BE6BA46C /* ZSWTaggedString_Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 2E727BC26E37FBA936F54B38AF00819D /* ZSWTaggedString_Private.h */; settings = {ATTRIBUTES = (Private, ); }; };
@@ -85,13 +87,12 @@
 		4E7928EF9169E1DE84CBF429162A4128 /* EXPMatchers+beGreaterThanOrEqualTo.m in Sources */ = {isa = PBXBuildFile; fileRef = F27720657CC19D3E16A5DB61857C8C1C /* EXPMatchers+beGreaterThanOrEqualTo.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4EA3C56AE53AD37BC0273D80017164F0 /* EXPMatchers+beginWith.h in Headers */ = {isa = PBXBuildFile; fileRef = 028DC4AF41856234BDF74B429CA6296A /* EXPMatchers+beginWith.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4EB2747D8F0843D0DF300990FEA1D19B /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F80F8BA974A80CEC66841545C196326 /* XCTest.framework */; };
+		4ED89257FFB57ED1BC207AF75306791F /* ZSWTappableLabelTouchHandling.m in Sources */ = {isa = PBXBuildFile; fileRef = 164AF173D58276E231CA801D24BE25A4 /* ZSWTappableLabelTouchHandling.m */; };
 		4FD8D4A9E3DFCABB9A26AA22FABA018B /* EXPMatchers+beInTheRangeOf.h in Headers */ = {isa = PBXBuildFile; fileRef = 219A42EA9DA06258FAE76EDBF8037C3F /* EXPMatchers+beInTheRangeOf.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		501F0AF3FFB718EE83A43AE6DB2C182A /* ZSWTappableLabelAccessibilityActionLongPress.h in Headers */ = {isa = PBXBuildFile; fileRef = 7415FE1A408D628492AF74B8EB7E8AFB /* ZSWTappableLabelAccessibilityActionLongPress.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		51CD5887014967E77E58F5A163996454 /* ConstraintMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F6DB887C3EC1B87781006EB86217A0 /* ConstraintMaker.swift */; };
 		521CCD99D4003505D4B65A4131BAFB22 /* EXPDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B450CE6726F8DD57D731D2B1C63F3B4 /* EXPDefines.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5242CFE182637D4BCCAC9E0BCC4483C4 /* EXPBlockDefinedMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 8ED1DE19BBC6ED5F0E88536369BCFC9F /* EXPBlockDefinedMatcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		533E12DDC6157F8850F1A9683FE652D0 /* ZSWTaggedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7533EB129094727A783DBFBB9E5C1A51 /* ZSWTaggedString.swift */; };
-		5527C815CA0D6C5720208C125FD90D1C /* ZSWTappableLabelTappableRegionInfoImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = F63CA4C328147467E7B2594E3C8BFACA /* ZSWTappableLabelTappableRegionInfoImpl.m */; };
 		57B1876F2BE4168E5BFDB63D8CC849A0 /* ConstraintLayoutSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2074D50AF9DEC49E8DF3959DE62218 /* ConstraintLayoutSupport.swift */; };
 		5854DF509E8A016B6235793D04083035 /* ConstraintConstantTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = F852340F525A122019196F4EC6DBBC27 /* ConstraintConstantTarget.swift */; };
 		59D34E8065607E956AC2DC046E76B743 /* EXPMatchers+conformTo.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D73143C71BE2A9886CF0916FD120386 /* EXPMatchers+conformTo.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -113,7 +114,6 @@
 		6E0EB9E7FAAEDBB7A73ECF3095F69C4A /* UILayoutSupport+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B090453727FA9BE3E34ECA51482D0F82 /* UILayoutSupport+Extensions.swift */; };
 		6E8A45EF6CD46D90A634E1E9163E562E /* EXPMatchers+beFalsy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FB909DB94C29D51845BFAC353A9E338 /* EXPMatchers+beFalsy.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		71DE9DC2FA583526AB4D1FD7F00C099C /* ConstraintDirectionalInsetTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED37E4A94D80B4784440414B5A6F6BB /* ConstraintDirectionalInsetTarget.swift */; };
-		74F0C201556FF7E1A9A6D9A0B2DBA411 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D98E6C1169DAC9A6A81EFCFAE138ADF3 /* UIKit.framework */; };
 		75E146C12D1287228A0B493E87CDE31F /* ConstraintMakerRelatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D967DFC3AD7375E87AB4D57EB85D81E5 /* ConstraintMakerRelatable.swift */; };
 		766A29A5DB099C8ED3BC29C9610E8C75 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F80F8BA974A80CEC66841545C196326 /* XCTest.framework */; };
 		76BE315B0D75876856C96B969D625367 /* ZSWTaggedStringAttribute.h in Headers */ = {isa = PBXBuildFile; fileRef = 79765E114311ECD78E03D1DBF6CF9CD8 /* ZSWTaggedStringAttribute.h */; settings = {ATTRIBUTES = (Private, ); }; };
@@ -126,7 +126,6 @@
 		7C1702076F3A31D8D2D45A4A9F09B266 /* ConstraintMakerEditable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32063A2307A79CC4BDB93FD864A66BE6 /* ConstraintMakerEditable.swift */; };
 		7D156B7C42133DDE9CAFFE75C433E51D /* SpectaDSL.h in Headers */ = {isa = PBXBuildFile; fileRef = E802822024057940D598DC0098144D57 /* SpectaDSL.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		80E479781BCF0EC67D40DFF1F4723215 /* SPTSharedExampleGroups.m in Sources */ = {isa = PBXBuildFile; fileRef = 58223999E3C2301DCD1062A51E10EDB6 /* SPTSharedExampleGroups.m */; };
-		81F803CC808E3E537159D352371848BE /* ZSWTappableLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = BB90AF22A00F8AD4796F3030E4922B2F /* ZSWTappableLabel.m */; };
 		821F025A006CB157497E83C0EC102052 /* Expecta-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 42E0481F17F1376A7CF1B252AFA80490 /* Expecta-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8277256ADEC3C4DCF79957D1CA681A9A /* ConstraintDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64044FBB5FD03CF8CB6B1FD6D6B48A0 /* ConstraintDSL.swift */; };
 		8539B851E01A58467BE49CA3FA77223C /* MASLayoutConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 6614A41305606905E95B70ED7B3EE27E /* MASLayoutConstraint.m */; };
@@ -139,7 +138,6 @@
 		8D4D1F6E4709EBB13974E95DC1059DDC /* MASLayoutConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = 6506449661F8A94C61E038510B641C66 /* MASLayoutConstraint.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8D65CE579E516BDD5FB36CAA21D693F6 /* MASCompositeConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = 07C54A35D283B4F65FC82249092C335E /* MASCompositeConstraint.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8E79D808BDDDDEDE44F06E9755CF3F4D /* SpectaUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = E0196D216D0ED86F67C3A9329800268B /* SpectaUtility.m */; };
-		91D52209332F322DB5A5E30E1C2CB729 /* ZSWTappableLabelTappableRegionInfoImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 971EEFCEA0DC75240787C7CA4B806DE1 /* ZSWTappableLabelTappableRegionInfoImpl.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		91F08081D0286CC0733C2D5A9B4A8F32 /* EXPMatchers+raise.m in Sources */ = {isa = PBXBuildFile; fileRef = A1063F45A948DC80575CB7C628947782 /* EXPMatchers+raise.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		922A99360E57A4A8F264A46EF9C3AA76 /* ZSWTaggedStringOptions.h in Headers */ = {isa = PBXBuildFile; fileRef = B8E71AEE7A9871847DA646558863AAD4 /* ZSWTaggedStringOptions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9258A50865E2622EB45E691748D0890F /* ZSWTaggedStringAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DE4DB3ECA89C9828538390BB247F1D /* ZSWTaggedStringAttribute.m */; };
@@ -153,9 +151,13 @@
 		9AC1A3902FC9162C9B432B411928B215 /* EXPMatchers+beLessThanOrEqualTo.m in Sources */ = {isa = PBXBuildFile; fileRef = 2609916743E8774EC8D5FE0ADD169C8C /* EXPMatchers+beLessThanOrEqualTo.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		9B09968922C73D50040C6EEF57890D6E /* ConstraintConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFEE709DD6C667216CD1984808F2DD26 /* ConstraintConfig.swift */; };
 		9D546E1168C04B0B2EAE005D9275D18B /* MASConstraint+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = E11102300B45D12C9C23A4D155898254 /* MASConstraint+Private.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A04929A07627F6BF41D4A79FA3E10462 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D98E6C1169DAC9A6A81EFCFAE138ADF3 /* UIKit.framework */; };
 		A270CD9EC3C541FE86E65AEDCEF500CF /* ConstraintLayoutGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89EC5055CDC7DAC16E552946FA015C5 /* ConstraintLayoutGuide.swift */; };
 		A35FBEEC7D088AEC05297E8292A32C77 /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = F304DA3FFF7A253ECAB3CFB49D675D69 /* View+MASAdditions.m */; };
+		A61E098A6529DF8D61E7D38382BE790C /* ZSWTappableLabelAccessibilityActionLongPress.m in Sources */ = {isa = PBXBuildFile; fileRef = 565EE0F29AE5DD30B8114FA6C2DAC56C /* ZSWTappableLabelAccessibilityActionLongPress.m */; };
 		A66ED57B365A35434C5BAF4B990819B7 /* SnapKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 754E5C84F2E61CD87DCF821B41B0389A /* SnapKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A6D431CA37F733ACD6527DB95B1103ED /* ZSWTappableLabelAccessibilityElement.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D00ACEE6FDAB8B17BB5AC420F991AE5 /* ZSWTappableLabelAccessibilityElement.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		AB7459E24ADF11B26A811A87E8249D4D /* ZSWTappableLabel-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D7EFBB2352A8BA363CEDF5A019FB005 /* ZSWTappableLabel-dummy.m */; };
 		AC35C9341C4BB156BB26FDD237EE3721 /* ConstraintDirectionalInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B7B702346571CC13FAD3D4B1CED3EC /* ConstraintDirectionalInsets.swift */; };
 		ACBDE7479CEDFD9F3261E26D6B1015FC /* EXPMatchers+haveCountOf.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BC63975C365173624474B1BEDE49399 /* EXPMatchers+haveCountOf.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B0556227077A1AEED50A9562603FCF05 /* SPTExample.m in Sources */ = {isa = PBXBuildFile; fileRef = 63CE9F9E6B18BA4558101BEA15F23A53 /* SPTExample.m */; };
@@ -170,6 +172,7 @@
 		B7D645EC004610E8A581E532D28771EC /* MASViewConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = C96A054E77B52490F49604EF49D78F2B /* MASViewConstraint.m */; };
 		B9694F78E720EB4DC1F7C3676FE61017 /* ZSWTaggedStringOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D9605B7EF1A25BF69DC085F32F4095A /* ZSWTaggedStringOptions.m */; };
 		B999DEBC999F335CC8E6C471F942F93D /* EXPExpect.m in Sources */ = {isa = PBXBuildFile; fileRef = BB6EF4424C1108B4F986D1FA9440A547 /* EXPExpect.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		BB16855BF4DE8305AA994C725159AC50 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F94A9F552457B2DBAD1616C5E0E0E7A /* Foundation.framework */; };
 		BECA67DFB5E0984DFAEFCB775C31972E /* ConstraintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800FE00FFA068D7D14F42C306AF48CD0 /* ConstraintView.swift */; };
 		C0861ADB4C5FA30F4F9E051F7638A264 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = AF6DD947F1D9F5B6270CDBF33A0795C4 /* NSLayoutConstraint+MASDebugAdditions.m */; };
 		C086824CEEDD952FAF0311B7FD8957FB /* SPTTestSuite.h in Headers */ = {isa = PBXBuildFile; fileRef = 7CCA48C595D993322F0BCE478B6C5EAA /* SPTTestSuite.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -177,9 +180,7 @@
 		C18FBD6CD221CAFD1AF15CC99A48CB84 /* EXPMatchers+beFalsy.h in Headers */ = {isa = PBXBuildFile; fileRef = 94F0962AE53511F3DAC302DDED841A8F /* EXPMatchers+beFalsy.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C412F27D75AFC0DF0F0289DBB270931C /* ConstraintMakerFinalizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CCDA7C03F77B1D81E5218A73156CBF4 /* ConstraintMakerFinalizable.swift */; };
 		C4632B64DD0F3ADB3BB829A6EBC322E6 /* EXPMatcherHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = DCFE08B3EBF0B40D629B27B075C21023 /* EXPMatcherHelpers.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		C749E9FA179433144D50B97F1A5979E1 /* ZSWTappableLabel-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C209D9178350F1722B0AE052EE84E2E /* ZSWTappableLabel-dummy.m */; };
 		C86AC684A3B10B92FDDF2340F7A3ADD4 /* SPTCallSite.h in Headers */ = {isa = PBXBuildFile; fileRef = 227FFFC1A3FAC5DFF952F6ACEB08DE76 /* SPTCallSite.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CADFD3C3B6A9BA30AE309E9F2E9994DF /* ZSWTappableLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = 28548B569654CBE8458C34D1C2AB0C3E /* ZSWTappableLabel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CAEE0E44BC37459BD49C0B1D626B0477 /* EXPMatchers+postNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 66428314FB628B973025AC6BFBEE69E4 /* EXPMatchers+postNotification.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		CE62FEABA57B2B53EABF8C7DCCC6B2C4 /* ConstraintRelation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814D21BEF35D0741731932E78B0DDD2C /* ConstraintRelation.swift */; };
 		CE93C54413259B4AC3683B6EB874D466 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D98E6C1169DAC9A6A81EFCFAE138ADF3 /* UIKit.framework */; };
@@ -187,6 +188,7 @@
 		D327EEB8522F6389513EB84ACF12F242 /* EXPMatchers+endWith.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B0088FB2EAFF0AE4E7E19AF6A039529 /* EXPMatchers+endWith.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		D4697DC40F3B059E4A0867838CA1814E /* ConstraintMultiplierTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9624991BB5C15C74123823A8DE2478D3 /* ConstraintMultiplierTarget.swift */; };
 		D5C3E91A2121AE27F99028292B9436A8 /* EXPMatchers+postNotification.h in Headers */ = {isa = PBXBuildFile; fileRef = 40C50446AD02625C831E0E9F11B87E9D /* EXPMatchers+postNotification.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D9BF3860C76D15CB029F0A024DF28A20 /* ZSWTappableLabelTappableRegionInfoImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = FDF3E9BF2545D1A948764CC55FBBF17D /* ZSWTappableLabelTappableRegionInfoImpl.m */; };
 		DB3C194E927FF147C0B12238CEB0B51A /* SPTExcludeGlobalBeforeAfterEach.h in Headers */ = {isa = PBXBuildFile; fileRef = 24478878F8EE240990892EA13E0C86AF /* SPTExcludeGlobalBeforeAfterEach.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DBFF33BEB222CF58005C06FF0CD556DF /* EXPExpect.h in Headers */ = {isa = PBXBuildFile; fileRef = 63764EFFF7AD0BF5D8C0621279E1A5A9 /* EXPExpect.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DD76BF48AC9E8896D8EDDB44A44F10C5 /* SpectaTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EF4BEC17DD0FA7A69787140AE7CA92F /* SpectaTypes.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -205,8 +207,8 @@
 		EAE8B0895956885A752B173683A0D889 /* MASViewConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = DF5A26232A55C2677C51E38EEE7D39AA /* MASViewConstraint.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EB1726F5E0D0EEBA20E4528B1E37A8FA /* ConstraintViewDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB5599750BB44F60584A8D854A6DCA5 /* ConstraintViewDSL.swift */; };
 		EC57F974317D76B799CFE2A018B5F9E2 /* EXPMatchers+beNil.m in Sources */ = {isa = PBXBuildFile; fileRef = 7382A0764277FD3D462EEA89C1C3308C /* EXPMatchers+beNil.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		ECAD0E96160B394A4486C3EF2AE664D4 /* ZSWTappableLabelAccessibilityActionLongPress.m in Sources */ = {isa = PBXBuildFile; fileRef = 095A74562DA367A038939D77B84ED810 /* ZSWTappableLabelAccessibilityActionLongPress.m */; };
 		EE909C7C786140109051BC9562EEC7C8 /* ConstraintMakerPriortizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590A8C0D65FFB20C059E3415ADE6D772 /* ConstraintMakerPriortizable.swift */; };
+		F08ED74F7590D79C09F33BE7B33D49BD /* ZSWTappableLabelTouchHandling.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A61522F7A4D2731A4453945F6A52DBB /* ZSWTappableLabelTouchHandling.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		F31CCBB90D75D9E5A83545FD95954FFA /* EXPMatchers+beCloseTo.m in Sources */ = {isa = PBXBuildFile; fileRef = 82AD5EF602CC5865073EC677C056E3D3 /* EXPMatchers+beCloseTo.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		F3DDE43C8782B8145F876B68A1C68F71 /* ZSWTaggedString.h in Headers */ = {isa = PBXBuildFile; fileRef = DFD92B90CC0EBA7E8BB1C49E0606D8F4 /* ZSWTaggedString.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F3EDE6D241EE2A6D0992A24ACDDBAB35 /* EXPFloatTuple.m in Sources */ = {isa = PBXBuildFile; fileRef = 176F2E1AC813898D84ECDA7B52A9A676 /* EXPFloatTuple.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -276,18 +278,18 @@
 		05F3AB261C1A401A143354BBF97CE869 /* Masonry.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Masonry.h; path = Masonry/Masonry.h; sourceTree = "<group>"; };
 		0674FB044F270873E86B7AC891122673 /* MASUtilities.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASUtilities.h; path = Masonry/MASUtilities.h; sourceTree = "<group>"; };
 		07C54A35D283B4F65FC82249092C335E /* MASCompositeConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASCompositeConstraint.h; path = Masonry/MASCompositeConstraint.h; sourceTree = "<group>"; };
+		08DCB2D9E1989AECCEE67B840FDF958C /* ZSWTappableLabelTappableRegionInfoImpl.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ZSWTappableLabelTappableRegionInfoImpl.h; sourceTree = "<group>"; };
 		08F7F0770B4878B9883B87DCD8569CB4 /* Expecta.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Expecta.framework; path = Expecta.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		095A74562DA367A038939D77B84ED810 /* ZSWTappableLabelAccessibilityActionLongPress.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ZSWTappableLabelAccessibilityActionLongPress.m; sourceTree = "<group>"; };
 		09C1DCC6EB03EAA3D741BCB533E49E4F /* EXPMatchers+beginWith.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "EXPMatchers+beginWith.m"; path = "Expecta/Matchers/EXPMatchers+beginWith.m"; sourceTree = "<group>"; };
 		0B7276A5382832A242DF305FFFB3D2C6 /* SnapKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SnapKit-dummy.m"; sourceTree = "<group>"; };
 		0D9605B7EF1A25BF69DC085F32F4095A /* ZSWTaggedStringOptions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ZSWTaggedStringOptions.m; path = ZSWTaggedString/Classes/ZSWTaggedStringOptions.m; sourceTree = "<group>"; };
 		0E77AF517877880BF079E007E5EB7CF2 /* SPTSpec.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SPTSpec.m; path = Specta/Specta/SPTSpec.m; sourceTree = "<group>"; };
 		104AB24897B4BDCF836EB8B794B841F8 /* EXPUnsupportedObject.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EXPUnsupportedObject.m; path = Expecta/EXPUnsupportedObject.m; sourceTree = "<group>"; };
 		106916C0053C141097F1FD4D413BB15E /* EXPMatchers+beIdenticalTo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+beIdenticalTo.h"; path = "Expecta/Matchers/EXPMatchers+beIdenticalTo.h"; sourceTree = "<group>"; };
-		116FA5492660FDC831C13DB016193B35 /* ZSWTappableLabel.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ZSWTappableLabel.xcconfig; sourceTree = "<group>"; };
 		127926E73AB1A766DE8E73A44BAB0079 /* EXPMatchers+beInTheRangeOf.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "EXPMatchers+beInTheRangeOf.m"; path = "Expecta/Matchers/EXPMatchers+beInTheRangeOf.m"; sourceTree = "<group>"; };
 		1443FE6FFE4132F4935EBC4DE29F00CF /* Masonry.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Masonry.modulemap; sourceTree = "<group>"; };
 		15B13B063AA97C48C9010C298AECBDDA /* Specta.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Specta.framework; path = Specta.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		164AF173D58276E231CA801D24BE25A4 /* ZSWTappableLabelTouchHandling.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ZSWTappableLabelTouchHandling.m; sourceTree = "<group>"; };
 		16C10E27846100B0A7B27EC792EB4D4A /* View+MASShorthandAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "View+MASShorthandAdditions.h"; path = "Masonry/View+MASShorthandAdditions.h"; sourceTree = "<group>"; };
 		176F2E1AC813898D84ECDA7B52A9A676 /* EXPFloatTuple.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EXPFloatTuple.m; path = Expecta/EXPFloatTuple.m; sourceTree = "<group>"; };
 		18BFDDDD59EEE3C48D431F045C92E906 /* EXPUnsupportedObject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EXPUnsupportedObject.h; path = Expecta/EXPUnsupportedObject.h; sourceTree = "<group>"; };
@@ -305,9 +307,7 @@
 		2609916743E8774EC8D5FE0ADD169C8C /* EXPMatchers+beLessThanOrEqualTo.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "EXPMatchers+beLessThanOrEqualTo.m"; path = "Expecta/Matchers/EXPMatchers+beLessThanOrEqualTo.m"; sourceTree = "<group>"; };
 		26E99A348724CFDA371A294327AC0559 /* MASConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASConstraint.m; path = Masonry/MASConstraint.m; sourceTree = "<group>"; };
 		282840AB37357E08F37836007926B19B /* Pods-Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		28548B569654CBE8458C34D1C2AB0C3E /* ZSWTappableLabel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ZSWTappableLabel.h; path = ZSWTappableLabel/ZSWTappableLabel.h; sourceTree = "<group>"; };
 		285F4D525F6A47A36B7D85A838CC6B3A /* EXPMatchers+raise.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+raise.h"; path = "Expecta/Matchers/EXPMatchers+raise.h"; sourceTree = "<group>"; };
-		2899009FED676E4084C2D9BC5DE30E35 /* ZSWTappableLabel-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ZSWTappableLabel-prefix.pch"; sourceTree = "<group>"; };
 		2AA3C5680CDFD7CD1DB0B0A51303ED13 /* ConstraintItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintItem.swift; path = Source/ConstraintItem.swift; sourceTree = "<group>"; };
 		2B450CE6726F8DD57D731D2B1C63F3B4 /* EXPDefines.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EXPDefines.h; path = Expecta/EXPDefines.h; sourceTree = "<group>"; };
 		2CE947FACA0AD03D09592997C01AA69A /* Pods-Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -322,6 +322,7 @@
 		393539DB5817AB0A38440AF20B301381 /* EXPMatchers+match.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "EXPMatchers+match.m"; path = "Expecta/Matchers/EXPMatchers+match.m"; sourceTree = "<group>"; };
 		39491FC811AEC8096CBA0693F5EEB2EA /* Pods-Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Tests-frameworks.sh"; sourceTree = "<group>"; };
 		3BB5599750BB44F60584A8D854A6DCA5 /* ConstraintViewDSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintViewDSL.swift; path = Source/ConstraintViewDSL.swift; sourceTree = "<group>"; };
+		3D00ACEE6FDAB8B17BB5AC420F991AE5 /* ZSWTappableLabelAccessibilityElement.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ZSWTappableLabelAccessibilityElement.h; sourceTree = "<group>"; };
 		3F6E658CC17DF6A282A61CC30CF242A1 /* NSArray+MASAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSArray+MASAdditions.m"; path = "Masonry/NSArray+MASAdditions.m"; sourceTree = "<group>"; };
 		3F80F8BA974A80CEC66841545C196326 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		3FA09D81726DEBE4123BE74B3604497A /* NSValue+Expecta.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSValue+Expecta.h"; path = "Expecta/NSValue+Expecta.h"; sourceTree = "<group>"; };
@@ -333,7 +334,6 @@
 		444DADF7269A25AB88A26D16AA04DD4E /* NSObject+Expecta.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSObject+Expecta.h"; path = "Expecta/NSObject+Expecta.h"; sourceTree = "<group>"; };
 		448E8D47DBAECED9F9A9777DD0A7DA08 /* LayoutConstraint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayoutConstraint.swift; path = Source/LayoutConstraint.swift; sourceTree = "<group>"; };
 		491EB97A18D75F8F77003FEA1C0BDA1F /* SPTCompiledExample.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SPTCompiledExample.h; path = Specta/Specta/SPTCompiledExample.h; sourceTree = "<group>"; };
-		493621B54B87DC58A0D96B7ADBE2294D /* ZSWTappableLabel.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ZSWTappableLabel.modulemap; sourceTree = "<group>"; };
 		4A8578A4A3C11A0EAD5E2A26ECB7B6CA /* NSValue+Expecta.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSValue+Expecta.m"; path = "Expecta/NSValue+Expecta.m"; sourceTree = "<group>"; };
 		4AE97E10882A619758532795BB53D27C /* EXPDoubleTuple.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EXPDoubleTuple.m; path = Expecta/EXPDoubleTuple.m; sourceTree = "<group>"; };
 		4B9B13AD7421F9878D2D979CCB313755 /* ZSWTaggedString.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ZSWTaggedString.m; path = ZSWTaggedString/Classes/ZSWTaggedString.m; sourceTree = "<group>"; };
@@ -341,17 +341,21 @@
 		4C564AFA03223D2E284B280C24718D5F /* ExpectaSupport.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ExpectaSupport.m; path = Expecta/ExpectaSupport.m; sourceTree = "<group>"; };
 		4F0F1D869F1668B455C415A436A83056 /* EXPMatchers+beSupersetOf.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+beSupersetOf.h"; path = "Expecta/Matchers/EXPMatchers+beSupersetOf.h"; sourceTree = "<group>"; };
 		4F6056ED5600DA830572300BE80D2F8D /* Pods-ZSWTappableLabel_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ZSWTappableLabel_Example-frameworks.sh"; sourceTree = "<group>"; };
+		50C781375288DC6F9CC08520667F355F /* ZSWTappableLabel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ZSWTappableLabel.m; path = ZSWTappableLabel/ZSWTappableLabel.m; sourceTree = "<group>"; };
 		50E8AC044771706E0519C2288EF4B560 /* Expecta.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Expecta.xcconfig; sourceTree = "<group>"; };
 		51DF1328B0BA0D2A688AC9664E0BC5BE /* ZSWStringParserTag.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ZSWStringParserTag.m; path = ZSWTaggedString/Private/ZSWStringParserTag.m; sourceTree = "<group>"; };
 		51EE710FDCD5A9038E223818E53BF28E /* Expecta.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Expecta.modulemap; sourceTree = "<group>"; };
 		53A4BCB73CCFA8B20FA163C67EF45802 /* EXPMatchers+raiseWithReason.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "EXPMatchers+raiseWithReason.m"; path = "Expecta/Matchers/EXPMatchers+raiseWithReason.m"; sourceTree = "<group>"; };
 		53E06C91DB1A39BA014B88A6D7CD77FD /* SnapKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SnapKit.xcconfig; sourceTree = "<group>"; };
 		5588A267AA76065CBD93EBF5AF200D9C /* XCTestCase+Specta.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "XCTestCase+Specta.m"; path = "Specta/Specta/XCTestCase+Specta.m"; sourceTree = "<group>"; };
+		565EE0F29AE5DD30B8114FA6C2DAC56C /* ZSWTappableLabelAccessibilityActionLongPress.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ZSWTappableLabelAccessibilityActionLongPress.m; sourceTree = "<group>"; };
 		571E66C4C0435B7DCBE6B24BFAFCC9AA /* ZSWTaggedString-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ZSWTaggedString-Info.plist"; sourceTree = "<group>"; };
+		5782A7D5BD0F51E872EB09912B83AE2E /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		57B14FB3CAD9F3CCBBE4C65052B198FE /* XCTestCase+Specta.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "XCTestCase+Specta.h"; path = "Specta/Specta/XCTestCase+Specta.h"; sourceTree = "<group>"; };
 		57FA94E2313119DFEC69AEF2185DF19F /* Specta-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Specta-umbrella.h"; sourceTree = "<group>"; };
 		58223999E3C2301DCD1062A51E10EDB6 /* SPTSharedExampleGroups.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SPTSharedExampleGroups.m; path = Specta/Specta/SPTSharedExampleGroups.m; sourceTree = "<group>"; };
 		590A8C0D65FFB20C059E3415ADE6D772 /* ConstraintMakerPriortizable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMakerPriortizable.swift; path = Source/ConstraintMakerPriortizable.swift; sourceTree = "<group>"; };
+		5928942EC7AAABAF5A57AFAF55DB9E3B /* ZSWTappableLabel-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ZSWTappableLabel-prefix.pch"; sourceTree = "<group>"; };
 		5979066B2710E1926D8494B59F47891B /* Specta-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Specta-dummy.m"; sourceTree = "<group>"; };
 		59BE6FF6D468F3CC57D38A33E4E62FB9 /* Masonry-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Masonry-umbrella.h"; sourceTree = "<group>"; };
 		5C23AB06C61094F9C522CC956F9D0A02 /* ConstraintRelatableTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintRelatableTarget.swift; path = Source/ConstraintRelatableTarget.swift; sourceTree = "<group>"; };
@@ -364,6 +368,7 @@
 		616F5FD3CC25E2742808C6EB7EA0C88F /* Specta.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Specta.xcconfig; sourceTree = "<group>"; };
 		624116096698E9818E198AF1713DFA60 /* EXPDoubleTuple.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EXPDoubleTuple.h; path = Expecta/EXPDoubleTuple.h; sourceTree = "<group>"; };
 		63764EFFF7AD0BF5D8C0621279E1A5A9 /* EXPExpect.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EXPExpect.h; path = Expecta/EXPExpect.h; sourceTree = "<group>"; };
+		63818F54E3AD67C1544E1EEED1EED9A3 /* ZSWTappableLabel.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ZSWTappableLabel.modulemap; sourceTree = "<group>"; };
 		63CE9F9E6B18BA4558101BEA15F23A53 /* SPTExample.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SPTExample.m; path = Specta/Specta/SPTExample.m; sourceTree = "<group>"; };
 		6506449661F8A94C61E038510B641C66 /* MASLayoutConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASLayoutConstraint.h; path = Masonry/MASLayoutConstraint.h; sourceTree = "<group>"; };
 		652CE30BFA270BB684B210672A2A68D1 /* Pods-Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Tests-umbrella.h"; sourceTree = "<group>"; };
@@ -380,10 +385,10 @@
 		6D73143C71BE2A9886CF0916FD120386 /* EXPMatchers+conformTo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+conformTo.h"; path = "Expecta/Matchers/EXPMatchers+conformTo.h"; sourceTree = "<group>"; };
 		6ED759A51081A65F6BFA26D4B50DBB78 /* Pods-ZSWTappableLabel_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ZSWTappableLabel_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		7114F92F8B62869FD832F15B08438D39 /* ExpectaObject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ExpectaObject.h; path = Expecta/ExpectaObject.h; sourceTree = "<group>"; };
+		731297043D6266230A0E4C9E3F007709 /* ZSWTappableLabel.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = ZSWTappableLabel.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		7378CD9D3FED6460C9AF72FBCB91C763 /* Pods-ZSWTappableLabel_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ZSWTappableLabel_Example-umbrella.h"; sourceTree = "<group>"; };
 		7382A0764277FD3D462EEA89C1C3308C /* EXPMatchers+beNil.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "EXPMatchers+beNil.m"; path = "Expecta/Matchers/EXPMatchers+beNil.m"; sourceTree = "<group>"; };
 		73E550CC272086BFF0DF3F9E66E6748B /* SPTExampleGroup.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SPTExampleGroup.h; path = Specta/Specta/SPTExampleGroup.h; sourceTree = "<group>"; };
-		7415FE1A408D628492AF74B8EB7E8AFB /* ZSWTappableLabelAccessibilityActionLongPress.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ZSWTappableLabelAccessibilityActionLongPress.h; sourceTree = "<group>"; };
 		744E123AE79C0725748A19BF450F2001 /* EXPMatchers+respondTo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+respondTo.h"; path = "Expecta/Matchers/EXPMatchers+respondTo.h"; sourceTree = "<group>"; };
 		74619B57EB19217FF320A5A64037E312 /* Expecta-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Expecta-dummy.m"; sourceTree = "<group>"; };
 		7533EB129094727A783DBFBB9E5C1A51 /* ZSWTaggedString.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ZSWTaggedString.swift; path = ZSWTaggedString/Classes/ZSWTaggedString.swift; sourceTree = "<group>"; };
@@ -397,35 +402,33 @@
 		791D61DA20A51E4A65793DC07216266A /* Typealiases.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Typealiases.swift; path = Source/Typealiases.swift; sourceTree = "<group>"; };
 		79765E114311ECD78E03D1DBF6CF9CD8 /* ZSWTaggedStringAttribute.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ZSWTaggedStringAttribute.h; path = ZSWTaggedString/Private/ZSWTaggedStringAttribute.h; sourceTree = "<group>"; };
 		7A2074D50AF9DEC49E8DF3959DE62218 /* ConstraintLayoutSupport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintLayoutSupport.swift; path = Source/ConstraintLayoutSupport.swift; sourceTree = "<group>"; };
-		7C209D9178350F1722B0AE052EE84E2E /* ZSWTappableLabel-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ZSWTappableLabel-dummy.m"; sourceTree = "<group>"; };
+		7A61522F7A4D2731A4453945F6A52DBB /* ZSWTappableLabelTouchHandling.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ZSWTappableLabelTouchHandling.h; sourceTree = "<group>"; };
 		7CCA48C595D993322F0BCE478B6C5EAA /* SPTTestSuite.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SPTTestSuite.h; path = Specta/Specta/SPTTestSuite.h; sourceTree = "<group>"; };
+		7D7EFBB2352A8BA363CEDF5A019FB005 /* ZSWTappableLabel-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ZSWTappableLabel-dummy.m"; sourceTree = "<group>"; };
 		7DBC2621358959CEAFC25C7F114AA03C /* ZSWTaggedString-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "ZSWTaggedString-umbrella.h"; path = "ZSWTaggedString/Classes/ZSWTaggedString-umbrella.h"; sourceTree = "<group>"; };
 		7E5C9E83CACCCE88AAF5FB179B83892D /* SPTExample.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SPTExample.h; path = Specta/Specta/SPTExample.h; sourceTree = "<group>"; };
 		800FE00FFA068D7D14F42C306AF48CD0 /* ConstraintView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintView.swift; path = Source/ConstraintView.swift; sourceTree = "<group>"; };
 		814D21BEF35D0741731932E78B0DDD2C /* ConstraintRelation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintRelation.swift; path = Source/ConstraintRelation.swift; sourceTree = "<group>"; };
 		81EF64E283CE91C8C4C59719AF07C721 /* ZSWTaggedString.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ZSWTaggedString.framework; path = ZSWTaggedString.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		82AD5EF602CC5865073EC677C056E3D3 /* EXPMatchers+beCloseTo.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "EXPMatchers+beCloseTo.m"; path = "Expecta/Matchers/EXPMatchers+beCloseTo.m"; sourceTree = "<group>"; };
-		8428347ABE1FC2D5A8EB1B49727EA856 /* ZSWTappableLabelTouchHandling.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ZSWTappableLabelTouchHandling.h; sourceTree = "<group>"; };
 		8474D84E57DDD1F37962FCEA6C08F19B /* SpectaUtility.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SpectaUtility.h; path = Specta/Specta/SpectaUtility.h; sourceTree = "<group>"; };
 		84D24953C7A64D694C0C609DD95CA53A /* EXPMatcher.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EXPMatcher.h; path = Expecta/EXPMatcher.h; sourceTree = "<group>"; };
 		867BA44FE4EE6E576FB412C4B35DD0BE /* ConstraintPriorityTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintPriorityTarget.swift; path = Source/ConstraintPriorityTarget.swift; sourceTree = "<group>"; };
-		86B0512E0ACF2FCEB3A8EE5FAC9FBC8F /* ZSWTappableLabel-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ZSWTappableLabel-umbrella.h"; sourceTree = "<group>"; };
 		8CA10F0BC39283A6620D1D42EBB4BA4A /* ZSWStringParser.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ZSWStringParser.m; path = ZSWTaggedString/Private/ZSWStringParser.m; sourceTree = "<group>"; };
 		8D1952D028123A69D78B3C35846A947E /* ViewController+MASAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "ViewController+MASAdditions.h"; path = "Masonry/ViewController+MASAdditions.h"; sourceTree = "<group>"; };
 		8DD066D41BB252A8D1C1A23D1AAD557C /* MASViewAttribute.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASViewAttribute.m; path = Masonry/MASViewAttribute.m; sourceTree = "<group>"; };
 		8ED1DE19BBC6ED5F0E88536369BCFC9F /* EXPBlockDefinedMatcher.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EXPBlockDefinedMatcher.h; path = Expecta/EXPBlockDefinedMatcher.h; sourceTree = "<group>"; };
-		8F02288966DD3C1D0F910F35BFA728F9 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		8F71766D2E97EC28F67EAFD8E3EA365F /* ZSWTappableLabel.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ZSWTappableLabel.xcconfig; sourceTree = "<group>"; };
 		9129A6D3A9466D8338C2FF3E8F597C6D /* MASViewAttribute.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASViewAttribute.h; path = Masonry/MASViewAttribute.h; sourceTree = "<group>"; };
 		9480931C55EB2C4036DF2FDC9F9B56BA /* SPTSpec.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SPTSpec.h; path = Specta/Specta/SPTSpec.h; sourceTree = "<group>"; };
 		94F0962AE53511F3DAC302DDED841A8F /* EXPMatchers+beFalsy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+beFalsy.h"; path = "Expecta/Matchers/EXPMatchers+beFalsy.h"; sourceTree = "<group>"; };
 		94F95FFC70FA9CCF09D3D394F5C24511 /* ZSWTappableLabel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ZSWTappableLabel.framework; path = ZSWTappableLabel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9624991BB5C15C74123823A8DE2478D3 /* ConstraintMultiplierTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMultiplierTarget.swift; path = Source/ConstraintMultiplierTarget.swift; sourceTree = "<group>"; };
 		9646212FE3FA5A3384011B49588C8CBA /* Pods-ZSWTappableLabel_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ZSWTappableLabel_Example-dummy.m"; sourceTree = "<group>"; };
-		971EEFCEA0DC75240787C7CA4B806DE1 /* ZSWTappableLabelTappableRegionInfoImpl.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ZSWTappableLabelTappableRegionInfoImpl.h; sourceTree = "<group>"; };
+		97070E9CB7186A70D0F5438DCF9DE90B /* ZSWTappableLabelAccessibilityActionLongPress.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ZSWTappableLabelAccessibilityActionLongPress.h; sourceTree = "<group>"; };
 		978BCD424134017DC8880E689570BE00 /* NSArray+MASAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+MASAdditions.h"; path = "Masonry/NSArray+MASAdditions.h"; sourceTree = "<group>"; };
 		979486118B3E90C08386079D57962701 /* SnapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SnapKit.framework; path = SnapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		983D9A834F5F6CDA5D8250F601389AB6 /* ConstraintDescription.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintDescription.swift; path = Source/ConstraintDescription.swift; sourceTree = "<group>"; };
-		99581991259EDB70EFDF6B95E70B43A0 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		99A4E38422174492C27A124DE8C73FD1 /* ZSWTaggedString.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ZSWTaggedString.xcconfig; sourceTree = "<group>"; };
 		99A92B517ECB658841F6CCA6A5396801 /* ZSWTaggedStringOptions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ZSWTaggedStringOptions.swift; path = ZSWTaggedString/Classes/ZSWTaggedStringOptions.swift; sourceTree = "<group>"; };
 		99F34E47137EA5F6FFC09B9EA95FF271 /* ConstraintLayoutGuideDSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintLayoutGuideDSL.swift; path = Source/ConstraintLayoutGuideDSL.swift; sourceTree = "<group>"; };
@@ -454,21 +457,20 @@
 		B35E05871BBB6D98C34CAE88308A70D4 /* EXPMatchers+equal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+equal.h"; path = "Expecta/Matchers/EXPMatchers+equal.h"; sourceTree = "<group>"; };
 		B3A54227866F3CE2CD2876AFF006F371 /* ZSWTaggedString-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ZSWTaggedString-prefix.pch"; sourceTree = "<group>"; };
 		B603FCC61F547D58E9B6CCAF0416627D /* EXPMatchers+beSubclassOf.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+beSubclassOf.h"; path = "Expecta/Matchers/EXPMatchers+beSubclassOf.h"; sourceTree = "<group>"; };
-		B684ABA8E2F948778FE66800D6947CA3 /* ZSWTappableLabel-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ZSWTappableLabel-Info.plist"; sourceTree = "<group>"; };
 		B6B7B2F58F16A6ABE9BA2409120ADE63 /* ViewController+MASAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "ViewController+MASAdditions.m"; path = "Masonry/ViewController+MASAdditions.m"; sourceTree = "<group>"; };
+		B71554B7721B8152092C3D1FBA3511DE /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		B71F5494CCC10719F902AF21A299CDF9 /* Pods-ZSWTappableLabel_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ZSWTappableLabel_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		B7AE5E01738A9857B19A344172D92B47 /* Pods-ZSWTappableLabel_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ZSWTappableLabel_Example.release.xcconfig"; sourceTree = "<group>"; };
 		B8E71AEE7A9871847DA646558863AAD4 /* ZSWTaggedStringOptions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ZSWTaggedStringOptions.h; path = ZSWTaggedString/Classes/ZSWTaggedStringOptions.h; sourceTree = "<group>"; };
-		B96E2CAA2309166EC8E1FA953C95F726 /* ZSWTappableLabel.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = ZSWTappableLabel.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		B97F66C073ABCA377099ED1B02024192 /* SPTGlobalBeforeAfterEach.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SPTGlobalBeforeAfterEach.h; path = Specta/Specta/SPTGlobalBeforeAfterEach.h; sourceTree = "<group>"; };
 		B9A88682545BE7B01CF7164EA42AC78E /* Specta.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Specta.modulemap; sourceTree = "<group>"; };
 		BB6EF4424C1108B4F986D1FA9440A547 /* EXPExpect.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EXPExpect.m; path = Expecta/EXPExpect.m; sourceTree = "<group>"; };
-		BB90AF22A00F8AD4796F3030E4922B2F /* ZSWTappableLabel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ZSWTappableLabel.m; path = ZSWTappableLabel/ZSWTappableLabel.m; sourceTree = "<group>"; };
 		BE310118CA7037318BB0A82B11EB5097 /* EXPMatchers+contain.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "EXPMatchers+contain.m"; path = "Expecta/Matchers/EXPMatchers+contain.m"; sourceTree = "<group>"; };
 		BE9DB561717708294E03E48EA6DB5FD3 /* Masonry-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Masonry-dummy.m"; sourceTree = "<group>"; };
 		BED37E4A94D80B4784440414B5A6F6BB /* ConstraintDirectionalInsetTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintDirectionalInsetTarget.swift; path = Source/ConstraintDirectionalInsetTarget.swift; sourceTree = "<group>"; };
 		BF0DDDA32C41A133E63C39FF30948D50 /* MASConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASConstraint.h; path = Masonry/MASConstraint.h; sourceTree = "<group>"; };
 		C15AA88A8963469DB0A3A76BAA7FECDB /* MASConstraintMaker.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASConstraintMaker.m; path = Masonry/MASConstraintMaker.m; sourceTree = "<group>"; };
+		C1E4D7B03E6838735E87BFBE03FDD211 /* ZSWTappableLabelAccessibilityElement.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ZSWTappableLabelAccessibilityElement.m; sourceTree = "<group>"; };
 		C28F95F72C2B5092A4AAA5BE07D4F2A5 /* Expecta-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Expecta-Info.plist"; sourceTree = "<group>"; };
 		C2D849E81126D4AEB9BEB85D3788D9C7 /* Debugging.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Debugging.swift; path = Source/Debugging.swift; sourceTree = "<group>"; };
 		C4E9123C042E5C1DC122459B97C4EF64 /* EXPMatchers+beGreaterThanOrEqualTo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+beGreaterThanOrEqualTo.h"; path = "Expecta/Matchers/EXPMatchers+beGreaterThanOrEqualTo.h"; sourceTree = "<group>"; };
@@ -493,17 +495,18 @@
 		D9CA6DDFA785D33E3ADE8F5F14BB2F52 /* ConstraintOffsetTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintOffsetTarget.swift; path = Source/ConstraintOffsetTarget.swift; sourceTree = "<group>"; };
 		DCC4BE0C0BF74A47A2FBCEF601F91FB3 /* SpectaDSL.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SpectaDSL.m; path = Specta/Specta/SpectaDSL.m; sourceTree = "<group>"; };
 		DCFE08B3EBF0B40D629B27B075C21023 /* EXPMatcherHelpers.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EXPMatcherHelpers.m; path = Expecta/Matchers/EXPMatcherHelpers.m; sourceTree = "<group>"; };
+		DDDE9E658C8AC1DD9FFEC8734EFD543F /* ZSWTappableLabel-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ZSWTappableLabel-Info.plist"; sourceTree = "<group>"; };
 		DF5A26232A55C2677C51E38EEE7D39AA /* MASViewConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASViewConstraint.h; path = Masonry/MASViewConstraint.h; sourceTree = "<group>"; };
 		DFD92B90CC0EBA7E8BB1C49E0606D8F4 /* ZSWTaggedString.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ZSWTaggedString.h; path = ZSWTaggedString/Classes/ZSWTaggedString.h; sourceTree = "<group>"; };
 		E0196D216D0ED86F67C3A9329800268B /* SpectaUtility.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SpectaUtility.m; path = Specta/Specta/SpectaUtility.m; sourceTree = "<group>"; };
 		E0F6DB887C3EC1B87781006EB86217A0 /* ConstraintMaker.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMaker.swift; path = Source/ConstraintMaker.swift; sourceTree = "<group>"; };
 		E11102300B45D12C9C23A4D155898254 /* MASConstraint+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "MASConstraint+Private.h"; path = "Masonry/MASConstraint+Private.h"; sourceTree = "<group>"; };
+		E14383A3EEC6E98E6F3FEDD23F6E0933 /* ZSWTappableLabel-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ZSWTappableLabel-umbrella.h"; sourceTree = "<group>"; };
 		E29A37CC14388AB839AA445AC2ADC002 /* EXPMatchers+beLessThan.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+beLessThan.h"; path = "Expecta/Matchers/EXPMatchers+beLessThan.h"; sourceTree = "<group>"; };
 		E39AE00DBC96EF85892D657D12541F1E /* ConstraintAttributes.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintAttributes.swift; path = Source/ConstraintAttributes.swift; sourceTree = "<group>"; };
 		E71DDA828B588E88967AAFA10DE90D60 /* Masonry-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Masonry-prefix.pch"; sourceTree = "<group>"; };
 		E7338474EB838696861FAA592C0EC3E1 /* EXPMatchers+beNil.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+beNil.h"; path = "Expecta/Matchers/EXPMatchers+beNil.h"; sourceTree = "<group>"; };
 		E802822024057940D598DC0098144D57 /* SpectaDSL.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SpectaDSL.h; path = Specta/Specta/SpectaDSL.h; sourceTree = "<group>"; };
-		E85355A1714D0E8DDE7C446A1609D898 /* ZSWTappableLabelTouchHandling.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ZSWTappableLabelTouchHandling.m; sourceTree = "<group>"; };
 		EA222FC3C80CB2D73256B57FA107ED1A /* Pods-Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		EB6C8C926F3D46203F92724567DAA9A3 /* EXPMatchers+beIdenticalTo.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "EXPMatchers+beIdenticalTo.m"; path = "Expecta/Matchers/EXPMatchers+beIdenticalTo.m"; sourceTree = "<group>"; };
 		ED8D7E8D68E961109E9813A60D1A26B8 /* Specta-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Specta-Info.plist"; sourceTree = "<group>"; };
@@ -513,12 +516,13 @@
 		F27720657CC19D3E16A5DB61857C8C1C /* EXPMatchers+beGreaterThanOrEqualTo.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "EXPMatchers+beGreaterThanOrEqualTo.m"; path = "Expecta/Matchers/EXPMatchers+beGreaterThanOrEqualTo.m"; sourceTree = "<group>"; };
 		F304DA3FFF7A253ECAB3CFB49D675D69 /* View+MASAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "View+MASAdditions.m"; path = "Masonry/View+MASAdditions.m"; sourceTree = "<group>"; };
 		F3C36DC559CEF2396EAE849FAF4FED63 /* EXPBlockDefinedMatcher.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EXPBlockDefinedMatcher.m; path = Expecta/EXPBlockDefinedMatcher.m; sourceTree = "<group>"; };
-		F63CA4C328147467E7B2594E3C8BFACA /* ZSWTappableLabelTappableRegionInfoImpl.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ZSWTappableLabelTappableRegionInfoImpl.m; sourceTree = "<group>"; };
 		F852340F525A122019196F4EC6DBBC27 /* ConstraintConstantTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintConstantTarget.swift; path = Source/ConstraintConstantTarget.swift; sourceTree = "<group>"; };
 		F9DE4DB3ECA89C9828538390BB247F1D /* ZSWTaggedStringAttribute.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ZSWTaggedStringAttribute.m; path = ZSWTaggedString/Private/ZSWTaggedStringAttribute.m; sourceTree = "<group>"; };
 		FAA236D246C2CEB6E641E74A16AB0D95 /* Masonry.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Masonry.xcconfig; sourceTree = "<group>"; };
 		FBAAB1E7F87FE52CD0EE64771041E244 /* NSArray+MASShorthandAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+MASShorthandAdditions.h"; path = "Masonry/NSArray+MASShorthandAdditions.h"; sourceTree = "<group>"; };
 		FC95D668E217CFBB25845AA15162348B /* Pods_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Tests.framework; path = "Pods-Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FDF3E9BF2545D1A948764CC55FBBF17D /* ZSWTappableLabelTappableRegionInfoImpl.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ZSWTappableLabelTappableRegionInfoImpl.m; sourceTree = "<group>"; };
+		FE334E3F332B11157D0B5D5334F5A8C5 /* ZSWTappableLabel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ZSWTappableLabel.h; path = ZSWTappableLabel/ZSWTappableLabel.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -527,15 +531,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				19F3FF4FA4198B54B4D3CF7764EC8017 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2760E72D8BC6AE57E382CBE803B58A9A /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0E3313A86EF95C651FC2D3BF2FC34072 /* Foundation.framework in Frameworks */,
-				74F0C201556FF7E1A9A6D9A0B2DBA411 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -552,6 +547,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				04543980C4A7CE442330B0F1BC4A9A54 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		59647F5EC46CB7D00D6B93DB1A2F2C53 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB16855BF4DE8305AA994C725159AC50 /* Foundation.framework in Frameworks */,
+				A04929A07627F6BF41D4A79FA3E10462 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -596,7 +600,7 @@
 		004D08CFAEB70808499A6F078DD6DF49 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				F4C4EA5D52EE34D612180A87F9470111 /* ZSWTappableLabel */,
+				457C79D7736E4BD2AB2681A7BBAD35FD /* ZSWTappableLabel */,
 			);
 			name = "Development Pods";
 			sourceTree = "<group>";
@@ -607,6 +611,19 @@
 				73B171266A96DC6E1563E2096515B150 /* iOS */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		457C79D7736E4BD2AB2681A7BBAD35FD /* ZSWTappableLabel */ = {
+			isa = PBXGroup;
+			children = (
+				FE334E3F332B11157D0B5D5334F5A8C5 /* ZSWTappableLabel.h */,
+				50C781375288DC6F9CC08520667F355F /* ZSWTappableLabel.m */,
+				D0E89C1755EC6DB44830D67CEFC12B41 /* Pod */,
+				82093A69B703E58824E04CD05B9D009F /* Private */,
+				CE11F388018BAD2D95B4CFF480AEA783 /* Support Files */,
+			);
+			name = ZSWTappableLabel;
+			path = ../..;
 			sourceTree = "<group>";
 		};
 		4BE930652C2F4750AE70AA538D8D7E98 /* Expecta */ = {
@@ -689,20 +706,6 @@
 			);
 			name = Expecta;
 			path = Expecta;
-			sourceTree = "<group>";
-		};
-		56699D8684FFE9D46DBE9361C002E107 /* Private */ = {
-			isa = PBXGroup;
-			children = (
-				7415FE1A408D628492AF74B8EB7E8AFB /* ZSWTappableLabelAccessibilityActionLongPress.h */,
-				095A74562DA367A038939D77B84ED810 /* ZSWTappableLabelAccessibilityActionLongPress.m */,
-				971EEFCEA0DC75240787C7CA4B806DE1 /* ZSWTappableLabelTappableRegionInfoImpl.h */,
-				F63CA4C328147467E7B2594E3C8BFACA /* ZSWTappableLabelTappableRegionInfoImpl.m */,
-				8428347ABE1FC2D5A8EB1B49727EA856 /* ZSWTappableLabelTouchHandling.h */,
-				E85355A1714D0E8DDE7C446A1609D898 /* ZSWTappableLabelTouchHandling.m */,
-			);
-			name = Private;
-			path = ZSWTappableLabel/Private;
 			sourceTree = "<group>";
 		};
 		5AF33C934D9937C44CC919FA03178C24 /* Specta */ = {
@@ -796,6 +799,22 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
+		82093A69B703E58824E04CD05B9D009F /* Private */ = {
+			isa = PBXGroup;
+			children = (
+				97070E9CB7186A70D0F5438DCF9DE90B /* ZSWTappableLabelAccessibilityActionLongPress.h */,
+				565EE0F29AE5DD30B8114FA6C2DAC56C /* ZSWTappableLabelAccessibilityActionLongPress.m */,
+				3D00ACEE6FDAB8B17BB5AC420F991AE5 /* ZSWTappableLabelAccessibilityElement.h */,
+				C1E4D7B03E6838735E87BFBE03FDD211 /* ZSWTappableLabelAccessibilityElement.m */,
+				08DCB2D9E1989AECCEE67B840FDF958C /* ZSWTappableLabelTappableRegionInfoImpl.h */,
+				FDF3E9BF2545D1A948764CC55FBBF17D /* ZSWTappableLabelTappableRegionInfoImpl.m */,
+				7A61522F7A4D2731A4453945F6A52DBB /* ZSWTappableLabelTouchHandling.h */,
+				164AF173D58276E231CA801D24BE25A4 /* ZSWTappableLabelTouchHandling.m */,
+			);
+			name = Private;
+			path = ZSWTappableLabel/Private;
+			sourceTree = "<group>";
+		};
 		86FA25FDC52C5C85CD230B51BBA78157 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -867,30 +886,6 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		B1F9FC0E44F8849BDCFB403D079C83C7 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				493621B54B87DC58A0D96B7ADBE2294D /* ZSWTappableLabel.modulemap */,
-				116FA5492660FDC831C13DB016193B35 /* ZSWTappableLabel.xcconfig */,
-				7C209D9178350F1722B0AE052EE84E2E /* ZSWTappableLabel-dummy.m */,
-				B684ABA8E2F948778FE66800D6947CA3 /* ZSWTappableLabel-Info.plist */,
-				2899009FED676E4084C2D9BC5DE30E35 /* ZSWTappableLabel-prefix.pch */,
-				86B0512E0ACF2FCEB3A8EE5FAC9FBC8F /* ZSWTappableLabel-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/ZSWTappableLabel";
-			sourceTree = "<group>";
-		};
-		B2FC1F179DA976D5842ED27C497BD55A /* Pod */ = {
-			isa = PBXGroup;
-			children = (
-				8F02288966DD3C1D0F910F35BFA728F9 /* LICENSE */,
-				99581991259EDB70EFDF6B95E70B43A0 /* README.md */,
-				B96E2CAA2309166EC8E1FA953C95F726 /* ZSWTappableLabel.podspec */,
-			);
-			name = Pod;
-			sourceTree = "<group>";
-		};
 		BD90AC55028F8A9FE1E9B7CEFD7B336B /* ZSWTaggedString */ = {
 			isa = PBXGroup;
 			children = (
@@ -900,6 +895,20 @@
 			);
 			name = ZSWTaggedString;
 			path = ZSWTaggedString;
+			sourceTree = "<group>";
+		};
+		CE11F388018BAD2D95B4CFF480AEA783 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				63818F54E3AD67C1544E1EEED1EED9A3 /* ZSWTappableLabel.modulemap */,
+				8F71766D2E97EC28F67EAFD8E3EA365F /* ZSWTappableLabel.xcconfig */,
+				7D7EFBB2352A8BA363CEDF5A019FB005 /* ZSWTappableLabel-dummy.m */,
+				DDDE9E658C8AC1DD9FFEC8734EFD543F /* ZSWTappableLabel-Info.plist */,
+				5928942EC7AAABAF5A57AFAF55DB9E3B /* ZSWTappableLabel-prefix.pch */,
+				E14383A3EEC6E98E6F3FEDD23F6E0933 /* ZSWTappableLabel-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/ZSWTappableLabel";
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
@@ -912,6 +921,16 @@
 				DB6D143E6BD84A74E101C55541FB6590 /* Products */,
 				AB0D0302577BE99BA59B06C9047B28BD /* Targets Support Files */,
 			);
+			sourceTree = "<group>";
+		};
+		D0E89C1755EC6DB44830D67CEFC12B41 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				5782A7D5BD0F51E872EB09912B83AE2E /* LICENSE */,
+				B71554B7721B8152092C3D1FBA3511DE /* README.md */,
+				731297043D6266230A0E4C9E3F007709 /* ZSWTappableLabel.podspec */,
+			);
+			name = Pod;
 			sourceTree = "<group>";
 		};
 		D1C7A3F85D433E085411029E2E6776BD /* Pods-ZSWTappableLabel_Example */ = {
@@ -1025,19 +1044,6 @@
 			path = Masonry;
 			sourceTree = "<group>";
 		};
-		F4C4EA5D52EE34D612180A87F9470111 /* ZSWTappableLabel */ = {
-			isa = PBXGroup;
-			children = (
-				28548B569654CBE8458C34D1C2AB0C3E /* ZSWTappableLabel.h */,
-				BB90AF22A00F8AD4796F3030E4922B2F /* ZSWTappableLabel.m */,
-				B2FC1F179DA976D5842ED27C497BD55A /* Pod */,
-				56699D8684FFE9D46DBE9361C002E107 /* Private */,
-				B1F9FC0E44F8849BDCFB403D079C83C7 /* Support Files */,
-			);
-			name = ZSWTappableLabel;
-			path = ../..;
-			sourceTree = "<group>";
-		};
 		F520A9307AA4B34216F91D1F69DBAA8E /* Pods-Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -1058,18 +1064,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		390FF6870A2ABD7A351D169AA936578A /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3068A9473B6C2FC52CC4D84B53AF3259 /* ZSWTappableLabel-umbrella.h in Headers */,
-				CADFD3C3B6A9BA30AE309E9F2E9994DF /* ZSWTappableLabel.h in Headers */,
-				501F0AF3FFB718EE83A43AE6DB2C182A /* ZSWTappableLabelAccessibilityActionLongPress.h in Headers */,
-				91D52209332F322DB5A5E30E1C2CB729 /* ZSWTappableLabelTappableRegionInfoImpl.h in Headers */,
-				2598BD91C7084B82F568C8B35E7BEF99 /* ZSWTappableLabelTouchHandling.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		4900EEFFF3A049EDA40F917F4EED85CD /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -1201,17 +1195,30 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F65D311124DA32C66717686E3EE80B01 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0B8E66F0F59569E54B1C4793A51FC778 /* ZSWTappableLabel-umbrella.h in Headers */,
+				07066AFD38A12C6C39948A6810222F10 /* ZSWTappableLabel.h in Headers */,
+				1DAB9ABBF2A850D5595A020D905BACFE /* ZSWTappableLabelAccessibilityActionLongPress.h in Headers */,
+				A6D431CA37F733ACD6527DB95B1103ED /* ZSWTappableLabelAccessibilityElement.h in Headers */,
+				17AC35C571DD5B2CBC360BE3EDD436E4 /* ZSWTappableLabelTappableRegionInfoImpl.h in Headers */,
+				F08ED74F7590D79C09F33BE7B33D49BD /* ZSWTappableLabelTouchHandling.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		14AD6D3DE5F8E41B9BFDD59D9BAE5959 /* ZSWTappableLabel */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B37D0C1D94A389C274838FCB32C66755 /* Build configuration list for PBXNativeTarget "ZSWTappableLabel" */;
+			buildConfigurationList = 7E8CB58A0993284FBBE656B51F2A90F5 /* Build configuration list for PBXNativeTarget "ZSWTappableLabel" */;
 			buildPhases = (
-				390FF6870A2ABD7A351D169AA936578A /* Headers */,
-				120E84339619C56C04489CEE880E7311 /* Sources */,
-				2760E72D8BC6AE57E382CBE803B58A9A /* Frameworks */,
-				E31D628AC091A5C04CE4C1C75C7CA54F /* Resources */,
+				F65D311124DA32C66717686E3EE80B01 /* Headers */,
+				76A5CD2626D6892358E88D34393B962E /* Sources */,
+				59647F5EC46CB7D00D6B93DB1A2F2C53 /* Frameworks */,
+				9B7A42256D14BBF2D1C280ED4EBD5FCA /* Resources */,
 			);
 			buildRules = (
 			);
@@ -1424,6 +1431,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9B7A42256D14BBF2D1C280ED4EBD5FCA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9C691CAA90D9565F2EFF5EF823D8A80C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1432,13 +1446,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		C64E53B7091B0208775F0166D8B09756 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E31D628AC091A5C04CE4C1C75C7CA54F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1466,18 +1473,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		120E84339619C56C04489CEE880E7311 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C749E9FA179433144D50B97F1A5979E1 /* ZSWTappableLabel-dummy.m in Sources */,
-				81F803CC808E3E537159D352371848BE /* ZSWTappableLabel.m in Sources */,
-				ECAD0E96160B394A4486C3EF2AE664D4 /* ZSWTappableLabelAccessibilityActionLongPress.m in Sources */,
-				5527C815CA0D6C5720208C125FD90D1C /* ZSWTappableLabelTappableRegionInfoImpl.m in Sources */,
-				4348F373DA0E6DB8DDE4AB3EC21A6C06 /* ZSWTappableLabelTouchHandling.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		56832F239017011D8E94FA78D66B8106 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1493,6 +1488,19 @@
 				B27CA77724EE492D67D5A6EEF3C04B83 /* SPTSpec.m in Sources */,
 				93076F6F0B96EAD80F67BC760A3FC0AD /* SPTTestSuite.m in Sources */,
 				88B1F2202F8E1BA69FF9FFD599C71A53 /* XCTestCase+Specta.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		76A5CD2626D6892358E88D34393B962E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB7459E24ADF11B26A811A87E8249D4D /* ZSWTappableLabel-dummy.m in Sources */,
+				207A91122FC8432D4C2E74FD2D00A730 /* ZSWTappableLabel.m in Sources */,
+				A61E098A6529DF8D61E7D38382BE790C /* ZSWTappableLabelAccessibilityActionLongPress.m in Sources */,
+				05A0FCCE886D4B78281B22FE12B8D993 /* ZSWTappableLabelAccessibilityElement.m in Sources */,
+				D9BF3860C76D15CB029F0A024DF28A20 /* ZSWTappableLabelTappableRegionInfoImpl.m in Sources */,
+				4ED89257FFB57ED1BC207AF75306791F /* ZSWTappableLabelTouchHandling.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2042,39 +2050,6 @@
 			};
 			name = Release;
 		};
-		60C27BF8EEA5AB4AA735D21F66BBB572 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 116FA5492660FDC831C13DB016193B35 /* ZSWTappableLabel.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/ZSWTappableLabel/ZSWTappableLabel-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/ZSWTappableLabel/ZSWTappableLabel-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/ZSWTappableLabel/ZSWTappableLabel.modulemap";
-				PRODUCT_MODULE_NAME = ZSWTappableLabel;
-				PRODUCT_NAME = ZSWTappableLabel;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		804C6A0F84C2BDAB457EAAEF17A02EA4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2CE947FACA0AD03D09592997C01AA69A /* Pods-Tests.release.xcconfig */;
@@ -2269,9 +2244,42 @@
 			};
 			name = Debug;
 		};
-		D56925C6AA0BAEC4A399626EDEE08850 /* Debug */ = {
+		DBD3927FA694C839CF89DDAE6202E3CF /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 116FA5492660FDC831C13DB016193B35 /* ZSWTappableLabel.xcconfig */;
+			baseConfigurationReference = 8F71766D2E97EC28F67EAFD8E3EA365F /* ZSWTappableLabel.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/ZSWTappableLabel/ZSWTappableLabel-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ZSWTappableLabel/ZSWTappableLabel-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/ZSWTappableLabel/ZSWTappableLabel.modulemap";
+				PRODUCT_MODULE_NAME = ZSWTappableLabel;
+				PRODUCT_NAME = ZSWTappableLabel;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		E9EDBF1FA83EB61FAFA5544D55BF429A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8F71766D2E97EC28F67EAFD8E3EA365F /* ZSWTappableLabel.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
@@ -2322,6 +2330,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		7E8CB58A0993284FBBE656B51F2A90F5 /* Build configuration list for PBXNativeTarget "ZSWTappableLabel" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E9EDBF1FA83EB61FAFA5544D55BF429A /* Debug */,
+				DBD3927FA694C839CF89DDAE6202E3CF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		7F8CE4DC18DBEA01587212F09727DB3D /* Build configuration list for PBXNativeTarget "SnapKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -2345,15 +2362,6 @@
 			buildConfigurations = (
 				A20608DEEBF67176E3AF4DF88FAB4D80 /* Debug */,
 				14FE7D86364F678811FFE1E09BC0E8EA /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		B37D0C1D94A389C274838FCB32C66755 /* Build configuration list for PBXNativeTarget "ZSWTappableLabel" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				D56925C6AA0BAEC4A399626EDEE08850 /* Debug */,
-				60C27BF8EEA5AB4AA735D21F66BBB572 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
