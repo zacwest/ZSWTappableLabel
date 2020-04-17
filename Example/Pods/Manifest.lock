@@ -8,7 +8,7 @@ PODS:
   - ZSWTaggedString/Core (4.2)
   - ZSWTaggedString/Swift (4.2):
     - ZSWTaggedString/Core
-  - ZSWTappableLabel (3.1)
+  - ZSWTappableLabel (3.2)
 
 DEPENDENCIES:
   - Expecta
@@ -37,8 +37,8 @@ SPEC CHECKSUMS:
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   Specta: 3e1bd89c3517421982dc4d1c992503e48bd5fe66
   ZSWTaggedString: 1a6aab3143188634c1e5dfe9383ce754c1fb5fe2
-  ZSWTappableLabel: 7fa2352180dc717eb1ecb733b2f72e9fed049912
+  ZSWTappableLabel: f738597b56086ed885f79f164a0c8c15a990c750
 
 PODFILE CHECKSUM: 9e919496c1848acd1d34cab7f2ec703df663e564
 
-COCOAPODS: 1.8.3
+COCOAPODS: 1.9.1
