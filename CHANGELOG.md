@@ -1,3 +1,7 @@
+# 3.2 (2020-04-17)
+
+- Fixes handling accessibility element activation that spans multiple lines.
+
 # 3.1 (2019-05-03)
 
 - Adds accessibilityDelegate method to override accessibilityLabel of constituent elements.
