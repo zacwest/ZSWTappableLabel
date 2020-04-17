@@ -10,6 +10,7 @@
 
 #import "ZSWTappableLabel.h"
 #import "Private/ZSWTappableLabelTappableRegionInfoImpl.h"
+#import "Private/ZSWTappableLabelAccessibilityElement.h"
 #import "Private/ZSWTappableLabelAccessibilityActionLongPress.h"
 #import "Private/ZSWTappableLabelTouchHandling.h"
 
@@ -369,6 +370,11 @@ typedef NS_ENUM(NSInteger, ZSWTappableLabelNotifyType) {
     }];
 }
 
+- (BOOL)activateForAccessibilityIndex:(NSInteger)characterIndex {
+    [self notifyForCharacterIndex:characterIndex type:ZSWTappableLabelNotifyTypeTap];
+    return YES;
+}
+
 - (BOOL)longPressForAccessibilityAction:(ZSWTappableLabelAccessibilityActionLongPress *)action {
     [self notifyForCharacterIndex:action.characterIndex type:ZSWTappableLabelNotifyTypeLongPress];
     return YES;
@@ -454,12 +460,17 @@ typedef NS_ENUM(NSInteger, ZSWTappableLabelNotifyType) {
         // always enumerate and read the entire contents using the two-finger up/down gesture, and this is behavior
         // they are likely used to.
         void (^enumerationBlock)(id, NSRange, BOOL *) = ^(id value, NSRange range, BOOL *stop) {
-            UIAccessibilityElement *element = [[UIAccessibilityElement alloc] initWithAccessibilityContainer:self];
-
+            ZSWTappableLabelAccessibilityElement *element = [[ZSWTappableLabelAccessibilityElement alloc] initWithAccessibilityContainer:self];
+            NSInteger characterIndex = range.location;
+            
             element.accessibilityFrameInContainerSpace = [th frameForCharacterRange:range];
             
             if ([value boolValue]) {
                 element.accessibilityTraits = UIAccessibilityTraitLink | UIAccessibilityTraitStaticText;
+                __weak __typeof(self) weakSelf = self;
+                element.activateBlock = ^{
+                    return [weakSelf activateForAccessibilityIndex:characterIndex];
+                };
             } else {
                 element.accessibilityTraits = UIAccessibilityTraitStaticText;
             }
@@ -468,7 +479,7 @@ typedef NS_ENUM(NSInteger, ZSWTappableLabelNotifyType) {
             
             if (longPressDelegate) {
                 ZSWTappableLabelAccessibilityActionLongPress *action = [[ZSWTappableLabelAccessibilityActionLongPress alloc] initWithName:longPressAccessibilityActionName target:self selector:@selector(longPressForAccessibilityAction:)];
-                action.characterIndex = range.location;
+                action.characterIndex = characterIndex;
                 [customActions addObject:action];
             }
             
