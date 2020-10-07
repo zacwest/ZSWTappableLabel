@@ -510,7 +510,7 @@ typedef NS_ENUM(NSInteger, ZSWTappableLabelNotifyType) {
         
         [unmodifiedAttributedString enumerateAttribute:ZSWTappableLabelTappableRegionAttributeName
                                                inRange:NSMakeRange(0, unmodifiedAttributedString.length)
-                                               options:NSAttributedStringEnumerationLongestEffectiveRangeNotRequired
+                                               options:0
                                             usingBlock:enumerationBlock];
     }];
 
