@@ -1,3 +1,8 @@
+# 3.3 (2021-04-02)
+
+- Fixes tappability of regions relocated to a new line to avoid single-word last lines by UILabel. This requires compiling using Xcode 12, but works backwards-compatibly.
+- Fixes accessibility elements sometimes exposing more than 1 element per tappable span.
+
 # 3.2 (2020-04-17)
 
 - Fixes handling accessibility element activation that spans multiple lines.
