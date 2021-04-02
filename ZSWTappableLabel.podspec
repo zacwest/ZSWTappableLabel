@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "ZSWTappableLabel"
-  s.version          = "3.2"
+  s.version          = "3.3"
   s.summary          = "UILabel subclass for links which are tappable, long-pressable, 3D Touchable, and VoiceOverable."
   s.description      = "NSAttributedStrings displayed in ZSWTappableLabel can be tapped, long-pressed, 3D Touched, "\
                        "or interacted with using VoiceOver in substrings you specify using string attributes. "\
