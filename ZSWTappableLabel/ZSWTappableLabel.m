@@ -139,15 +139,24 @@ typedef NS_ENUM(NSInteger, ZSWTappableLabelNotifyType) {
                             }];
 
 #ifdef __IPHONE_14_0
+    NSLineBreakStrategy lineBreakStrategy;
+
+    if ([self respondsToSelector:@selector(lineBreakStrategy)]) {
+        // Although declared without a min OS, this isn't available on iOS 12.
+        lineBreakStrategy = self.lineBreakStrategy;
+    } else {
+        lineBreakStrategy = NSLineBreakStrategyPushOut;
+    }
+
     // lineBreakStrategy was exposed publicly in Xcode 12, but works backwords-compatibly
-    if (self.textAlignment != NSTextAlignmentLeft || self.lineBreakStrategy != NSLineBreakStrategyNone) {
+    if (self.textAlignment != NSTextAlignmentLeft || lineBreakStrategy != NSLineBreakStrategyNone) {
 #else
     if (self.textAlignment != NSTextAlignmentLeft) {
 #endif
         NSMutableParagraphStyle *style = [[NSMutableParagraphStyle alloc] init];
         style.alignment = self.textAlignment;
 #ifdef __IPHONE_14_0
-        style.lineBreakStrategy = self.lineBreakStrategy;
+        style.lineBreakStrategy = lineBreakStrategy;
 #endif
         
         [attributedText enumerateAttribute:NSParagraphStyleAttributeName

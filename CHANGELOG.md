@@ -1,3 +1,6 @@
+# 3.3.1 (2021-04-20)
+- Fixes a regression in 3.3 which caused a crash on iOS 12. Turns out that availability flag for lineBreakStrategy only works on iOS 13+!
+
 # 3.3 (2021-04-02)
 
 - Fixes tappability of regions relocated to a new line to avoid single-word last lines by UILabel. This requires compiling using Xcode 12, but works backwards-compatibly.
