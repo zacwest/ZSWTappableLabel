@@ -388,6 +388,26 @@ func tappableLabel(
 
 ## Installation
 
+ZSWTappableLabel is available through [Swift Package Manager](https://developer.apple.com/documentation/swift_packages/adding_package_dependencies_to_your_app). To install, in xcode, simply click file -> swift packages -> add package dependency and paste `https://github.com/zacwest/ZSWTappableLabel.git` into the search field.
+
+OR
+
+if you are using this library inside of another swift package. Simply add the following to your `Package.swift` file:
+
+```swift
+dependencies: [
+    .package(url: "https://github.com/zacwest/ZSWTappableLabel.git", from: "3.3.0"),
+],
+targets: [
+    // Targets are the basic building blocks of a package. A target can define a module or a test suite.
+    // Targets can depend on other targets in this package, and on products in packages this package depends on.
+    .target(
+        name: "MyPackage",
+        dependencies: ["ZSWTappableLabel"]
+    )
+]
+```
+
 ZSWTappableLabel is available through [CocoaPods](http://cocoapods.org). To install it, simply add the following line to your Podfile:
 
 ```ruby
