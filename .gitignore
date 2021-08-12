@@ -21,3 +21,5 @@ DerivedData
 
 # Bundler
 .bundle
+.build
+.swiftpm

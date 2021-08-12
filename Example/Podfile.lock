@@ -8,7 +8,7 @@ PODS:
   - ZSWTaggedString/Core (4.2)
   - ZSWTaggedString/Swift (4.2):
     - ZSWTaggedString/Core
-  - ZSWTappableLabel (3.2)
+  - ZSWTappableLabel (3.3.2)
 
 DEPENDENCIES:
   - Expecta
@@ -20,7 +20,7 @@ DEPENDENCIES:
   - ZSWTappableLabel (from `../`)
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  trunk:
     - Expecta
     - Masonry
     - SnapKit
@@ -37,8 +37,8 @@ SPEC CHECKSUMS:
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   Specta: 3e1bd89c3517421982dc4d1c992503e48bd5fe66
   ZSWTaggedString: 1a6aab3143188634c1e5dfe9383ce754c1fb5fe2
-  ZSWTappableLabel: f738597b56086ed885f79f164a0c8c15a990c750
+  ZSWTappableLabel: 92f11d677bb395a8294df48482316c4981783ca0
 
-PODFILE CHECKSUM: 9e919496c1848acd1d34cab7f2ec703df663e564
+PODFILE CHECKSUM: 6a653d5b9d6d2422d9813a55ee72322514951887
 
-COCOAPODS: 1.9.1
+COCOAPODS: 1.10.1

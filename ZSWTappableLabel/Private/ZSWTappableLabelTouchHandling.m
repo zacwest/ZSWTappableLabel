@@ -9,7 +9,7 @@
 //
 
 #import "ZSWTappableLabelTouchHandling.h"
-#import "../ZSWTappableLabel.h"
+#import "../Public/ZSWTappableLabel.h"
 
 @interface ZSWTappableLabelTouchHandling()
 @property (nonatomic, readwrite) NSAttributedString *unmodifiedAttributedString;

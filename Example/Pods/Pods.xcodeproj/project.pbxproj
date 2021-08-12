@@ -10,39 +10,34 @@
 		008A37B2A63BC1F3E33557FEF5BEE189 /* NSValue+Expecta.h in Headers */ = {isa = PBXBuildFile; fileRef = F526AE368EBD17A16BC3987187ADB822 /* NSValue+Expecta.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		00B3EF135DE4634D6FA1E5EF15239824 /* EXPMatchers+endWith.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BAE78D0D4F653F180DD04C71A912623 /* EXPMatchers+endWith.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		01C550A53C9E2047C83F8E85BBB558E6 /* ConstraintLayoutSupportDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6EDFB69847218042FD09B89D26E8E27 /* ConstraintLayoutSupportDSL.swift */; };
+		0301C5B2031E28AC249F9387ACAC19E6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54808C6C88411583D225CB43662CF2A8 /* Foundation.framework */; };
 		039EAFE7935113805F3FC21BF1B7C9D5 /* LayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FF34C9E3A9DDAF6F66C6623B7C0178 /* LayoutConstraint.swift */; };
-		04543980C4A7CE442330B0F1BC4A9A54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F94A9F552457B2DBAD1616C5E0E0E7A /* Foundation.framework */; };
 		0475A9EA5F07D6B60E1135A35541C3C3 /* Specta-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D8884A1EE1C3124E65FDE115D9BB9E69 /* Specta-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		05A040F35BF1C88F869404E1A940B493 /* NSArray+MASShorthandAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = F6E59CFFB8C5AC232F952848C2673276 /* NSArray+MASShorthandAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		05A0FCCE886D4B78281B22FE12B8D993 /* ZSWTappableLabelAccessibilityElement.m in Sources */ = {isa = PBXBuildFile; fileRef = F67AB5DD3C1410DEFA6E057615106743 /* ZSWTappableLabelAccessibilityElement.m */; };
+		05A0FCCE886D4B78281B22FE12B8D993 /* ZSWTappableLabelAccessibilityElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CE7EDDA032C4699E79DE7BB1B2C0B89 /* ZSWTappableLabelAccessibilityElement.m */; };
 		05BCAED08DADF67CC4711A102262D9AB /* EXPMatchers+equal.m in Sources */ = {isa = PBXBuildFile; fileRef = A137EE099D6D7459FD0673E5B1DADC36 /* EXPMatchers+equal.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		05CFF6618B87EDE2069D4C5D3DDFF9EB /* EXPMatchers+beginWith.m in Sources */ = {isa = PBXBuildFile; fileRef = 366D55B6F8EF15C430D52538033C3EF7 /* EXPMatchers+beginWith.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		05EA1447EEA0EB669F8DEE73964A7C60 /* NSArray+MASAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 362006FF4F1A6575695C0564B8B22C59 /* NSArray+MASAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		06F842D617FB7015C5798852A4E3F359 /* SPTCallSite.m in Sources */ = {isa = PBXBuildFile; fileRef = 151D007BCE603A7ED8A72E3AE046A6D9 /* SPTCallSite.m */; };
-		07066AFD38A12C6C39948A6810222F10 /* ZSWTappableLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = 1696ED66D74D821743D406BD4898D521 /* ZSWTappableLabel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0967598607D521318F69D7D39D517B20 /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7BD4AB05414C6FF0194AEA2B659094 /* ViewController+MASAdditions.m */; };
 		098630ECDB64ED7B89F5F687C82B4AC3 /* NSArray+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = D28AFD0965B2FB19AC23A0A8DC42A3EC /* NSArray+MASAdditions.m */; };
 		0AF1AD35706D90B1A91F291B899EF8C0 /* NSLayoutConstraint+MASDebugAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 01597A379F1339937B93334B09DB3E7B /* NSLayoutConstraint+MASDebugAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0B8E66F0F59569E54B1C4793A51FC778 /* ZSWTappableLabel-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E0F926323949A5D529C2C448C7B03E81 /* ZSWTappableLabel-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0DE0AA588BC61692033B67CFCE4EC742 /* EXPMatchers+beSubclassOf.h in Headers */ = {isa = PBXBuildFile; fileRef = 692B8553CDC917A3A88C58CB7AED6CD2 /* EXPMatchers+beSubclassOf.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		114C2163DAE74196CAF6FA2E5FB633D7 /* NSObject+Expecta.h in Headers */ = {isa = PBXBuildFile; fileRef = 2FF5F9D9AA51970C605C11F0FC102717 /* NSObject+Expecta.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		12C14FE4834134BC916F8DD42B875D3B /* EXPMatchers+beLessThanOrEqualTo.h in Headers */ = {isa = PBXBuildFile; fileRef = 1906D0F3E05599ECA2FBE4DBBF7638F2 /* EXPMatchers+beLessThanOrEqualTo.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		13E39E050768ED6CBE0C7FDF93102EA6 /* ZSWStringParserTag.m in Sources */ = {isa = PBXBuildFile; fileRef = C1B52D436CF613CF2D5536839CD9E4A4 /* ZSWStringParserTag.m */; };
 		140394F97EEF0A95AB171649249F211C /* EXPMatchers+beTruthy.m in Sources */ = {isa = PBXBuildFile; fileRef = 38E5F6304068E8D4E1DEC16343C750A8 /* EXPMatchers+beTruthy.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		15C0054801F96BA3329545B1FAA6A85E /* EXPMatchers+haveCountOf.m in Sources */ = {isa = PBXBuildFile; fileRef = AE9F2C7A88CA3513EA2E4CE8E62F29B8 /* EXPMatchers+haveCountOf.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		17AC35C571DD5B2CBC360BE3EDD436E4 /* ZSWTappableLabelTappableRegionInfoImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 06E88AF587EC003FEF6589EA8FE57A06 /* ZSWTappableLabelTappableRegionInfoImpl.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		188A55E8570219DC971027460C2BCF1B /* EXPMatchers+beSubclassOf.m in Sources */ = {isa = PBXBuildFile; fileRef = AE5A7DE17FBCC8DF8889811A742D3A2E /* EXPMatchers+beSubclassOf.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		1956E392D500F3CD899D39A5F805736D /* Typealiases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F77F460359C73D9192918A58BEECB34 /* Typealiases.swift */; };
 		19621E59AF2C3772FF6290740DB6EAB4 /* NSValue+Expecta.m in Sources */ = {isa = PBXBuildFile; fileRef = A04338E9A17C22CFE46E5CE176891A53 /* NSValue+Expecta.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		1972E85F0FCD0F3EAF28ED7CD036286E /* Masonry-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A76731E37E48192CF1B8A94057FF7145 /* Masonry-dummy.m */; };
-		19F3FF4FA4198B54B4D3CF7764EC8017 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F94A9F552457B2DBAD1616C5E0E0E7A /* Foundation.framework */; };
 		1AFB1E9136716C0B61D6C700FF1E60FD /* ConstraintLayoutGuide+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069FE100DA144CD920A9757C200357BA /* ConstraintLayoutGuide+Extensions.swift */; };
 		1BE7FE40FAEBFD94EA74D3CA2F62568A /* ZSWTaggedString-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5683F3234A38A5D68210F841F00978A3 /* ZSWTaggedString-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1CF5E91F1AE39E4CA72E7CB9DC066BC5 /* EXPMatchers+raiseWithReason.h in Headers */ = {isa = PBXBuildFile; fileRef = 799CF69248C7E132DAAF3363F6E871CB /* EXPMatchers+raiseWithReason.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1DAB9ABBF2A850D5595A020D905BACFE /* ZSWTappableLabelAccessibilityActionLongPress.h in Headers */ = {isa = PBXBuildFile; fileRef = B1683BAE49DA9F37CD41EDEDB259CAE4 /* ZSWTappableLabelAccessibilityActionLongPress.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		1EDA4657EEF6B795B643063E05E8DC57 /* EXPMatchers+respondTo.m in Sources */ = {isa = PBXBuildFile; fileRef = F50382168C958BBA93B129A06D2279ED /* EXPMatchers+respondTo.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		20471DE376ACB94F0E144A26EFFCFD21 /* EXPMatchers+beSupersetOf.m in Sources */ = {isa = PBXBuildFile; fileRef = D1BD061657FB2B61F25A0F0952C93EA3 /* EXPMatchers+beSupersetOf.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		207A91122FC8432D4C2E74FD2D00A730 /* ZSWTappableLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = A806445D2E73E9D5AEFB59D05A2202B8 /* ZSWTappableLabel.m */; };
+		207A91122FC8432D4C2E74FD2D00A730 /* ZSWTappableLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9648A9975BD90322C0B292028B593D90 /* ZSWTappableLabel.m */; };
 		21AB1101BBE4D28D74ED4EDF0D59025A /* ConstraintInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6593EE5CBD7C08A09FF4EA4B9C050C7E /* ConstraintInsets.swift */; };
 		232B2F922E972D9F43D2EE15ACECE734 /* ConstraintPriority.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE7946012EB3B2248C441C470B6B8E2 /* ConstraintPriority.swift */; };
 		244D8552B11F2D1B417EBB82BBE9E938 /* EXPMatchers+beKindOf.m in Sources */ = {isa = PBXBuildFile; fileRef = B38F02EB07543657217B96BF78B98ABC /* EXPMatchers+beKindOf.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -56,7 +51,7 @@
 		2BDBAAED6B5DDF1AE1549226894F7165 /* SPTSharedExampleGroups.h in Headers */ = {isa = PBXBuildFile; fileRef = A612D6A5F0C9DE4806A2469C87FA3E24 /* SPTSharedExampleGroups.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2BFCCD2D052757EA67D9E8CE838F65E4 /* Specta-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B903C5D6DB93653D1530828D64579FEF /* Specta-dummy.m */; };
 		2C06F2E972444D359754D21AC46BFFE2 /* ConstraintInsetTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2183175A54D80455E76724D7D2B402 /* ConstraintInsetTarget.swift */; };
-		2FED4B7E6410714C867AAEFCE317D308 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F94A9F552457B2DBAD1616C5E0E0E7A /* Foundation.framework */; };
+		317EC8FDDEB6C8AD9E9292EE75178902 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54808C6C88411583D225CB43662CF2A8 /* Foundation.framework */; };
 		32196B0F99B54C8B6E1A7BC7D91FDED0 /* ZSWTaggedString-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B867FEFB8AC8FE95C6190924DE7F24B /* ZSWTaggedString-dummy.m */; };
 		32762E6201C8909C32899F1EA489913B /* EXPMatchers+beInstanceOf.h in Headers */ = {isa = PBXBuildFile; fileRef = A6E1C781ECBD34470ADA1156DDF85A77 /* EXPMatchers+beInstanceOf.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		32EBE818F0F41CC0EA2270B977BD62C8 /* SPTSpec.h in Headers */ = {isa = PBXBuildFile; fileRef = 385E5E82E98ADB1314CDAC165737398D /* SPTSpec.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -64,6 +59,7 @@
 		346080C0D1CA23399ADD739D722D7CEF /* Masonry.h in Headers */ = {isa = PBXBuildFile; fileRef = 84ABF0EB59A0EF1CA371964755328549 /* Masonry.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3681AC7A2C3E52B5F6514D1560E13191 /* EXPMatchers+beKindOf.h in Headers */ = {isa = PBXBuildFile; fileRef = FF6B82D55F27A1D95569E61178EE5B91 /* EXPMatchers+beKindOf.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		38A289C0550F25C9EDBF6A54BABC5A18 /* EXPMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 88AEDADAC2746DDF8689730C50A3FC04 /* EXPMatcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		391510BEBAAC7E81586C56957D87ECE1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54808C6C88411583D225CB43662CF2A8 /* Foundation.framework */; };
 		3B2A59E466E5E952E51862D462BD0A6C /* EXPFloatTuple.h in Headers */ = {isa = PBXBuildFile; fileRef = B3026A7C87D8203306EE3A5CC73AF890 /* EXPFloatTuple.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3BFC243AB9BD579969F0D5756560BCAA /* Constraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E86194F837585B7C918265D6B342F3 /* Constraint.swift */; };
 		3C5E21003A743A7AE12E2ED6A68791C9 /* SPTExampleGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 523C32B76E387CF46F801AD6E4B5F962 /* SPTExampleGroup.m */; };
@@ -71,35 +67,39 @@
 		3DA5F1D8E51CDD102A871C2F37770C7B /* MASViewAttribute.h in Headers */ = {isa = PBXBuildFile; fileRef = 1456556EE262B74C04DFA2575151C4E1 /* MASViewAttribute.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3DB6607AA00EDF662D4328EA4F9C44EC /* EXPBlockDefinedMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 236796417B6F235159DD1EFDACFBAFA1 /* EXPBlockDefinedMatcher.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		3E5285F4F36EAD77ECABBFB7F36BB1BB /* ConstraintView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A134A66B8B168CA4F9BDD486502F7FCC /* ConstraintView+Extensions.swift */; };
-		40553AD8F47956602E39E4EFD481C83F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F94A9F552457B2DBAD1616C5E0E0E7A /* Foundation.framework */; };
 		416D3BE841B08CED03D16649957ECB10 /* ExpectaSupport.h in Headers */ = {isa = PBXBuildFile; fileRef = 99DECADF896FC05B324DD2947B866786 /* ExpectaSupport.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		41B490A5CB6565458F1F507A8AD0FB45 /* EXPMatchers.h in Headers */ = {isa = PBXBuildFile; fileRef = 805E3CB2CBC5BCBBAB628116E8503386 /* EXPMatchers.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4363A9B7F321D650D93F2E2096D32BD8 /* ZSWTaggedString.m in Sources */ = {isa = PBXBuildFile; fileRef = F3AAD70061DF6B36B55E23DFCD517A3A /* ZSWTaggedString.m */; };
-		4499BB3103E3A22DDBCF80F7A1A2E02E /* Pods-ZSWTappableLabel_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9646212FE3FA5A3384011B49588C8CBA /* Pods-ZSWTappableLabel_Example-dummy.m */; };
 		46A96403505C673588DF7F87BE6BA46C /* ZSWTaggedString_Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 538EF75FB9867188585A988D21B05311 /* ZSWTaggedString_Private.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		46ACAF12638940470981FA6689B0469F /* EXPMatchers+beGreaterThan.m in Sources */ = {isa = PBXBuildFile; fileRef = 913F740E852C20D21943D77F0FBC0C37 /* EXPMatchers+beGreaterThan.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4A03F7E68886AE6A13DFC35E9A9B942A /* EXPMatchers+beTruthy.h in Headers */ = {isa = PBXBuildFile; fileRef = F5E6B7DD7A0442526705F9F2ED641958 /* EXPMatchers+beTruthy.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4B01D8793C8F10AA4D5F7417589FD001 /* XCTest+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = D74C0D172325A52DCBEF844E73A8B5F9 /* XCTest+Private.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4B0981F9AC628CF5100C50FF4A163A4A /* View+MASAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = B7F5DC937F3AB68B296ABD068140481C /* View+MASAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4C7A676DAE95EEAC3787A75349F0862D /* SnapKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BE9E1E719E471D773517176FF475417D /* SnapKit-dummy.m */; };
+		4C928A49AB3421CAADFE0C93E80B2037 /* ZSWTappableLabel-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FE48B040A8DC7DDE17C5E6DB5EA5C905 /* ZSWTappableLabel-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4CD00C2DDD1130268D57492C92768C2D /* EXPDoubleTuple.h in Headers */ = {isa = PBXBuildFile; fileRef = E24AA5A6E0765B49B86B52FA21BEE559 /* EXPDoubleTuple.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4D48EA2D9F127FF844FE61016D25DDE0 /* ExpectaObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 996CA9DF18B2FC292FA1A65E7FDB080E /* ExpectaObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4DB32587694924803658FFC1F6C6D74C /* ZSWTappableLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = E8651AD5379B41D0AB2DCE9809B552B8 /* ZSWTappableLabel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4E7928EF9169E1DE84CBF429162A4128 /* EXPMatchers+beGreaterThanOrEqualTo.m in Sources */ = {isa = PBXBuildFile; fileRef = 418C5C86F53BD4D313B46099536B56E4 /* EXPMatchers+beGreaterThanOrEqualTo.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4EA3C56AE53AD37BC0273D80017164F0 /* EXPMatchers+beginWith.h in Headers */ = {isa = PBXBuildFile; fileRef = 6DBEE458C6EA317B5C6B283DDB2359F8 /* EXPMatchers+beginWith.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4EB2747D8F0843D0DF300990FEA1D19B /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F80F8BA974A80CEC66841545C196326 /* XCTest.framework */; };
-		4ED89257FFB57ED1BC207AF75306791F /* ZSWTappableLabelTouchHandling.m in Sources */ = {isa = PBXBuildFile; fileRef = F8D1336082C171B97A52C78D88D05A68 /* ZSWTappableLabelTouchHandling.m */; };
+		4ED89257FFB57ED1BC207AF75306791F /* ZSWTappableLabelTouchHandling.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D64C0C19758B0E27EDC5B40B350EC0 /* ZSWTappableLabelTouchHandling.m */; };
 		4FD8D4A9E3DFCABB9A26AA22FABA018B /* EXPMatchers+beInTheRangeOf.h in Headers */ = {isa = PBXBuildFile; fileRef = 054451370F4C2AF4C051FA96DD81D8AD /* EXPMatchers+beInTheRangeOf.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		511DAEE69C302984C6F1CECCB0E4F3FE /* Pods-Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C440EF8B896F02FBAE85D2DBE771A56 /* Pods-Tests-dummy.m */; };
 		51CD5887014967E77E58F5A163996454 /* ConstraintMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EDDDE340053E7E871A03D785160812 /* ConstraintMaker.swift */; };
 		521CCD99D4003505D4B65A4131BAFB22 /* EXPDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = 5384438DF1E3D4533B8772096C6F5886 /* EXPDefines.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5242CFE182637D4BCCAC9E0BCC4483C4 /* EXPBlockDefinedMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = DE6D6385409F6BDCA29606E122201FA6 /* EXPBlockDefinedMatcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		533E12DDC6157F8850F1A9683FE652D0 /* ZSWTaggedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E0650E71467556FAABD1AE60602684 /* ZSWTaggedString.swift */; };
 		57B1876F2BE4168E5BFDB63D8CC849A0 /* ConstraintLayoutSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CAB4ABF03E56A1BE1E44428179D88B /* ConstraintLayoutSupport.swift */; };
 		5854DF509E8A016B6235793D04083035 /* ConstraintConstantTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = D385CE923BF2B2A6A2D150EB0CC68A9A /* ConstraintConstantTarget.swift */; };
+		58AF805046CFD9986EFEAACCBA61F9BE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54808C6C88411583D225CB43662CF2A8 /* Foundation.framework */; };
 		59D34E8065607E956AC2DC046E76B743 /* EXPMatchers+conformTo.h in Headers */ = {isa = PBXBuildFile; fileRef = 62BB1B94A02E6123299AB96BFB16541A /* EXPMatchers+conformTo.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5A8D258FDA8A367E327AA53352BAA63E /* ZSWStringParserTag.h in Headers */ = {isa = PBXBuildFile; fileRef = E459EEB5EB19A0A37E10E01E4BC99F72 /* ZSWStringParserTag.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		5B111E8C334DE1EF3538F9A8147F8D48 /* Pods-ZSWTappableLabel_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7378CD9D3FED6460C9AF72FBCB91C763 /* Pods-ZSWTappableLabel_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5C6754FDD1DFAD63B3689EE5A7897F01 /* EXPMatchers+beCloseTo.h in Headers */ = {isa = PBXBuildFile; fileRef = C9DDCF7475471389A50C3831C6E0625D /* EXPMatchers+beCloseTo.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5C8A35F9659B4241B5949C9056269389 /* SPTCompiledExample.m in Sources */ = {isa = PBXBuildFile; fileRef = 03213B9DFBC2DE714FB2526B5C90E23E /* SPTCompiledExample.m */; };
+		5D5AB502D85BF8E27246A5964F6B3E9F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03D9F470BE7939CC23898F0F41EF0B5E /* UIKit.framework */; };
 		5DD71838737687E6FA4583D98B08D7D4 /* EXPMatchers+beInTheRangeOf.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B2A5A09A5232592EBC9AC3F057E1589 /* EXPMatchers+beInTheRangeOf.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		60080804CE75941E2AC6FE3EBEF2369A /* ZSWTappableLabelAccessibilityElement.h in Headers */ = {isa = PBXBuildFile; fileRef = 088A492C4417D38F044BD6955BA69202 /* ZSWTappableLabelAccessibilityElement.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		61CA94EF2639807466427720DA2091C6 /* EXPDoubleTuple.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E75F3F5105C023DA5E95476D43E3439 /* EXPDoubleTuple.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		63A0BE650141BBE5D9F57E42A36C7CE5 /* SpectaUtility.h in Headers */ = {isa = PBXBuildFile; fileRef = F780C22A8741CF544E851D5935B61302 /* SpectaUtility.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		660F79D9086A7962E1FFFA101802E8E0 /* EXPMatchers+match.h in Headers */ = {isa = PBXBuildFile; fileRef = 628304A149739C562ED0682E1A797379 /* EXPMatchers+match.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -110,54 +110,55 @@
 		6A6AD3A5BBDBFD0B4AF936BD518EC0B1 /* Masonry-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2540BF56F89A07B175FE8E738F5DDECD /* Masonry-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6B575D5C03624D5A253D6C128F3768DC /* EXPMatchers+beGreaterThan.h in Headers */ = {isa = PBXBuildFile; fileRef = EC9623B42F997147FC1FD7D3002673CA /* EXPMatchers+beGreaterThan.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6B5E990838B241B56A5F19E90FEFCD72 /* SpectaDSL.m in Sources */ = {isa = PBXBuildFile; fileRef = 4537551A3AA55FB3FDFA99FE3B96908E /* SpectaDSL.m */; };
-		6D8AF3CE3ECD9C43406D3DAEC3D04214 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F94A9F552457B2DBAD1616C5E0E0E7A /* Foundation.framework */; };
 		6E0EB9E7FAAEDBB7A73ECF3095F69C4A /* UILayoutSupport+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E62098B006A5DE893FBB28C12338D8 /* UILayoutSupport+Extensions.swift */; };
+		6E31B3BB67BB77E99BB18E16F86C72CC /* ZSWTappableLabelAccessibilityActionLongPress.h in Headers */ = {isa = PBXBuildFile; fileRef = B1BFC0CF6C6F4C5BFE304E98670BDEF0 /* ZSWTappableLabelAccessibilityActionLongPress.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		6E8A45EF6CD46D90A634E1E9163E562E /* EXPMatchers+beFalsy.m in Sources */ = {isa = PBXBuildFile; fileRef = A69DB69AE19825761EFD418D426C299C /* EXPMatchers+beFalsy.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		71DE9DC2FA583526AB4D1FD7F00C099C /* ConstraintDirectionalInsetTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E3B4446C88341A56D3C5EA9A3B69819 /* ConstraintDirectionalInsetTarget.swift */; };
 		75E146C12D1287228A0B493E87CDE31F /* ConstraintMakerRelatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9932F296CA83E9D49F171C442870C72C /* ConstraintMakerRelatable.swift */; };
-		766A29A5DB099C8ED3BC29C9610E8C75 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F80F8BA974A80CEC66841545C196326 /* XCTest.framework */; };
+		7692AB1B4B06D141EC22C184659C1384 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03D9F470BE7939CC23898F0F41EF0B5E /* UIKit.framework */; };
 		76BE315B0D75876856C96B969D625367 /* ZSWTaggedStringAttribute.h in Headers */ = {isa = PBXBuildFile; fileRef = 30EB05651650982DE456EFF0494456A0 /* ZSWTaggedStringAttribute.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		7709CF64039955B3BAF42CDA38E0F96F /* EXPMatchers+contain.m in Sources */ = {isa = PBXBuildFile; fileRef = A1492A4F61D897065FD45793D5707A3E /* EXPMatchers+contain.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		777DB2CAF42F78F06C61F9A4AA3AD09C /* EXPUnsupportedObject.h in Headers */ = {isa = PBXBuildFile; fileRef = F53F6AE4D761F24DC95814C275AED2FF /* EXPUnsupportedObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		77C9889055A3B32EA13A9616824DB0ED /* ConstraintLayoutGuideDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE68E10D5E868AE59E6D1D24B7FF822 /* ConstraintLayoutGuideDSL.swift */; };
+		7813A09B8F9242BBF63900D45EF15054 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54808C6C88411583D225CB43662CF2A8 /* Foundation.framework */; };
 		78B2727EE5D693F58D019DB098005101 /* MASConstraintMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 8865CE0CED1E036865076B0EFE51E005 /* MASConstraintMaker.m */; };
 		7967AB2E31F5D064244EB23735D0B3E8 /* ExpectaSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 49E3D5EDEA99DE57112E656BCE940692 /* ExpectaSupport.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		7BFF65958F014760B6AC4742824892EB /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D349BA5512E5393D49B83632359F10 /* MASCompositeConstraint.m */; };
 		7C1702076F3A31D8D2D45A4A9F09B266 /* ConstraintMakerEditable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE8E69ACC400060843DE0E1B73B30238 /* ConstraintMakerEditable.swift */; };
 		7D156B7C42133DDE9CAFFE75C433E51D /* SpectaDSL.h in Headers */ = {isa = PBXBuildFile; fileRef = D5AD972D95545B3E0FB6AB9E2483E579 /* SpectaDSL.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7D22935560DBA8F2EE62C3609A9EC3F1 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE438E25F67548080875B1E9D861E554 /* XCTest.framework */; };
 		80E479781BCF0EC67D40DFF1F4723215 /* SPTSharedExampleGroups.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C07C8B1BD8AA6A5BA1B3D137ED36D75 /* SPTSharedExampleGroups.m */; };
 		821F025A006CB157497E83C0EC102052 /* Expecta-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EC6D6A3A6E3960FBD6491D8BA235BA80 /* Expecta-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8277256ADEC3C4DCF79957D1CA681A9A /* ConstraintDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81159B2D466C7BF92CFC49ECA486494 /* ConstraintDSL.swift */; };
 		8539B851E01A58467BE49CA3FA77223C /* MASLayoutConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = A434A965838BBD2FC388AC140F4674BE /* MASLayoutConstraint.m */; };
 		86AF47F4D2229BC576C54BA1FE1DD940 /* XCTestCase+Specta.h in Headers */ = {isa = PBXBuildFile; fileRef = 89EF709B86ED58EAA99324FC4909D7F8 /* XCTestCase+Specta.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8705BBF0D428BF0AE1B554A377ECC540 /* ConstraintOffsetTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B585763A80A8279E9230C9A8CFF66D /* ConstraintOffsetTarget.swift */; };
+		87072DD7C1EC570007E5D0BEFDCA247A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE438E25F67548080875B1E9D861E554 /* XCTest.framework */; };
 		873165886F20870B205EBE37F8185546 /* EXPMatchers+beNil.h in Headers */ = {isa = PBXBuildFile; fileRef = 229641ECD3D0C8B1FE396E803BC7FA7D /* EXPMatchers+beNil.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		88B1F2202F8E1BA69FF9FFD599C71A53 /* XCTestCase+Specta.m in Sources */ = {isa = PBXBuildFile; fileRef = BA7F6B3F47F0573C127434ABDF463EC3 /* XCTestCase+Specta.m */; };
+		8A8D5855FE026003FABB30371C5FBBF5 /* ZSWTappableLabelTouchHandling.h in Headers */ = {isa = PBXBuildFile; fileRef = A4CCD423D958F1845B2CF3A31A1EF2D6 /* ZSWTappableLabelTouchHandling.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		8B8CB2F1361DD1EA4711D54F596569F4 /* EXPMatcherHelpers.h in Headers */ = {isa = PBXBuildFile; fileRef = 06625743384156BD8AD6D110E7F04FBC /* EXPMatcherHelpers.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8B92011C9373001132C8148BFC8F50B3 /* ViewController+MASAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = B1EB81736B0F967A8528DCD7A43A6B71 /* ViewController+MASAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8D4D1F6E4709EBB13974E95DC1059DDC /* MASLayoutConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = BB13A92A5DF9397A024D7B4B8E8A3802 /* MASLayoutConstraint.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8D65CE579E516BDD5FB36CAA21D693F6 /* MASCompositeConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = F71FA0C213B77B5134C4D1CA25D8CA3E /* MASCompositeConstraint.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8E30B7DA0041E761CA840C538EC05152 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54808C6C88411583D225CB43662CF2A8 /* Foundation.framework */; };
 		8E79D808BDDDDEDE44F06E9755CF3F4D /* SpectaUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B0429686F8167EDCC74734CD2EEECD6 /* SpectaUtility.m */; };
 		91F08081D0286CC0733C2D5A9B4A8F32 /* EXPMatchers+raise.m in Sources */ = {isa = PBXBuildFile; fileRef = E492CD12651699A4AC4F61987333742A /* EXPMatchers+raise.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		922A99360E57A4A8F264A46EF9C3AA76 /* ZSWTaggedStringOptions.h in Headers */ = {isa = PBXBuildFile; fileRef = 14B793D725695B3EDF8530274901425D /* ZSWTaggedStringOptions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9258A50865E2622EB45E691748D0890F /* ZSWTaggedStringAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 6254982CB2D644ECF974817F42182795 /* ZSWTaggedStringAttribute.m */; };
-		92FAAE33A8F0B4C0D7F072A43443C00E /* Pods-Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 652CE30BFA270BB684B210672A2A68D1 /* Pods-Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		93076F6F0B96EAD80F67BC760A3FC0AD /* SPTTestSuite.m in Sources */ = {isa = PBXBuildFile; fileRef = D2DDC87CAB603B1D389A989F9589CCB3 /* SPTTestSuite.m */; };
 		941955A19C40899D275604E6E9C21A6D /* MASConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = 46AF5328991B3400F7AFC174018492D3 /* MASConstraint.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9501262D83639D5412AC3A86F528B63D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F94A9F552457B2DBAD1616C5E0E0E7A /* Foundation.framework */; };
 		96BC54118F99CACBCEDE0B64784E0737 /* Expecta-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 41D97C00C180A2C113DA796EBB87ABFA /* Expecta-dummy.m */; };
 		97D9A825385A35B046B1DFF01F24136F /* Expecta.h in Headers */ = {isa = PBXBuildFile; fileRef = F0CCE4D970926103D15DD7234C3B6AD0 /* Expecta.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		99B5296A5EDECE0557B9DA53D9E19CA1 /* ConstraintItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB3A09F923B5B3020DD7457B71EFB27 /* ConstraintItem.swift */; };
 		9AC1A3902FC9162C9B432B411928B215 /* EXPMatchers+beLessThanOrEqualTo.m in Sources */ = {isa = PBXBuildFile; fileRef = F0F0A0C305A2AD32C354650A7BBBD77B /* EXPMatchers+beLessThanOrEqualTo.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		9B09968922C73D50040C6EEF57890D6E /* ConstraintConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7229B1F3EA1C173319D452938E94531E /* ConstraintConfig.swift */; };
 		9D546E1168C04B0B2EAE005D9275D18B /* MASConstraint+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = DCFFC472E1ACC928EFDC7F696392395F /* MASConstraint+Private.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A04929A07627F6BF41D4A79FA3E10462 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D98E6C1169DAC9A6A81EFCFAE138ADF3 /* UIKit.framework */; };
 		A270CD9EC3C541FE86E65AEDCEF500CF /* ConstraintLayoutGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A7F18AA22CE505B18BBE80CEA5CAD3 /* ConstraintLayoutGuide.swift */; };
 		A35FBEEC7D088AEC05297E8292A32C77 /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 57FB6382DEBB34883AE334F310A8314E /* View+MASAdditions.m */; };
-		A61E098A6529DF8D61E7D38382BE790C /* ZSWTappableLabelAccessibilityActionLongPress.m in Sources */ = {isa = PBXBuildFile; fileRef = 873A858848958C9AB5B8E7F6205BF51F /* ZSWTappableLabelAccessibilityActionLongPress.m */; };
+		A61E098A6529DF8D61E7D38382BE790C /* ZSWTappableLabelAccessibilityActionLongPress.m in Sources */ = {isa = PBXBuildFile; fileRef = 79CBE58F076C7933C463B8824FA4AC9A /* ZSWTappableLabelAccessibilityActionLongPress.m */; };
 		A66ED57B365A35434C5BAF4B990819B7 /* SnapKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = AC21131B1FAEB27FAA87A6494AAEB1F6 /* SnapKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A6D431CA37F733ACD6527DB95B1103ED /* ZSWTappableLabelAccessibilityElement.h in Headers */ = {isa = PBXBuildFile; fileRef = 3432814E16EA9C46AF83E642D654EA50 /* ZSWTappableLabelAccessibilityElement.h */; settings = {ATTRIBUTES = (Private, ); }; };
-		AB7459E24ADF11B26A811A87E8249D4D /* ZSWTappableLabel-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A5F9F6B0C8768C4C61D0A9DD68C3E0AF /* ZSWTappableLabel-dummy.m */; };
+		AB7459E24ADF11B26A811A87E8249D4D /* ZSWTappableLabel-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FCBA979DA3705A3ECD720CEEF0ADDC1 /* ZSWTappableLabel-dummy.m */; };
 		AC35C9341C4BB156BB26FDD237EE3721 /* ConstraintDirectionalInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26E939E604E8E51960DBC08DC6F0452 /* ConstraintDirectionalInsets.swift */; };
 		ACBDE7479CEDFD9F3261E26D6B1015FC /* EXPMatchers+haveCountOf.h in Headers */ = {isa = PBXBuildFile; fileRef = F3ADEF720850A8D8A81168681B4ABC7B /* EXPMatchers+haveCountOf.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B0556227077A1AEED50A9562603FCF05 /* SPTExample.m in Sources */ = {isa = PBXBuildFile; fileRef = FA79B473E2165BC454B7C8314A04C1D8 /* SPTExample.m */; };
@@ -168,35 +169,33 @@
 		B5596C58EE23B7C7BCE850A4C6679F1C /* EXPMatchers+beInstanceOf.m in Sources */ = {isa = PBXBuildFile; fileRef = 5180CD9CD080ECF303CC815B3166CF55 /* EXPMatchers+beInstanceOf.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		B599696DFEF6B2A5ECF528F4E5BB1846 /* ConstraintDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = F609AA61F4FF9AD447122F173689C78F /* ConstraintDescription.swift */; };
 		B628F2BB909FBE9D533C0C6D382BAA9E /* ExpectaObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 950DFE5C5EDB8DE6FD718E9731587170 /* ExpectaObject.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		B71CD8EB55808C8AFFFEE286DBA37956 /* Pods-ZSWTappableLabel_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9646212FE3FA5A3384011B49588C8CBA /* Pods-ZSWTappableLabel_Example-dummy.m */; };
 		B780B272106411CBE258BB60FFC45410 /* Debugging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CDF5EA45184C2FDD4904851726209B /* Debugging.swift */; };
 		B7D645EC004610E8A581E532D28771EC /* MASViewConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 15CEAD85F150675904793B1584FD4A9E /* MASViewConstraint.m */; };
 		B9694F78E720EB4DC1F7C3676FE61017 /* ZSWTaggedStringOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B327CA946BA54EE217D541A4E496CB2 /* ZSWTaggedStringOptions.m */; };
 		B999DEBC999F335CC8E6C471F942F93D /* EXPExpect.m in Sources */ = {isa = PBXBuildFile; fileRef = FC87923B2833AD68229DA77A92B85729 /* EXPExpect.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		BB16855BF4DE8305AA994C725159AC50 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F94A9F552457B2DBAD1616C5E0E0E7A /* Foundation.framework */; };
+		BB9625141DBC1BA30814CC5758559729 /* ZSWTappableLabelTappableRegionInfoImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = 4504811B272313B07951D1AF526E67FF /* ZSWTappableLabelTappableRegionInfoImpl.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		BECA67DFB5E0984DFAEFCB775C31972E /* ConstraintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8733004DDE7B8E36366ED7A739AA73E9 /* ConstraintView.swift */; };
 		C0861ADB4C5FA30F4F9E051F7638A264 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = CE820320AD26FE54ECF9E7F80CCB2C38 /* NSLayoutConstraint+MASDebugAdditions.m */; };
 		C086824CEEDD952FAF0311B7FD8957FB /* SPTTestSuite.h in Headers */ = {isa = PBXBuildFile; fileRef = 043B7280B11F9C45105B3AACA649D8EB /* SPTTestSuite.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C17CC12224E04FA20F6015321C4021AA /* Pods-ZSWTappableLabel_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7378CD9D3FED6460C9AF72FBCB91C763 /* Pods-ZSWTappableLabel_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C18FBD6CD221CAFD1AF15CC99A48CB84 /* EXPMatchers+beFalsy.h in Headers */ = {isa = PBXBuildFile; fileRef = 734587A6FB9DC2014F0925AFBFA014F0 /* EXPMatchers+beFalsy.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C412F27D75AFC0DF0F0289DBB270931C /* ConstraintMakerFinalizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0679A6F97EB41D5D5A33B490670AAB /* ConstraintMakerFinalizable.swift */; };
 		C4632B64DD0F3ADB3BB829A6EBC322E6 /* EXPMatcherHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 68A1478F0FB97675EBF8AFC9C79D7B97 /* EXPMatcherHelpers.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		C86AC684A3B10B92FDDF2340F7A3ADD4 /* SPTCallSite.h in Headers */ = {isa = PBXBuildFile; fileRef = 108C304B7F2C3AB49B851A23285AD8FE /* SPTCallSite.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CAEE0E44BC37459BD49C0B1D626B0477 /* EXPMatchers+postNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 476F528936386C85044C92CBBE5D5F40 /* EXPMatchers+postNotification.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		CE62FEABA57B2B53EABF8C7DCCC6B2C4 /* ConstraintRelation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725D8DE30335A007AD915243605B4222 /* ConstraintRelation.swift */; };
-		CE93C54413259B4AC3683B6EB874D466 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D98E6C1169DAC9A6A81EFCFAE138ADF3 /* UIKit.framework */; };
 		D007E9498F1FF58D386577D6A9FA4B8F /* ZSWTaggedStringOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7DD96D4FF89D7D0B88C2AC3420C37C /* ZSWTaggedStringOptions.swift */; };
 		D327EEB8522F6389513EB84ACF12F242 /* EXPMatchers+endWith.m in Sources */ = {isa = PBXBuildFile; fileRef = A6BD2751ED4E655EF627AA7CC938E171 /* EXPMatchers+endWith.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		D4697DC40F3B059E4A0867838CA1814E /* ConstraintMultiplierTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C4504B3D1A3DB3FADB8631F2793812 /* ConstraintMultiplierTarget.swift */; };
+		D4F682D46E16549951390CF69B514270 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54808C6C88411583D225CB43662CF2A8 /* Foundation.framework */; };
 		D5C3E91A2121AE27F99028292B9436A8 /* EXPMatchers+postNotification.h in Headers */ = {isa = PBXBuildFile; fileRef = 356C00A4B290D642E8E693D9AF104CB7 /* EXPMatchers+postNotification.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D9BF3860C76D15CB029F0A024DF28A20 /* ZSWTappableLabelTappableRegionInfoImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B72B7FCEBDDFF9440DE28B83724D03B /* ZSWTappableLabelTappableRegionInfoImpl.m */; };
+		D9BF3860C76D15CB029F0A024DF28A20 /* ZSWTappableLabelTappableRegionInfoImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = F19FC8C1B59C55B8679EC3FC1993042E /* ZSWTappableLabelTappableRegionInfoImpl.m */; };
 		DB3C194E927FF147C0B12238CEB0B51A /* SPTExcludeGlobalBeforeAfterEach.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F9D891A8B5F4B010102C15D8B8087D1 /* SPTExcludeGlobalBeforeAfterEach.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DBFF33BEB222CF58005C06FF0CD556DF /* EXPExpect.h in Headers */ = {isa = PBXBuildFile; fileRef = 94B34AF63E7847D7C309388C319E49CE /* EXPExpect.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DD76BF48AC9E8896D8EDDB44A44F10C5 /* SpectaTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = 2E173062E7303B236D09120F16E5D0C2 /* SpectaTypes.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DE3FA3B98CD73AE4E5C0FA57F77EA6D7 /* SPTGlobalBeforeAfterEach.h in Headers */ = {isa = PBXBuildFile; fileRef = 413FF829C73D4E22529076EF65114327 /* SPTGlobalBeforeAfterEach.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DE7FC5D8F81CE893DB6EDF99865350C5 /* EXPMatchers+conformTo.m in Sources */ = {isa = PBXBuildFile; fileRef = 176421109FCA9F9D3E0220148279B5A0 /* EXPMatchers+conformTo.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E2058F4A0E7638E420DE96F8DC17AAA9 /* EXPMatchers+raiseWithReason.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FCD88AF81424601E161DE236C14415E /* EXPMatchers+raiseWithReason.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		E51F496BDC6ACADE04FDA059C6CB2342 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F94A9F552457B2DBAD1616C5E0E0E7A /* Foundation.framework */; };
-		E6A7E6F5ACF24E3DAE2BFBBFB3CD08BC /* Pods-Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C440EF8B896F02FBAE85D2DBE771A56 /* Pods-Tests-dummy.m */; };
 		E791EEB9E7DA8C5DBDFF80A2BA7A6A4F /* EXPMatchers+respondTo.h in Headers */ = {isa = PBXBuildFile; fileRef = 65B40117EA97A14CBC57FC3D9C074D7C /* EXPMatchers+respondTo.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E7CA20228B3583F41927813EE904CAD3 /* View+MASShorthandAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 947CC26FD85FAA2447941FDA7A9A81F4 /* View+MASShorthandAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E8DD5D1D406150E1C80AD015271B6848 /* MASConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 190F7D8031C298AE44704B8D6DDADF48 /* MASConstraint.m */; };
@@ -208,66 +207,67 @@
 		EB1726F5E0D0EEBA20E4528B1E37A8FA /* ConstraintViewDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB1744C96954EBF3BC4B0883C83EAB6 /* ConstraintViewDSL.swift */; };
 		EC57F974317D76B799CFE2A018B5F9E2 /* EXPMatchers+beNil.m in Sources */ = {isa = PBXBuildFile; fileRef = 235632D821B8602344F1F0EB3029A2F6 /* EXPMatchers+beNil.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		EE909C7C786140109051BC9562EEC7C8 /* ConstraintMakerPriortizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2D65132C5AB836622FB3D1A1E3DC93 /* ConstraintMakerPriortizable.swift */; };
-		F08ED74F7590D79C09F33BE7B33D49BD /* ZSWTappableLabelTouchHandling.h in Headers */ = {isa = PBXBuildFile; fileRef = BD101C2C0E0D3B8B4C04094B18E57D6A /* ZSWTappableLabelTouchHandling.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		F31CCBB90D75D9E5A83545FD95954FFA /* EXPMatchers+beCloseTo.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F0F872885EBB9112D8344E7EA43E1DD /* EXPMatchers+beCloseTo.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		F3DDE43C8782B8145F876B68A1C68F71 /* ZSWTaggedString.h in Headers */ = {isa = PBXBuildFile; fileRef = B65FDE8A2DFE012463980B1FDC6837F3 /* ZSWTaggedString.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F3EDE6D241EE2A6D0992A24ACDDBAB35 /* EXPFloatTuple.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DAB1F0D173125D25D53A92851A54D90 /* EXPFloatTuple.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		F43FCC208DB0C1E910C35A9A9E7A23AD /* Pods-Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 652CE30BFA270BB684B210672A2A68D1 /* Pods-Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F4591B9C7F70268A3F94B40ADDBA5202 /* EXPMatchers+beIdenticalTo.m in Sources */ = {isa = PBXBuildFile; fileRef = D61528E3D2FEC987BF4D47FD1A4C4267 /* EXPMatchers+beIdenticalTo.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		F67506E4C6F04D7559BE5B3CB1527F53 /* Specta.h in Headers */ = {isa = PBXBuildFile; fileRef = 20281E520C88D693BB22AA435AB7A174 /* Specta.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F9D2EB447A6537390ADE63EC9409C1CB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54808C6C88411583D225CB43662CF2A8 /* Foundation.framework */; };
 		FA0890D59056DB07032A23E9045ECAF4 /* SPTCompiledExample.h in Headers */ = {isa = PBXBuildFile; fileRef = A8A991BE34E2BD1AB419A32031EC90C1 /* SPTCompiledExample.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FAFBFA90F7BC3E7CF50F8A5CF0A8B264 /* MASConstraintMaker.h in Headers */ = {isa = PBXBuildFile; fileRef = 352F8110945287A17BC1133D0882F582 /* MASConstraintMaker.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FBC9734FF84807AE5347B2196D7EBC6D /* EXPMatchers+equal.h in Headers */ = {isa = PBXBuildFile; fileRef = 1060BAA89D0C71A22D4CF69F7D7B166F /* EXPMatchers+equal.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		02FD17597C95CC5F5928D6CEF0DBD18B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 19622742EBA51E823D6DAE3F8CDBFAD4;
-			remoteInfo = SnapKit;
-		};
-		1CF649375092D308E0ED492DB3EE06D9 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 14AD6D3DE5F8E41B9BFDD59D9BAE5959;
-			remoteInfo = ZSWTappableLabel;
-		};
-		4755B7BF961F813FFCC449E15076F0CB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 55AF53E6C77A10ED4985E04D74A8878E;
-			remoteInfo = Masonry;
-		};
-		65EDFC298C7FC66AB1599D554EEBA705 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 8222E4B7957D0B8A2221D0D499282AD4;
-			remoteInfo = ZSWTaggedString;
-		};
-		9AB4E42142B259D564A00DD9BDF78629 /* PBXContainerItemProxy */ = {
+		133E5FEF13829896E0B2806D84AB76C5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = F8676010755CF1530FC02DA9A0D8822B;
 			remoteInfo = Specta;
 		};
-		E30EA907122896A609E2535C773BDD13 /* PBXContainerItemProxy */ = {
+		5B8834F2E154D9D7ACCA6AE80C6E3B2F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 14AD6D3DE5F8E41B9BFDD59D9BAE5959;
+			remoteInfo = ZSWTappableLabel;
+		};
+		DC631C7091FD9CA96133EA1FD7B33CFC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 55AF53E6C77A10ED4985E04D74A8878E;
+			remoteInfo = Masonry;
+		};
+		E0B7DCFA093BEA1DBC53D8A1B8EA3B78 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DD48D4B7B4BE7729E639A4B853B598C6;
+			remoteInfo = "Pods-ZSWTappableLabel_Example";
+		};
+		F5CC8BD4F0884FBDE2AB3F24A6CF4608 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = DC371B7477C88184274EC6710690F97C;
 			remoteInfo = Expecta;
 		};
-		F80935547DE3384905B459095F4D5DFD /* PBXContainerItemProxy */ = {
+		FB11BF77BFFFE4DA1ADFF50F557E3A62 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = DD48D4B7B4BE7729E639A4B853B598C6;
-			remoteInfo = "Pods-ZSWTappableLabel_Example";
+			remoteGlobalIDString = 19622742EBA51E823D6DAE3F8CDBFAD4;
+			remoteInfo = SnapKit;
+		};
+		FD020477D54D53029E34317C9AC98E89 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8222E4B7957D0B8A2221D0D499282AD4;
+			remoteInfo = ZSWTaggedString;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -276,12 +276,13 @@
 		0282A350DD4860F1D96F5A0699EC98AB /* Pods_ZSWTappableLabel_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ZSWTappableLabel_Example.framework; path = "Pods-ZSWTappableLabel_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0306B450449E15D9CD8BAC2FAD1B285D /* ZSWStringParser.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ZSWStringParser.h; path = ZSWTaggedString/Private/ZSWStringParser.h; sourceTree = "<group>"; };
 		03213B9DFBC2DE714FB2526B5C90E23E /* SPTCompiledExample.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SPTCompiledExample.m; path = Specta/Specta/SPTCompiledExample.m; sourceTree = "<group>"; };
+		03D9F470BE7939CC23898F0F41EF0B5E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		043B7280B11F9C45105B3AACA649D8EB /* SPTTestSuite.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SPTTestSuite.h; path = Specta/Specta/SPTTestSuite.h; sourceTree = "<group>"; };
 		054451370F4C2AF4C051FA96DD81D8AD /* EXPMatchers+beInTheRangeOf.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+beInTheRangeOf.h"; path = "Expecta/Matchers/EXPMatchers+beInTheRangeOf.h"; sourceTree = "<group>"; };
 		06625743384156BD8AD6D110E7F04FBC /* EXPMatcherHelpers.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EXPMatcherHelpers.h; path = Expecta/Matchers/EXPMatcherHelpers.h; sourceTree = "<group>"; };
 		069FE100DA144CD920A9757C200357BA /* ConstraintLayoutGuide+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ConstraintLayoutGuide+Extensions.swift"; path = "Source/ConstraintLayoutGuide+Extensions.swift"; sourceTree = "<group>"; };
-		06E88AF587EC003FEF6589EA8FE57A06 /* ZSWTappableLabelTappableRegionInfoImpl.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ZSWTappableLabelTappableRegionInfoImpl.h; sourceTree = "<group>"; };
 		07CAB4ABF03E56A1BE1E44428179D88B /* ConstraintLayoutSupport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintLayoutSupport.swift; path = Source/ConstraintLayoutSupport.swift; sourceTree = "<group>"; };
+		088A492C4417D38F044BD6955BA69202 /* ZSWTappableLabelAccessibilityElement.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ZSWTappableLabelAccessibilityElement.h; sourceTree = "<group>"; };
 		08F7F0770B4878B9883B87DCD8569CB4 /* Expecta.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Expecta.framework; path = Expecta.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		09D349BA5512E5393D49B83632359F10 /* MASCompositeConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASCompositeConstraint.m; path = Masonry/MASCompositeConstraint.m; sourceTree = "<group>"; };
 		0B9257BC2B55411C55CF5B7621D10E12 /* SPTSpec.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SPTSpec.m; path = Specta/Specta/SPTSpec.m; sourceTree = "<group>"; };
@@ -295,14 +296,11 @@
 		15692B5FE80093C2E84DE9CAB9D15CDE /* ZSWTaggedString-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ZSWTaggedString-prefix.pch"; sourceTree = "<group>"; };
 		15B13B063AA97C48C9010C298AECBDDA /* Specta.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Specta.framework; path = Specta.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		15CEAD85F150675904793B1584FD4A9E /* MASViewConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASViewConstraint.m; path = Masonry/MASViewConstraint.m; sourceTree = "<group>"; };
-		1696ED66D74D821743D406BD4898D521 /* ZSWTappableLabel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ZSWTappableLabel.h; path = ZSWTappableLabel/ZSWTappableLabel.h; sourceTree = "<group>"; };
 		176421109FCA9F9D3E0220148279B5A0 /* EXPMatchers+conformTo.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "EXPMatchers+conformTo.m"; path = "Expecta/Matchers/EXPMatchers+conformTo.m"; sourceTree = "<group>"; };
 		1906D0F3E05599ECA2FBE4DBBF7638F2 /* EXPMatchers+beLessThanOrEqualTo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+beLessThanOrEqualTo.h"; path = "Expecta/Matchers/EXPMatchers+beLessThanOrEqualTo.h"; sourceTree = "<group>"; };
 		190F7D8031C298AE44704B8D6DDADF48 /* MASConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASConstraint.m; path = Masonry/MASConstraint.m; sourceTree = "<group>"; };
-		1B72B7FCEBDDFF9440DE28B83724D03B /* ZSWTappableLabelTappableRegionInfoImpl.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ZSWTappableLabelTappableRegionInfoImpl.m; sourceTree = "<group>"; };
 		1C440EF8B896F02FBAE85D2DBE771A56 /* Pods-Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Tests-dummy.m"; sourceTree = "<group>"; };
 		1CE4A498F2BE7297C6F2772DD2CADB44 /* EXPUnsupportedObject.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EXPUnsupportedObject.m; path = Expecta/EXPUnsupportedObject.m; sourceTree = "<group>"; };
-		1D3BF713C4B086696DC4821ECA4ECE6B /* ZSWTappableLabel-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ZSWTappableLabel-prefix.pch"; sourceTree = "<group>"; };
 		1DAB1F0D173125D25D53A92851A54D90 /* EXPFloatTuple.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EXPFloatTuple.m; path = Expecta/EXPFloatTuple.m; sourceTree = "<group>"; };
 		1EE00E7865D4FBC0E20358076651B6DD /* Pods-ZSWTappableLabel_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ZSWTappableLabel_Example-Info.plist"; sourceTree = "<group>"; };
 		1F2D65132C5AB836622FB3D1A1E3DC93 /* ConstraintMakerPriortizable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMakerPriortizable.swift; path = Source/ConstraintMakerPriortizable.swift; sourceTree = "<group>"; };
@@ -311,6 +309,7 @@
 		20281E520C88D693BB22AA435AB7A174 /* Specta.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Specta.h; path = Specta/Specta/Specta.h; sourceTree = "<group>"; };
 		21A97FF3021F62072C98C3DD8FD7E3CC /* Pods-ZSWTappableLabel_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-ZSWTappableLabel_Example.modulemap"; sourceTree = "<group>"; };
 		229641ECD3D0C8B1FE396E803BC7FA7D /* EXPMatchers+beNil.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+beNil.h"; path = "Expecta/Matchers/EXPMatchers+beNil.h"; sourceTree = "<group>"; };
+		22E2C030B1D76F182EFD1D1455F9A980 /* ZSWTappableLabel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ZSWTappableLabel.release.xcconfig; sourceTree = "<group>"; };
 		235632D821B8602344F1F0EB3029A2F6 /* EXPMatchers+beNil.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "EXPMatchers+beNil.m"; path = "Expecta/Matchers/EXPMatchers+beNil.m"; sourceTree = "<group>"; };
 		236796417B6F235159DD1EFDACFBAFA1 /* EXPBlockDefinedMatcher.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EXPBlockDefinedMatcher.m; path = Expecta/EXPBlockDefinedMatcher.m; sourceTree = "<group>"; };
 		2540BF56F89A07B175FE8E738F5DDECD /* Masonry-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Masonry-umbrella.h"; sourceTree = "<group>"; };
@@ -319,11 +318,9 @@
 		2D73339C1CD34AB2C3F0C81C62FD7178 /* Masonry.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Masonry.release.xcconfig; sourceTree = "<group>"; };
 		2E173062E7303B236D09120F16E5D0C2 /* SpectaTypes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SpectaTypes.h; path = Specta/Specta/SpectaTypes.h; sourceTree = "<group>"; };
 		2E75F3F5105C023DA5E95476D43E3439 /* EXPDoubleTuple.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EXPDoubleTuple.m; path = Expecta/EXPDoubleTuple.m; sourceTree = "<group>"; };
-		2F94A9F552457B2DBAD1616C5E0E0E7A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		2FF5F9D9AA51970C605C11F0FC102717 /* NSObject+Expecta.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSObject+Expecta.h"; path = "Expecta/NSObject+Expecta.h"; sourceTree = "<group>"; };
 		30EB05651650982DE456EFF0494456A0 /* ZSWTaggedStringAttribute.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ZSWTaggedStringAttribute.h; path = ZSWTaggedString/Private/ZSWTaggedStringAttribute.h; sourceTree = "<group>"; };
 		328508B28DB0473C02493E2EBC2E57FC /* Masonry.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Masonry.modulemap; sourceTree = "<group>"; };
-		3432814E16EA9C46AF83E642D654EA50 /* ZSWTappableLabelAccessibilityElement.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ZSWTappableLabelAccessibilityElement.h; sourceTree = "<group>"; };
 		352F8110945287A17BC1133D0882F582 /* MASConstraintMaker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASConstraintMaker.h; path = Masonry/MASConstraintMaker.h; sourceTree = "<group>"; };
 		356C00A4B290D642E8E693D9AF104CB7 /* EXPMatchers+postNotification.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+postNotification.h"; path = "Expecta/Matchers/EXPMatchers+postNotification.h"; sourceTree = "<group>"; };
 		362006FF4F1A6575695C0564B8B22C59 /* NSArray+MASAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+MASAdditions.h"; path = "Masonry/NSArray+MASAdditions.h"; sourceTree = "<group>"; };
@@ -334,31 +331,35 @@
 		39491FC811AEC8096CBA0693F5EEB2EA /* Pods-Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Tests-frameworks.sh"; sourceTree = "<group>"; };
 		3A4AB7485BB1B3C9D3F33F867C39519C /* Specta.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Specta.debug.xcconfig; sourceTree = "<group>"; };
 		3F0F872885EBB9112D8344E7EA43E1DD /* EXPMatchers+beCloseTo.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "EXPMatchers+beCloseTo.m"; path = "Expecta/Matchers/EXPMatchers+beCloseTo.m"; sourceTree = "<group>"; };
-		3F80F8BA974A80CEC66841545C196326 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		3FCBA979DA3705A3ECD720CEEF0ADDC1 /* ZSWTappableLabel-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ZSWTappableLabel-dummy.m"; sourceTree = "<group>"; };
 		3FEBE4FD3ECAA9FED62AEE0C99D40F5B /* Specta.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Specta.release.xcconfig; sourceTree = "<group>"; };
 		413FF829C73D4E22529076EF65114327 /* SPTGlobalBeforeAfterEach.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SPTGlobalBeforeAfterEach.h; path = Specta/Specta/SPTGlobalBeforeAfterEach.h; sourceTree = "<group>"; };
 		418C5C86F53BD4D313B46099536B56E4 /* EXPMatchers+beGreaterThanOrEqualTo.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "EXPMatchers+beGreaterThanOrEqualTo.m"; path = "Expecta/Matchers/EXPMatchers+beGreaterThanOrEqualTo.m"; sourceTree = "<group>"; };
 		41D97C00C180A2C113DA796EBB87ABFA /* Expecta-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Expecta-dummy.m"; sourceTree = "<group>"; };
+		4504811B272313B07951D1AF526E67FF /* ZSWTappableLabelTappableRegionInfoImpl.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ZSWTappableLabelTappableRegionInfoImpl.h; sourceTree = "<group>"; };
 		4537551A3AA55FB3FDFA99FE3B96908E /* SpectaDSL.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SpectaDSL.m; path = Specta/Specta/SpectaDSL.m; sourceTree = "<group>"; };
 		46AF5328991B3400F7AFC174018492D3 /* MASConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASConstraint.h; path = Masonry/MASConstraint.h; sourceTree = "<group>"; };
 		476F528936386C85044C92CBBE5D5F40 /* EXPMatchers+postNotification.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "EXPMatchers+postNotification.m"; path = "Expecta/Matchers/EXPMatchers+postNotification.m"; sourceTree = "<group>"; };
 		49E3D5EDEA99DE57112E656BCE940692 /* ExpectaSupport.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ExpectaSupport.m; path = Expecta/ExpectaSupport.m; sourceTree = "<group>"; };
 		4CE68E10D5E868AE59E6D1D24B7FF822 /* ConstraintLayoutGuideDSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintLayoutGuideDSL.swift; path = Source/ConstraintLayoutGuideDSL.swift; sourceTree = "<group>"; };
+		4CE7EDDA032C4699E79DE7BB1B2C0B89 /* ZSWTappableLabelAccessibilityElement.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ZSWTappableLabelAccessibilityElement.m; sourceTree = "<group>"; };
 		4F6056ED5600DA830572300BE80D2F8D /* Pods-ZSWTappableLabel_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ZSWTappableLabel_Example-frameworks.sh"; sourceTree = "<group>"; };
 		5180CD9CD080ECF303CC815B3166CF55 /* EXPMatchers+beInstanceOf.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "EXPMatchers+beInstanceOf.m"; path = "Expecta/Matchers/EXPMatchers+beInstanceOf.m"; sourceTree = "<group>"; };
 		523C32B76E387CF46F801AD6E4B5F962 /* SPTExampleGroup.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SPTExampleGroup.m; path = Specta/Specta/SPTExampleGroup.m; sourceTree = "<group>"; };
 		5384438DF1E3D4533B8772096C6F5886 /* EXPDefines.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EXPDefines.h; path = Expecta/EXPDefines.h; sourceTree = "<group>"; };
 		538EF75FB9867188585A988D21B05311 /* ZSWTaggedString_Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ZSWTaggedString_Private.h; path = ZSWTaggedString/Private/ZSWTaggedString_Private.h; sourceTree = "<group>"; };
+		54808C6C88411583D225CB43662CF2A8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		5683F3234A38A5D68210F841F00978A3 /* ZSWTaggedString-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "ZSWTaggedString-umbrella.h"; path = "ZSWTaggedString/Classes/ZSWTaggedString-umbrella.h"; sourceTree = "<group>"; };
 		57FB6382DEBB34883AE334F310A8314E /* View+MASAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "View+MASAdditions.m"; path = "Masonry/View+MASAdditions.m"; sourceTree = "<group>"; };
 		5A9C752E8D80216E678B83F2DD7EE928 /* EXPMatchers+beLessThan.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "EXPMatchers+beLessThan.m"; path = "Expecta/Matchers/EXPMatchers+beLessThan.m"; sourceTree = "<group>"; };
-		5ABFE0084CC32E073EB1E78FA27DE668 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		5BAE78D0D4F653F180DD04C71A912623 /* EXPMatchers+endWith.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+endWith.h"; path = "Expecta/Matchers/EXPMatchers+endWith.h"; sourceTree = "<group>"; };
 		5C07C8B1BD8AA6A5BA1B3D137ED36D75 /* SPTSharedExampleGroups.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SPTSharedExampleGroups.m; path = Specta/Specta/SPTSharedExampleGroups.m; sourceTree = "<group>"; };
 		5CF8AC215B078AC06D607DC5CD95B9EB /* ConstraintRelatableTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintRelatableTarget.swift; path = Source/ConstraintRelatableTarget.swift; sourceTree = "<group>"; };
+		60E9CB796AAF6C19D2E4A499D9FD377D /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		6254982CB2D644ECF974817F42182795 /* ZSWTaggedStringAttribute.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ZSWTaggedStringAttribute.m; path = ZSWTaggedString/Private/ZSWTaggedStringAttribute.m; sourceTree = "<group>"; };
 		628304A149739C562ED0682E1A797379 /* EXPMatchers+match.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+match.h"; path = "Expecta/Matchers/EXPMatchers+match.h"; sourceTree = "<group>"; };
 		62BB1B94A02E6123299AB96BFB16541A /* EXPMatchers+conformTo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+conformTo.h"; path = "Expecta/Matchers/EXPMatchers+conformTo.h"; sourceTree = "<group>"; };
+		63D64C0C19758B0E27EDC5B40B350EC0 /* ZSWTappableLabelTouchHandling.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ZSWTappableLabelTouchHandling.m; sourceTree = "<group>"; };
 		64E0650E71467556FAABD1AE60602684 /* ZSWTaggedString.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ZSWTaggedString.swift; path = ZSWTaggedString/Classes/ZSWTaggedString.swift; sourceTree = "<group>"; };
 		652CE30BFA270BB684B210672A2A68D1 /* Pods-Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Tests-umbrella.h"; sourceTree = "<group>"; };
 		655BDEE79210E1B77C3C8DB8BD0EBD12 /* Expecta.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Expecta.debug.xcconfig; sourceTree = "<group>"; };
@@ -366,11 +367,9 @@
 		65B40117EA97A14CBC57FC3D9C074D7C /* EXPMatchers+respondTo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+respondTo.h"; path = "Expecta/Matchers/EXPMatchers+respondTo.h"; sourceTree = "<group>"; };
 		667F1B062CBDC46CD8F7F9314314D00A /* SnapKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SnapKit.release.xcconfig; sourceTree = "<group>"; };
 		681486ADCE85135C98C8BBC3C2C5B24E /* SnapKit-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SnapKit-Info.plist"; sourceTree = "<group>"; };
-		686A37E6162EB1B1FFC6F121081AA165 /* ZSWTappableLabel-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ZSWTappableLabel-Info.plist"; sourceTree = "<group>"; };
 		68A1478F0FB97675EBF8AFC9C79D7B97 /* EXPMatcherHelpers.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EXPMatcherHelpers.m; path = Expecta/Matchers/EXPMatcherHelpers.m; sourceTree = "<group>"; };
 		692B8553CDC917A3A88C58CB7AED6CD2 /* EXPMatchers+beSubclassOf.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+beSubclassOf.h"; path = "Expecta/Matchers/EXPMatchers+beSubclassOf.h"; sourceTree = "<group>"; };
 		6B327CA946BA54EE217D541A4E496CB2 /* ZSWTaggedStringOptions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ZSWTaggedStringOptions.m; path = ZSWTaggedString/Classes/ZSWTaggedStringOptions.m; sourceTree = "<group>"; };
-		6C05240D3AB8721189043B88DA0126D1 /* ZSWTappableLabel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ZSWTappableLabel.release.xcconfig; sourceTree = "<group>"; };
 		6DBEE458C6EA317B5C6B283DDB2359F8 /* EXPMatchers+beginWith.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+beginWith.h"; path = "Expecta/Matchers/EXPMatchers+beginWith.h"; sourceTree = "<group>"; };
 		6ED759A51081A65F6BFA26D4B50DBB78 /* Pods-ZSWTappableLabel_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ZSWTappableLabel_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		70D57491FB7D1EF991A56C0388C63B97 /* EXPMatchers+raise.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+raise.h"; path = "Expecta/Matchers/EXPMatchers+raise.h"; sourceTree = "<group>"; };
@@ -384,6 +383,7 @@
 		778FF7CC60A649B7ECBA78FD7B253A4C /* MASViewConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASViewConstraint.h; path = Masonry/MASViewConstraint.h; sourceTree = "<group>"; };
 		77D371B9FBCBAADFAD1DF3F581A343D3 /* Pods-ZSWTappableLabel_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ZSWTappableLabel_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		799CF69248C7E132DAAF3363F6E871CB /* EXPMatchers+raiseWithReason.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+raiseWithReason.h"; path = "Expecta/Matchers/EXPMatchers+raiseWithReason.h"; sourceTree = "<group>"; };
+		79CBE58F076C7933C463B8824FA4AC9A /* ZSWTappableLabelAccessibilityActionLongPress.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ZSWTappableLabelAccessibilityActionLongPress.m; sourceTree = "<group>"; };
 		7B234FFDE73227BA991246310BB8D688 /* ZSWStringParser.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ZSWStringParser.m; path = ZSWTaggedString/Private/ZSWStringParser.m; sourceTree = "<group>"; };
 		7E7DD96D4FF89D7D0B88C2AC3420C37C /* ZSWTaggedStringOptions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ZSWTaggedStringOptions.swift; path = ZSWTaggedString/Classes/ZSWTaggedStringOptions.swift; sourceTree = "<group>"; };
 		805E3CB2CBC5BCBBAB628116E8503386 /* EXPMatchers.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EXPMatchers.h; path = Expecta/Matchers/EXPMatchers.h; sourceTree = "<group>"; };
@@ -393,9 +393,9 @@
 		84ABF0EB59A0EF1CA371964755328549 /* Masonry.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Masonry.h; path = Masonry/Masonry.h; sourceTree = "<group>"; };
 		87269E4177268778DD7CC0C9D1DF9569 /* SPTExample.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SPTExample.h; path = Specta/Specta/SPTExample.h; sourceTree = "<group>"; };
 		8733004DDE7B8E36366ED7A739AA73E9 /* ConstraintView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintView.swift; path = Source/ConstraintView.swift; sourceTree = "<group>"; };
-		873A858848958C9AB5B8E7F6205BF51F /* ZSWTappableLabelAccessibilityActionLongPress.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ZSWTappableLabelAccessibilityActionLongPress.m; sourceTree = "<group>"; };
 		8865CE0CED1E036865076B0EFE51E005 /* MASConstraintMaker.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASConstraintMaker.m; path = Masonry/MASConstraintMaker.m; sourceTree = "<group>"; };
 		88AEDADAC2746DDF8689730C50A3FC04 /* EXPMatcher.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EXPMatcher.h; path = Expecta/EXPMatcher.h; sourceTree = "<group>"; };
+		89D2F70E224ED4CEAC78E609C9EE747E /* ZSWTappableLabel.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = ZSWTappableLabel.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		89EF709B86ED58EAA99324FC4909D7F8 /* XCTestCase+Specta.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "XCTestCase+Specta.h"; path = "Specta/Specta/XCTestCase+Specta.h"; sourceTree = "<group>"; };
 		8B0429686F8167EDCC74734CD2EEECD6 /* SpectaUtility.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SpectaUtility.m; path = Specta/Specta/SpectaUtility.m; sourceTree = "<group>"; };
 		8B867FEFB8AC8FE95C6190924DE7F24B /* ZSWTaggedString-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ZSWTaggedString-dummy.m"; sourceTree = "<group>"; };
@@ -408,8 +408,8 @@
 		94B34AF63E7847D7C309388C319E49CE /* EXPExpect.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EXPExpect.h; path = Expecta/EXPExpect.h; sourceTree = "<group>"; };
 		94F95FFC70FA9CCF09D3D394F5C24511 /* ZSWTappableLabel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ZSWTappableLabel.framework; path = ZSWTappableLabel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		950DFE5C5EDB8DE6FD718E9731587170 /* ExpectaObject.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ExpectaObject.m; path = Expecta/ExpectaObject.m; sourceTree = "<group>"; };
-		9537C7639C5A1246D4FD1CCE8CAE5CBC /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		9646212FE3FA5A3384011B49588C8CBA /* Pods-ZSWTappableLabel_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ZSWTappableLabel_Example-dummy.m"; sourceTree = "<group>"; };
+		9648A9975BD90322C0B292028B593D90 /* ZSWTappableLabel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ZSWTappableLabel.m; path = ZSWTappableLabel/ZSWTappableLabel.m; sourceTree = "<group>"; };
 		979486118B3E90C08386079D57962701 /* SnapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SnapKit.framework; path = SnapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9807A3F7CE2B7795594749F3FF6E0E6C /* SPTExampleGroup.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SPTExampleGroup.h; path = Specta/Specta/SPTExampleGroup.h; sourceTree = "<group>"; };
 		9932F296CA83E9D49F171C442870C72C /* ConstraintMakerRelatable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMakerRelatable.swift; path = Source/ConstraintMakerRelatable.swift; sourceTree = "<group>"; };
@@ -430,20 +430,21 @@
 		A1492A4F61D897065FD45793D5707A3E /* EXPMatchers+contain.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "EXPMatchers+contain.m"; path = "Expecta/Matchers/EXPMatchers+contain.m"; sourceTree = "<group>"; };
 		A3BD5476C5A05D1A36B579F30489A685 /* ConstraintMakerExtendable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMakerExtendable.swift; path = Source/ConstraintMakerExtendable.swift; sourceTree = "<group>"; };
 		A434A965838BBD2FC388AC140F4674BE /* MASLayoutConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASLayoutConstraint.m; path = Masonry/MASLayoutConstraint.m; sourceTree = "<group>"; };
+		A4CCD423D958F1845B2CF3A31A1EF2D6 /* ZSWTappableLabelTouchHandling.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ZSWTappableLabelTouchHandling.h; sourceTree = "<group>"; };
 		A52EF1D126C69994CB79A2DF539708FB /* EXPMatchers+beIdenticalTo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+beIdenticalTo.h"; path = "Expecta/Matchers/EXPMatchers+beIdenticalTo.h"; sourceTree = "<group>"; };
-		A5F9F6B0C8768C4C61D0A9DD68C3E0AF /* ZSWTappableLabel-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ZSWTappableLabel-dummy.m"; sourceTree = "<group>"; };
 		A612D6A5F0C9DE4806A2469C87FA3E24 /* SPTSharedExampleGroups.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SPTSharedExampleGroups.h; path = Specta/Specta/SPTSharedExampleGroups.h; sourceTree = "<group>"; };
 		A69DB69AE19825761EFD418D426C299C /* EXPMatchers+beFalsy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "EXPMatchers+beFalsy.m"; path = "Expecta/Matchers/EXPMatchers+beFalsy.m"; sourceTree = "<group>"; };
 		A6BD2751ED4E655EF627AA7CC938E171 /* EXPMatchers+endWith.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "EXPMatchers+endWith.m"; path = "Expecta/Matchers/EXPMatchers+endWith.m"; sourceTree = "<group>"; };
 		A6E1C781ECBD34470ADA1156DDF85A77 /* EXPMatchers+beInstanceOf.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+beInstanceOf.h"; path = "Expecta/Matchers/EXPMatchers+beInstanceOf.h"; sourceTree = "<group>"; };
-		A745FB0FCA7FA0C8DF16BDA9B37E8838 /* ZSWTappableLabel.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = ZSWTappableLabel.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A70FDE973FFD6969778E5E53B0B38DC6 /* ZSWTappableLabel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ZSWTappableLabel.debug.xcconfig; sourceTree = "<group>"; };
 		A76731E37E48192CF1B8A94057FF7145 /* Masonry-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Masonry-dummy.m"; sourceTree = "<group>"; };
-		A806445D2E73E9D5AEFB59D05A2202B8 /* ZSWTappableLabel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ZSWTappableLabel.m; path = ZSWTappableLabel/ZSWTappableLabel.m; sourceTree = "<group>"; };
 		A8A991BE34E2BD1AB419A32031EC90C1 /* SPTCompiledExample.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SPTCompiledExample.h; path = Specta/Specta/SPTCompiledExample.h; sourceTree = "<group>"; };
 		AC21131B1FAEB27FAA87A6494AAEB1F6 /* SnapKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SnapKit-umbrella.h"; sourceTree = "<group>"; };
+		AC585FBCD6CDB6EBA92F977053CD404F /* ZSWTappableLabel-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ZSWTappableLabel-Info.plist"; sourceTree = "<group>"; };
+		AE438E25F67548080875B1E9D861E554 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		AE5A7DE17FBCC8DF8889811A742D3A2E /* EXPMatchers+beSubclassOf.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "EXPMatchers+beSubclassOf.m"; path = "Expecta/Matchers/EXPMatchers+beSubclassOf.m"; sourceTree = "<group>"; };
 		AE9F2C7A88CA3513EA2E4CE8E62F29B8 /* EXPMatchers+haveCountOf.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "EXPMatchers+haveCountOf.m"; path = "Expecta/Matchers/EXPMatchers+haveCountOf.m"; sourceTree = "<group>"; };
-		B1683BAE49DA9F37CD41EDEDB259CAE4 /* ZSWTappableLabelAccessibilityActionLongPress.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ZSWTappableLabelAccessibilityActionLongPress.h; sourceTree = "<group>"; };
+		B1BFC0CF6C6F4C5BFE304E98670BDEF0 /* ZSWTappableLabelAccessibilityActionLongPress.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ZSWTappableLabelAccessibilityActionLongPress.h; sourceTree = "<group>"; };
 		B1EB81736B0F967A8528DCD7A43A6B71 /* ViewController+MASAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "ViewController+MASAdditions.h"; path = "Masonry/ViewController+MASAdditions.h"; sourceTree = "<group>"; };
 		B3026A7C87D8203306EE3A5CC73AF890 /* EXPFloatTuple.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EXPFloatTuple.h; path = Expecta/EXPFloatTuple.h; sourceTree = "<group>"; };
 		B38F02EB07543657217B96BF78B98ABC /* EXPMatchers+beKindOf.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "EXPMatchers+beKindOf.m"; path = "Expecta/Matchers/EXPMatchers+beKindOf.m"; sourceTree = "<group>"; };
@@ -458,7 +459,7 @@
 		B9E62098B006A5DE893FBB28C12338D8 /* UILayoutSupport+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UILayoutSupport+Extensions.swift"; path = "Source/UILayoutSupport+Extensions.swift"; sourceTree = "<group>"; };
 		BA7F6B3F47F0573C127434ABDF463EC3 /* XCTestCase+Specta.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "XCTestCase+Specta.m"; path = "Specta/Specta/XCTestCase+Specta.m"; sourceTree = "<group>"; };
 		BB13A92A5DF9397A024D7B4B8E8A3802 /* MASLayoutConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASLayoutConstraint.h; path = Masonry/MASLayoutConstraint.h; sourceTree = "<group>"; };
-		BD101C2C0E0D3B8B4C04094B18E57D6A /* ZSWTappableLabelTouchHandling.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ZSWTappableLabelTouchHandling.h; sourceTree = "<group>"; };
+		BB8F396F0CC9C9FE1CD63FB869BA84FB /* ZSWTappableLabel-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ZSWTappableLabel-prefix.pch"; sourceTree = "<group>"; };
 		BD5E16DEC7E7810FBF4B52E0884EC8EA /* ZSWTaggedString.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ZSWTaggedString.debug.xcconfig; sourceTree = "<group>"; };
 		BE9E1E719E471D773517176FF475417D /* SnapKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SnapKit-dummy.m"; sourceTree = "<group>"; };
 		BFB1744C96954EBF3BC4B0883C83EAB6 /* ConstraintViewDSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintViewDSL.swift; path = Source/ConstraintViewDSL.swift; sourceTree = "<group>"; };
@@ -471,7 +472,6 @@
 		CBAC049D43675D56262E3899C62493ED /* Expecta.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Expecta.modulemap; sourceTree = "<group>"; };
 		CE820320AD26FE54ECF9E7F80CCB2C38 /* NSLayoutConstraint+MASDebugAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSLayoutConstraint+MASDebugAdditions.m"; path = "Masonry/NSLayoutConstraint+MASDebugAdditions.m"; sourceTree = "<group>"; };
 		CF05B3E2480F459B599107700BDDAFE8 /* MASUtilities.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASUtilities.h; path = Masonry/MASUtilities.h; sourceTree = "<group>"; };
-		CFC01474EF8849F7BF95621B77EEAC91 /* ZSWTappableLabel.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ZSWTappableLabel.modulemap; sourceTree = "<group>"; };
 		D08F1AE1B82D5EEAFB2D46BFE668032F /* SnapKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SnapKit-prefix.pch"; sourceTree = "<group>"; };
 		D1BD061657FB2B61F25A0F0952C93EA3 /* EXPMatchers+beSupersetOf.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "EXPMatchers+beSupersetOf.m"; path = "Expecta/Matchers/EXPMatchers+beSupersetOf.m"; sourceTree = "<group>"; };
 		D28AFD0965B2FB19AC23A0A8DC42A3EC /* NSArray+MASAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSArray+MASAdditions.m"; path = "Masonry/NSArray+MASAdditions.m"; sourceTree = "<group>"; };
@@ -485,19 +485,18 @@
 		D61528E3D2FEC987BF4D47FD1A4C4267 /* EXPMatchers+beIdenticalTo.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "EXPMatchers+beIdenticalTo.m"; path = "Expecta/Matchers/EXPMatchers+beIdenticalTo.m"; sourceTree = "<group>"; };
 		D74C0D172325A52DCBEF844E73A8B5F9 /* XCTest+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "XCTest+Private.h"; path = "Specta/Specta/XCTest+Private.h"; sourceTree = "<group>"; };
 		D8884A1EE1C3124E65FDE115D9BB9E69 /* Specta-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Specta-umbrella.h"; sourceTree = "<group>"; };
-		D98E6C1169DAC9A6A81EFCFAE138ADF3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		DAA5ED8D9457765874E062208F1D9304 /* EXPMatchers+contain.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+contain.h"; path = "Expecta/Matchers/EXPMatchers+contain.h"; sourceTree = "<group>"; };
 		DCFFC472E1ACC928EFDC7F696392395F /* MASConstraint+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "MASConstraint+Private.h"; path = "Masonry/MASConstraint+Private.h"; sourceTree = "<group>"; };
 		DD0679A6F97EB41D5D5A33B490670AAB /* ConstraintMakerFinalizable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMakerFinalizable.swift; path = Source/ConstraintMakerFinalizable.swift; sourceTree = "<group>"; };
 		DE6D6385409F6BDCA29606E122201FA6 /* EXPBlockDefinedMatcher.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EXPBlockDefinedMatcher.h; path = Expecta/EXPBlockDefinedMatcher.h; sourceTree = "<group>"; };
 		DFB3A09F923B5B3020DD7457B71EFB27 /* ConstraintItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintItem.swift; path = Source/ConstraintItem.swift; sourceTree = "<group>"; };
-		E0F926323949A5D529C2C448C7B03E81 /* ZSWTappableLabel-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ZSWTappableLabel-umbrella.h"; sourceTree = "<group>"; };
 		E24AA5A6E0765B49B86B52FA21BEE559 /* EXPDoubleTuple.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EXPDoubleTuple.h; path = Expecta/EXPDoubleTuple.h; sourceTree = "<group>"; };
 		E341D48CC5F2D85981F554AF49B4D69B /* ConstraintPriorityTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintPriorityTarget.swift; path = Source/ConstraintPriorityTarget.swift; sourceTree = "<group>"; };
 		E459EEB5EB19A0A37E10E01E4BC99F72 /* ZSWStringParserTag.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ZSWStringParserTag.h; path = ZSWTaggedString/Private/ZSWStringParserTag.h; sourceTree = "<group>"; };
 		E492CD12651699A4AC4F61987333742A /* EXPMatchers+raise.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "EXPMatchers+raise.m"; path = "Expecta/Matchers/EXPMatchers+raise.m"; sourceTree = "<group>"; };
 		E6D2CC812C59894281720AC40A44C1F7 /* Specta.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Specta.modulemap; sourceTree = "<group>"; };
 		E6EDFB69847218042FD09B89D26E8E27 /* ConstraintLayoutSupportDSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintLayoutSupportDSL.swift; path = Source/ConstraintLayoutSupportDSL.swift; sourceTree = "<group>"; };
+		E8651AD5379B41D0AB2DCE9809B552B8 /* ZSWTappableLabel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ZSWTappableLabel.h; sourceTree = "<group>"; };
 		EA222FC3C80CB2D73256B57FA107ED1A /* Pods-Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		EAFF1D0C33685120B0475A7E12E35701 /* Expecta-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Expecta-Info.plist"; sourceTree = "<group>"; };
 		EBE7946012EB3B2248C441C470B6B8E2 /* ConstraintPriority.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintPriority.swift; path = Source/ConstraintPriority.swift; sourceTree = "<group>"; };
@@ -505,8 +504,10 @@
 		EC9623B42F997147FC1FD7D3002673CA /* EXPMatchers+beGreaterThan.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+beGreaterThan.h"; path = "Expecta/Matchers/EXPMatchers+beGreaterThan.h"; sourceTree = "<group>"; };
 		ED3B31F738A52DE6BE43C879BF152A1A /* Masonry.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Masonry.debug.xcconfig; sourceTree = "<group>"; };
 		EE8E69ACC400060843DE0E1B73B30238 /* ConstraintMakerEditable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMakerEditable.swift; path = Source/ConstraintMakerEditable.swift; sourceTree = "<group>"; };
+		F0A691C9687E80E1376A3CEFADABF823 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		F0CCE4D970926103D15DD7234C3B6AD0 /* Expecta.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Expecta.h; path = Expecta/Expecta.h; sourceTree = "<group>"; };
 		F0F0A0C305A2AD32C354650A7BBBD77B /* EXPMatchers+beLessThanOrEqualTo.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "EXPMatchers+beLessThanOrEqualTo.m"; path = "Expecta/Matchers/EXPMatchers+beLessThanOrEqualTo.m"; sourceTree = "<group>"; };
+		F19FC8C1B59C55B8679EC3FC1993042E /* ZSWTappableLabelTappableRegionInfoImpl.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ZSWTappableLabelTappableRegionInfoImpl.m; sourceTree = "<group>"; };
 		F2D68057448AC58EA834E8E5BE1A78A1 /* EXPMatchers+beGreaterThanOrEqualTo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+beGreaterThanOrEqualTo.h"; path = "Expecta/Matchers/EXPMatchers+beGreaterThanOrEqualTo.h"; sourceTree = "<group>"; };
 		F3AAD70061DF6B36B55E23DFCD517A3A /* ZSWTaggedString.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ZSWTaggedString.m; path = ZSWTaggedString/Classes/ZSWTaggedString.m; sourceTree = "<group>"; };
 		F3ADEF720850A8D8A81168681B4ABC7B /* EXPMatchers+haveCountOf.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+haveCountOf.h"; path = "Expecta/Matchers/EXPMatchers+haveCountOf.h"; sourceTree = "<group>"; };
@@ -517,26 +518,25 @@
 		F5A7F18AA22CE505B18BBE80CEA5CAD3 /* ConstraintLayoutGuide.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintLayoutGuide.swift; path = Source/ConstraintLayoutGuide.swift; sourceTree = "<group>"; };
 		F5E6B7DD7A0442526705F9F2ED641958 /* EXPMatchers+beTruthy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+beTruthy.h"; path = "Expecta/Matchers/EXPMatchers+beTruthy.h"; sourceTree = "<group>"; };
 		F609AA61F4FF9AD447122F173689C78F /* ConstraintDescription.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintDescription.swift; path = Source/ConstraintDescription.swift; sourceTree = "<group>"; };
-		F67AB5DD3C1410DEFA6E057615106743 /* ZSWTappableLabelAccessibilityElement.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ZSWTappableLabelAccessibilityElement.m; sourceTree = "<group>"; };
 		F6E59CFFB8C5AC232F952848C2673276 /* NSArray+MASShorthandAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+MASShorthandAdditions.h"; path = "Masonry/NSArray+MASShorthandAdditions.h"; sourceTree = "<group>"; };
 		F71FA0C213B77B5134C4D1CA25D8CA3E /* MASCompositeConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASCompositeConstraint.h; path = Masonry/MASCompositeConstraint.h; sourceTree = "<group>"; };
 		F780C22A8741CF544E851D5935B61302 /* SpectaUtility.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SpectaUtility.h; path = Specta/Specta/SpectaUtility.h; sourceTree = "<group>"; };
-		F8D1336082C171B97A52C78D88D05A68 /* ZSWTappableLabelTouchHandling.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ZSWTappableLabelTouchHandling.m; sourceTree = "<group>"; };
 		FA79B473E2165BC454B7C8314A04C1D8 /* SPTExample.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SPTExample.m; path = Specta/Specta/SPTExample.m; sourceTree = "<group>"; };
 		FA7BD4AB05414C6FF0194AEA2B659094 /* ViewController+MASAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "ViewController+MASAdditions.m"; path = "Masonry/ViewController+MASAdditions.m"; sourceTree = "<group>"; };
+		FAE7516DFAC02E655A8D7EBA38227616 /* ZSWTappableLabel.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ZSWTappableLabel.modulemap; sourceTree = "<group>"; };
 		FB2123B40A6CDA0DAF81A9EE2EC7423F /* Masonry-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Masonry-prefix.pch"; sourceTree = "<group>"; };
 		FC87923B2833AD68229DA77A92B85729 /* EXPExpect.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EXPExpect.m; path = Expecta/EXPExpect.m; sourceTree = "<group>"; };
 		FC95D668E217CFBB25845AA15162348B /* Pods_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Tests.framework; path = "Pods-Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		FD33E7A84A75B75BC1CB612EDD4AA9EE /* ZSWTappableLabel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ZSWTappableLabel.debug.xcconfig; sourceTree = "<group>"; };
+		FE48B040A8DC7DDE17C5E6DB5EA5C905 /* ZSWTappableLabel-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ZSWTappableLabel-umbrella.h"; sourceTree = "<group>"; };
 		FF6B82D55F27A1D95569E61178EE5B91 /* EXPMatchers+beKindOf.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+beKindOf.h"; path = "Expecta/Matchers/EXPMatchers+beKindOf.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		1E11FF45C5BCE20F40F54E4C6864A0FC /* Frameworks */ = {
+		2C2DE94780BD87F255903B43C20E3722 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				19F3FF4FA4198B54B4D3CF7764EC8017 /* Foundation.framework in Frameworks */,
+				F9D2EB447A6537390ADE63EC9409C1CB /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -544,7 +544,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6D8AF3CE3ECD9C43406D3DAEC3D04214 /* Foundation.framework in Frameworks */,
+				D4F682D46E16549951390CF69B514270 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -552,7 +552,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04543980C4A7CE442330B0F1BC4A9A54 /* Foundation.framework in Frameworks */,
+				7813A09B8F9242BBF63900D45EF15054 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -560,8 +560,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BB16855BF4DE8305AA994C725159AC50 /* Foundation.framework in Frameworks */,
-				A04929A07627F6BF41D4A79FA3E10462 /* UIKit.framework in Frameworks */,
+				0301C5B2031E28AC249F9387ACAC19E6 /* Foundation.framework in Frameworks */,
+				7692AB1B4B06D141EC22C184659C1384 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -569,8 +569,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E51F496BDC6ACADE04FDA059C6CB2342 /* Foundation.framework in Frameworks */,
-				CE93C54413259B4AC3683B6EB874D466 /* UIKit.framework in Frameworks */,
+				58AF805046CFD9986EFEAACCBA61F9BE /* Foundation.framework in Frameworks */,
+				5D5AB502D85BF8E27246A5964F6B3E9F /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -578,16 +578,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9501262D83639D5412AC3A86F528B63D /* Foundation.framework in Frameworks */,
-				4EB2747D8F0843D0DF300990FEA1D19B /* XCTest.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D0208D66CF958F6AD9154D3072617C7B /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				40553AD8F47956602E39E4EFD481C83F /* Foundation.framework in Frameworks */,
+				8E30B7DA0041E761CA840C538EC05152 /* Foundation.framework in Frameworks */,
+				7D22935560DBA8F2EE62C3609A9EC3F1 /* XCTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -595,8 +587,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2FED4B7E6410714C867AAEFCE317D308 /* Foundation.framework in Frameworks */,
-				766A29A5DB099C8ED3BC29C9610E8C75 /* XCTest.framework in Frameworks */,
+				317EC8FDDEB6C8AD9E9292EE75178902 /* Foundation.framework in Frameworks */,
+				87072DD7C1EC570007E5D0BEFDCA247A /* XCTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC709B0F0F7352432407628509FD2F42 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				391510BEBAAC7E81586C56957D87ECE1 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -606,7 +606,7 @@
 		004D08CFAEB70808499A6F078DD6DF49 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				48C50A3C411889ADD630AC337BAAE5DE /* ZSWTappableLabel */,
+				57BDEE9BB676A611A7C4B40571EE425D /* ZSWTappableLabel */,
 			);
 			name = "Development Pods";
 			sourceTree = "<group>";
@@ -614,7 +614,7 @@
 		03C5C200A0787E300053CFA8F53CA094 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				73B171266A96DC6E1563E2096515B150 /* iOS */,
+				204BF320E11014414D53166EB7C125A8 /* iOS */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -780,6 +780,25 @@
 			path = Expecta;
 			sourceTree = "<group>";
 		};
+		18EF6C5FB9EB9C8E415FEF8041AD9EB1 /* Public */ = {
+			isa = PBXGroup;
+			children = (
+				E8651AD5379B41D0AB2DCE9809B552B8 /* ZSWTappableLabel.h */,
+			);
+			name = Public;
+			path = ZSWTappableLabel/Public;
+			sourceTree = "<group>";
+		};
+		204BF320E11014414D53166EB7C125A8 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				54808C6C88411583D225CB43662CF2A8 /* Foundation.framework */,
+				03D9F470BE7939CC23898F0F41EF0B5E /* UIKit.framework */,
+				AE438E25F67548080875B1E9D861E554 /* XCTest.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
 		27C153AF39DA6B169805E137520ACD38 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -840,68 +859,27 @@
 			path = "../Target Support Files/Expecta";
 			sourceTree = "<group>";
 		};
-		48C50A3C411889ADD630AC337BAAE5DE /* ZSWTappableLabel */ = {
+		40BF0B4F5F84A3C3CC267C02598E655F /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				1696ED66D74D821743D406BD4898D521 /* ZSWTappableLabel.h */,
-				A806445D2E73E9D5AEFB59D05A2202B8 /* ZSWTappableLabel.m */,
-				7D391B17E1BF63221B7B80A7EE71F64C /* Pod */,
-				871DABB51C2A73A68D3C42067DD28F0B /* Private */,
-				6A86CD2F588E150ADC8723CEB9EE75FC /* Support Files */,
-			);
-			name = ZSWTappableLabel;
-			path = ../..;
-			sourceTree = "<group>";
-		};
-		6A86CD2F588E150ADC8723CEB9EE75FC /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				CFC01474EF8849F7BF95621B77EEAC91 /* ZSWTappableLabel.modulemap */,
-				A5F9F6B0C8768C4C61D0A9DD68C3E0AF /* ZSWTappableLabel-dummy.m */,
-				686A37E6162EB1B1FFC6F121081AA165 /* ZSWTappableLabel-Info.plist */,
-				1D3BF713C4B086696DC4821ECA4ECE6B /* ZSWTappableLabel-prefix.pch */,
-				E0F926323949A5D529C2C448C7B03E81 /* ZSWTappableLabel-umbrella.h */,
-				FD33E7A84A75B75BC1CB612EDD4AA9EE /* ZSWTappableLabel.debug.xcconfig */,
-				6C05240D3AB8721189043B88DA0126D1 /* ZSWTappableLabel.release.xcconfig */,
-			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/ZSWTappableLabel";
-			sourceTree = "<group>";
-		};
-		73B171266A96DC6E1563E2096515B150 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				2F94A9F552457B2DBAD1616C5E0E0E7A /* Foundation.framework */,
-				D98E6C1169DAC9A6A81EFCFAE138ADF3 /* UIKit.framework */,
-				3F80F8BA974A80CEC66841545C196326 /* XCTest.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		7D391B17E1BF63221B7B80A7EE71F64C /* Pod */ = {
-			isa = PBXGroup;
-			children = (
-				5ABFE0084CC32E073EB1E78FA27DE668 /* LICENSE */,
-				9537C7639C5A1246D4FD1CCE8CAE5CBC /* README.md */,
-				A745FB0FCA7FA0C8DF16BDA9B37E8838 /* ZSWTappableLabel.podspec */,
+				60E9CB796AAF6C19D2E4A499D9FD377D /* LICENSE */,
+				F0A691C9687E80E1376A3CEFADABF823 /* README.md */,
+				89D2F70E224ED4CEAC78E609C9EE747E /* ZSWTappableLabel.podspec */,
 			);
 			name = Pod;
 			sourceTree = "<group>";
 		};
-		871DABB51C2A73A68D3C42067DD28F0B /* Private */ = {
+		57BDEE9BB676A611A7C4B40571EE425D /* ZSWTappableLabel */ = {
 			isa = PBXGroup;
 			children = (
-				B1683BAE49DA9F37CD41EDEDB259CAE4 /* ZSWTappableLabelAccessibilityActionLongPress.h */,
-				873A858848958C9AB5B8E7F6205BF51F /* ZSWTappableLabelAccessibilityActionLongPress.m */,
-				3432814E16EA9C46AF83E642D654EA50 /* ZSWTappableLabelAccessibilityElement.h */,
-				F67AB5DD3C1410DEFA6E057615106743 /* ZSWTappableLabelAccessibilityElement.m */,
-				06E88AF587EC003FEF6589EA8FE57A06 /* ZSWTappableLabelTappableRegionInfoImpl.h */,
-				1B72B7FCEBDDFF9440DE28B83724D03B /* ZSWTappableLabelTappableRegionInfoImpl.m */,
-				BD101C2C0E0D3B8B4C04094B18E57D6A /* ZSWTappableLabelTouchHandling.h */,
-				F8D1336082C171B97A52C78D88D05A68 /* ZSWTappableLabelTouchHandling.m */,
+				9648A9975BD90322C0B292028B593D90 /* ZSWTappableLabel.m */,
+				40BF0B4F5F84A3C3CC267C02598E655F /* Pod */,
+				948830D39F473FAC2C41F579BA08EEEF /* Private */,
+				18EF6C5FB9EB9C8E415FEF8041AD9EB1 /* Public */,
+				9C1CD62F11FDAD41894C7A9FC7E17AE0 /* Support Files */,
 			);
-			name = Private;
-			path = ZSWTappableLabel/Private;
+			name = ZSWTappableLabel;
+			path = ../..;
 			sourceTree = "<group>";
 		};
 		8A50DE3925E0C493A640EA8B2CA296DD /* Swift */ = {
@@ -911,6 +889,37 @@
 				7E7DD96D4FF89D7D0B88C2AC3420C37C /* ZSWTaggedStringOptions.swift */,
 			);
 			name = Swift;
+			sourceTree = "<group>";
+		};
+		948830D39F473FAC2C41F579BA08EEEF /* Private */ = {
+			isa = PBXGroup;
+			children = (
+				B1BFC0CF6C6F4C5BFE304E98670BDEF0 /* ZSWTappableLabelAccessibilityActionLongPress.h */,
+				79CBE58F076C7933C463B8824FA4AC9A /* ZSWTappableLabelAccessibilityActionLongPress.m */,
+				088A492C4417D38F044BD6955BA69202 /* ZSWTappableLabelAccessibilityElement.h */,
+				4CE7EDDA032C4699E79DE7BB1B2C0B89 /* ZSWTappableLabelAccessibilityElement.m */,
+				4504811B272313B07951D1AF526E67FF /* ZSWTappableLabelTappableRegionInfoImpl.h */,
+				F19FC8C1B59C55B8679EC3FC1993042E /* ZSWTappableLabelTappableRegionInfoImpl.m */,
+				A4CCD423D958F1845B2CF3A31A1EF2D6 /* ZSWTappableLabelTouchHandling.h */,
+				63D64C0C19758B0E27EDC5B40B350EC0 /* ZSWTappableLabelTouchHandling.m */,
+			);
+			name = Private;
+			path = ZSWTappableLabel/Private;
+			sourceTree = "<group>";
+		};
+		9C1CD62F11FDAD41894C7A9FC7E17AE0 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				FAE7516DFAC02E655A8D7EBA38227616 /* ZSWTappableLabel.modulemap */,
+				3FCBA979DA3705A3ECD720CEEF0ADDC1 /* ZSWTappableLabel-dummy.m */,
+				AC585FBCD6CDB6EBA92F977053CD404F /* ZSWTappableLabel-Info.plist */,
+				BB8F396F0CC9C9FE1CD63FB869BA84FB /* ZSWTappableLabel-prefix.pch */,
+				FE48B040A8DC7DDE17C5E6DB5EA5C905 /* ZSWTappableLabel-umbrella.h */,
+				A70FDE973FFD6969778E5E53B0B38DC6 /* ZSWTappableLabel.debug.xcconfig */,
+				22E2C030B1D76F182EFD1D1455F9A980 /* ZSWTappableLabel.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/ZSWTappableLabel";
 			sourceTree = "<group>";
 		};
 		AB0D0302577BE99BA59B06C9047B28BD /* Targets Support Files */ = {
@@ -1076,6 +1085,14 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		182EAD168F7A5AA0CBF87BF9A6F21415 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F43FCC208DB0C1E910C35A9A9E7A23AD /* Pods-Tests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4900EEFFF3A049EDA40F917F4EED85CD /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -1160,11 +1177,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		71EA30839D24F72466F55DDDDE954A3D /* Headers */ = {
+		76FA4FF67B95912D7347C79B63AF2E28 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				92FAAE33A8F0B4C0D7F072A43443C00E /* Pods-Tests-umbrella.h in Headers */,
+				4C928A49AB3421CAADFE0C93E80B2037 /* ZSWTappableLabel-umbrella.h in Headers */,
+				4DB32587694924803658FFC1F6C6D74C /* ZSWTappableLabel.h in Headers */,
+				6E31B3BB67BB77E99BB18E16F86C72CC /* ZSWTappableLabelAccessibilityActionLongPress.h in Headers */,
+				60080804CE75941E2AC6FE3EBEF2369A /* ZSWTappableLabelAccessibilityElement.h in Headers */,
+				BB9625141DBC1BA30814CC5758559729 /* ZSWTappableLabelTappableRegionInfoImpl.h in Headers */,
+				8A8D5855FE026003FABB30371C5FBBF5 /* ZSWTappableLabelTouchHandling.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1199,24 +1221,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		888021DFF13B3FAE2197B76E91FD4B23 /* Headers */ = {
+		82DE1594FB034C35884433F8D2419047 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C17CC12224E04FA20F6015321C4021AA /* Pods-ZSWTappableLabel_Example-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F65D311124DA32C66717686E3EE80B01 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0B8E66F0F59569E54B1C4793A51FC778 /* ZSWTappableLabel-umbrella.h in Headers */,
-				07066AFD38A12C6C39948A6810222F10 /* ZSWTappableLabel.h in Headers */,
-				1DAB9ABBF2A850D5595A020D905BACFE /* ZSWTappableLabelAccessibilityActionLongPress.h in Headers */,
-				A6D431CA37F733ACD6527DB95B1103ED /* ZSWTappableLabelAccessibilityElement.h in Headers */,
-				17AC35C571DD5B2CBC360BE3EDD436E4 /* ZSWTappableLabelTappableRegionInfoImpl.h in Headers */,
-				F08ED74F7590D79C09F33BE7B33D49BD /* ZSWTappableLabelTouchHandling.h in Headers */,
+				5B111E8C334DE1EF3538F9A8147F8D48 /* Pods-ZSWTappableLabel_Example-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1227,7 +1236,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7E8CB58A0993284FBBE656B51F2A90F5 /* Build configuration list for PBXNativeTarget "ZSWTappableLabel" */;
 			buildPhases = (
-				F65D311124DA32C66717686E3EE80B01 /* Headers */,
+				76FA4FF67B95912D7347C79B63AF2E28 /* Headers */,
 				76A5CD2626D6892358E88D34393B962E /* Sources */,
 				59647F5EC46CB7D00D6B93DB1A2F2C53 /* Frameworks */,
 				9B7A42256D14BBF2D1C280ED4EBD5FCA /* Resources */,
@@ -1297,19 +1306,19 @@
 		};
 		958186CF7D75761173A23E66E0CCAF14 /* Pods-Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 75AD30F5E3B8E8E097628D0C5BBC3AC6 /* Build configuration list for PBXNativeTarget "Pods-Tests" */;
+			buildConfigurationList = E17657967569521A8B2482E0AE456F3E /* Build configuration list for PBXNativeTarget "Pods-Tests" */;
 			buildPhases = (
-				71EA30839D24F72466F55DDDDE954A3D /* Headers */,
-				B03B840BE99271D944C3613E5C106529 /* Sources */,
-				1E11FF45C5BCE20F40F54E4C6864A0FC /* Frameworks */,
-				C64E53B7091B0208775F0166D8B09756 /* Resources */,
+				182EAD168F7A5AA0CBF87BF9A6F21415 /* Headers */,
+				59ADA0E12FBBD1B05D5B452ED0CE3D0C /* Sources */,
+				2C2DE94780BD87F255903B43C20E3722 /* Frameworks */,
+				D817557214FB6EF4E1EF1FEB61706D61 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				7C2BB77D9DA08C1134E23589784D9209 /* PBXTargetDependency */,
-				CF9FDE0F666E5585136C719B4DAC0B26 /* PBXTargetDependency */,
-				91F49CCA7821DE9DFC25ACCF4701BFBE /* PBXTargetDependency */,
+				0D31E616C819DACA3FFF42738AF2B887 /* PBXTargetDependency */,
+				9AA25B612994C5207B4D3FFA2A7A8ED3 /* PBXTargetDependency */,
+				42AC105A81C43D3E35DC3F7DC555ED24 /* PBXTargetDependency */,
 			);
 			name = "Pods-Tests";
 			productName = "Pods-Tests";
@@ -1336,20 +1345,20 @@
 		};
 		DD48D4B7B4BE7729E639A4B853B598C6 /* Pods-ZSWTappableLabel_Example */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C8FE850CB499E7015F7ACD6745A92502 /* Build configuration list for PBXNativeTarget "Pods-ZSWTappableLabel_Example" */;
+			buildConfigurationList = 823F8A0893CF5585BE8DFAB868685417 /* Build configuration list for PBXNativeTarget "Pods-ZSWTappableLabel_Example" */;
 			buildPhases = (
-				888021DFF13B3FAE2197B76E91FD4B23 /* Headers */,
-				E263FD54637CEE3ACF2464674F5606D1 /* Sources */,
-				D0208D66CF958F6AD9154D3072617C7B /* Frameworks */,
-				328A446B6A16E430E7E1E930438CD35A /* Resources */,
+				82DE1594FB034C35884433F8D2419047 /* Headers */,
+				ABFF8BFC15025F95E5F87041EB36B4A9 /* Sources */,
+				FC709B0F0F7352432407628509FD2F42 /* Frameworks */,
+				E2A90D538755C59E9DABB12F92066CDB /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				B79A8541358EEA3BA6FF6BCFF05C9FBB /* PBXTargetDependency */,
-				BBB63B69F5627271BADAC04C0FAD6400 /* PBXTargetDependency */,
-				880F3554DD10A2CB6F4DF29E1B1231B0 /* PBXTargetDependency */,
-				17B427CCC588EF16D3EBDE46E3755BCA /* PBXTargetDependency */,
+				06864B917AEE8A3BE2C4C4CBA577D8BC /* PBXTargetDependency */,
+				99D5EB0F999BE2ED0A1ED07DBA2AA509 /* PBXTargetDependency */,
+				20D23C193E510586F413AAC75544DF97 /* PBXTargetDependency */,
+				BA14214B9C7ADFDEF3968E3253DCB54D /* PBXTargetDependency */,
 			);
 			name = "Pods-ZSWTappableLabel_Example";
 			productName = "Pods-ZSWTappableLabel_Example";
@@ -1409,13 +1418,6 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		328A446B6A16E430E7E1E930438CD35A /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		34011600D72DD04AC12C96367136E94B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1458,7 +1460,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C64E53B7091B0208775F0166D8B09756 /* Resources */ = {
+		D817557214FB6EF4E1EF1FEB61706D61 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E2A90D538755C59E9DABB12F92066CDB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1501,6 +1510,14 @@
 				B27CA77724EE492D67D5A6EEF3C04B83 /* SPTSpec.m in Sources */,
 				93076F6F0B96EAD80F67BC760A3FC0AD /* SPTTestSuite.m in Sources */,
 				88B1F2202F8E1BA69FF9FFD599C71A53 /* XCTestCase+Specta.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		59ADA0E12FBBD1B05D5B452ED0CE3D0C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				511DAEE69C302984C6F1CECCB0E4F3FE /* Pods-Tests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1618,77 +1635,68 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B03B840BE99271D944C3613E5C106529 /* Sources */ = {
+		ABFF8BFC15025F95E5F87041EB36B4A9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E6A7E6F5ACF24E3DAE2BFBBFB3CD08BC /* Pods-Tests-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E263FD54637CEE3ACF2464674F5606D1 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4499BB3103E3A22DDBCF80F7A1A2E02E /* Pods-ZSWTappableLabel_Example-dummy.m in Sources */,
+				B71CD8EB55808C8AFFFEE286DBA37956 /* Pods-ZSWTappableLabel_Example-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		17B427CCC588EF16D3EBDE46E3755BCA /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = ZSWTappableLabel;
-			target = 14AD6D3DE5F8E41B9BFDD59D9BAE5959 /* ZSWTappableLabel */;
-			targetProxy = 1CF649375092D308E0ED492DB3EE06D9 /* PBXContainerItemProxy */;
-		};
-		7C2BB77D9DA08C1134E23589784D9209 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Expecta;
-			target = DC371B7477C88184274EC6710690F97C /* Expecta */;
-			targetProxy = E30EA907122896A609E2535C773BDD13 /* PBXContainerItemProxy */;
-		};
-		880F3554DD10A2CB6F4DF29E1B1231B0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = ZSWTaggedString;
-			target = 8222E4B7957D0B8A2221D0D499282AD4 /* ZSWTaggedString */;
-			targetProxy = 65EDFC298C7FC66AB1599D554EEBA705 /* PBXContainerItemProxy */;
-		};
-		91F49CCA7821DE9DFC25ACCF4701BFBE /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Specta;
-			target = F8676010755CF1530FC02DA9A0D8822B /* Specta */;
-			targetProxy = 9AB4E42142B259D564A00DD9BDF78629 /* PBXContainerItemProxy */;
-		};
-		B79A8541358EEA3BA6FF6BCFF05C9FBB /* PBXTargetDependency */ = {
+		06864B917AEE8A3BE2C4C4CBA577D8BC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Masonry;
 			target = 55AF53E6C77A10ED4985E04D74A8878E /* Masonry */;
-			targetProxy = 4755B7BF961F813FFCC449E15076F0CB /* PBXContainerItemProxy */;
+			targetProxy = DC631C7091FD9CA96133EA1FD7B33CFC /* PBXContainerItemProxy */;
 		};
-		BBB63B69F5627271BADAC04C0FAD6400 /* PBXTargetDependency */ = {
+		0D31E616C819DACA3FFF42738AF2B887 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Expecta;
+			target = DC371B7477C88184274EC6710690F97C /* Expecta */;
+			targetProxy = F5CC8BD4F0884FBDE2AB3F24A6CF4608 /* PBXContainerItemProxy */;
+		};
+		20D23C193E510586F413AAC75544DF97 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ZSWTaggedString;
+			target = 8222E4B7957D0B8A2221D0D499282AD4 /* ZSWTaggedString */;
+			targetProxy = FD020477D54D53029E34317C9AC98E89 /* PBXContainerItemProxy */;
+		};
+		42AC105A81C43D3E35DC3F7DC555ED24 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Specta;
+			target = F8676010755CF1530FC02DA9A0D8822B /* Specta */;
+			targetProxy = 133E5FEF13829896E0B2806D84AB76C5 /* PBXContainerItemProxy */;
+		};
+		99D5EB0F999BE2ED0A1ED07DBA2AA509 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = SnapKit;
 			target = 19622742EBA51E823D6DAE3F8CDBFAD4 /* SnapKit */;
-			targetProxy = 02FD17597C95CC5F5928D6CEF0DBD18B /* PBXContainerItemProxy */;
+			targetProxy = FB11BF77BFFFE4DA1ADFF50F557E3A62 /* PBXContainerItemProxy */;
 		};
-		CF9FDE0F666E5585136C719B4DAC0B26 /* PBXTargetDependency */ = {
+		9AA25B612994C5207B4D3FFA2A7A8ED3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-ZSWTappableLabel_Example";
 			target = DD48D4B7B4BE7729E639A4B853B598C6 /* Pods-ZSWTappableLabel_Example */;
-			targetProxy = F80935547DE3384905B459095F4D5DFD /* PBXContainerItemProxy */;
+			targetProxy = E0B7DCFA093BEA1DBC53D8A1B8EA3B78 /* PBXContainerItemProxy */;
+		};
+		BA14214B9C7ADFDEF3968E3253DCB54D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ZSWTappableLabel;
+			target = 14AD6D3DE5F8E41B9BFDD59D9BAE5959 /* ZSWTappableLabel */;
+			targetProxy = 5B8834F2E154D9D7ACCA6AE80C6E3B2F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		11DB24A0C151CD28A8EFA0E408593593 /* Debug */ = {
+		2650DA6A08D52537A5DA87F63FA0B93C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B71F5494CCC10719F902AF21A299CDF9 /* Pods-ZSWTappableLabel_Example.debug.xcconfig */;
+			baseConfigurationReference = B7AE5E01738A9857B19A344172D92B47 /* Pods-ZSWTappableLabel_Example.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -1711,15 +1719,233 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		27420F8AC16BFB93999765E245868578 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2D73339C1CD34AB2C3F0C81C62FD7178 /* Masonry.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Masonry/Masonry-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Masonry/Masonry-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Masonry/Masonry.modulemap";
+				PRODUCT_MODULE_NAME = Masonry;
+				PRODUCT_NAME = Masonry;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		311B5832B0FAFE9E393842593D6A032E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 36D80A0BCAA8C4C235306469EED8B948 /* ZSWTaggedString.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/ZSWTaggedString/ZSWTaggedString-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ZSWTaggedString/ZSWTaggedString-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/ZSWTaggedString/ZSWTaggedString.modulemap";
+				PRODUCT_MODULE_NAME = ZSWTaggedString;
+				PRODUCT_NAME = ZSWTaggedString;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		39F29C414C1E6A6DD2AB0A19707CCA07 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 91ADAE7317CABCD4600A076FA5F36728 /* Expecta.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Expecta/Expecta-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Expecta/Expecta-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Expecta/Expecta.modulemap";
+				PRODUCT_MODULE_NAME = Expecta;
+				PRODUCT_NAME = Expecta;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		3CED2A1868C02DE5BDFB79BFD1CA5450 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EA222FC3C80CB2D73256B57FA107ED1A /* Pods-Tests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Tests/Pods-Tests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Tests/Pods-Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
-		196DFA3E4A09A28224918543529A1885 /* Debug */ = {
+		4B6DB5263D3F48DDF74D0D6F7AE82BAC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BD5E16DEC7E7810FBF4B52E0884EC8EA /* ZSWTaggedString.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/ZSWTaggedString/ZSWTaggedString-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ZSWTaggedString/ZSWTaggedString-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/ZSWTaggedString/ZSWTaggedString.modulemap";
+				PRODUCT_MODULE_NAME = ZSWTaggedString;
+				PRODUCT_NAME = ZSWTaggedString;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		58344F1AEDBBB3C1C5BCB45B5586247C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = ED3B31F738A52DE6BE43C879BF152A1A /* Masonry.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Masonry/Masonry-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Masonry/Masonry-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Masonry/Masonry.modulemap";
+				PRODUCT_MODULE_NAME = Masonry;
+				PRODUCT_NAME = Masonry;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		77B25FC9CEE66CA6521DBC2E6517BD97 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 74DF0530E3E006BD780F082FEA277ACE /* SnapKit.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SnapKit/SnapKit-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SnapKit/SnapKit-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SnapKit/SnapKit.modulemap";
+				PRODUCT_MODULE_NAME = SnapKit;
+				PRODUCT_NAME = SnapKit;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		7EE7A78859F657F6BEFC651185B43192 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -1742,6 +1968,192 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		86695E78651F645F5333570D015FC880 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 22E2C030B1D76F182EFD1D1455F9A980 /* ZSWTappableLabel.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/ZSWTappableLabel/ZSWTappableLabel-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ZSWTappableLabel/ZSWTappableLabel-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/ZSWTappableLabel/ZSWTappableLabel.modulemap";
+				PRODUCT_MODULE_NAME = ZSWTappableLabel;
+				PRODUCT_NAME = ZSWTappableLabel;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		8E403E361CD6D3F32A530333F7435318 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 667F1B062CBDC46CD8F7F9314314D00A /* SnapKit.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SnapKit/SnapKit-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SnapKit/SnapKit-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SnapKit/SnapKit.modulemap";
+				PRODUCT_MODULE_NAME = SnapKit;
+				PRODUCT_NAME = SnapKit;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		AC307948649E47492A262EDB3FE660F2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 655BDEE79210E1B77C3C8DB8BD0EBD12 /* Expecta.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Expecta/Expecta-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Expecta/Expecta-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Expecta/Expecta.modulemap";
+				PRODUCT_MODULE_NAME = Expecta;
+				PRODUCT_NAME = Expecta;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B0525BE04B7473598AA33EBD02F88F1E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3FEBE4FD3ECAA9FED62AEE0C99D40F5B /* Specta.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Specta/Specta-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Specta/Specta-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Specta/Specta.modulemap";
+				PRODUCT_MODULE_NAME = Specta;
+				PRODUCT_NAME = Specta;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		D299434AB35E7FD6F7921C8EF24742FF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -1780,11 +2192,10 @@
 			};
 			name = Debug;
 		};
-		348942B1F845635D244BC771FDACC574 /* Release */ = {
+		D91B6B892DF40A2C85543F6AE3B6A6D5 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3FEBE4FD3ECAA9FED62AEE0C99D40F5B /* Specta.release.xcconfig */;
+			baseConfigurationReference = 3A4AB7485BB1B3C9D3F33F867C39519C /* Specta.debug.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -1805,212 +2216,17 @@
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		3D7DB0B78375309B7CDE60F0E550E51E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 655BDEE79210E1B77C3C8DB8BD0EBD12 /* Expecta.debug.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/Expecta/Expecta-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Expecta/Expecta-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Expecta/Expecta.modulemap";
-				PRODUCT_MODULE_NAME = Expecta;
-				PRODUCT_NAME = Expecta;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
-		3FF02EF200E5551CF610BBB6A82173E8 /* Debug */ = {
+		D9BA07F123EB6041C619853929C19CCE /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BD5E16DEC7E7810FBF4B52E0884EC8EA /* ZSWTaggedString.debug.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/ZSWTaggedString/ZSWTaggedString-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/ZSWTaggedString/ZSWTaggedString-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/ZSWTaggedString/ZSWTaggedString.modulemap";
-				PRODUCT_MODULE_NAME = ZSWTaggedString;
-				PRODUCT_NAME = ZSWTaggedString;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		73B201A0641E8BDF892BA0B27E0AF833 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 667F1B062CBDC46CD8F7F9314314D00A /* SnapKit.release.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/SnapKit/SnapKit-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/SnapKit/SnapKit-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/SnapKit/SnapKit.modulemap";
-				PRODUCT_MODULE_NAME = SnapKit;
-				PRODUCT_NAME = SnapKit;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		804C6A0F84C2BDAB457EAAEF17A02EA4 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2CE947FACA0AD03D09592997C01AA69A /* Pods-Tests.release.xcconfig */;
+			baseConfigurationReference = B71F5494CCC10719F902AF21A299CDF9 /* Pods-ZSWTappableLabel_Example.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-Tests/Pods-Tests-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Tests/Pods-Tests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		8308A6D8F32A94C0740A0665D3DE6290 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 36D80A0BCAA8C4C235306469EED8B948 /* ZSWTaggedString.release.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/ZSWTaggedString/ZSWTaggedString-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/ZSWTaggedString/ZSWTaggedString-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/ZSWTaggedString/ZSWTaggedString.modulemap";
-				PRODUCT_MODULE_NAME = ZSWTaggedString;
-				PRODUCT_NAME = ZSWTaggedString;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		8CF4171A3670DE16D6BAC50E01020645 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2D73339C1CD34AB2C3F0C81C62FD7178 /* Masonry.release.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/Masonry/Masonry-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Masonry/Masonry-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Masonry/Masonry.modulemap";
-				PRODUCT_MODULE_NAME = Masonry;
-				PRODUCT_NAME = Masonry;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		A5A2FDA732CE0E2D84C443C7D320DEAF /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B7AE5E01738A9857B19A344172D92B47 /* Pods-ZSWTappableLabel_Example.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -2033,77 +2249,16 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
-		B01D14FDC83DCF9D4BE53066BEA96D05 /* Release */ = {
+		E7274F948FD4C653FB54AEAC2767A9DA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A70FDE973FFD6969778E5E53B0B38DC6 /* ZSWTappableLabel.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"POD_CONFIGURATION_RELEASE=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				MTL_FAST_MATH = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				SWIFT_VERSION = 5.0;
-				SYMROOT = "${SRCROOT}/../build";
-			};
-			name = Release;
-		};
-		B07D031F9C22CA0BD325BEFD4B416F98 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 91ADAE7317CABCD4600A076FA5F36728 /* Expecta.release.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
+				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -2112,31 +2267,30 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/Expecta/Expecta-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Expecta/Expecta-Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/ZSWTappableLabel/ZSWTappableLabel-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ZSWTappableLabel/ZSWTappableLabel-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Expecta/Expecta.modulemap";
-				PRODUCT_MODULE_NAME = Expecta;
-				PRODUCT_NAME = Expecta;
+				MODULEMAP_FILE = "Target Support Files/ZSWTappableLabel/ZSWTappableLabel.modulemap";
+				PRODUCT_MODULE_NAME = ZSWTappableLabel;
+				PRODUCT_NAME = ZSWTappableLabel;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
-		B9C1458272F788BFB211526A6149844B /* Debug */ = {
+		EDC9A4750303E882942A176F01AEE719 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EA222FC3C80CB2D73256B57FA107ED1A /* Pods-Tests.debug.xcconfig */;
+			baseConfigurationReference = 2CE947FACA0AD03D09592997C01AA69A /* Pods-Tests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -2159,168 +2313,11 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		D9D8E15E92945C9C4201827C3C59DDA8 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3A4AB7485BB1B3C9D3F33F867C39519C /* Specta.debug.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/Specta/Specta-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Specta/Specta-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Specta/Specta.modulemap";
-				PRODUCT_MODULE_NAME = Specta;
-				PRODUCT_NAME = Specta;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		F5BCCCF0272FA2B8B963E018A362A5BA /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6C05240D3AB8721189043B88DA0126D1 /* ZSWTappableLabel.release.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/ZSWTappableLabel/ZSWTappableLabel-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/ZSWTappableLabel/ZSWTappableLabel-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/ZSWTappableLabel/ZSWTappableLabel.modulemap";
-				PRODUCT_MODULE_NAME = ZSWTappableLabel;
-				PRODUCT_NAME = ZSWTappableLabel;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
-		};
-		F93AF49C1CAF2486F9DC6AE9F85C0739 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 74DF0530E3E006BD780F082FEA277ACE /* SnapKit.debug.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/SnapKit/SnapKit-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/SnapKit/SnapKit-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/SnapKit/SnapKit.modulemap";
-				PRODUCT_MODULE_NAME = SnapKit;
-				PRODUCT_NAME = SnapKit;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		FA62E6AD0566126E516BF2233DA6D462 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = ED3B31F738A52DE6BE43C879BF152A1A /* Masonry.debug.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/Masonry/Masonry-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Masonry/Masonry-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Masonry/Masonry.modulemap";
-				PRODUCT_MODULE_NAME = Masonry;
-				PRODUCT_NAME = Masonry;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		FC4A65EFEEC30DA548126A198C184494 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = FD33E7A84A75B75BC1CB612EDD4AA9EE /* ZSWTappableLabel.debug.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/ZSWTappableLabel/ZSWTappableLabel-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/ZSWTappableLabel/ZSWTappableLabel-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/ZSWTappableLabel/ZSWTappableLabel.modulemap";
-				PRODUCT_MODULE_NAME = ZSWTappableLabel;
-				PRODUCT_NAME = ZSWTappableLabel;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
 		};
 /* End XCBuildConfiguration section */
 
@@ -2328,17 +2325,8 @@
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				196DFA3E4A09A28224918543529A1885 /* Debug */,
-				B01D14FDC83DCF9D4BE53066BEA96D05 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		75AD30F5E3B8E8E097628D0C5BBC3AC6 /* Build configuration list for PBXNativeTarget "Pods-Tests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				B9C1458272F788BFB211526A6149844B /* Debug */,
-				804C6A0F84C2BDAB457EAAEF17A02EA4 /* Release */,
+				D299434AB35E7FD6F7921C8EF24742FF /* Debug */,
+				7EE7A78859F657F6BEFC651185B43192 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -2346,8 +2334,8 @@
 		7E8CB58A0993284FBBE656B51F2A90F5 /* Build configuration list for PBXNativeTarget "ZSWTappableLabel" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				FC4A65EFEEC30DA548126A198C184494 /* Debug */,
-				F5BCCCF0272FA2B8B963E018A362A5BA /* Release */,
+				E7274F948FD4C653FB54AEAC2767A9DA /* Debug */,
+				86695E78651F645F5333570D015FC880 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -2355,8 +2343,17 @@
 		7F8CE4DC18DBEA01587212F09727DB3D /* Build configuration list for PBXNativeTarget "SnapKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F93AF49C1CAF2486F9DC6AE9F85C0739 /* Debug */,
-				73B201A0641E8BDF892BA0B27E0AF833 /* Release */,
+				77B25FC9CEE66CA6521DBC2E6517BD97 /* Debug */,
+				8E403E361CD6D3F32A530333F7435318 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		823F8A0893CF5585BE8DFAB868685417 /* Build configuration list for PBXNativeTarget "Pods-ZSWTappableLabel_Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D9BA07F123EB6041C619853929C19CCE /* Debug */,
+				2650DA6A08D52537A5DA87F63FA0B93C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -2364,8 +2361,8 @@
 		87FD40BD683E3BD044AA4D1B5CA58652 /* Build configuration list for PBXNativeTarget "Masonry" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				FA62E6AD0566126E516BF2233DA6D462 /* Debug */,
-				8CF4171A3670DE16D6BAC50E01020645 /* Release */,
+				58344F1AEDBBB3C1C5BCB45B5586247C /* Debug */,
+				27420F8AC16BFB93999765E245868578 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -2373,17 +2370,8 @@
 		902BCF405B3D02679340695CD9C09879 /* Build configuration list for PBXNativeTarget "Expecta" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3D7DB0B78375309B7CDE60F0E550E51E /* Debug */,
-				B07D031F9C22CA0BD325BEFD4B416F98 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		C8FE850CB499E7015F7ACD6745A92502 /* Build configuration list for PBXNativeTarget "Pods-ZSWTappableLabel_Example" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				11DB24A0C151CD28A8EFA0E408593593 /* Debug */,
-				A5A2FDA732CE0E2D84C443C7D320DEAF /* Release */,
+				AC307948649E47492A262EDB3FE660F2 /* Debug */,
+				39F29C414C1E6A6DD2AB0A19707CCA07 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -2391,8 +2379,8 @@
 		D21498675065A4173967C7DAAF1CDCE5 /* Build configuration list for PBXNativeTarget "ZSWTaggedString" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3FF02EF200E5551CF610BBB6A82173E8 /* Debug */,
-				8308A6D8F32A94C0740A0665D3DE6290 /* Release */,
+				4B6DB5263D3F48DDF74D0D6F7AE82BAC /* Debug */,
+				311B5832B0FAFE9E393842593D6A032E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -2400,8 +2388,17 @@
 		DD8D04F2A3C30A012F8579B1B0F943E4 /* Build configuration list for PBXNativeTarget "Specta" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D9D8E15E92945C9C4201827C3C59DDA8 /* Debug */,
-				348942B1F845635D244BC771FDACC574 /* Release */,
+				D91B6B892DF40A2C85543F6AE3B6A6D5 /* Debug */,
+				B0525BE04B7473598AA33EBD02F88F1E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E17657967569521A8B2482E0AE456F3E /* Build configuration list for PBXNativeTarget "Pods-Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3CED2A1868C02DE5BDFB79BFD1CA5450 /* Debug */,
+				EDC9A4750303E882942A176F01AEE719 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
