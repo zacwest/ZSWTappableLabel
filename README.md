@@ -394,6 +394,14 @@ ZSWTappableLabel is available through [CocoaPods](http://cocoapods.org). To inst
 pod "ZSWTappableLabel", "~> 3.3"
 ```
 
+ZSWTappableLabel is available through [Swift Package Manager](https://developer.apple.com/documentation/swift_packages/adding_package_dependencies_to_your_app) in a `Package.swift` like:
+
+```swift
+.package(url: "https://github.com/zacwest/ZSWTappableLabel.git", majorVersion: 3)
+```
+
+To add it to an Xcode project, add the URL via File > Swift Packages -> Add Package Dependency.
+
 ## License
 
 ZSWTappableLabel is available under the [MIT license](https://github.com/zacwest/ZSWTappableLabel/blob/master/LICENSE). This library was created while working on [Free](https://www.producthunt.com/posts/free) who allowed this to be open-sourced.
