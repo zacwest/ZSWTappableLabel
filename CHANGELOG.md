@@ -1,3 +1,6 @@
+# 3.3.2 (2021-08-11)
+- Added Swift Package Manager support.
+
 # 3.3.1 (2021-04-20)
 - Fixes a regression in 3.3 which caused a crash on iOS 12. Turns out that availability flag for lineBreakStrategy only works on iOS 13+!
 
