@@ -9,7 +9,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "../ZSWTappableLabel.h"
+#import "../Public/ZSWTappableLabel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

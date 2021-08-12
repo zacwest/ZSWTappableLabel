@@ -8,7 +8,7 @@
 //  https://github.com/zacwest/ZSWTappableLabel
 //
 
-#import "ZSWTappableLabel.h"
+#import "Public/ZSWTappableLabel.h"
 #import "Private/ZSWTappableLabelTappableRegionInfoImpl.h"
 #import "Private/ZSWTappableLabelAccessibilityElement.h"
 #import "Private/ZSWTappableLabelAccessibilityActionLongPress.h"
